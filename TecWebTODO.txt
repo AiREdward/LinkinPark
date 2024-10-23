@@ -1,0 +1,148 @@
+
+
+stile aside, main, nav, header footer
+regola F
+flashing errori/messaggi successo
+
+
+				USEr 	|     PW
+login 2 utenti obbligatori:     user         user		(artista singolo)
+				admin	     admin		(noi che gestiamo il sito)
+
+
+
+TITOLO: …
+LOGO: …
+KEYWOrDS: …
+IMMAGINI: usare .webp
+
+
+[/home]  
+
+HEADEr//
+
+NAV 
+- titolo HOME
+- menu hamburger
+
+ASIDE
+- Profili consigliati in base a followers
+
+MAIN
+- h1 (Titolo)
+- h2 (Sottotitolo)
+- <a> per link di login
+
+
+FOOTEr//
+
+
+
+
+[/login]
+
+HEADEr//
+
+NAV 
+- titolo LOGIN
+- menu hamburger
+
+ASIDE
+- Consigliati + POST following
+
+MAIN
+- <form> user o email + pw
+- switch a /registration
+- POST su navbar per far vedere che sei loggato
+
+FOOTEr//
+
+
+
+
+
+[/registration]
+
+HEADEr//
+
+NAV 
+- titolo rEGISTrATION
+- menu hamburger
+
+ASIDE
+- Consigliati + POST following
+
+MAIN
+- <form> email + user + pw + conferma pw
+- barra sicurezza pw (verde, gialla, rossa) in base a lunghezza, e diversità caratteri
+- switch a /login
+- POST aggiungere user a db
+- POST su navbar per far vedere che sei loggato
+
+FOOTEr//
+
+
+
+
+
+
+[/admin-profile]
+
+HEADEr//
+
+NAV 
+- titolo Admin Control Panel
+- menu hamburger
+
+ASIDE
+- Consigliati + POST following
+
+MAIN
+- Statistiche utenti prese da db (quanti utenti, filtra per giorno d'iscrizione, quanti artisti)
+- search di utenti
+- grafico
+
+FOOTEr//
+
+
+
+if login name == NOME_UTENTE 
+[/personal-profile/${NOME_UTENTE}]
+
+HEADEr//
+
+NAV 
+- titolo Admin Control Panel
+- menu hamburger
+
+ASIDE
+- Consigliati + POST following
+
+MAIN
+- followers + following 
+- funzionalità follow/unfollow user
+- drag and drop per canzone + POST su user/${NOME_UTENTE}
+
+FOOTEr//
+
+
+
+
+
+[/user/${NOME_UTENTE}]
+
+HEADEr//
+
+NAV 
+- titolo Admin Control Panel
+- menu hamburger
+
+ASIDE
+- Consigliati + POST following
+
+MAIN
+- followers + following 
+- funzionalità follow/unfollow user
+
+FOOTEr//
+
