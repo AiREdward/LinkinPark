@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>wishbone</title>
+    <meta name="description" content="TODO">
+    <meta name="keywords" content="TODO">
+    <meta author="">
+    <link rel="stylesheet" href="../css/style.css" media="screen">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+</head>
+<body>
+    <header>
+        <h1>wishbone</h1>
+        <h2>I vicini ci odiano dal 2007</h2>
+    </header>
+    <nav id="breadcrumb">
+        <p>Ti trovi in <span lang="Home">Shop</span></p>
+    </nav>
+    <nav id="menu">
+        <ul>
+            <li>Shop</li>
+            <li><a href="tour.html">Tour</a></li>
+            <li><a href="aboutus.html">About Us</a></li>
+        </ul>
+    </nav>
+    <main>
+        <div class="filters">
+            <button data-type="all" onclick="filterItems('all')">Mostra Tutto</button>
+            <button data-type="abbigliamento" onclick="filterItems('type', 'maglietta')">Magliette</button>
+            <button data-type="abbigliamento" onclick="filterItems('type', 'cappellino')">Cappellini</button>
+            <button data-type="abbigliamento" onclick="filterItems('type', 'felpa')">Felpe</button>
+            <button data-type="tour" onclick="filterItems('tour', 'Tour 2023')">Tour 2023</button>
+            <button data-type="tour" onclick="filterItems('tour', 'Tour 2011')">Tour 2011</button>
+            <button data-type="tour" onclick="filterItems('tour', 'Tour 2017')">Tour 2017</button>
+        </div>
+
+        <div class="filters">
+            <button onclick="filterItems('all')">Mostra Tutto</button>
+            <button onclick="filterItems('type', 'maglietta')">Magliette</button>
+            <button onclick="filterItems('type', 'cappellino')">Cappellini</button>
+            <button onclick="filterItems('type', 'felpa')">Felpe</button>
+            <button onclick="filterItems('tour', 'Tour 2023')">Tour 2023</button>
+            <button onclick="filterItems('tour', 'Tour 2011')">Tour 2011</button>
+            <button onclick="filterItems('tour', 'Tour 2017')">Tour 2017</button>
+        </div>
+        
+        
+        <section class="shop">
+            <div class="card" data-type="maglietta" data-tour="Tour 2023">
+                <div class="card-front">
+                    <h3>Maglietta Tour 2023</h3>
+                    <img src="img/maglietta-2023.jpg" alt="Maglietta Tour 2023">
+                    <p class="price">€25,00</p>
+                    <button class="info-btn">Info</button>
+                </div>
+                <div class="card-back">
+                    <p>Maglietta ufficiale del tour 2023 in 100% cotone. Disponibile in varie taglie.</p>
+                    <button class="info-btn">Indietro</button>
+                </div>
+            </div>
+            
+            <div class="card" data-type="cappellino" data-tour="Tour 2011">
+                <div class="card-front">
+                    <h3>Cappellino Tour 2011</h3>
+                    <img src="img/cappellino-2011.jpg" alt="Cappellino Tour 2011">
+                    <p class="price">€15,00</p>
+                    <button class="info-btn">Info</button>
+                </div>
+                <div class="card-back">
+                    <p>Cappellino regolabile in taglia unica, creato per il tour 2011.</p>
+                    <button class="info-btn">Indietro</button>
+                </div>
+            </div>
+            
+            <div class="card" data-type="felpa" data-tour="Tour 2017">
+                <div class="card-front">
+                    <h3>Felpa Tour 2017</h3>
+                    <img src="img/felpa-2017.jpg" alt="Felpa Tour 2017">
+                    <p class="price">€40,00</p>
+                    <button class="info-btn">Info</button>
+                </div>
+                <div class="card-back">
+                    <p>Felpa in misto cotone e poliestere, rilasciata per il tour 2017.</p>
+                    <button class="info-btn">Indietro</button>
+                </div>
+            </div>
+            
+            <div class="card" data-type="felpa" data-tour="Tour 2023">
+                <div class="card-front">
+                    <h3>Felpa Tour 2023</h3>
+                    <img src="img/felpa-2023.jpg" alt="Felpa Tour 2023">
+                    <p class="price">€20,00</p>
+                    <button class="info-btn">Info</button>
+                </div>
+                <div class="card-back">
+                    <p>Felpa in misto cotone e poliestere, rilasciata per il tour 2023.</p>
+                    <button class="info-btn">Indietro</button>
+                </div>
+            </div>
+            
+            <div class="card" data-type="maglietta" data-tour="Tour 2011">
+                <div class="card-front">
+                    <h3>Pantaloni Tour 2011</h3>
+                    <img src="img/maglietta-2011.jpg" alt="Maglietta Tour 2011">
+                    <p class="price">€30,00</p>
+                    <button class="info-btn">Info</button>
+                </div>
+                <div class="card-back">
+                    <p>Maglietta unisex comodi, realizzati per il tour 2011.</p>
+                    <button class="info-btn">Indietro</button>
+                </div>
+            </div>
+            
+            <div class="card" data-type="maglietta" data-tour="Tour 2017">
+                <div class="card-front">
+                    <h3>Maglietta Tour 2017</h3>
+                    <img src="img/maglietta-2017.jpg" alt="Maglietta Tour 2017">
+                    <p class="price">€25,00</p>
+                    <button class="info-btn">Info</button>
+                </div>
+                <div class="card-back">
+                    <p>Edizione speciale 2017 della maglietta, in cotone organico.</p>
+                    <button class="info-btn">Indietro</button>
+                </div>
+            </div>
+            
+            <div class="card" data-type="felpa" data-tour="Tour 2023">
+                <div class="card-front">
+                    <h3>Felpa Tour 2023</h3>
+                    <img src="img/felpa-2023.jpg" alt="Felpa Tour 2023">
+                    <p class="price">€45,00</p>
+                    <button class="info-btn">Info</button>
+                </div>
+                <div class="card-back">
+                    <p>Felpa calda con cappuccio, perfetta per il tour 2023. Disponibile in varie taglie.</p>
+                    <button class="info-btn">Indietro</button>
+                </div>
+            </div>
+            
+            <div class="card" data-type="cappellino" data-tour="Tour 2017">
+                <div class="card-front">
+                    <h3>Cappellino Tour 2017</h3>
+                    <img src="img/cappellino-2017.jpg" alt="Cappellino Tour 2017">
+                    <p class="price">€18,00</p>
+                    <button class="info-btn">Info</button>
+                </div>
+                <div class="card-back">
+                    <p>Cappellino in tessuto leggero, versione tour 2017. Disponibili in diverse taglie.</p>
+                    <button class="info-btn">Indietro</button>
+                </div>
+            </div>
+            
+            <div class="card" data-type="cappellino" data-tour="Tour 2023">
+                <div class="card-front">
+                    <h3>Cappellino Tour 2023</h3>
+                    <img src="img/cappellino-2023.jpg" alt="Cappellino Tour 2023">
+                    <p class="price">€17,00</p>
+                    <button class="info-btn">Info</button>
+                </div>
+                <div class="card-back">
+                    <p>Cappellino da baseball, edizione speciale per il tour 2023.</p>
+                    <button class="info-btn">Indietro</button>
+                </div>
+            </div>
+            
+            <div class="card" data-type="maglietta" data-tour="Tour 2011">
+                <div class="card-front">
+                    <h3>Pantaloni Tour 2011</h3>
+                    <img src="img/maglietta.jpg" alt="Maglietta Tour 2011">
+                    <p class="price">€28,00</p>
+                    <button class="info-btn">Info</button>
+                </div>
+                <div class="card-back">
+                    <p>Maglietta confortevole e alla moda, creati per il tour 2011.</p>
+                    <button class="info-btn">Indietro</button>
+                </div>
+            </div>
+                    </section>
+    </main>
+    <footer>
+        <img class="imgValidCode" src="../img/valid-xhtml10.png" alt="HTML valido">
+        <p>Ombretta Gaggi, Cactus &amp; Federazione Italiana Pallavolo - <span lang="en">All rights Reserved</span></p>
+    </footer>
+    <script>
+        document.querySelectorAll('.card').forEach(card => {
+            card.querySelectorAll('.info-btn').forEach(button => {
+                button.addEventListener('click', () => {
+                    card.classList.toggle('flipped');
+                });
+            });
+        });
+    </script>
+    <script>
+        function filterItems(attribute, value) {
+            
+            document.querySelectorAll('.filters button').forEach(button => {
+                button.classList.remove('active-filter');
+            });        
+            event.target.classList.add('active-filter');
+        
+            // Logica di filtraggio degli elementi
+            document.querySelectorAll('.card').forEach(card => {
+                if (attribute === 'all') {
+                    card.style.display = 'block';
+                } else if (card.getAttribute('data-' + attribute) === value) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+    </script>
+
+
+        
+</body>
+</html>
