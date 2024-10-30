@@ -125,17 +125,24 @@ FILTEVS
     background-color: #28a745;
     color: #f0f0f0;
 }
-.filters .active-filter button[data-type="all"]:hover {
+.filters button[data-type="all"]:hover {
     background-color: #28a745;
     color: #f0f0f0;
 }
 
-.active-filter {
-    background-color: #007bff; /* Colore di sfondo del pulsante attivo */
-    color: white;
-    border: 2px solid #0056b3;
+.filters .active-filter {
+    background-color: #ffdd00; /* Colore di sfondo del pulsante attivo */
+    color: rgb(0, 0, 0);
+    border: 2px solid #000000;
 }
 
+#search-bar {
+    padding: 8px;
+    width: 200px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
 
 /*
 SEZIONE CONTENUTO
@@ -222,3 +229,45 @@ h3 {
 .info-btn:hover {
     background-color: #0056b3;
 }
+
+/*
+CART
+*/
+
+#cart {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    max-width: 300px;
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.cart-item img.cart-item-image {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+    border-radius: 5px;
+}
+
+.cart-item-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.empty-cart {
+    text-align: center;
+    color: #777;
+    margin-top: 20px;
+}
+
+.empty-cart-icon {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 10px;
+}
+
