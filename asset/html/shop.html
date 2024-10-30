@@ -17,15 +17,28 @@
     <nav id="breadcrumb">
         <p>Ti trovi in <span lang="Home">Shop</span></p>
     </nav>
+
     <nav id="menu">
         <ul>
             <li>Shop</li>
             <li><a href="tour.html">Tour</a></li>
             <li><a href="aboutus.html">About Us</a></li>
         </ul>
+        <!-- Inizio del Carrello -->
+        <div id="cart">
+            <h3>Carrello</h3>
+            <div id="cart-items">
+                <!-- Gli articoli del carrello verranno aggiunti qui tramite JavaScript -->
+            </div>
+            <p id="subtotal">Subtotale: €0,00</p>
+            <button id="checkout-btn" style="display: none;">Procedi all'acquisto</button>
+        </div>
     </nav>
+    
     <main>
+        
         <div class="filters">
+            <input type="text" id="search-bar" placeholder="Cerca prodotti..." oninput="searchItems()">
             <button data-type="all" onclick="filterItems('all')">Mostra Tutto</button>
             <button data-type="abbigliamento" onclick="filterItems('type', 'maglietta')">Magliette</button>
             <button data-type="abbigliamento" onclick="filterItems('type', 'cappellino')">Cappellini</button>
@@ -35,40 +48,63 @@
             <button data-type="tour" onclick="filterItems('tour', 'Tour 2017')">Tour 2017</button>
         </div>
 
-        <div class="filters">
-            <button onclick="filterItems('all')">Mostra Tutto</button>
-            <button onclick="filterItems('type', 'maglietta')">Magliette</button>
-            <button onclick="filterItems('type', 'cappellino')">Cappellini</button>
-            <button onclick="filterItems('type', 'felpa')">Felpe</button>
-            <button onclick="filterItems('tour', 'Tour 2023')">Tour 2023</button>
-            <button onclick="filterItems('tour', 'Tour 2011')">Tour 2011</button>
-            <button onclick="filterItems('tour', 'Tour 2017')">Tour 2017</button>
-        </div>
-        
-        
         <section class="shop">
             <div class="card" data-type="maglietta" data-tour="Tour 2023">
                 <div class="card-front">
                     <h3>Maglietta Tour 2023</h3>
                     <img src="img/maglietta-2023.jpg" alt="Maglietta Tour 2023">
-                    <p class="price">€25,00</p>
+                    <p class="price">€20,00</p>
+                    <input type="number" min="1" value="1" class="quantity-input">
+                    <button class="add-to-cart-btn">Aggiungi al carrello</button>
                     <button class="info-btn">Info</button>
                 </div>
                 <div class="card-back">
-                    <p>Maglietta ufficiale del tour 2023 in 100% cotone. Disponibile in varie taglie.</p>
+                    <p>Maglietta ufficiale del tour 2023, in cotone 100%.</p>
                     <button class="info-btn">Indietro</button>
                 </div>
             </div>
             
-            <div class="card" data-type="cappellino" data-tour="Tour 2011">
+            <div class="card" data-type="felpa" data-tour="Tour 2023">
                 <div class="card-front">
-                    <h3>Cappellino Tour 2011</h3>
-                    <img src="img/cappellino-2011.jpg" alt="Cappellino Tour 2011">
-                    <p class="price">€15,00</p>
+                    <h3>Felpa Tour 2023</h3>
+                    <img src="img/felpa-2023.jpg" alt="Felpa Tour 2023">
+                    <p class="price">€40,00</p>
+                    <input type="number" min="1" value="1" class="quantity-input">
+                    <button class="add-to-cart-btn">Aggiungi al carrello</button>
                     <button class="info-btn">Info</button>
                 </div>
                 <div class="card-back">
-                    <p>Cappellino regolabile in taglia unica, creato per il tour 2011.</p>
+                    <p>Felpa comoda in misto cotone, rilasciata per il tour 2023.</p>
+                    <button class="info-btn">Indietro</button>
+                </div>
+            </div>
+            
+            <div class="card" data-type="cappellino" data-tour="Tour 2023">
+                <div class="card-front">
+                    <h3>Cappellino Tour 2023</h3>
+                    <img src="img/cappellino-2023.jpg" alt="Cappellino Tour 2023">
+                    <p class="price">€15,00</p>
+                    <input type="number" min="1" value="1" class="quantity-input">
+                    <button class="add-to-cart-btn">Aggiungi al carrello</button>
+                    <button class="info-btn">Info</button>
+                </div>
+                <div class="card-back">
+                    <p>Cappellino in cotone con il logo ufficiale del tour 2023.</p>
+                    <button class="info-btn">Indietro</button>
+                </div>
+            </div>
+            
+            <div class="card" data-type="maglietta" data-tour="Tour 2017">
+                <div class="card-front">
+                    <h3>Maglietta Tour 2017</h3>
+                    <img src="img/maglietta-2017.jpg" alt="Maglietta Tour 2017">
+                    <p class="price">€20,00</p>
+                    <input type="number" min="1" value="1" class="quantity-input">
+                    <button class="add-to-cart-btn">Aggiungi al carrello</button>
+                    <button class="info-btn">Info</button>
+                </div>
+                <div class="card-back">
+                    <p>Maglietta in edizione limitata per il tour 2017.</p>
                     <button class="info-btn">Indietro</button>
                 </div>
             </div>
@@ -78,6 +114,8 @@
                     <h3>Felpa Tour 2017</h3>
                     <img src="img/felpa-2017.jpg" alt="Felpa Tour 2017">
                     <p class="price">€40,00</p>
+                    <input type="number" min="1" value="1" class="quantity-input">
+                    <button class="add-to-cart-btn">Aggiungi al carrello</button>
                     <button class="info-btn">Info</button>
                 </div>
                 <div class="card-back">
@@ -86,102 +124,183 @@
                 </div>
             </div>
             
-            <div class="card" data-type="felpa" data-tour="Tour 2023">
-                <div class="card-front">
-                    <h3>Felpa Tour 2023</h3>
-                    <img src="img/felpa-2023.jpg" alt="Felpa Tour 2023">
-                    <p class="price">€20,00</p>
-                    <button class="info-btn">Info</button>
-                </div>
-                <div class="card-back">
-                    <p>Felpa in misto cotone e poliestere, rilasciata per il tour 2023.</p>
-                    <button class="info-btn">Indietro</button>
-                </div>
-            </div>
-            
-            <div class="card" data-type="maglietta" data-tour="Tour 2011">
-                <div class="card-front">
-                    <h3>Pantaloni Tour 2011</h3>
-                    <img src="img/maglietta-2011.jpg" alt="Maglietta Tour 2011">
-                    <p class="price">€30,00</p>
-                    <button class="info-btn">Info</button>
-                </div>
-                <div class="card-back">
-                    <p>Maglietta unisex comodi, realizzati per il tour 2011.</p>
-                    <button class="info-btn">Indietro</button>
-                </div>
-            </div>
-            
-            <div class="card" data-type="maglietta" data-tour="Tour 2017">
-                <div class="card-front">
-                    <h3>Maglietta Tour 2017</h3>
-                    <img src="img/maglietta-2017.jpg" alt="Maglietta Tour 2017">
-                    <p class="price">€25,00</p>
-                    <button class="info-btn">Info</button>
-                </div>
-                <div class="card-back">
-                    <p>Edizione speciale 2017 della maglietta, in cotone organico.</p>
-                    <button class="info-btn">Indietro</button>
-                </div>
-            </div>
-            
-            <div class="card" data-type="felpa" data-tour="Tour 2023">
-                <div class="card-front">
-                    <h3>Felpa Tour 2023</h3>
-                    <img src="img/felpa-2023.jpg" alt="Felpa Tour 2023">
-                    <p class="price">€45,00</p>
-                    <button class="info-btn">Info</button>
-                </div>
-                <div class="card-back">
-                    <p>Felpa calda con cappuccio, perfetta per il tour 2023. Disponibile in varie taglie.</p>
-                    <button class="info-btn">Indietro</button>
-                </div>
-            </div>
-            
             <div class="card" data-type="cappellino" data-tour="Tour 2017">
                 <div class="card-front">
                     <h3>Cappellino Tour 2017</h3>
                     <img src="img/cappellino-2017.jpg" alt="Cappellino Tour 2017">
-                    <p class="price">€18,00</p>
+                    <p class="price">€15,00</p>
+                    <input type="number" min="1" value="1" class="quantity-input">
+                    <button class="add-to-cart-btn">Aggiungi al carrello</button>
                     <button class="info-btn">Info</button>
                 </div>
                 <div class="card-back">
-                    <p>Cappellino in tessuto leggero, versione tour 2017. Disponibili in diverse taglie.</p>
-                    <button class="info-btn">Indietro</button>
-                </div>
-            </div>
-            
-            <div class="card" data-type="cappellino" data-tour="Tour 2023">
-                <div class="card-front">
-                    <h3>Cappellino Tour 2023</h3>
-                    <img src="img/cappellino-2023.jpg" alt="Cappellino Tour 2023">
-                    <p class="price">€17,00</p>
-                    <button class="info-btn">Info</button>
-                </div>
-                <div class="card-back">
-                    <p>Cappellino da baseball, edizione speciale per il tour 2023.</p>
+                    <p>Cappellino in cotone, esclusivo per il tour 2017.</p>
                     <button class="info-btn">Indietro</button>
                 </div>
             </div>
             
             <div class="card" data-type="maglietta" data-tour="Tour 2011">
                 <div class="card-front">
-                    <h3>Pantaloni Tour 2011</h3>
-                    <img src="img/maglietta.jpg" alt="Maglietta Tour 2011">
-                    <p class="price">€28,00</p>
+                    <h3>Maglietta Tour 2011</h3>
+                    <img src="img/maglietta-2011.jpg" alt="Maglietta Tour 2011">
+                    <p class="price">€20,00</p>
+                    <input type="number" min="1" value="1" class="quantity-input">
+                    <button class="add-to-cart-btn">Aggiungi al carrello</button>
                     <button class="info-btn">Info</button>
                 </div>
                 <div class="card-back">
-                    <p>Maglietta confortevole e alla moda, creati per il tour 2011.</p>
+                    <p>Maglietta in edizione vintage per il tour 2011.</p>
                     <button class="info-btn">Indietro</button>
                 </div>
             </div>
-                    </section>
+            
+            <div class="card" data-type="felpa" data-tour="Tour 2011">
+                <div class="card-front">
+                    <h3>Felpa Tour 2011</h3>
+                    <img src="img/felpa-2011.jpg" alt="Felpa Tour 2011">
+                    <p class="price">€40,00</p>
+                    <input type="number" min="1" value="1" class="quantity-input">
+                    <button class="add-to-cart-btn">Aggiungi al carrello</button>
+                    <button class="info-btn">Info</button>
+                </div>
+                <div class="card-back">
+                    <p>Felpa calda in lana e cotone, vintage del tour 2011.</p>
+                    <button class="info-btn">Indietro</button>
+                </div>
+            </div>
+            
+            <div class="card" data-type="cappellino" data-tour="Tour 2011">
+                <div class="card-front">
+                    <h3>Cappellino Tour 2011</h3>
+                    <img src="img/cappellino-2011.jpg" alt="Cappellino Tour 2011">
+                    <p class="price">€15,00</p>
+                    <input type="number" min="1" value="1" class="quantity-input">
+                    <button class="add-to-cart-btn">Aggiungi al carrello</button>
+                    <button class="info-btn">Info</button>
+                </div>
+                <div class="card-back">
+                    <p>Cappellino in stile retrò del tour 2011.</p>
+                    <button class="info-btn">Indietro</button>
+                </div>
+            </div>
+            
+        </section>
+        <p id="no-results" style="display: none;">Nessun risultato trovato.</p>
     </main>
     <footer>
         <img class="imgValidCode" src="../img/valid-xhtml10.png" alt="HTML valido">
         <p>Ombretta Gaggi, Cactus &amp; Federazione Italiana Pallavolo - <span lang="en">All rights Reserved</span></p>
     </footer>
+    <script>
+        // Array per tenere traccia degli articoli nel carrello
+        let cartItems = [];
+
+// Funzione per aggiungere un articolo al carrello
+        function addToCart(itemName, itemPrice, quantity, itemImage) {
+            const existingItem = cartItems.find(item => item.name === itemName);
+
+            if (existingItem) {
+                existingItem.quantity += quantity; // Aggiorna la quantità se l'articolo è già nel carrello
+            } else {
+                cartItems.push({ name: itemName, price: itemPrice, quantity: quantity, image: itemImage });
+            }
+            updateCartDisplay();
+        }
+        
+        // Funzione per aggiornare la visualizzazione del carrello
+        function updateCartDisplay() {
+            const cartContainer = document.getElementById('cart-items');
+            const subtotalContainer = document.getElementById('subtotal');
+            const checkoutButton = document.getElementById('checkout-btn');
+            cartContainer.innerHTML = '';
+            let subtotal = 0;
+
+            if (cartItems.length === 0) {
+                cartContainer.innerHTML = '<p>Carrello Vuoto</p>';
+                subtotalContainer.textContent = '';
+                checkoutButton.style.display = 'none';
+            } else {
+                cartItems.forEach(item => {
+                    const itemElement = document.createElement('div');
+                    itemElement.classList.add('cart-item');
+                    itemElement.innerHTML = `
+                        <img src="${item.image}" alt="${item.name}" class="cart-item-image">
+                        <p>${item.name}</p>
+                        <p>Quantità: <input type="number" value="${item.quantity}" min="1" class="quantity-input-cart" data-item="${item.name}"></p>
+                        <p>Prezzo: €${item.price.toFixed(2)}</p>
+                        <button class="remove-btn" onclick="removeFromCart('${item.name}')">Rimuovi</button>
+                    `;
+                    cartContainer.appendChild(itemElement);
+                    subtotal += item.price * item.quantity;
+                });
+            
+                subtotalContainer.textContent = `Subtotale: €${subtotal.toFixed(2)}`;
+                checkoutButton.style.display = 'block';
+            }
+        }
+
+        
+        // Funzione per rimuovere un articolo dal carrello
+        function removeFromCart(itemName) {
+            cartItems = cartItems.filter(item => item.name !== itemName);
+            updateCartDisplay();
+        }
+        
+        // Assegna l'evento di aggiunta al carrello a ogni pulsante "Aggiungi al carrello"
+        document.querySelectorAll('.add-to-cart-btn').forEach(button => {
+            button.addEventListener('click', event => {
+                const card = event.target.closest('.card');
+                const itemName = card.querySelector('h3').textContent;
+                const itemPrice = parseFloat(card.querySelector('.price').textContent.replace('€', '').replace(',', '.'));
+                const quantity = parseInt(card.querySelector('.quantity-input').value, 10);
+                const itemImage = card.querySelector('img').src;
+            
+                if (quantity > 0) {
+                    addToCart(itemName, itemPrice, quantity, itemImage);
+                } else {
+                    alert("Seleziona una quantità valida.");
+                }
+            });
+        });
+        
+        // Aggiorna la quantità direttamente dal carrello
+        document.getElementById('cart-items').addEventListener('input', event => {
+            if (event.target.classList.contains('quantity-input-cart')) {
+                const itemName = event.target.getAttribute('data-item');
+                const newQuantity = parseInt(event.target.value, 10);
+                const item = cartItems.find(i => i.name === itemName);
+            
+                if (item && newQuantity > 0) {
+                    item.quantity = newQuantity;
+                    updateCartDisplay();
+                }
+            }
+        });
+
+    </script>
+    
+
+    <script>
+        function searchItems() {
+            const query = document.getElementById('search-bar').value.toLowerCase();
+            let hasResults = false;
+    
+            document.querySelectorAll('.card').forEach(card => {
+                const title = card.querySelector('h3').textContent.toLowerCase();
+                const description = card.querySelector('.card-back p').textContent.toLowerCase();
+                if (title.includes(query) || description.includes(query)) {
+                    card.style.display = 'block';
+                    hasResults = true;
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+    
+            // Mostra o nasconde il messaggio "Nessun risultato trovato"
+            document.getElementById('no-results').style.display = hasResults ? 'none' : 'block';
+        }
+    </script>
+    
     <script>
         document.querySelectorAll('.card').forEach(card => {
             card.querySelectorAll('.info-btn').forEach(button => {
@@ -191,26 +310,34 @@
             });
         });
     </script>
+    
     <script>
         function filterItems(attribute, value) {
-            
             document.querySelectorAll('.filters button').forEach(button => {
                 button.classList.remove('active-filter');
-            });        
+            });
+            
             event.target.classList.add('active-filter');
-        
-            // Logica di filtraggio degli elementi
+            
+            let hasResults = false;
+    
             document.querySelectorAll('.card').forEach(card => {
                 if (attribute === 'all') {
                     card.style.display = 'block';
+                    hasResults = true;
                 } else if (card.getAttribute('data-' + attribute) === value) {
                     card.style.display = 'block';
+                    hasResults = true;
                 } else {
                     card.style.display = 'none';
                 }
             });
+    
+            // Mostra o nasconde il messaggio "Nessun risultato trovato"
+            document.getElementById('no-results').style.display = hasResults ? 'none' : 'block';
         }
     </script>
+    
 
 
         
