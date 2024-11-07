@@ -1,0 +1,3 @@
+i bottoni non fanno niente per ora -> usa il tag dei tour per il collegamento allo shop
+
+quando apri un tour chiudi gli altri
