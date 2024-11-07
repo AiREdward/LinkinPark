@@ -31,7 +31,7 @@
                 <!-- Gli articoli del carrello verranno aggiunti qui tramite JavaScript -->
             </div>
             <p id="subtotal">Subtotale: €0,00</p>
-            <button id="checkout-btn" style="display: none;">Procedi all'acquisto</button>
+            <button id="checkout-btn" style="display: none;" onclick="handleCheckout()">Procedi all'acquisto</button>
         </div>
     </nav>
     
@@ -338,8 +338,22 @@
         }
     </script>
     
-
-
+    <script>
+        // Simula se l'utente è loggato o meno
+        // In una vera applicazione, questa informazione arriverebbe dal backend
+        let isLoggedIn = false; // Imposta a true per simulare l'utente loggato
+        
+        // Funzione per gestire il click su "Procedi all'acquisto"
+        function handleCheckout() {
+            if (!isLoggedIn) {
+                // Se non è loggato, reindirizza alla pagina di accesso o registrazione
+                window.location.href = 'login.html'; // Sostituisci con l'URL della tua pagina di accesso/registrazione
+            } else {
+                // Se è loggato, reindirizza alla pagina di checkout
+                window.location.href = 'registration.html'; // Sostituisci con l'URL della tua pagina di checkout
+            }
+        }
+    </script>
         
 </body>
 </html>
