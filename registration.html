@@ -41,6 +41,51 @@
             width: 0%; /* Imposta la larghezza iniziale a 0% */
             transition: width 0.3s ease; /* Aggiunge un'animazione per la progressione della barra */
         }
+
+        .checkbox-container {
+            text-align: left;
+        }
+
+        .checkbox-container label {
+            display: inline-block;
+            margin: 5px 0;
+        }
+
+        /* Stile del Modale */
+        .modal {
+            display: none; /* Modale nascosto per default */
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.4); /* Sfondo semi-trasparente */
+        }
+
+        .modal-content {
+            background-color: #fff;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 600px;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
     </style>
 </head>
 <body>
@@ -68,14 +113,60 @@
             <label for="confirm-password">Conferma Password:</label>
             <input type="password" id="confirm-password" name="confirm-password" required>
             
+            <!-- Checkbox Privacy -->
+            <div class="checkbox-container">
+                <label>
+                    <input type="checkbox" id="privacy" name="privacy" required>
+                    Accetto la <a href="#" onclick="openModal('privacyModal')">Privacy Policy</a>.
+                </label>
+            </div>
+            
+            <!-- Checkbox Termini di Servizio -->
+            <div class="checkbox-container">
+                <label>
+                    <input type="checkbox" id="terms" name="terms" required>
+                    Accetto i <a href="#" onclick="openModal('termsModal')">Termini di Servizio</a>.
+                </label>
+            </div>
+            
             <button type="submit">Registrati</button>
         </form>
         
         <p>Hai già un account? <a href="login.html">Accedi qui</a></p>
     </main>
 
+    <!-- Modale Privacy Policy -->
+    <div id="privacyModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('privacyModal')">&times;</span>
+            <h2>Privacy Policy</h2>
+            <p>Inserisci qui il testo completo della tua Privacy Policy...</p>
+        </div>
+    </div>
+
+    <!-- Modale Termini di Servizio -->
+    <div id="termsModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('termsModal')">&times;</span>
+            <h2>Termini di Servizio</h2>
+            <p>Inserisci qui il testo completo dei tuoi Termini di Servizio...</p>
+        </div>
+    </div>
+
     <script>
-        // Controllo della forza della password
+        // Funzione per aprire il modale
+        function openModal(modalId) {
+            var modal = document.getElementById(modalId);
+            modal.style.display = "block";
+        }
+
+        // Funzione per chiudere il modale
+        function closeModal(modalId) {
+            var modal = document.getElementById(modalId);
+            modal.style.display = "none";
+        }
+
+        // Funzione per controllare la forza della password
         function checkPasswordStrength() {
             const password = document.getElementById('password').value;
             const strengthBar = document.getElementById('strength-bar');
@@ -120,6 +211,20 @@
             // Controlla che le password coincidano
             if (password !== confirmPassword) {
                 alert("Le password non coincidono.");
+                return false;
+            }
+
+            // Controlla che la checkbox privacy sia selezionata
+            const privacyCheckbox = document.getElementById('privacy');
+            if (!privacyCheckbox.checked) {
+                alert("Devi accettare la Privacy Policy.");
+                return false;
+            }
+
+            // Controlla che la checkbox dei Termini di Servizio sia selezionata
+            const termsCheckbox = document.getElementById('terms');
+            if (!termsCheckbox.checked) {
+                alert("Devi accettare i Termini di Servizio.");
                 return false;
             }
 
