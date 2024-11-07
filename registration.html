@@ -3,6 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <title>Registrati</title>
+    <style>
+        /* Centra il contenuto verticalmente */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            flex-direction: column;
+        }
+
+        /* Contenitore per il modulo */
+        main {
+            width: 300px;
+            text-align: center;
+        }
+
+        /* Spaziatura tra i campi */
+        form label, form input, .password-strength, form button, form small {
+            display: block;
+            width: 100%;
+            margin: 10px 0;
+        }
+
+        /* Barra di forza della password */
+        .password-strength {
+            width: 80%; /* Dimensione fissa della barra genitore */
+            height: 10px;
+            background-color: #e0e0e0;
+            margin: 5px auto; /* Centra la barra */
+            overflow: hidden; /* Evita che la barra interna ecceda i confini */
+        }
+
+        .password-strength div {
+            height: 100%;
+            width: 0%; /* Imposta la larghezza iniziale a 0% */
+            transition: width 0.3s ease; /* Aggiunge un'animazione per la progressione della barra */
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -10,7 +49,7 @@
     </header>
     
     <main>
-        <form action="php/registration.php" method="post">
+        <form action="php/registration.php" method="post" onsubmit="return validateForm()">
             <label for="name">Nome:</label>
             <input type="text" id="name" name="name" required>
             
@@ -18,7 +57,13 @@
             <input type="email" id="email" name="email" required>
             
             <label for="password">Password:</label>
-            <input type="password" id="password" name="password" required>
+            <input type="password" id="password" name="password" required oninput="checkPasswordStrength()">
+            
+            <!-- Barra di forza della password -->
+            <div class="password-strength">
+                <div id="strength-bar"></div>
+            </div>
+            <small id="password-hint">La password deve contenere almeno 8 caratteri, una maiuscola, una minuscola, un numero e un carattere speciale.</small>
             
             <label for="confirm-password">Conferma Password:</label>
             <input type="password" id="confirm-password" name="confirm-password" required>
@@ -28,5 +73,58 @@
         
         <p>Hai già un account? <a href="login.html">Accedi qui</a></p>
     </main>
+
+    <script>
+        // Controllo della forza della password
+        function checkPasswordStrength() {
+            const password = document.getElementById('password').value;
+            const strengthBar = document.getElementById('strength-bar');
+            let strength = 0;
+
+            // Incrementa la forza in base ai requisiti
+            if (password.length >= 8) strength++;
+            if (/[A-Z]/.test(password)) strength++;
+            if (/[a-z]/.test(password)) strength++;
+            if (/[0-9]/.test(password)) strength++;
+            if (/[^A-Za-z0-9]/.test(password)) strength++;
+
+            // Imposta la larghezza della barra in base alla forza
+            strengthBar.style.width = (strength * 25) + '%';
+
+            // Imposta il colore della barra in base alla forza
+            if (strength === 1) strengthBar.style.backgroundColor = 'red';
+            if (strength === 2) strengthBar.style.backgroundColor = 'orange';
+            if (strength === 3) strengthBar.style.backgroundColor = 'yellowgreen';
+            if (strength >= 4) strengthBar.style.backgroundColor = 'green';
+        }
+
+        // Convalida i campi del form
+        function validateForm() {
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirm-password').value;
+
+            // Controlla che la password rispetti i requisiti
+            const isValidPassword = (
+                password.length >= 8 &&
+                /[A-Z]/.test(password) &&
+                /[a-z]/.test(password) &&
+                /[0-9]/.test(password) &&
+                /[^A-Za-z0-9]/.test(password)
+            );
+
+            if (!isValidPassword) {
+                alert("La password non rispetta i requisiti di complessità.");
+                return false;
+            }
+
+            // Controlla che le password coincidano
+            if (password !== confirmPassword) {
+                alert("Le password non coincidono.");
+                return false;
+            }
+
+            return true; // Form valido
+        }
+    </script>
 </body>
 </html>

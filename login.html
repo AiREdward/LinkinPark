@@ -3,6 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <title>Accedi</title>
+    <style>
+        /* Centra il contenuto verticalmente */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            flex-direction: column;
+        }
+
+        /* Contenitore per il modulo */
+        main {
+            width: 300px;
+            text-align: center;
+        }
+
+        /* Spaziatura e larghezza uniforme tra i campi */
+        form label, form input, form button {
+            display: block;
+            width: 100%;
+            margin: 10px 0;
+            box-sizing: border-box; /* Assicura che padding e border non alterino la larghezza */
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -16,11 +41,23 @@
             
             <label for="password">Password:</label>
             <input type="password" id="password" name="password" required>
+            <button type="button" onclick="togglePassword()">Mostra/Nascondi</button>
             
             <button type="submit">Accedi</button>
         </form>
         
         <p>Non hai un account? <a href="registration.html">Registrati qui</a></p>
+
+        <script>
+            function togglePassword() {
+                const passwordField = document.getElementById('password');
+                if (passwordField.type === 'password') {
+                    passwordField.type = 'text';
+                } else {
+                    passwordField.type = 'password';
+                }
+            }
+        </script>
     </main>
 </body>
 </html>
