@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="it">
+
 <head>
     <meta charset="UTF-8">
     <title>Registrati</title>
@@ -21,7 +22,11 @@
         }
 
         /* Spaziatura tra i campi */
-        form label, form input, .password-strength, form button, form small {
+        form label,
+        form input,
+        .password-strength,
+        form button,
+        form small {
             display: block;
             width: 100%;
             margin: 10px 0;
@@ -29,17 +34,17 @@
 
         /* Barra di forza della password */
         .password-strength {
-            width: 80%; /* Dimensione fissa della barra genitore */
+            width: 80%;
             height: 10px;
             background-color: #e0e0e0;
-            margin: 5px auto; /* Centra la barra */
-            overflow: hidden; /* Evita che la barra interna ecceda i confini */
+            margin: 5px auto;
+            overflow: hidden;
         }
 
         .password-strength div {
             height: 100%;
-            width: 0%; /* Imposta la larghezza iniziale a 0% */
-            transition: width 0.3s ease; /* Aggiunge un'animazione per la progressione della barra */
+            width: 0%;
+            transition: width 0.3s ease;
         }
 
         .checkbox-container {
@@ -53,23 +58,33 @@
 
         /* Stile del Modale */
         .modal {
-            display: none; /* Modale nascosto per default */
+            display: none;
             position: fixed;
             z-index: 1;
             left: 0;
             top: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.4); /* Sfondo semi-trasparente */
+            background-color: rgba(0, 0, 0, 0.4);
         }
 
         .modal-content {
             background-color: #fff;
-            margin: 15% auto;
+            margin: 10% auto;
             padding: 20px;
             border: 1px solid #888;
             width: 80%;
             max-width: 600px;
+            max-height: 70vh;
+            overflow-y: auto;
+            opacity: 0;
+            transform: scale(0.8);
+            transition: all 0.3s ease;
+        }
+
+        .modal.show .modal-content {
+            opacity: 1;
+            transform: scale(1);
         }
 
         .close {
@@ -85,34 +100,35 @@
             text-decoration: none;
             cursor: pointer;
         }
-
     </style>
 </head>
+
 <body>
     <header>
         <h1>Registrati</h1>
     </header>
-    
+
     <main>
         <form action="php/registration.php" method="post" onsubmit="return validateForm()">
             <label for="name">Nome:</label>
             <input type="text" id="name" name="name" required>
-            
+
             <label for="email">Email:</label>
             <input type="email" id="email" name="email" required>
-            
+
             <label for="password">Password:</label>
             <input type="password" id="password" name="password" required oninput="checkPasswordStrength()">
-            
+
             <!-- Barra di forza della password -->
             <div class="password-strength">
                 <div id="strength-bar"></div>
             </div>
-            <small id="password-hint">La password deve contenere almeno 8 caratteri, una maiuscola, una minuscola, un numero e un carattere speciale.</small>
-            
+            <small id="password-hint">La password deve contenere almeno 8 caratteri, una maiuscola, una minuscola, un
+                numero e un carattere speciale.</small>
+
             <label for="confirm-password">Conferma Password:</label>
             <input type="password" id="confirm-password" name="confirm-password" required>
-            
+
             <!-- Checkbox Privacy -->
             <div class="checkbox-container">
                 <label>
@@ -120,7 +136,7 @@
                     Accetto la <a href="#" onclick="openModal('privacyModal')">Privacy Policy</a>.
                 </label>
             </div>
-            
+
             <!-- Checkbox Termini di Servizio -->
             <div class="checkbox-container">
                 <label>
@@ -128,42 +144,181 @@
                     Accetto i <a href="#" onclick="openModal('termsModal')">Termini di Servizio</a>.
                 </label>
             </div>
-            
+
             <button type="submit">Registrati</button>
         </form>
-        
+
         <p>Hai già un account? <a href="login.html">Accedi qui</a></p>
     </main>
 
     <!-- Modale Privacy Policy -->
-    <div id="privacyModal" class="modal">
+    <div id="privacyModal" class="modal" onclick="closeModalOutside(event, 'privacyModal')">
         <div class="modal-content">
             <span class="close" onclick="closeModal('privacyModal')">&times;</span>
-            <h2>Privacy Policy</h2>
-            <p>Inserisci qui il testo completo della tua Privacy Policy...</p>
+            <section>
+                <h2>1. Titolare del Trattamento</h2>
+                <p>
+                    Il titolare del trattamento dei dati è wishbone, con sede legale in
+                    Piazza delle Erbe, 35 35122 Padova PD. Puoi contattarci all'indirizzo email: wishbone@assistenza.it.
+                </p>
+            </section>
+
+            <section>
+                <h2>2. Tipologie di Dati Raccolti</h2>
+                <p>
+                    Raccogliamo dati personali come nome, email, dati di pagamento e dati di navigazione sul sito. I
+                    dati vengono raccolti al momento della registrazione, dell'acquisto e della navigazione.
+                </p>
+            </section>
+
+            <section>
+                <h2>3. Finalità e Basi Giuridiche del Trattamento</h2>
+                <p>
+                    I dati vengono utilizzati per completare gli acquisti, gestire le prenotazioni e migliorare
+                    l'esperienza utente, in conformità con il GDPR. Utilizziamo i dati personali esclusivamente con il
+                    consenso dell'utente o in base ad altre basi legali previste dal GDPR.
+                </p>
+            </section>
+
+            <section>
+                <h2>4. Conservazione dei Dati</h2>
+                <p>
+                    I tuoi dati personali saranno conservati per il tempo strettamente necessario a soddisfare le
+                    finalità indicate o come richiesto dalla legge.
+                </p>
+            </section>
+
+            <section>
+                <h2>5. Condivisione dei Dati</h2>
+                <p>
+                    Condividiamo i dati personali con fornitori terzi per l'elaborazione delle transazioni, le
+                    spedizioni e per obblighi legali.
+                </p>
+            </section>
+
+            <section>
+                <h2>6. Diritti dell'Interessato</h2>
+                <p>
+                    Ai sensi del GDPR, hai il diritto di accedere, rettificare, cancellare e limitare il trattamento dei
+                    tuoi dati personali. Per esercitare questi diritti, contattaci all'indirizzo wishbone@assistenza.it.
+                </p>
+            </section>
+
+            <section>
+                <h2>7. Cookie e Tecnologie di Tracciamento</h2>
+                <p>
+                    Utilizziamo i cookie per migliorare l'esperienza utente e per analizzare il traffico.
+                </p>
+            </section>
+
+            <section>
+                <h2>8. Sicurezza dei Dati</h2>
+                <p>
+                    Adottiamo misure tecniche e organizzative per proteggere i dati personali, in conformità
+                    all'Articolo 32 del GDPR.
+                </p>
+            </section>
+
+            <section>
+                <h2>9. Modifiche all'Informativa</h2>
+                <p>
+                    La presente informativa può essere aggiornata periodicamente. Ti consigliamo di verificare
+                    regolarmente gli aggiornamenti su questa pagina.
+                </p>
+            </section>
+
+            <section>
+                <h2>10. Contatti e Reclami</h2>
+                <p>
+                    Per domande o reclami, contattaci all'indirizzo wishbone@assistenza.it. Se ritieni che i tuoi diritti siano stati
+                    violati, hai il diritto di rivolgerti al Garante per la protezione dei dati personali.
+                </p>
+            </section>
         </div>
     </div>
 
     <!-- Modale Termini di Servizio -->
-    <div id="termsModal" class="modal">
+    <div id="termsModal" class="modal" onclick="closeModalOutside(event, 'privacyModal')">
         <div class="modal-content">
             <span class="close" onclick="closeModal('termsModal')">&times;</span>
-            <h2>Termini di Servizio</h2>
-            <p>Inserisci qui il testo completo dei tuoi Termini di Servizio...</p>
+            <section>
+                <h2>1. Accettazione dei Termini</h2>
+                <p>
+                    Utilizzando il nostro sito web, accetti i presenti Termini e Condizioni, applicabili a tutti gli
+                    utenti che visitano o effettuano acquisti su [Nome del sito]. Se non accetti i termini, ti invitiamo
+                    a non utilizzare il sito.
+                </p>
+            </section>
+
+            <section>
+                <h2>2. Servizi Offerti</h2>
+                <p>
+                    [Nome del sito] offre ai fan della nostra band la possibilità di acquistare prodotti ufficiali, come
+                    abbigliamento e accessori, e di prenotare biglietti per le date del tour. Tutti i prodotti e i
+                    biglietti sono soggetti a disponibilità e possono essere modificati senza preavviso.
+                </p>
+            </section>
+
+            <section>
+                <h2>3. Condizioni di Acquisto</h2>
+                <p>
+                    Gli acquisti effettuati su questo sito sono vincolati alla disponibilità dei prodotti. Al
+                    completamento dell'acquisto, riceverai una conferma via email con i dettagli dell'ordine. Per i
+                    biglietti, assicurati di conservare la conferma, che sarà richiesta per l'ingresso agli eventi.
+                </p>
+            </section>
+
+            <section>
+                <h2>4. Politica di Reso e Rimborso</h2>
+                <p>
+                    Se desideri restituire un prodotto acquistato, puoi contattare il nostro servizio clienti entro 14
+                    giorni dalla consegna. I biglietti per gli eventi, tuttavia, non sono rimborsabili, salvo
+                    cancellazione o modifiche dell'evento.
+                </p>
+            </section>
+
+            <section>
+                <h2>5. Modifiche ai Termini e Servizi</h2>
+                <p>
+                    [Nome del sito] si riserva il diritto di modificare questi Termini e Servizi in qualsiasi momento.
+                    Le modifiche verranno comunicate sul sito e, se rilevanti, tramite email agli utenti registrati.
+                </p>
+            </section>
+
+            <section>
+                <h2>6. Contatti</h2>
+                <p>
+                    Per qualsiasi domanda, contatta il nostro servizio clienti all'indirizzo email: wishbone@assistenza.it.
+                </p>
+            </section>
         </div>
     </div>
 
     <script>
         // Funzione per aprire il modale
         function openModal(modalId) {
-            var modal = document.getElementById(modalId);
+            const modal = document.getElementById(modalId);
             modal.style.display = "block";
+            setTimeout(() => {
+                modal.classList.add("show");
+            }, 10);  // Attiva l'animazione con un breve ritardo
         }
 
-        // Funzione per chiudere il modale
+        // Funzione per chiudere il modale con l'animazione
         function closeModal(modalId) {
-            var modal = document.getElementById(modalId);
-            modal.style.display = "none";
+            const modal = document.getElementById(modalId);
+            modal.classList.remove("show");
+            setTimeout(() => {
+                modal.style.display = "none";
+            }, 300);  // Aspetta la fine dell'animazione prima di nascondere il modale
+        }
+
+        // Funzione per chiudere il modale cliccando fuori dal contenuto
+        function closeModalOutside(event, modalId) {
+            const modal = document.getElementById(modalId);
+            if (event.target === modal) {  // Controlla se il click è fuori dal contenuto del modale
+                closeModal(modalId);
+            }
         }
 
         // Funzione per controllare la forza della password
@@ -232,4 +387,5 @@
         }
     </script>
 </body>
+
 </html>
