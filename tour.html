@@ -31,26 +31,151 @@
         </ul>
     </nav>
     <main>
-      <dl>
-        <dt>Monday
-        <dd>Go to work
-        <dd>Get home from work and clean the house
+        <h3>EUROPEAN TOUR</h3>
+        <dl id="EuropeanTour">
+            <dt>Italia</dt>
+            <dd onclick="toggleDetails(this)">
+                <p>
+                    <strong>Roma</strong> - Colosseo
+                    <time datetime="2024-06-12">12 Giugno 2024</time>
+                </p>
+                <div class="extra-details" hidden>
+                    <p>Concerto unico a Roma presso il <a href="https://www.google.com/maps?q=Colosseo" target="_blank">Colosseo</a>!</p>
+                    <button aria-label="Compra Biglietto per Roma">Compra Biglietto</button>
+                    <a href="shop.html?tour=European%20Tour">
+                        <button aria-label="Compra Merch per Roma - European Tour">Merch European Tour</button>
+                    </a>
+                </div>
+            </dd>
+            <dd onclick="toggleDetails(this)">
+                <p>
+                    <strong>Milano</strong> - Duomo
+                    <time datetime="2024-06-15">15 Giugno 2024</time>
+                </p>
+                <div class="extra-details" hidden>
+                    <p>Grande serata al <a href="https://www.google.com/maps?q=Duomo" target="_blank">Duomo</a> di Milano.</p>
+                    <button aria-label="Compra Biglietto per Milano">Compra Biglietto</button>
+                    <a href="shop.html?tour=European%20Tour">
+                        <button aria-label="Compra Merch per Milano - European Tour">Merch European Tour</button>
+                    </a>
+                </div>
+            </dd>
         
-        <dt>Tuesday
-        <dd>Go to the park
-        <dd>Workout
-      
-        <dt>Wednesday</dt>
-        <dd>Go to a party
-    
-        <dt>Friday
-        <dd>Go to another party 🎉
-      </dl>
+            <dt>Spagna</dt>
+            <dd onclick="toggleDetails(this)">
+                <p>
+                    <strong>Valencia</strong> - Mestalla
+                    <time datetime="2024-07-10">10 Luglio 2024</time><br>
+                </p>
+                <div class="extra-details" hidden>
+                    <p>Concerto emozionante allo <a href="https://www.google.com/maps?q=Stadio_Mestalla" target="_blank">Stadio Mestalla</a> di Valencia.</p>
+                    <button aria-label="Compra Biglietto per Valencia">Compra Biglietto</button>
+                    <a href="shop.html?tour=European%20Tour">
+                        <button aria-label="Compra Merch per Valencia - European Tour">Merch European Tour</button>
+                    </a>
+                </div>
+            </dd>
+            <dd onclick="toggleDetails(this)">
+                <p>
+                    <strong>Barcellona</strong> - Camp Nou
+                    <time datetime="2024-07-12">12 Luglio 2024</time>
+                </p>
+                <div class="extra-details" hidden>
+                    <p>Non perdere l'evento al <a href="https://www.google.com/maps?q=Camp Nou" target="_blank">Camp Nou</a> di Barcellona.</p>
+                    <button aria-label="Compra Biglietto per Barcellona">Compra Biglietto</button>
+                    <a href="shop.html?tour=European%20Tour">
+                        <button aria-label="Compra Merch per Barcellona - European Tour">Merch European Tour</button>
+                    </a>
+                </div>
+            </dd>
+        </dl>
+
+
+        <h3>ASIAN TOUR</h3>
+        <!-- Asia Tour -->
+        <dl id="AsiaTour">
+            <dt>Giappone</dt>
+            <dd onclick="toggleDetails(this)">
+                <p>
+                    <strong>Tokyo</strong> - Tokyo Dome
+                    <time datetime="2024-08-01">1 Agosto 2024</time>
+                </p>
+                <div class="extra-details" hidden>
+                    <p>Spettacolare concerto al <a href="https://www.google.com/maps?q=Tokyo Dome" target="_blank">Tokyo Dome</a> di Tokyo.</p>
+                    <button aria-label="Compra Biglietto per Tokyo">Compra Biglietto</button>
+                    <button aria-label="Compra Merch per Tokyo - Asia Tour">Merch Asia Tour</button>
+                </div>
+            </dd>
+            <dt>Corea del Sud</dt>
+            <dd onclick="toggleDetails(this)">
+                <p>
+                    <strong>Seoul</strong> - Olympic Stadium
+                    <time datetime="2024-08-04">4 Agosto 2024</time>
+                </p>
+                <div class="extra-details" hidden>
+                    <p>Grande evento allo <a href="https://www.google.com/maps?q=Olympic Stadium Seoul" target="_blank">Olympic Stadium</a> di Seoul.</p>
+                    <button aria-label="Compra Biglietto per Seoul">Compra Biglietto</button>
+                    <a href="shop.html?tour=Asian%20Tour">
+                        <button aria-label="Compra Merch per Seoul - Asia Tour">Merch Asia Tour</button>
+                    </a>
+                </div>
+            </dd>
+        </dl>
+          
+        <h3>AMERICAN TOUR</h3>
+        <!-- America Tour -->
+        <dl id="AmericaTour">
+            <dt>Stati Uniti</dt>
+            <dd onclick="toggleDetails(this)">
+                <p>
+                    <strong>New York</strong> - Madison Square Garden
+                    <time datetime="2024-09-10">10 Settembre 2024</time>
+                </p>
+                <div class="extra-details" hidden>
+                    <p>Evento iconico al <a href="https://www.google.com/maps?q=Madison Square Garden" target="_blank">Madison Square Garden</a> di New York.</p>
+                    <button aria-label="Compra Biglietto per New York">Compra Biglietto</button>
+                    <a href="shop.html?tour=American%20Tour">
+                        <button aria-label="Compra Merch per New York - America Tour">Merch America Tour</button>
+                    </a>
+                </div>
+            </dd>
+            <dd onclick="toggleDetails(this)">
+                <p>
+                    <strong>Los Angeles</strong> - Staples Center
+                    <time datetime="2024-09-12">12 Settembre 2024</time>
+                </p>
+                <div class="extra-details" hidden>
+                    <p>Non perdere il concerto al <a href="https://www.google.com/maps?q=Staples Center" target="_blank">Staples Center</a> di Los Angeles.</p>
+                    <button aria-label="Compra Biglietto per Los Angeles">Compra Biglietto</button>
+                    <a href="shop.html?tour=American%20Tour">
+                        <button aria-label="Compra Merch per Los Angeles - America Tour">Merch America Tour</button>
+                    </a>
+                    </div>
+            </dd>
+            <!-- Aggiungi altre città in America... -->
+        </dl>
     </main>
     <footer>
         <img class="imgValidCode" src="asset/img/valid-xhtml10.png" alt="HTML valido">
         <p>Ombretta Gaggi, Cactus &amp; Federazione Italiana Pallavolo - <span lang="en">All rights Reserved</span></p>
     </footer>
+    <script>
+
+        function toggleDetails(element) {
+            // Chiude tutti i dettagli aperti in altri tour
+            document.querySelectorAll(".extra-details").forEach(details => {
+                details.hidden = true;
+            });
+        
+            // Mostra solo i dettagli dell'elemento cliccato
+            const details = element.querySelector(".extra-details");
+            if (details) {
+                details.hidden = !details.hidden;
+            }
+        }
+
+
+    </script>
 </body>
 
 </html>

@@ -2,3 +2,7 @@
 metti selezione multipla filti
 pinned item
 filto
+
+
+
+metti classe active filter su bottoni che fanno riferimento alla pagina tour
