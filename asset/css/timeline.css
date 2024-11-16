@@ -1,4 +1,19 @@
 /* Styles */
+
+/* Stile per .extra-details */
+.extra-details {
+  margin-top: 10px;
+}
+
+
+h3 {
+  font-size: 1.8em;
+  margin-top: 30px;
+  text-align: left;
+  padding-bottom: 5px;
+  margin-bottom: 20px;
+}
+
 dl {
   padding-left: 10%;
   max-width: 80%;
