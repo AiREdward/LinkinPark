@@ -1,35 +1,38 @@
 <?php
+session_start(); // Avvia la sessione
+
 // Connessione al database
 $servername = "localhost";
 $username = "root";
 $password = "";
 $dbname = "wishbone_db";
 
-// Crea una connessione
 $conn = new mysqli($servername, $username, $password, $dbname);
 
-// Controlla la connessione
 if ($conn->connect_error) {
     die("Connessione fallita: " . $conn->connect_error);
 }
 
-// Riceve i dati dal form di login
 $email = $_POST['email'];
 $password = $_POST['password'];
+$redirect = $_POST['redirect'] ?? 'homepage.html'; // Valore di default
 
-// Verifica che l'utente esista nel database
-$sql = "SELECT * FROM users WHERE email = '$email'";
-$result = $conn->query($sql);
+$sql = "SELECT * FROM users WHERE email = ?";
+$stmt = $conn->prepare($sql);
+$stmt->bind_param("s", $email);
+$stmt->execute();
+$result = $stmt->get_result();
 
 if ($result->num_rows > 0) {
-    // L'utente esiste, controlla la password
     $user = $result->fetch_assoc();
     
     if (password_verify($password, $user['password'])) {
-        echo "Accesso effettuato con successo!";
-        // Qui potresti reindirizzare alla homepage o all'area riservata
-        // header("Location: homepage.html");
-        // exit();
+        $_SESSION['logged_in'] = true;
+        $_SESSION['user_id'] = $user['id'];
+        $_SESSION['email'] = $user['email'];
+        
+        header("Location: $redirect");
+        exit();
     } else {
         echo "Password errata. <a href='login.html'>Riprova</a>";
     }
