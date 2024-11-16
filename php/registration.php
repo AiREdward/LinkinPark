@@ -23,15 +23,23 @@ $sql = "SELECT * FROM users WHERE email = '$email'";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
-    echo "L'email è già registrata. <a href='registration.html'>Torna indietro</a>";
+    // Email già registrata
+    header("Location: ../registration.html?error=email_taken");
+    exit(); // Interrompe l'esecuzione per evitare che il codice continui
 } else {
     // Inserisci il nuovo utente
-    $sql = "INSERT INTO users (name, email, password) VALUES ('$name', '$email', '$password')";
-    
-    if ($conn->query($sql) === TRUE) {
-        echo "Registrazione avvenuta con successo! <a href='login.html'>Accedi qui</a>";
+    $sql = "INSERT INTO users (name, email, password) VALUES (?, ?, ?)";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("sss", $name, $email, $password);
+
+    if ($stmt->execute()) {
+        // Registrazione avvenuta con successo
+        header("Location: ../login.html?success=registration");
+        exit();
     } else {
-        echo "Errore nell'inserimento: " . $conn->error;  // Messaggio di errore dettagliato
+        // Errore durante l'inserimento
+        header("Location: ../registration.html?error=insert_failed");
+        exit();
     }
 }
 
