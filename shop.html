@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="it">
+
 <head>
     <meta charset="UTF-8">
     <title>wishbone</title>
@@ -9,9 +10,31 @@
     <link rel="stylesheet" href="asset/css/style.css" media="screen">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 </head>
+<script>
+    // Funzione per leggere i parametri dell'URL
+    function getURLParameter(name) {
+        const urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get(name);
+    }
+
+    // Applica il filtro in base al parametro 'tour' dell'URL
+    function applyTourFilter() {
+        const tour = getURLParameter('tour');
+        if (tour) {
+            filterItems('tour', tour); // Chiama la funzione di filtro con il parametro trovato
+        }
+    }
+
+    // Esegui la funzione per applicare il filtro una volta caricata la pagina
+    document.addEventListener('DOMContentLoaded', () => {
+        applyTourFilter();
+    });
+
+</script>
+
 <body>
     <header>
-        <h1>wishbone</h1>
+        <h1>Linkin Park</h1>
         <h2>I vicini ci odiano dal 2007</h2>
     </header>
     <nav id="breadcrumb">
@@ -37,9 +60,9 @@
             <button id="checkout-btn" style="display: none;" onclick="handleCheckout()">Procedi all'acquisto</button>
         </div>
     </nav>
-    
+
     <main>
-        
+
         <div class="filters">
             <input type="text" id="search-bar" placeholder="Cerca prodotti..." oninput="searchItems()">
             <button data-type="all" class="active-filter" onclick="filterItems('all')">Mostra Tutto</button>
@@ -67,7 +90,7 @@
                     <button class="info-btn">Indietro</button>
                 </div>
             </div>
-            
+
             <div class="card" data-type="felpa" data-tour="European Tour">
                 <div class="card-front">
                     <h3>Felpa European Tour</h3>
@@ -82,7 +105,7 @@
                     <button class="info-btn">Indietro</button>
                 </div>
             </div>
-            
+
             <div class="card" data-type="cappellino" data-tour="European Tour">
                 <div class="card-front">
                     <h3>Cappellino European Tour</h3>
@@ -97,7 +120,7 @@
                     <button class="info-btn">Indietro</button>
                 </div>
             </div>
-            
+
             <div class="card" data-type="maglietta" data-tour="Asian Tour">
                 <div class="card-front">
                     <h3>Maglietta Asian Tour</h3>
@@ -112,7 +135,7 @@
                     <button class="info-btn">Indietro</button>
                 </div>
             </div>
-            
+
             <div class="card" data-type="felpa" data-tour="Asian Tour">
                 <div class="card-front">
                     <h3>Felpa Asian Tour</h3>
@@ -127,7 +150,7 @@
                     <button class="info-btn">Indietro</button>
                 </div>
             </div>
-            
+
             <div class="card" data-type="cappellino" data-tour="Asian Tour">
                 <div class="card-front">
                     <h3>Cappellino Asian Tour</h3>
@@ -142,7 +165,7 @@
                     <button class="info-btn">Indietro</button>
                 </div>
             </div>
-            
+
             <div class="card" data-type="maglietta" data-tour="American Tour">
                 <div class="card-front">
                     <h3>Maglietta American Tour</h3>
@@ -157,7 +180,7 @@
                     <button class="info-btn">Indietro</button>
                 </div>
             </div>
-            
+
             <div class="card" data-type="felpa" data-tour="American Tour">
                 <div class="card-front">
                     <h3>Felpa American Tour</h3>
@@ -172,7 +195,7 @@
                     <button class="info-btn">Indietro</button>
                 </div>
             </div>
-            
+
             <div class="card" data-type="cappellino" data-tour="American Tour">
                 <div class="card-front">
                     <h3>Cappellino American Tour</h3>
@@ -187,7 +210,7 @@
                     <button class="info-btn">Indietro</button>
                 </div>
             </div>
-            
+
         </section>
         <p id="no-results" style="display: none;">Nessun risultato trovato.</p>
     </main>
@@ -210,7 +233,7 @@
             }
             updateCartDisplay();
         }
-        
+
         // Funzione per aggiornare la visualizzazione del carrello
         function updateCartDisplay() {
             const cartContainer = document.getElementById('cart-items');
@@ -237,19 +260,19 @@
                     cartContainer.appendChild(itemElement);
                     subtotal += item.price * item.quantity;
                 });
-            
+
                 subtotalContainer.textContent = `Subtotale: €${subtotal.toFixed(2)}`;
                 checkoutButton.style.display = 'block';
             }
         }
 
-        
+
         // Funzione per rimuovere un articolo dal carrello
         function removeFromCart(itemName) {
             cartItems = cartItems.filter(item => item.name !== itemName);
             updateCartDisplay();
         }
-        
+
         // Assegna l'evento di aggiunta al carrello a ogni pulsante "Aggiungi al carrello"
         document.querySelectorAll('.add-to-cart-btn').forEach(button => {
             button.addEventListener('click', event => {
@@ -258,7 +281,7 @@
                 const itemPrice = parseFloat(card.querySelector('.price').textContent.replace('€', '').replace(',', '.'));
                 const quantity = parseInt(card.querySelector('.quantity-input').value, 10);
                 const itemImage = card.querySelector('img').src;
-            
+
                 if (quantity > 0) {
                     addToCart(itemName, itemPrice, quantity, itemImage);
                 } else {
@@ -266,14 +289,14 @@
                 }
             });
         });
-        
+
         // Aggiorna la quantità direttamente dal carrello
         document.getElementById('cart-items').addEventListener('input', event => {
             if (event.target.classList.contains('quantity-input-cart')) {
                 const itemName = event.target.getAttribute('data-item');
                 const newQuantity = parseInt(event.target.value, 10);
                 const item = cartItems.find(i => i.name === itemName);
-            
+
                 if (item && newQuantity > 0) {
                     item.quantity = newQuantity;
                     updateCartDisplay();
@@ -282,13 +305,13 @@
         });
 
     </script>
-    
+
 
     <script>
         function searchItems() {
             const query = document.getElementById('search-bar').value.toLowerCase();
             let hasResults = false;
-    
+
             document.querySelectorAll('.card').forEach(card => {
                 const title = card.querySelector('h3').textContent.toLowerCase();
                 const description = card.querySelector('.card-back p').textContent.toLowerCase();
@@ -299,12 +322,12 @@
                     card.style.display = 'none';
                 }
             });
-    
+
             // Mostra o nasconde il messaggio "Nessun risultato trovato"
             document.getElementById('no-results').style.display = hasResults ? 'none' : 'block';
         }
     </script>
-    
+
     <script>
         document.querySelectorAll('.card').forEach(card => {
             card.querySelectorAll('.info-btn').forEach(button => {
@@ -316,44 +339,41 @@
     </script>
 
     <script>
-        function filterItems(attribute, value) {
+        function filterItems(type, value) {
+            // Rimuovi lo stato 'active' da tutti i bottoni di filtro
             document.querySelectorAll('.filters button').forEach(button => {
                 button.classList.remove('active-filter');
             });
-            
-            if (event) {
-                event.target.classList.add('active-filter');
-            } else {
-                // Altrimenti imposta di default "Mostra Tutto"
-                document.querySelector('.filters button').classList.add('active-filter');
+
+            // Aggiungi lo stato 'active' al bottone corrispondente
+            const button = document.querySelector(`button[data-type="${type}"][onclick*="${value}"]`);
+            if (button) {
+                button.classList.add('active-filter');
             }
 
-            
-            let hasResults = false;
-    
-            document.querySelectorAll('.card').forEach(card => {
-                if (attribute === 'all') {
+            // Filtra gli elementi in base al tipo e valore specificati
+            const cards = document.querySelectorAll('.card');
+            cards.forEach(card => {
+                if (type === 'all' || (card.dataset[type] && card.dataset[type] === value)) {
                     card.style.display = 'block';
-                    hasResults = true;
-                } else if (card.getAttribute('data-' + attribute) === value) {
-                    card.style.display = 'block';
-                    hasResults = true;
                 } else {
                     card.style.display = 'none';
                 }
             });
-    
-            // Mostra o nasconde il messaggio "Nessun risultato trovato"
-            document.getElementById('no-results').style.display = hasResults ? 'none' : 'block';
+
+            // Nascondi il messaggio di "nessun risultato" se ci sono risultati
+            const visibleCards = Array.from(cards).filter(card => card.style.display === 'block');
+            document.getElementById('no-results').style.display = visibleCards.length > 0 ? 'none' : 'block';
         }
-        
+
+
     </script>
-    
+
     <script>
         // Simula se l'utente è loggato o meno
         // In una vera applicazione, questa informazione arriverebbe dal backend
         let isLoggedIn = false; // Imposta a true per simulare l'utente loggato
-        
+
         // Funzione per gestire il click su "Procedi all'acquisto"
         function handleCheckout() {
             if (!isLoggedIn) {
@@ -365,6 +385,7 @@
             }
         }
     </script>
-        
+
 </body>
+
 </html>
