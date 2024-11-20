@@ -1,0 +1,26 @@
+COLLEGA SHOP A PAYMENT
+
+COLLEGA PAYMENT A RIEPILOGO (STAMPA FATTURA)
+
+aggiungi data scadenza
+
+puoi veramente inserire la carta nel db? forse con hashing
+
+aggiungi chiave eserna di utenti in transazione
+
+1244143452634552 formatta .replace(" ", "")
+
+sistema controlli nome, ccv, ecc ecc
+
+mantenere articoli nel carrello anche se pagina fa refresh
+
+fanne uno così :
+INSERT INTO utenti (nome, cognome, email, password, indirizzo, ruolo) 
+VALUES (
+    'admin', 
+    'test', 
+    'admin@test', 
+    '$2y$10$fQ2S5rViOrfy9RrcOcUAVuaWgEyaV8KdwqEKGqFLfB0vdphUcyJHO',
+    'via test', 
+    'admin'
+);

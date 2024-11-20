@@ -10,10 +10,31 @@
     <link rel="stylesheet" href="asset/css/style.css" media="screen">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 </head>
+<script>
+    // Funzione per leggere i parametri dell'URL
+    function getURLParameter(name) {
+        const urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get(name);
+    }
+
+    // Applica il filtro in base al parametro 'tour' dell'URL
+    function applyTourFilter() {
+        const tour = getURLParameter('tour');
+        if (tour) {
+            filterItems('tour', tour); // Chiama la funzione di filtro con il parametro trovato
+        }
+    }
+
+    // Esegui la funzione per applicare il filtro una volta caricata la pagina
+    document.addEventListener('DOMContentLoaded', () => {
+        applyTourFilter();
+    });
+
+</script>
 
 <body>
     <header>
-        <h1>wishbone</h1>
+        <h1>Linkin Park</h1>
         <h2>I vicini ci odiano dal 2007</h2>
     </header>
     <nav id="breadcrumb">
@@ -318,32 +339,29 @@
     </script>
 
     <script>
-        function filterItems(attribute, value) {
+        function filterItems(type, value) {
+            // Rimuovi lo stato 'active' da tutti i bottoni di filtro
             document.querySelectorAll('.filters button').forEach(button => {
                 button.classList.remove('active-filter');
             });
 
-            if (event) {
-                event.target.classList.add('active-filter');
-            } else {
-                // Altrimenti imposta di default "Mostra Tutto"
-                document.querySelector('.filters button').classList.add('active-filter');
+            // Aggiungi lo stato 'active' al bottone corrispondente
+            const button = document.querySelector(`button[data-type="${type}"][onclick*="${value}"]`);
+            if (button) {
+                button.classList.add('active-filter');
             }
 
-
-            let hasResults = false;
-
-            document.querySelectorAll('.card').forEach(card => {
-                if (attribute === 'all') {
+            // Filtra gli elementi in base al tipo e valore specificati
+            const cards = document.querySelectorAll('.card');
+            cards.forEach(card => {
+                if (type === 'all' || (card.dataset[type] && card.dataset[type] === value)) {
                     card.style.display = 'block';
-                    hasResults = true;
-                } else if (card.getAttribute('data-' + attribute) === value) {
-                    card.style.display = 'block';
-                    hasResults = true;
                 } else {
                     card.style.display = 'none';
                 }
             });
+
+            const visibleCards = Array.from(cards).filter(card => card.style.display === 'block');
 
             // Mostra o nasconde il messaggio "Nessun risultato trovato"
             document.getElementById('no-results').style.display = hasResults ? 'none' : 'block';
@@ -359,7 +377,7 @@
 
             if (isLoggedIn) {
                 // Utente loggato: vai direttamente alla pagina di acquisto
-                window.location.href = `payment.html}`;
+                window.location.href = `payment.html`;
             } else {
                 // Utente non loggato: reindirizza alla pagina di login con redirect alla pagina di acquisto
                 const redirectUrl = encodeURIComponent(`payment.html`);

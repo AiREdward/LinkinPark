@@ -1,4 +1,7 @@
 DROP TABLE IF EXISTS utenti;
+DROP TABLE IF EXISTS transazioni;
+
+CREATE DATABASE wishbone_db;
 
 CREATE TABLE utenti (
     id INT AUTO_INCREMENT PRIMARY KEY,
@@ -22,3 +25,16 @@ VALUES (
     'via test', 
     'admin'
 );
+
+
+CREATE TABLE transazioni (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    n_carta VARCHAR(20) NOT NULL,
+    nome VARCHAR(100) NOT NULL,
+    ccv VARCHAR(4) NOT NULL,
+    costo_tot DECIMAL(10, 2) NOT NULL,
+    el_acquistati TEXT NOT NULL,
+    data_creazione TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+
