@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="it">
+
 <head>
     <meta charset="UTF-8">
     <title>wishbone</title>
@@ -9,6 +10,7 @@
     <link rel="stylesheet" href="asset/css/style.css" media="screen">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 </head>
+
 <body>
     <header>
         <h1>wishbone</h1>
@@ -37,9 +39,9 @@
             <button id="checkout-btn" style="display: none;" onclick="handleCheckout()">Procedi all'acquisto</button>
         </div>
     </nav>
-    
+
     <main>
-        
+
         <div class="filters">
             <input type="text" id="search-bar" placeholder="Cerca prodotti..." oninput="searchItems()">
             <button data-type="all" class="active-filter" onclick="filterItems('all')">Mostra Tutto</button>
@@ -67,7 +69,7 @@
                     <button class="info-btn">Indietro</button>
                 </div>
             </div>
-            
+
             <div class="card" data-type="felpa" data-tour="European Tour">
                 <div class="card-front">
                     <h3>Felpa European Tour</h3>
@@ -82,7 +84,7 @@
                     <button class="info-btn">Indietro</button>
                 </div>
             </div>
-            
+
             <div class="card" data-type="cappellino" data-tour="European Tour">
                 <div class="card-front">
                     <h3>Cappellino European Tour</h3>
@@ -97,7 +99,7 @@
                     <button class="info-btn">Indietro</button>
                 </div>
             </div>
-            
+
             <div class="card" data-type="maglietta" data-tour="Asian Tour">
                 <div class="card-front">
                     <h3>Maglietta Asian Tour</h3>
@@ -112,7 +114,7 @@
                     <button class="info-btn">Indietro</button>
                 </div>
             </div>
-            
+
             <div class="card" data-type="felpa" data-tour="Asian Tour">
                 <div class="card-front">
                     <h3>Felpa Asian Tour</h3>
@@ -127,7 +129,7 @@
                     <button class="info-btn">Indietro</button>
                 </div>
             </div>
-            
+
             <div class="card" data-type="cappellino" data-tour="Asian Tour">
                 <div class="card-front">
                     <h3>Cappellino Asian Tour</h3>
@@ -142,7 +144,7 @@
                     <button class="info-btn">Indietro</button>
                 </div>
             </div>
-            
+
             <div class="card" data-type="maglietta" data-tour="American Tour">
                 <div class="card-front">
                     <h3>Maglietta American Tour</h3>
@@ -157,7 +159,7 @@
                     <button class="info-btn">Indietro</button>
                 </div>
             </div>
-            
+
             <div class="card" data-type="felpa" data-tour="American Tour">
                 <div class="card-front">
                     <h3>Felpa American Tour</h3>
@@ -172,7 +174,7 @@
                     <button class="info-btn">Indietro</button>
                 </div>
             </div>
-            
+
             <div class="card" data-type="cappellino" data-tour="American Tour">
                 <div class="card-front">
                     <h3>Cappellino American Tour</h3>
@@ -187,7 +189,7 @@
                     <button class="info-btn">Indietro</button>
                 </div>
             </div>
-            
+
         </section>
         <p id="no-results" style="display: none;">Nessun risultato trovato.</p>
     </main>
@@ -210,7 +212,7 @@
             }
             updateCartDisplay();
         }
-        
+
         // Funzione per aggiornare la visualizzazione del carrello
         function updateCartDisplay() {
             const cartContainer = document.getElementById('cart-items');
@@ -237,19 +239,19 @@
                     cartContainer.appendChild(itemElement);
                     subtotal += item.price * item.quantity;
                 });
-            
+
                 subtotalContainer.textContent = `Subtotale: €${subtotal.toFixed(2)}`;
                 checkoutButton.style.display = 'block';
             }
         }
 
-        
+
         // Funzione per rimuovere un articolo dal carrello
         function removeFromCart(itemName) {
             cartItems = cartItems.filter(item => item.name !== itemName);
             updateCartDisplay();
         }
-        
+
         // Assegna l'evento di aggiunta al carrello a ogni pulsante "Aggiungi al carrello"
         document.querySelectorAll('.add-to-cart-btn').forEach(button => {
             button.addEventListener('click', event => {
@@ -258,7 +260,7 @@
                 const itemPrice = parseFloat(card.querySelector('.price').textContent.replace('€', '').replace(',', '.'));
                 const quantity = parseInt(card.querySelector('.quantity-input').value, 10);
                 const itemImage = card.querySelector('img').src;
-            
+
                 if (quantity > 0) {
                     addToCart(itemName, itemPrice, quantity, itemImage);
                 } else {
@@ -266,14 +268,14 @@
                 }
             });
         });
-        
+
         // Aggiorna la quantità direttamente dal carrello
         document.getElementById('cart-items').addEventListener('input', event => {
             if (event.target.classList.contains('quantity-input-cart')) {
                 const itemName = event.target.getAttribute('data-item');
                 const newQuantity = parseInt(event.target.value, 10);
                 const item = cartItems.find(i => i.name === itemName);
-            
+
                 if (item && newQuantity > 0) {
                     item.quantity = newQuantity;
                     updateCartDisplay();
@@ -282,13 +284,13 @@
         });
 
     </script>
-    
+
 
     <script>
         function searchItems() {
             const query = document.getElementById('search-bar').value.toLowerCase();
             let hasResults = false;
-    
+
             document.querySelectorAll('.card').forEach(card => {
                 const title = card.querySelector('h3').textContent.toLowerCase();
                 const description = card.querySelector('.card-back p').textContent.toLowerCase();
@@ -299,12 +301,12 @@
                     card.style.display = 'none';
                 }
             });
-    
+
             // Mostra o nasconde il messaggio "Nessun risultato trovato"
             document.getElementById('no-results').style.display = hasResults ? 'none' : 'block';
         }
     </script>
-    
+
     <script>
         document.querySelectorAll('.card').forEach(card => {
             card.querySelectorAll('.info-btn').forEach(button => {
@@ -320,7 +322,7 @@
             document.querySelectorAll('.filters button').forEach(button => {
                 button.classList.remove('active-filter');
             });
-            
+
             if (event) {
                 event.target.classList.add('active-filter');
             } else {
@@ -328,9 +330,9 @@
                 document.querySelector('.filters button').classList.add('active-filter');
             }
 
-            
+
             let hasResults = false;
-    
+
             document.querySelectorAll('.card').forEach(card => {
                 if (attribute === 'all') {
                     card.style.display = 'block';
@@ -342,29 +344,42 @@
                     card.style.display = 'none';
                 }
             });
-    
+
             // Mostra o nasconde il messaggio "Nessun risultato trovato"
             document.getElementById('no-results').style.display = hasResults ? 'none' : 'block';
         }
-        
+
     </script>
-    
+
     <script>
-        // Simula se l'utente è loggato o meno
-        // In una vera applicazione, questa informazione arriverebbe dal backend
-        let isLoggedIn = false; // Imposta a true per simulare l'utente loggato
-        
-        // Funzione per gestire il click su "Procedi all'acquisto"
-        function handleCheckout() {
-            if (!isLoggedIn) {
-                // Se non è loggato, reindirizza alla pagina di accesso o registrazione
-                window.location.href = 'login.html'; // Sostituisci con l'URL della tua pagina di accesso/registrazione
+
+        async function handleCheckout() {
+            event.stopPropagation(); // Evita che il clic chiami `toggleDetails`
+            const isLoggedIn = await checkLoginStatus();
+
+            if (isLoggedIn) {
+                // Utente loggato: vai direttamente alla pagina di acquisto
+                window.location.href = `payment.html}`;
             } else {
-                // Se è loggato, reindirizza alla pagina di checkout
-                window.location.href = 'registration.html'; // Sostituisci con l'URL della tua pagina di checkout
+                // Utente non loggato: reindirizza alla pagina di login con redirect alla pagina di acquisto
+                const redirectUrl = encodeURIComponent(`payment.html`);
+                window.location.href = `login.html?redirect=${redirectUrl}`;
+            }
+        }
+
+        async function checkLoginStatus() {
+            // Verifica lo stato di login tramite una chiamata al server
+            const response = await fetch("php/check_login.php", { method: "GET" });
+            if (response.ok) {
+                const data = await response.json();
+                return data.logged_in; // Ritorna true o false in base alla risposta del server
+            } else {
+                console.error("Errore durante il controllo dello stato di login.");
+                return false;
             }
         }
     </script>
-        
+
 </body>
+
 </html>
