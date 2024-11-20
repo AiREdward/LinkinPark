@@ -361,27 +361,39 @@
                 }
             });
 
-            // Nascondi il messaggio di "nessun risultato" se ci sono risultati
             const visibleCards = Array.from(cards).filter(card => card.style.display === 'block');
-            document.getElementById('no-results').style.display = visibleCards.length > 0 ? 'none' : 'block';
-        }
 
+            // Mostra o nasconde il messaggio "Nessun risultato trovato"
+            document.getElementById('no-results').style.display = hasResults ? 'none' : 'block';
+        }
 
     </script>
 
     <script>
-        // Simula se l'utente è loggato o meno
-        // In una vera applicazione, questa informazione arriverebbe dal backend
-        let isLoggedIn = false; // Imposta a true per simulare l'utente loggato
 
-        // Funzione per gestire il click su "Procedi all'acquisto"
-        function handleCheckout() {
-            if (!isLoggedIn) {
-                // Se non è loggato, reindirizza alla pagina di accesso o registrazione
-                window.location.href = 'login.html'; // Sostituisci con l'URL della tua pagina di accesso/registrazione
+        async function handleCheckout() {
+            event.stopPropagation(); // Evita che il clic chiami `toggleDetails`
+            const isLoggedIn = await checkLoginStatus();
+
+            if (isLoggedIn) {
+                // Utente loggato: vai direttamente alla pagina di acquisto
+                window.location.href = `payment.html}`;
             } else {
-                // Se è loggato, reindirizza alla pagina di checkout
-                window.location.href = 'registration.html'; // Sostituisci con l'URL della tua pagina di checkout
+                // Utente non loggato: reindirizza alla pagina di login con redirect alla pagina di acquisto
+                const redirectUrl = encodeURIComponent(`payment.html`);
+                window.location.href = `login.html?redirect=${redirectUrl}`;
+            }
+        }
+
+        async function checkLoginStatus() {
+            // Verifica lo stato di login tramite una chiamata al server
+            const response = await fetch("php/check_login.php", { method: "GET" });
+            if (response.ok) {
+                const data = await response.json();
+                return data.logged_in; // Ritorna true o false in base alla risposta del server
+            } else {
+                console.error("Errore durante il controllo dello stato di login.");
+                return false;
             }
         }
     </script>

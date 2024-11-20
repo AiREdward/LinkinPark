@@ -1,17 +1,5 @@
 <?php
-// Connessione al database
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "wishbone_db";
-
-// Crea una connessione
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// Controlla la connessione
-if ($conn->connect_error) {
-    die("Connessione fallita: " . $conn->connect_error);
-}
+include 'db_config.php';
 
 // Riceve i dati dal form di registrazione
 $nome = $_POST['nome'];
@@ -30,7 +18,8 @@ if ($result->num_rows > 0) {
     echo "L'email è già registrata. <a href='registration.html'>Torna indietro</a>";
 } else {
     // Inserisci il nuovo utente
-    $sql = "INSERT INTO utenti (nome, cognome, email, password, indirizzo, telefono, data_di_nascita) VALUES ('$nome', '$cognome', '$email', '$password', '$indirizzo', '$telefono', '$data_di_nascita')";
+    $sql = "INSERT INTO utenti (nome, cognome, email, password, indirizzo, telefono, data_di_nascita) 
+            VALUES ('$nome', '$cognome', '$email', '$password', '$indirizzo', '$telefono', '$data_di_nascita')";
 
     if ($conn->query($sql) === TRUE) {
         // Ottieni il percorso dinamico della directory principale
@@ -39,7 +28,6 @@ if ($result->num_rows > 0) {
         // Redirect alla pagina di login
         header("Location: " . $base_url . "login.html");
         exit();
-
     } else {
         echo "Errore nell'inserimento: " . $conn->error;  // Messaggio di errore dettagliato
     }
