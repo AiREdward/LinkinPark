@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Dashboard</title>
+    <style>
+        /* CSS per il layout */
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        header, nav, main {
+            width: 80%;
+            max-width: 1200px;
+            margin: 20px;
+        }
+        header {
+            text-align: center;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: space-around;
+            background-color: #333;
+            padding: 10px;
+        }
+        nav ul li {
+            color: white;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+        .stats {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+        .stat {
+            border: 1px solid #ccc;
+            padding: 20px;
+            text-align: center;
+            flex: 1;
+            margin: 10px;
+            min-width: 250px;
+        }
+    </style>
+</head>
+<body>
+    <?php include 'stats.php'; ?> <!-- Include le statistiche -->
+
+    <header aria-labelledby="dashboard-title">
+        <h1 id="dashboard-title">Dashboard Admin</h1>
+    </header>
+
+    <!--<nav aria-label="Navigazione principale">
+        <ul>
+            <li><a href="#stats">Statistiche</a></li>
+            <li><a href="#bookings">Prenotazioni</a></li>
+            <li><a href="#orders">Ordini</a></li>
+            <li><a href="#users">Gestione Utenti</a></li>
+        </ul>
+    </nav>-->
+
+    <main>
+        <!-- Sezione statistiche giornaliere -->
+        <section id="stats" aria-labelledby="stats-title">
+            <h2 id="stats-title">Statistiche Giornaliere</h2>
+            <div class="stats">
+                <div class="stat" aria-labelledby="bookings-title">
+                    <h3 id="bookings-title">Prenotazioni Giorno</h3>
+                    <p><?php echo $numBookings; ?></p>
+                </div>
+                <div class="stat" aria-labelledby="orders-title">
+                    <h3 id="orders-title">Acquisti Giorno</h3>
+                    <p><?php echo $numOrders; ?></p>
+                </div>
+                <div class="stat" aria-labelledby="revenue-title">
+                    <h3 id="revenue-title">Incassi Giorno</h3>
+                    <p>€ <?php echo number_format($totalRevenue, 2); ?></p>
+                </div>
+                <div class="stat" aria-labelledby="new-users-title">
+                    <h3 id="new-users-title">Nuovi Utenti Giornalieri</h3>
+                    <p><?php echo $numUsers; ?></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sezione statistiche settimanali e mensili -->
+        <section id="weekly-stats" aria-labelledby="weekly-stats-title">
+            <h2 id="weekly-stats-title">Statistiche Settimanali e Mensili</h2>
+            <div class="stats">
+                <div class="stat" aria-labelledby="weekly-bookings-title">
+                    <h3 id="weekly-bookings-title">Prenotazioni Settimanali</h3>
+                    <p><?php echo $weeklyBookings; ?></p>
+                </div>
+                <div class="stat" aria-labelledby="monthly-revenue-title">
+                    <h3 id="monthly-revenue-title">Incassi Mensili</h3>
+                    <p>€ <?php echo number_format($monthlyRevenue, 2); ?></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sezione variazione delle prenotazioni rispetto a ieri -->
+        <section id="growth-stats" aria-labelledby="growth-stats-title">
+            <h2 id="growth-stats-title">Crescita Giornaliera delle Prenotazioni</h2>
+            <div class="stat">
+                <h3>Variazione rispetto a ieri</h3>
+                <p><?php echo number_format($bookingGrowth, 2); ?>%</p>
+            </div>
+        </section>
+
+        <!-- Sezione prenotazioni per tipo di evento -->
+        <section id="event-bookings" aria-labelledby="event-bookings-title">
+            <h2 id="event-bookings-title">Prenotazioni per Tipo di Evento</h2>
+            <div class="stats">
+                <?php foreach ($bookingsByEventType as $eventType => $count): ?>
+                    <div class="stat">
+                        <h3><?php echo htmlspecialchars($eventType); ?></h3>
+                        <p><?php echo $count; ?> prenotazioni</p>
+                    </div>
+                <?php endforeach; ?>
+            </div>
+        </section>
+
+        <!-- Sezione ordini più recenti -->
+        <section id="recent-orders" aria-labelledby="recent-orders-title">
+            <h2 id="recent-orders-title">Ultimi Ordini</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID Ordine</th>
+                        <th>ID Utente</th>
+                        <th>Importo</th>
+                        <th>Data Ordine</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php foreach ($recentOrders as $order): ?>
+                        <tr>
+                            <td><?php echo $order['id']; ?></td>
+                            <td><?php echo $order['user_id']; ?></td>
+                            <td>€ <?php echo number_format($order['amount'], 2); ?></td>
+                            <td><?php echo $order['order_date']; ?></td>
+                        </tr>
+                    <?php endforeach; ?>
+                </tbody>
+            </table>
+        </section>
+    </main>
+</body>
+</html>

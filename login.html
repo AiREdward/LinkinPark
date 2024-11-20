@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="it">
+
 <head>
     <meta charset="UTF-8">
     <title>Accedi</title>
@@ -21,31 +22,38 @@
         }
 
         /* Spaziatura e larghezza uniforme tra i campi */
-        form label, form input, form button {
+        form label,
+        form input,
+        form button {
             display: block;
             width: 100%;
             margin: 10px 0;
-            box-sizing: border-box; /* Assicura che padding e border non alterino la larghezza */
+            box-sizing: border-box;
+            /* Assicura che padding e border non alterino la larghezza */
         }
     </style>
 </head>
+
 <body>
     <header>
         <h1>Accedi</h1>
     </header>
-    
+
     <main>
         <form action="php/login.php" method="post">
             <label for="email">Email:</label>
             <input type="email" id="email" name="email" required>
-            
+
             <label for="password">Password:</label>
             <input type="password" id="password" name="password" required>
             <button type="button" onclick="togglePassword()">Mostra/Nascondi</button>
-            
+
+            <!-- Campo nascosto per la pagina di origine -->
+            <input type="hidden" name="redirect" id="redirect" value="">
+
             <button type="submit">Accedi</button>
         </form>
-        
+
         <p>Non hai un account? <a href="registration.html">Registrati qui</a></p>
 
         <script>
@@ -57,7 +65,15 @@
                     passwordField.type = 'password';
                 }
             }
+
+            // Recupera il parametro "redirect" dall'URL e lo inserisce nel campo nascosto
+            const params = new URLSearchParams(window.location.search);
+            const redirect = params.get('redirect');
+            if (redirect) {
+                document.getElementById('redirect').value = redirect;
+            }
         </script>
     </main>
 </body>
+
 </html>

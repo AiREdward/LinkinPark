@@ -1,10 +1,24 @@
-DROP TABLE IF EXISTS users;
+DROP TABLE IF EXISTS utenti;
 
-CREATE TABLE users (
+CREATE TABLE utenti (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    name VARCHAR(50) NOT NULL,
+    nome VARCHAR(50) NOT NULL,
+    cognome VARCHAR(50) NOT NULL,
     email VARCHAR(100) NOT NULL UNIQUE,
     password VARCHAR(255) NOT NULL,
-    role VARCHAR(20) NOT NULL DEFAULT 'user', 
-    creation_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    indirizzo TEXT NOT NULL,
+    telefono VARCHAR(20) NULL,
+    data_di_nascita DATE NULL,
+    ruolo VARCHAR(20) NOT NULL DEFAULT 'utente',
+    data_creazione TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+INSERT INTO utenti (nome, cognome, email, password, indirizzo, ruolo) 
+VALUES (
+    'admin', 
+    'test', 
+    'admin@test', 
+    '$2y$10$fQ2S5rViOrfy9RrcOcUAVuaWgEyaV8KdwqEKGqFLfB0vdphUcyJHO',
+    'via test', 
+    'admin'
 );
