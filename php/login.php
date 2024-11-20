@@ -17,19 +17,19 @@ $email = $_POST['email'];
 $password = $_POST['password'];
 $redirect = $_POST['redirect'] ?? 'homepage.html'; // Valore di default
 
-$sql = "SELECT * FROM users WHERE email = ?";
+$sql = "SELECT * FROM utenti WHERE email = ?";
 $stmt = $conn->prepare($sql);
 $stmt->bind_param("s", $email);
 $stmt->execute();
 $result = $stmt->get_result();
 
 if ($result->num_rows > 0) {
-    $user = $result->fetch_assoc();
+    $utenti = $result->fetch_assoc();
     
-    if (password_verify($password, $user['password'])) {
+    if (password_verify($password, $utenti['password'])) {
         $_SESSION['logged_in'] = true;
-        $_SESSION['user_id'] = $user['id'];
-        $_SESSION['email'] = $user['email'];
+        $_SESSION['user_id'] = $utenti['id'];
+        $_SESSION['email'] = $utenti['email'];
         
         header("Location: $redirect");
         exit();

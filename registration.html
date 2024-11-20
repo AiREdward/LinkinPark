@@ -110,26 +110,36 @@
 
     <main>
         <form action="php/registration.php" method="post" onsubmit="return validateForm()">
-            <label for="name">Nome:</label>
-            <input type="text" id="name" name="name" required>
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" required>
+
+            <label for="cognome">Cognome:</label>
+            <input type="text" id="cognome" name="cognome" required>
 
             <label for="email">Email:</label>
             <input type="email" id="email" name="email" required>
 
+            <label for="indirizzo">Indirizzo:</label>
+            <input id="indirizzo" name="indirizzo" required></input>
+
+            <label for="telefono">Telefono:</label>
+            <input type="tel" id="telefono" name="telefono">
+
+            <label for="data_di_nascita">Data di Nascita:</label>
+            <input type="date" id="data_di_nascita" name="data_di_nascita">
+
             <label for="password">Password:</label>
             <input type="password" id="password" name="password" required oninput="checkPasswordStrength()">
 
-            <!-- Barra di forza della password -->
             <div class="password-strength">
                 <div id="strength-bar"></div>
             </div>
             <small id="password-hint">La password deve contenere almeno 8 caratteri, una maiuscola, una minuscola, un
                 numero e un carattere speciale.</small>
 
-            <label for="confirm-password">Conferma Password:</label>
-            <input type="password" id="confirm-password" name="confirm-password" required>
+            <label for="conferma-password">Conferma Password:</label>
+            <input type="password" id="conferma-password" name="conferma-password" required>
 
-            <!-- Checkbox Privacy -->
             <div class="checkbox-container">
                 <label>
                     <input type="checkbox" id="privacy" name="privacy" required>
@@ -137,10 +147,9 @@
                 </label>
             </div>
 
-            <!-- Checkbox Termini di Servizio -->
             <div class="checkbox-container">
                 <label>
-                    <input type="checkbox" id="terms" name="terms" required>
+                    <input type="checkbox" id="termini" name="termini" required>
                     Accetto i <a href="#" onclick="openModal('termsModal')">Termini di Servizio</a>.
                 </label>
             </div>
@@ -148,244 +157,258 @@
             <button type="submit">Registrati</button>
         </form>
 
-        <p>Hai già un account? <a href="login.html">Accedi qui</a></p>
-    </main>
+        <!-- Modale Privacy Policy -->
+        <div id="privacyModal" class="modal" onclick="closeModalOutside(event, 'privacyModal')">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('privacyModal')">&times;</span>
+                <section>
+                    <h2>1. Titolare del Trattamento</h2>
+                    <p>
+                        Il titolare del trattamento dei dati è wishbone, con sede legale in
+                        Piazza delle Erbe, 35 35122 Padova PD. Puoi contattarci all'indirizzo email:
+                        wishbone@assistenza.it.
+                    </p>
+                </section>
 
-    <!-- Modale Privacy Policy -->
-    <div id="privacyModal" class="modal" onclick="closeModalOutside(event, 'privacyModal')">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal('privacyModal')">&times;</span>
-            <section>
-                <h2>1. Titolare del Trattamento</h2>
-                <p>
-                    Il titolare del trattamento dei dati è wishbone, con sede legale in
-                    Piazza delle Erbe, 35 35122 Padova PD. Puoi contattarci all'indirizzo email: wishbone@assistenza.it.
-                </p>
-            </section>
+                <section>
+                    <h2>2. Tipologie di Dati Raccolti</h2>
+                    <p>
+                        Raccogliamo dati personali come nome, email, dati di pagamento e dati di navigazione sul sito. I
+                        dati vengono raccolti al momento della registrazione, dell'acquisto e della navigazione.
+                    </p>
+                </section>
 
-            <section>
-                <h2>2. Tipologie di Dati Raccolti</h2>
-                <p>
-                    Raccogliamo dati personali come nome, email, dati di pagamento e dati di navigazione sul sito. I
-                    dati vengono raccolti al momento della registrazione, dell'acquisto e della navigazione.
-                </p>
-            </section>
+                <section>
+                    <h2>3. Finalità e Basi Giuridiche del Trattamento</h2>
+                    <p>
+                        I dati vengono utilizzati per completare gli acquisti, gestire le prenotazioni e migliorare
+                        l'esperienza utente, in conformità con il GDPR. Utilizziamo i dati personali esclusivamente con
+                        il
+                        consenso dell'utente o in base ad altre basi legali previste dal GDPR.
+                    </p>
+                </section>
 
-            <section>
-                <h2>3. Finalità e Basi Giuridiche del Trattamento</h2>
-                <p>
-                    I dati vengono utilizzati per completare gli acquisti, gestire le prenotazioni e migliorare
-                    l'esperienza utente, in conformità con il GDPR. Utilizziamo i dati personali esclusivamente con il
-                    consenso dell'utente o in base ad altre basi legali previste dal GDPR.
-                </p>
-            </section>
+                <section>
+                    <h2>4. Conservazione dei Dati</h2>
+                    <p>
+                        I tuoi dati personali saranno conservati per il tempo strettamente necessario a soddisfare le
+                        finalità indicate o come richiesto dalla legge.
+                    </p>
+                </section>
 
-            <section>
-                <h2>4. Conservazione dei Dati</h2>
-                <p>
-                    I tuoi dati personali saranno conservati per il tempo strettamente necessario a soddisfare le
-                    finalità indicate o come richiesto dalla legge.
-                </p>
-            </section>
+                <section>
+                    <h2>5. Condivisione dei Dati</h2>
+                    <p>
+                        Condividiamo i dati personali con fornitori terzi per l'elaborazione delle transazioni, le
+                        spedizioni e per obblighi legali.
+                    </p>
+                </section>
 
-            <section>
-                <h2>5. Condivisione dei Dati</h2>
-                <p>
-                    Condividiamo i dati personali con fornitori terzi per l'elaborazione delle transazioni, le
-                    spedizioni e per obblighi legali.
-                </p>
-            </section>
+                <section>
+                    <h2>6. Diritti dell'Interessato</h2>
+                    <p>
+                        Ai sensi del GDPR, hai il diritto di accedere, rettificare, cancellare e limitare il trattamento
+                        dei
+                        tuoi dati personali. Per esercitare questi diritti, contattaci all'indirizzo
+                        wishbone@assistenza.it.
+                    </p>
+                </section>
 
-            <section>
-                <h2>6. Diritti dell'Interessato</h2>
-                <p>
-                    Ai sensi del GDPR, hai il diritto di accedere, rettificare, cancellare e limitare il trattamento dei
-                    tuoi dati personali. Per esercitare questi diritti, contattaci all'indirizzo wishbone@assistenza.it.
-                </p>
-            </section>
+                <section>
+                    <h2>7. Cookie e Tecnologie di Tracciamento</h2>
+                    <p>
+                        Utilizziamo i cookie per migliorare l'esperienza utente e per analizzare il traffico.
+                    </p>
+                </section>
 
-            <section>
-                <h2>7. Cookie e Tecnologie di Tracciamento</h2>
-                <p>
-                    Utilizziamo i cookie per migliorare l'esperienza utente e per analizzare il traffico.
-                </p>
-            </section>
+                <section>
+                    <h2>8. Sicurezza dei Dati</h2>
+                    <p>
+                        Adottiamo misure tecniche e organizzative per proteggere i dati personali, in conformità
+                        all'Articolo 32 del GDPR.
+                    </p>
+                </section>
 
-            <section>
-                <h2>8. Sicurezza dei Dati</h2>
-                <p>
-                    Adottiamo misure tecniche e organizzative per proteggere i dati personali, in conformità
-                    all'Articolo 32 del GDPR.
-                </p>
-            </section>
+                <section>
+                    <h2>9. Modifiche all'Informativa</h2>
+                    <p>
+                        La presente informativa può essere aggiornata periodicamente. Ti consigliamo di verificare
+                        regolarmente gli aggiornamenti su questa pagina.
+                    </p>
+                </section>
 
-            <section>
-                <h2>9. Modifiche all'Informativa</h2>
-                <p>
-                    La presente informativa può essere aggiornata periodicamente. Ti consigliamo di verificare
-                    regolarmente gli aggiornamenti su questa pagina.
-                </p>
-            </section>
-
-            <section>
-                <h2>10. Contatti e Reclami</h2>
-                <p>
-                    Per domande o reclami, contattaci all'indirizzo wishbone@assistenza.it. Se ritieni che i tuoi diritti siano stati
-                    violati, hai il diritto di rivolgerti al Garante per la protezione dei dati personali.
-                </p>
-            </section>
+                <section>
+                    <h2>10. Contatti e Reclami</h2>
+                    <p>
+                        Per domande o reclami, contattaci all'indirizzo wishbone@assistenza.it. Se ritieni che i tuoi
+                        diritti siano stati
+                        violati, hai il diritto di rivolgerti al Garante per la protezione dei dati personali.
+                    </p>
+                </section>
+            </div>
         </div>
-    </div>
 
-    <!-- Modale Termini di Servizio -->
-    <div id="termsModal" class="modal" onclick="closeModalOutside(event, 'termsModal')">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal('termsModal')">&times;</span>
-            <section>
-                <h2>1. Accettazione dei Termini</h2>
-                <p>
-                    Utilizzando il nostro sito web, accetti i presenti Termini e Condizioni, applicabili a tutti gli
-                    utenti che visitano o effettuano acquisti su wishbone. Se non accetti i termini, ti invitiamo
-                    a non utilizzare il sito.
-                </p>
-            </section>
+        <!-- Modale Termini di Servizio -->
+        <div id="termsModal" class="modal" onclick="closeModalOutside(event, 'termsModal')">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('termsModal')">&times;</span>
+                <section>
+                    <h2>1. Accettazione dei Termini</h2>
+                    <p>
+                        Utilizzando il nostro sito web, accetti i presenti Termini e Condizioni, applicabili a tutti gli
+                        utenti che visitano o effettuano acquisti su wishbone. Se non accetti i termini, ti invitiamo
+                        a non utilizzare il sito.
+                    </p>
+                </section>
 
-            <section>
-                <h2>2. Servizi Offerti</h2>
-                <p>
-                    [Nome del sito] offre ai fan della nostra band la possibilità di acquistare prodotti ufficiali, come
-                    abbigliamento e accessori, e di prenotare biglietti per le date del tour. Tutti i prodotti e i
-                    biglietti sono soggetti a disponibilità e possono essere modificati senza preavviso.
-                </p>
-            </section>
+                <section>
+                    <h2>2. Servizi Offerti</h2>
+                    <p>
+                        [Nome del sito] offre ai fan della nostra band la possibilità di acquistare prodotti ufficiali,
+                        come
+                        abbigliamento e accessori, e di prenotare biglietti per le date del tour. Tutti i prodotti e i
+                        biglietti sono soggetti a disponibilità e possono essere modificati senza preavviso.
+                    </p>
+                </section>
 
-            <section>
-                <h2>3. Condizioni di Acquisto</h2>
-                <p>
-                    Gli acquisti effettuati su questo sito sono vincolati alla disponibilità dei prodotti. Al
-                    completamento dell'acquisto, riceverai una conferma via email con i dettagli dell'ordine. Per i
-                    biglietti, assicurati di conservare la conferma, che sarà richiesta per l'ingresso agli eventi.
-                </p>
-            </section>
+                <section>
+                    <h2>3. Condizioni di Acquisto</h2>
+                    <p>
+                        Gli acquisti effettuati su questo sito sono vincolati alla disponibilità dei prodotti. Al
+                        completamento dell'acquisto, riceverai una conferma via email con i dettagli dell'ordine. Per i
+                        biglietti, assicurati di conservare la conferma, che sarà richiesta per l'ingresso agli eventi.
+                    </p>
+                </section>
 
-            <section>
-                <h2>4. Politica di Reso e Rimborso</h2>
-                <p>
-                    Se desideri restituire un prodotto acquistato, puoi contattare il nostro servizio clienti entro 14
-                    giorni dalla consegna. I biglietti per gli eventi, tuttavia, non sono rimborsabili, salvo
-                    cancellazione o modifiche dell'evento.
-                </p>
-            </section>
+                <section>
+                    <h2>4. Politica di Reso e Rimborso</h2>
+                    <p>
+                        Se desideri restituire un prodotto acquistato, puoi contattare il nostro servizio clienti entro
+                        14
+                        giorni dalla consegna. I biglietti per gli eventi, tuttavia, non sono rimborsabili, salvo
+                        cancellazione o modifiche dell'evento.
+                    </p>
+                </section>
 
-            <section>
-                <h2>5. Modifiche ai Termini e Servizi</h2>
-                <p>
-                    [Nome del sito] si riserva il diritto di modificare questi Termini e Servizi in qualsiasi momento.
-                    Le modifiche verranno comunicate sul sito e, se rilevanti, tramite email agli utenti registrati.
-                </p>
-            </section>
+                <section>
+                    <h2>5. Modifiche ai Termini e Servizi</h2>
+                    <p>
+                        [Nome del sito] si riserva il diritto di modificare questi Termini e Servizi in qualsiasi
+                        momento.
+                        Le modifiche verranno comunicate sul sito e, se rilevanti, tramite email agli utenti registrati.
+                    </p>
+                </section>
 
-            <section>
-                <h2>6. Contatti</h2>
-                <p>
-                    Per qualsiasi domanda, contatta il nostro servizio clienti all'indirizzo email: wishbone@assistenza.it.
-                </p>
-            </section>
+                <section>
+                    <h2>6. Contatti</h2>
+                    <p>
+                        Per qualsiasi domanda, contatta il nostro servizio clienti all'indirizzo email:
+                        wishbone@assistenza.it.
+                    </p>
+                </section>
+            </div>
         </div>
-    </div>
 
-    <script>
-        // Funzione per aprire il modale
-        function openModal(modalId) {
-            const modal = document.getElementById(modalId);
-            modal.style.display = "block";
-            setTimeout(() => {
-                modal.classList.add("show");
-            }, 10);  // Attiva l'animazione con un breve ritardo
-        }
-
-        // Funzione per chiudere il modale con l'animazione
-        function closeModal(modalId) {
-            const modal = document.getElementById(modalId);
-            modal.classList.remove("show");
-            setTimeout(() => {
-                modal.style.display = "none";
-            }, 300);  // Aspetta la fine dell'animazione prima di nascondere il modale
-        }
-
-        // Funzione per chiudere il modale cliccando fuori dal contenuto
-        function closeModalOutside(event, modalId) {
-            const modal = document.getElementById(modalId);
-            if (event.target === modal) {  // Controlla se il click è fuori dal contenuto del modale
-                closeModal(modalId);
-            }
-        }
-
-        // Funzione per controllare la forza della password
-        function checkPasswordStrength() {
-            const password = document.getElementById('password').value;
-            const strengthBar = document.getElementById('strength-bar');
-            let strength = 0;
-
-            // Incrementa la forza in base ai requisiti
-            if (password.length >= 8) strength++;
-            if (/[A-Z]/.test(password)) strength++;
-            if (/[a-z]/.test(password)) strength++;
-            if (/[0-9]/.test(password)) strength++;
-            if (/[^A-Za-z0-9]/.test(password)) strength++;
-
-            // Imposta la larghezza della barra in base alla forza
-            strengthBar.style.width = (strength * 25) + '%';
-
-            // Imposta il colore della barra in base alla forza
-            if (strength === 1) strengthBar.style.backgroundColor = 'red';
-            if (strength === 2) strengthBar.style.backgroundColor = 'orange';
-            if (strength === 3) strengthBar.style.backgroundColor = 'yellowgreen';
-            if (strength >= 4) strengthBar.style.backgroundColor = 'green';
-        }
-
-        // Convalida i campi del form
-        function validateForm() {
-            const password = document.getElementById('password').value;
-            const confirmPassword = document.getElementById('confirm-password').value;
-
-            // Controlla che la password rispetti i requisiti
-            const isValidPassword = (
-                password.length >= 8 &&
-                /[A-Z]/.test(password) &&
-                /[a-z]/.test(password) &&
-                /[0-9]/.test(password) &&
-                /[^A-Za-z0-9]/.test(password)
-            );
-
-            if (!isValidPassword) {
-                alert("La password non rispetta i requisiti di complessità.");
-                return false;
+        <script>
+            // Funzione per aprire il modale
+            function openModal(modalId) {
+                const modal = document.getElementById(modalId);
+                modal.style.display = "block";
+                setTimeout(() => {
+                    modal.classList.add("show");
+                }, 10);  // Attiva l'animazione con un breve ritardo
             }
 
-            // Controlla che le password coincidano
-            if (password !== confirmPassword) {
-                alert("Le password non coincidono.");
-                return false;
+            // Funzione per chiudere il modale con l'animazione
+            function closeModal(modalId) {
+                const modal = document.getElementById(modalId);
+                modal.classList.remove("show");
+                setTimeout(() => {
+                    modal.style.display = "none";
+                }, 300);  // Aspetta la fine dell'animazione prima di nascondere il modale
             }
 
-            // Controlla che la checkbox privacy sia selezionata
-            const privacyCheckbox = document.getElementById('privacy');
-            if (!privacyCheckbox.checked) {
-                alert("Devi accettare la Privacy Policy.");
-                return false;
+            // Funzione per chiudere il modale cliccando fuori dal contenuto
+            function closeModalOutside(event, modalId) {
+                const modal = document.getElementById(modalId);
+                if (event.target === modal) {  // Controlla se il click è fuori dal contenuto del modale
+                    closeModal(modalId);
+                }
             }
 
-            // Controlla che la checkbox dei Termini di Servizio sia selezionata
-            const termsCheckbox = document.getElementById('terms');
-            if (!termsCheckbox.checked) {
-                alert("Devi accettare i Termini di Servizio.");
-                return false;
+            // Funzione per controllare la forza della password
+            function checkPasswordStrength() {
+                const password = document.getElementById('password').value;
+                const strengthBar = document.getElementById('strength-bar');
+                let strength = 0;
+
+                // Incrementa la forza in base ai requisiti
+                if (password.length >= 8) strength++;
+                if (/[A-Z]/.test(password)) strength++;
+                if (/[a-z]/.test(password)) strength++;
+                if (/[0-9]/.test(password)) strength++;
+                if (/[^A-Za-z0-9]/.test(password)) strength++;
+
+                // Imposta la larghezza della barra in base alla forza
+                strengthBar.style.width = (strength * 25) + '%';
+
+                // Imposta il colore della barra in base alla forza
+                if (strength === 1) strengthBar.style.backgroundColor = 'red';
+                if (strength === 2) strengthBar.style.backgroundColor = 'orange';
+                if (strength === 3) strengthBar.style.backgroundColor = 'yellowgreen';
+                if (strength >= 4) strengthBar.style.backgroundColor = 'green';
             }
 
-            return true; // Form valido
-        }
-    </script>
+            // Convalida i campi del form
+            function validateForm() {
+                const nome = document.getElementById('nome').value.trim();
+                const cognome = document.getElementById('cognome').value.trim();
+                const email = document.getElementById('email').value.trim();
+                const password = document.getElementById('password').value;
+                const confermaPassword = document.getElementById('conferma-password').value;
+                const indirizzo = document.getElementById('indirizzo').value.trim();
+
+                if (!nome || !cognome || !indirizzo) {
+                    alert("Compila tutti i campi obbligatori.");
+                    return false;
+                }
+
+                if (password !== confermaPassword) {
+                    alert("Le password non coincidono.");
+                    return false;
+                }
+
+                // Controlla che la password rispetti i requisiti
+                const isValidPassword = (
+                    password.length >= 8 &&
+                    /[A-Z]/.test(password) &&
+                    /[a-z]/.test(password) &&
+                    /[0-9]/.test(password) &&
+                    /[^A-Za-z0-9]/.test(password)
+                );
+
+                if (!isValidPassword) {
+                    alert("La password non rispetta i requisiti di complessità.");
+                    return false;
+                }
+
+                // Controlla che la checkbox privacy sia selezionata
+                const privacyCheckbox = document.getElementById('privacy');
+                if (!privacyCheckbox.checked) {
+                    alert("Devi accettare la Privacy Policy.");
+                    return false;
+                }
+
+                // Controlla che la checkbox dei Termini di Servizio sia selezionata
+                const termsCheckbox = document.getElementById('terms');
+                if (!termsCheckbox.checked) {
+                    alert("Devi accettare i Termini di Servizio.");
+                    return false;
+                }
+
+                return true; // Form valido
+            }
+        </script>
 </body>
 
 </html>

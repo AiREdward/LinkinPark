@@ -1,8 +1,8 @@
 <?php
 // Connessione al database
 $servername = "localhost";
-$username = "root"; // Nome utente predefinito di XAMPP
-$password = "";     // Password predefinita di XAMPP
+$username = "root";
+$password = "";
 $dbname = "wishbone_db";
 
 // Crea una connessione
@@ -14,32 +14,34 @@ if ($conn->connect_error) {
 }
 
 // Riceve i dati dal form di registrazione
-$name = $_POST['name'];
+$nome = $_POST['nome'];
+$cognome = $_POST['cognome'];
 $email = $_POST['email'];
 $password = password_hash($_POST['password'], PASSWORD_BCRYPT); // Cripta la password
+$indirizzo = $_POST['indirizzo'];
+$telefono = $_POST['telefono'];
+$data_di_nascita = $_POST['data_di_nascita'];
 
 // Controlla se l'email è già registrata
-$sql = "SELECT * FROM users WHERE email = '$email'";
+$sql = "SELECT * FROM utenti WHERE email = '$email'";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
-    // Email già registrata
-    header("Location: ../registration.html?error=email_taken");
-    exit(); // Interrompe l'esecuzione per evitare che il codice continui
+    echo "L'email è già registrata. <a href='registration.html'>Torna indietro</a>";
 } else {
     // Inserisci il nuovo utente
-    $sql = "INSERT INTO users (name, email, password) VALUES (?, ?, ?)";
-    $stmt = $conn->prepare($sql);
-    $stmt->bind_param("sss", $name, $email, $password);
+    $sql = "INSERT INTO utenti (nome, cognome, email, password, indirizzo, telefono, data_di_nascita) VALUES ('$nome', '$cognome', '$email', '$password', '$indirizzo', '$telefono', '$data_di_nascita')";
 
-    if ($stmt->execute()) {
-        // Registrazione avvenuta con successo
-        header("Location: ../login.html?success=registration");
+    if ($conn->query($sql) === TRUE) {
+        // Ottieni il percorso dinamico della directory principale
+        $base_url = "http://" . $_SERVER['HTTP_HOST'] . dirname(dirname($_SERVER['SCRIPT_NAME'])) . "/";
+
+        // Redirect alla pagina di login
+        header("Location: " . $base_url . "login.html");
         exit();
+
     } else {
-        // Errore durante l'inserimento
-        header("Location: ../registration.html?error=insert_failed");
-        exit();
+        echo "Errore nell'inserimento: " . $conn->error;  // Messaggio di errore dettagliato
     }
 }
 
