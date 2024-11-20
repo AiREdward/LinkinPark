@@ -1,17 +1,7 @@
 <?php
-session_start(); // Avvia la sessione
+session_start();
 
-// Connessione al database
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "wishbone_db";
-
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-if ($conn->connect_error) {
-    die("Connessione fallita: " . $conn->connect_error);
-}
+include 'db_config.php';
 
 $email = $_POST['email'];
 $password = $_POST['password'];
