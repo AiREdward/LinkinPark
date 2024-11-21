@@ -5,7 +5,7 @@ include 'db_config.php';
 
 $email = $_POST['email'];
 $password = $_POST['password'];
-$redirect = $_POST['redirect'] ?? 'homepage.html'; // Valore di default
+$redirect = str_replace('php/', '', ($_POST['redirect'] ?? 'homepage.html')); // Rimuove 'php/' dal redirect
 
 $sql = "SELECT * FROM utenti WHERE email = ?";
 $stmt = $conn->prepare($sql);
