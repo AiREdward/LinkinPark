@@ -166,10 +166,13 @@ body {
 }
 
 .card {
-    width: 200px;
-    height: 300px;
+    width: 30%;
+    height: 400px;
+    margin: 2px;
     perspective: 1000px;
     position: relative;
+    overflow: hidden;
+    border-radius: 10px;
 }
 
 .card-front, .card-back {
@@ -202,6 +205,12 @@ body {
 
 .card.flipped .card-back {
     transform: rotateY(0deg);
+}
+/* Image styling for card */
+.card-front img {
+    max-width: 60%;
+    object-fit: cover; /* Scales image to fit without distorting aspect ratio */
+    margin-bottom: 10px;
 }
 
 h3 {
