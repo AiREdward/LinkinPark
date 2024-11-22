@@ -26,15 +26,26 @@ VALUES (
     'admin'
 );
 
-
 CREATE TABLE transazioni (
     id INT AUTO_INCREMENT PRIMARY KEY,
     n_carta VARCHAR(20) NOT NULL,
     nome VARCHAR(100) NOT NULL,
+    data_scadenza DATE NOT NULL,
     ccv VARCHAR(4) NOT NULL,
     costo_tot DECIMAL(10, 2) NOT NULL,
     el_acquistati TEXT NOT NULL,
-    data_creazione TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    utente_id INT NOT NULL,
+    data_creazione TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (utente_id) REFERENCES utenti(id)
 );
 
-
+INSERT INTO transazioni (n_carta, nome, ccv, data_scadenza, costo_tot, el_acquistati, utente_id) 
+VALUES (
+    '1234567890123456', 
+    'Mario Rossi', 
+    '123', 
+    '2024-12-31',
+    49.99, 
+    'articolo1, articolo2', 
+    1
+);
