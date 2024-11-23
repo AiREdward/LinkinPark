@@ -197,10 +197,10 @@
 
             if (isLoggedIn) {
                 // Utente loggato: vai direttamente alla pagina di acquisto
-                window.location.href = `purchase.html?city=${encodeURIComponent(city)}`;
+                window.location.href = `ticket.html?city=${encodeURIComponent(city)}`;
             } else {
                 // Utente non loggato: reindirizza alla pagina di login con redirect alla pagina di acquisto
-                const redirectUrl = encodeURIComponent(`purchase.html?city=${city}`);
+                const redirectUrl = encodeURIComponent(`ticket.html?city=${city}`);
                 window.location.href = `login.html?redirect=${redirectUrl}`;
             }
         }
