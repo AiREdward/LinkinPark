@@ -59,7 +59,7 @@
                     <button class="close-details" onclick="closeDetails(event, this)">Chiudi</button>
 
                     <p>Grande serata al <a href="https://www.google.com/maps?q=Duomo" target="_blank">Duomo</a> di Milano.</p>
-                    <button aria-label="Compra Biglietto per Milano">Compra Biglietto</button>
+                    <button aria-label="Compra Biglietto per Milano" onclick="handleTicketPurchase(event, 'Milano')">Compra Biglietto</button>
                     <a href="shop.html?tour=European%20Tour">
                         <button aria-label="Compra Merch per Milano - European Tour">Merch European Tour</button>
                     </a>
@@ -77,7 +77,7 @@
 
                     <p>Concerto emozionante allo <a href="https://www.google.com/maps?q=Stadio_Mestalla"
                             target="_blank">Stadio Mestalla</a> di Valencia.</p>
-                    <button aria-label="Compra Biglietto per Valencia">Compra Biglietto</button>
+                    <button aria-label="Compra Biglietto per Valencia" onclick="handleTicketPurchase(event, 'Valencia')">Compra Biglietto</button>
                     <a href="shop.html?tour=European%20Tour">
                         <button aria-label="Compra Merch per Valencia - European Tour">Merch European Tour</button>
                     </a>
@@ -92,7 +92,7 @@
                     <button class="close-details" onclick="closeDetails(event, this)">Chiudi</button>
 
                     <p>Non perdere l'evento al <a href="https://www.google.com/maps?q=Camp Nou" target="_blank">Camp Nou</a> di Barcellona.</p>
-                    <button aria-label="Compra Biglietto per Barcellona">Compra Biglietto</button>
+                    <button aria-label="Compra Biglietto per Barcellona" onclick="handleTicketPurchase(event, 'Barcellona')">Compra Biglietto</button>
                     <a href="shop.html?tour=European%20Tour">
                         <button aria-label="Compra Merch per Barcellona - European Tour">Merch European Tour</button>
                     </a>
@@ -114,7 +114,7 @@
                     <button class="close-details" onclick="closeDetails(event, this)">Chiudi</button>
 
                     <p>Spettacolare concerto al <a href="https://www.google.com/maps?q=Tokyo Dome" target="_blank">Tokyo Dome</a> di Tokyo.</p>
-                    <button aria-label="Compra Biglietto per Tokyo">Compra Biglietto</button>
+                    <button aria-label="Compra Biglietto per Tokyo" onclick="handleTicketPurchase(event, 'Tokyo')">Compra Biglietto</button>
                     <button aria-label="Compra Merch per Tokyo - Asia Tour">Merch Asia Tour</button>
                 </div>
             </dd>
@@ -128,7 +128,7 @@
                     <button class="close-details" onclick="closeDetails(event, this)">Chiudi</button>
 
                     <p>Grande evento allo <a href="https://www.google.com/maps?q=Olympic Stadium Seoul" target="_blank">Olympic Stadium</a> di Seoul.</p>
-                    <button aria-label="Compra Biglietto per Seoul">Compra Biglietto</button>
+                    <button aria-label="Compra Biglietto per Seoul" onclick="handleTicketPurchase(event, 'Seul')">Compra Biglietto</button>
                     <a href="shop.html?tour=Asian%20Tour">
                         <button aria-label="Compra Merch per Seoul - Asia Tour">Merch Asia Tour</button>
                     </a>
@@ -149,7 +149,7 @@
                     <button class="close-details" onclick="closeDetails(event, this)">Chiudi</button>
 
                     <p>Evento iconico al <a href="https://www.google.com/maps?q=Madison Square Garden" target="_blank">Madison Square Garden</a> di New York.</p>
-                    <button aria-label="Compra Biglietto per New York">Compra Biglietto</button>
+                    <button aria-label="Compra Biglietto per New York" onclick="handleTicketPurchase(event, 'New York')">Compra Biglietto</button>
                     <a href="shop.html?tour=American%20Tour">
                         <button aria-label="Compra Merch per New York - America Tour">Merch America Tour</button>
                     </a>
@@ -165,7 +165,7 @@
 
                     <p>Non perdere il concerto al <a href="https://www.google.com/maps?q=Staples Center"
                             target="_blank">Staples Center</a> di Los Angeles.</p>
-                    <button aria-label="Compra Biglietto per Los Angeles">Compra Biglietto</button>
+                    <button aria-label="Compra Biglietto per Los Angeles" onclick="handleTicketPurchase(event, 'Los Angeles')">Compra Biglietto</button>
                     <a href="shop.html?tour=American%20Tour">
                         <button aria-label="Compra Merch per Los Angeles - America Tour">Merch America Tour</button>
                     </a>
