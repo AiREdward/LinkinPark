@@ -3,7 +3,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "wishbone_db";
+$dbname = "lp_db";
 
 // Crea una connessione
 $conn = new mysqli($servername, $username, $password, $dbname);
