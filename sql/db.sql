@@ -49,3 +49,15 @@ VALUES (
     'articolo1, articolo2', 
     1
 );
+
+CREATE TABLE biglietti (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    evento VARCHAR(255) NOT NULL,
+    data DATE NOT NULL,
+    orario TIME NOT NULL,
+    nome_utente VARCHAR(255) NOT NULL,
+    email_utente VARCHAR(255) NOT NULL,
+    utente_id INT NOT NULL,
+    data_creazione TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (utente_id) REFERENCES utenti(id)
+);

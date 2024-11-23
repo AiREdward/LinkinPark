@@ -131,6 +131,8 @@
             <label for="password">Password:</label>
             <input type="password" id="password" name="password" required oninput="checkPasswordStrength()">
 
+            <button type="button" onclick="togglePassword()">Mostra/Nascondi</button>
+
             <div class="password-strength">
                 <div id="strength-bar"></div>
             </div>
@@ -310,6 +312,15 @@
         </div>
 
         <script>
+            function togglePassword() {
+                const passwordField = document.getElementById('password');
+                if (passwordField.type === 'password') {
+                    passwordField.type = 'text';
+                } else {
+                    passwordField.type = 'password';
+                }
+            }
+
             // Funzione per aprire il modale
             function openModal(modalId) {
                 const modal = document.getElementById(modalId);
