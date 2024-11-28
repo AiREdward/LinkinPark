@@ -29,6 +29,18 @@ VALUES (
     'attivo'
 );
 
+INSERT INTO utenti (nome, cognome, email, password, indirizzo, ruolo, stato) 
+VALUES (
+    'block', 
+    'test', 
+    'block@test', 
+    '$2y$10$nx0vjdmO/U8dPT0cWS6M5OydWpdwOcTpRUwlaWCphyF57uzjvUUsS',
+    'via test', 
+    'utente',
+    'bloccato'
+);
+
+
 CREATE TABLE transazioni (
     id INT AUTO_INCREMENT PRIMARY KEY,
     n_carta VARCHAR(20) NOT NULL,

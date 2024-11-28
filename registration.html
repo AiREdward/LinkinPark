@@ -123,7 +123,8 @@
             <input id="indirizzo" name="indirizzo" required></input>
 
             <label for="telefono">Telefono:</label>
-            <input type="tel" id="telefono" name="telefono">
+            <input type="tel" id="telefono" name="telefono" oninput="validatePhone()" required>
+            <small id="telefono-error" style="color: red; display: none;">Inserisci solo caratteri numerici.</small>
 
             <label for="data_di_nascita">Data di Nascita:</label>
             <input type="date" id="data_di_nascita" name="data_di_nascita">
@@ -166,9 +167,9 @@
                 <section>
                     <h2>1. Titolare del Trattamento</h2>
                     <p>
-                        Il titolare del trattamento dei dati è wishbone, con sede legale in
+                        Il titolare del trattamento dei dati è Linkin Park, con sede legale in
                         Piazza delle Erbe, 35 35122 Padova PD. Puoi contattarci all'indirizzo email:
-                        wishbone@assistenza.it.
+                        linkinpark@assistenza.it.
                     </p>
                 </section>
 
@@ -212,7 +213,7 @@
                         Ai sensi del GDPR, hai il diritto di accedere, rettificare, cancellare e limitare il trattamento
                         dei
                         tuoi dati personali. Per esercitare questi diritti, contattaci all'indirizzo
-                        wishbone@assistenza.it.
+                        linkinpark@assistenza.it.
                     </p>
                 </section>
 
@@ -258,7 +259,7 @@
                     <h2>1. Accettazione dei Termini</h2>
                     <p>
                         Utilizzando il nostro sito web, accetti i presenti Termini e Condizioni, applicabili a tutti gli
-                        utenti che visitano o effettuano acquisti su wishbone. Se non accetti i termini, ti invitiamo
+                        utenti che visitano o effettuano acquisti su Linkin Park. Se non accetti i termini, ti invitiamo
                         a non utilizzare il sito.
                     </p>
                 </section>
@@ -266,7 +267,7 @@
                 <section>
                     <h2>2. Servizi Offerti</h2>
                     <p>
-                        [Nome del sito] offre ai fan della nostra band la possibilità di acquistare prodotti ufficiali,
+                        Linkin Park offre ai fan della nostra band la possibilità di acquistare prodotti ufficiali,
                         come
                         abbigliamento e accessori, e di prenotare biglietti per le date del tour. Tutti i prodotti e i
                         biglietti sono soggetti a disponibilità e possono essere modificati senza preavviso.
@@ -295,7 +296,7 @@
                 <section>
                     <h2>5. Modifiche ai Termini e Servizi</h2>
                     <p>
-                        [Nome del sito] si riserva il diritto di modificare questi Termini e Servizi in qualsiasi
+                        Linkin Park si riserva il diritto di modificare questi Termini e Servizi in qualsiasi
                         momento.
                         Le modifiche verranno comunicate sul sito e, se rilevanti, tramite email agli utenti registrati.
                     </p>
@@ -305,13 +306,25 @@
                     <h2>6. Contatti</h2>
                     <p>
                         Per qualsiasi domanda, contatta il nostro servizio clienti all'indirizzo email:
-                        wishbone@assistenza.it.
+                        linkinpark@assistenza.it.
                     </p>
                 </section>
             </div>
         </div>
 
         <script>
+            function validatePhone() {
+                const telefono = document.getElementById('telefono').value;
+                const telefonoError = document.getElementById('telefono-error');
+
+                // Controlla se il valore contiene solo numeri
+                if (/^\d*$/.test(telefono)) {
+                    telefonoError.style.display = 'none'; // Nascondi il messaggio di errore
+                } else {
+                    telefonoError.style.display = 'block'; // Mostra il messaggio di errore
+                }
+            }
+
             function togglePassword() {
                 const passwordField = document.getElementById('password');
                 if (passwordField.type === 'password') {
@@ -378,9 +391,16 @@
                 const password = document.getElementById('password').value;
                 const confermaPassword = document.getElementById('conferma-password').value;
                 const indirizzo = document.getElementById('indirizzo').value.trim();
+                const telefono = document.getElementById('telefono').value.trim();
 
                 if (!nome || !cognome || !indirizzo) {
                     alert("Compila tutti i campi obbligatori.");
+                    return false;
+                }
+
+                // Controlla che il telefono sia numerico
+                if (!/^\d*$/.test(telefono)) {
+                    alert("Il campo telefono deve contenere solo caratteri numerici.");
                     return false;
                 }
 
