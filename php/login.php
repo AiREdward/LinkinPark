@@ -22,7 +22,10 @@ $result = $stmt->get_result();
 if ($result->num_rows > 0) {
     $utenti = $result->fetch_assoc();
     
-    if (password_verify($password, $utenti['password'])) {
+    if ($utenti['stato'] === 'bloccato') {
+        header("Location: ../login.html?error=bloccato");
+        exit();
+    } elseif (password_verify($password, $utenti['password'])) {
         // Imposta la sessione
         $_SESSION['logged_in'] = true;
         $_SESSION['user_id'] = $utenti['id'];
@@ -32,10 +35,12 @@ if ($result->num_rows > 0) {
         header("Location: $redirectPath");
         exit();
     } else {
-        echo "Password errata. <a href='../login.html'>Riprova</a>";
+        header("Location: ../login.html?error=password");
+        exit();
     }
 } else {
-    echo "Utente non trovato. <a href='../registration.html'>Registrati</a>";
+    header("Location: ../login.html?error=utente");
+    exit();
 }
 
 $conn->close();

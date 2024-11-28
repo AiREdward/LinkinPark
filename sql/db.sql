@@ -1,7 +1,8 @@
 CREATE DATABASE lp_db;
 
-DROP TABLE IF EXISTS utenti;
+DROP TABLE IF EXISTS biglietti;
 DROP TABLE IF EXISTS transazioni;
+DROP TABLE IF EXISTS utenti;
 
 CREATE TABLE utenti (
     id INT AUTO_INCREMENT PRIMARY KEY,
@@ -13,17 +14,19 @@ CREATE TABLE utenti (
     telefono VARCHAR(20) NULL,
     data_di_nascita DATE NULL,
     ruolo VARCHAR(20) NOT NULL DEFAULT 'utente',
+    stato ENUM('attivo', 'bloccato') NOT NULL DEFAULT 'attivo',
     data_creazione TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
-INSERT INTO utenti (nome, cognome, email, password, indirizzo, ruolo) 
+INSERT INTO utenti (nome, cognome, email, password, indirizzo, ruolo, stato) 
 VALUES (
     'admin', 
     'test', 
     'admin@test', 
     '$2y$10$fQ2S5rViOrfy9RrcOcUAVuaWgEyaV8KdwqEKGqFLfB0vdphUcyJHO',
     'via test', 
-    'admin'
+    'admin',
+    'attivo'
 );
 
 CREATE TABLE transazioni (
@@ -55,8 +58,6 @@ CREATE TABLE biglietti (
     evento VARCHAR(255) NOT NULL,
     data DATE NOT NULL,
     orario TIME NOT NULL,
-    nome_utente VARCHAR(255) NOT NULL,
-    email_utente VARCHAR(255) NOT NULL,
     utente_id INT NOT NULL,
     data_creazione TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (utente_id) REFERENCES utenti(id)
