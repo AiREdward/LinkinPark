@@ -1,0 +1,78 @@
+<?php
+session_start();
+
+// Initialize cart if not already set
+if (!isset($_SESSION['cart'])) {
+    $_SESSION['cart'] = [];
+}
+
+// Function to add item to cart
+function addToCart($itemName, $itemPrice, $quantity, $itemImage) {
+    foreach ($_SESSION['cart'] as &$item) {
+        if ($item['name'] === $itemName) {
+            $item['quantity'] += $quantity;
+            return;
+        }
+    }
+    $_SESSION['cart'][] = [
+        'name' => $itemName,
+        'price' => $itemPrice,
+        'quantity' => $quantity,
+        'image' => $itemImage
+    ];
+}
+
+// Function to remove item from cart
+function removeFromCart($itemName) {
+    $_SESSION['cart'] = array_filter($_SESSION['cart'], function($item) use ($itemName) {
+        return $item['name'] !== $itemName;
+    });
+}
+
+// Function to update cart display
+function updateCartDisplay() {
+    $cartItems = $_SESSION['cart'];
+    $subtotal = 0;
+    $cartHtml = '';
+
+    if (empty($cartItems)) {
+        $cartHtml = '<p>Carrello Vuoto</p>';
+    } else {
+        foreach ($cartItems as $item) {
+            $cartHtml .= '
+                <div class="cart-item">
+                    <img src="' . $item['image'] . '" alt="' . $item['name'] . '" class="cart-item-image">
+                    <p>' . $item['name'] . '</p>
+                    <p>Quantità: <input type="number" value="' . $item['quantity'] . '" min="1" class="quantity-input-cart" data-item="' . $item['name'] . '"></p>
+                    <p>Prezzo: €' . number_format($item['price'], 2) . '</p>
+                    <button class="remove-btn" onclick="removeFromCart(\'' . $item['name'] . '\')">Rimuovi</button>
+                </div>';
+            $subtotal += $item['price'] * $item['quantity'];
+        }
+        $cartHtml .= '<p id="subtotal">Subtotale: €' . number_format($subtotal, 2) . '</p>';
+    }
+
+    return $cartHtml;
+}
+
+// Handle AJAX requests
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $action = $_POST['action'];
+    $itemName = $_POST['itemName'] ?? '';
+    $itemPrice = $_POST['itemPrice'] ?? 0;
+    $quantity = $_POST['quantity'] ?? 0;
+    $itemImage = $_POST['itemImage'] ?? '';
+
+    if ($action === 'add') {
+        addToCart($itemName, $itemPrice, $quantity, $itemImage);
+    } elseif ($action === 'remove') {
+        removeFromCart($itemName);
+    } elseif ($action === 'load') {
+        echo updateCartDisplay();
+        exit;
+    }
+
+    echo updateCartDisplay();
+    exit;
+}
+?>

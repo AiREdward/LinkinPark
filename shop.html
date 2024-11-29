@@ -56,7 +56,6 @@
             <div id="cart-items">
                 <!-- Gli articoli del carrello verranno aggiunti qui tramite JavaScript -->
             </div>
-            <p id="subtotal">Subtotale: €0,00</p>
             <button id="checkout-btn" style="display: none;" onclick="handleCheckout()">Procedi all'acquisto</button>
         </div>
     </nav>
@@ -81,7 +80,7 @@
                     <h3>Maglietta European Tour</h3>
                     <img src="asset/img/m_europa.png" alt="Maglietta European Tour">
                     <p class="price">€20,00</p>
-                    <input type="number" min="1" value="1" class="quantity-input">
+                    <input type="number" min="1" max="5" value="1" class="quantity-input">
                     <button class="add-to-cart-btn">Aggiungi al carrello</button>
                     <button class="info-btn">Info</button>
                 </div>
@@ -96,7 +95,7 @@
                     <h3>Felpa European Tour</h3>
                     <img src="asset/img/f_europa.png" alt="Felpa European Tour">
                     <p class="price">€40,00</p>
-                    <input type="number" min="1" value="1" class="quantity-input">
+                    <input type="number" min="1" max="5" value="1" class="quantity-input">
                     <button class="add-to-cart-btn">Aggiungi al carrello</button>
                     <button class="info-btn">Info</button>
                 </div>
@@ -111,7 +110,7 @@
                     <h3>Cappellino European Tour</h3>
                     <img src="asset/img/c_europa.png" alt="Cappellino European Tour">
                     <p class="price">€15,00</p>
-                    <input type="number" min="1" value="1" class="quantity-input">
+                    <input type="number" min="1" max="5" value="1" class="quantity-input">
                     <button class="add-to-cart-btn">Aggiungi al carrello</button>
                     <button class="info-btn">Info</button>
                 </div>
@@ -126,7 +125,7 @@
                     <h3>Maglietta Asian Tour</h3>
                     <img src="asset/img/m_asia.png" alt="Maglietta Asian Tour">
                     <p class="price">€20,00</p>
-                    <input type="number" min="1" value="1" class="quantity-input">
+                    <input type="number" min="1" max="5" value="1" class="quantity-input">
                     <button class="add-to-cart-btn">Aggiungi al carrello</button>
                     <button class="info-btn">Info</button>
                 </div>
@@ -141,7 +140,7 @@
                     <h3>Felpa Asian Tour</h3>
                     <img src="asset/img/f_asia.png" alt="Felpa Asian Tour">
                     <p class="price">€40,00</p>
-                    <input type="number" min="1" value="1" class="quantity-input">
+                    <input type="number" min="1" max="5" value="1" class="quantity-input">
                     <button class="add-to-cart-btn">Aggiungi al carrello</button>
                     <button class="info-btn">Info</button>
                 </div>
@@ -156,7 +155,7 @@
                     <h3>Cappellino Asian Tour</h3>
                     <img src="asset/img/c_asia.png" alt="Cappellino Asian Tour">
                     <p class="price">€15,00</p>
-                    <input type="number" min="1" value="1" class="quantity-input">
+                    <input type="number" min="1" max="5" value="1" class="quantity-input">
                     <button class="add-to-cart-btn">Aggiungi al carrello</button>
                     <button class="info-btn">Info</button>
                 </div>
@@ -171,7 +170,7 @@
                     <h3>Maglietta American Tour</h3>
                     <img src="asset/img/m_america.png" alt="Maglietta American Tour">
                     <p class="price">€20,00</p>
-                    <input type="number" min="1" value="1" class="quantity-input">
+                    <input type="number" min="1" max="5" value="1" class="quantity-input">
                     <button class="add-to-cart-btn">Aggiungi al carrello</button>
                     <button class="info-btn">Info</button>
                 </div>
@@ -186,7 +185,7 @@
                     <h3>Felpa American Tour</h3>
                     <img src="asset/img/f_america.png" alt="Felpa American Tour">
                     <p class="price">€40,00</p>
-                    <input type="number" min="1" value="1" class="quantity-input">
+                    <input type="number" min="1" max="5" value="1" class="quantity-input">
                     <button class="add-to-cart-btn">Aggiungi al carrello</button>
                     <button class="info-btn">Info</button>
                 </div>
@@ -201,7 +200,7 @@
                     <h3>Cappellino American Tour</h3>
                     <img src="asset/img/c_america.png" alt="Cappellino American Tour">
                     <p class="price">€15,00</p>
-                    <input type="number" min="1" value="1" class="quantity-input">
+                    <input type="number" min="1" max="5" value="1" class="quantity-input">
                     <button class="add-to-cart-btn">Aggiungi al carrello</button>
                     <button class="info-btn">Info</button>
                 </div>
@@ -219,94 +218,110 @@
         <p>Ombretta Gaggi, Cactus &amp; Federazione Italiana Pallavolo - <span lang="en">All rights Reserved</span></p>
     </footer>
     <script>
-        // Array per tenere traccia degli articoli nel carrello
-        let cartItems = [];
-
-        // Funzione per aggiungere un articolo al carrello
         function addToCart(itemName, itemPrice, quantity, itemImage) {
-            const existingItem = cartItems.find(item => item.name === itemName);
+            console.log('Adding to cart:', itemName, itemPrice, quantity, itemImage);
+            const formData = new FormData();
+            formData.append('action', 'add');
+            formData.append('itemName', itemName);
+            formData.append('itemPrice', itemPrice);
+            formData.append('quantity', quantity);
+            formData.append('itemImage', itemImage);
 
-            if (existingItem) {
-                existingItem.quantity += quantity; // Aggiorna la quantità se l'articolo è già nel carrello
-            } else {
-                cartItems.push({ name: itemName, price: itemPrice, quantity: quantity, image: itemImage });
-            }
-            updateCartDisplay();
-        }
-
-        // Funzione per aggiornare la visualizzazione del carrello
-        function updateCartDisplay() {
-            const cartContainer = document.getElementById('cart-items');
-            const subtotalContainer = document.getElementById('subtotal');
-            const checkoutButton = document.getElementById('checkout-btn');
-            cartContainer.innerHTML = '';
-            let subtotal = 0;
-
-            if (cartItems.length === 0) {
-                cartContainer.innerHTML = '<p>Carrello Vuoto</p>';
-                subtotalContainer.textContent = '';
-                checkoutButton.style.display = 'none';
-            } else {
-                cartItems.forEach(item => {
-                    const itemElement = document.createElement('div');
-                    itemElement.classList.add('cart-item');
-                    itemElement.innerHTML = `
-                        <img src="${item.image}" alt="${item.name}" class="cart-item-image">
-                        <p>${item.name}</p>
-                        <p>Quantità: <input type="number" value="${item.quantity}" min="1" class="quantity-input-cart" data-item="${item.name}"></p>
-                        <p>Prezzo: €${item.price.toFixed(2)}</p>
-                        <button class="remove-btn" onclick="removeFromCart('${item.name}')">Rimuovi</button>
-                    `;
-                    cartContainer.appendChild(itemElement);
-                    subtotal += item.price * item.quantity;
+            fetch('./php/shop.php', {
+                method: 'POST',
+                body: formData
+            })
+                .then(response => response.text())
+                .then(data => {
+                    console.log('Response from addToCart:', data);
+                    document.getElementById('cart-items').innerHTML = data;
+                    updateSubtotal();
                 });
-
-                subtotalContainer.textContent = `Subtotale: €${subtotal.toFixed(2)}`;
-                checkoutButton.style.display = 'block';
-            }
         }
 
-
-        // Funzione per rimuovere un articolo dal carrello
         function removeFromCart(itemName) {
-            cartItems = cartItems.filter(item => item.name !== itemName);
-            updateCartDisplay();
+            console.log('Removing from cart:', itemName);
+            const formData = new FormData();
+            formData.append('action', 'remove');
+            formData.append('itemName', itemName);
+
+            fetch('./php/shop.php', {
+                method: 'POST',
+                body: formData
+            })
+                .then(response => response.text())
+                .then(data => {
+                    console.log('Response from removeFromCart:', data);
+                    document.getElementById('cart-items').innerHTML = data;
+                    updateSubtotal();
+                });
         }
 
-        // Assegna l'evento di aggiunta al carrello a ogni pulsante "Aggiungi al carrello"
-        document.querySelectorAll('.add-to-cart-btn').forEach(button => {
-            button.addEventListener('click', event => {
-                const card = event.target.closest('.card');
-                const itemName = card.querySelector('h3').textContent;
-                const itemPrice = parseFloat(card.querySelector('.price').textContent.replace('€', '').replace(',', '.'));
-                const quantity = parseInt(card.querySelector('.quantity-input').value, 10);
-                const itemImage = card.querySelector('img').src;
+        function loadCart() {
+            console.log('Loading cart');
+            fetch('./php/shop.php', {
+                method: 'POST',
+                body: new URLSearchParams('action=load')
+            })
+                .then(response => response.text())
+                .then(data => {
+                    console.log('Response from loadCart:', data);
+                    document.getElementById('cart-items').innerHTML = data;
+                    updateSubtotal();
+                });
+        }
 
-                if (quantity > 0) {
-                    addToCart(itemName, itemPrice, quantity, itemImage);
-                } else {
-                    alert("Seleziona una quantità valida.");
+        function updateSubtotal() {
+            var cartItemContainer = document.getElementsByClassName('cart-items')[0];
+            var cartRows = cartItemContainer.getElementsByClassName('cart-row');
+            var total = 0;
+            for (var i = 0; i < cartRows.length; i++) {
+                var cartRow = cartRows[i];
+                var priceElement = cartRow.getElementsByClassName('cart-price')[0];
+                var quantityElement = cartRow.getElementsByClassName('quantity-input-cart')[0];
+                var price = parseFloat(priceElement.innerText.replace('$', ''));
+                var quantity = quantityElement.value;
+                total = total + (price * quantity);
+            }
+            total = Math.round(total * 100) / 100;
+            document.getElementsByClassName('cart-total-price')[0].innerText = '$' + total;
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            loadCart();
+
+            document.querySelectorAll('.add-to-cart-btn').forEach(button => {
+                button.addEventListener('click', event => {
+                    const card = event.target.closest('.card');
+                    const itemName = card.querySelector('h3').textContent;
+                    const itemPrice = parseFloat(card.querySelector('.price').textContent.replace('€', '').replace(',', '.'));
+                    const quantity = parseInt(card.querySelector('.quantity-input').value, 10);
+                    const itemImage = card.querySelector('img').src;
+
+                    console.log('Adding item:', itemName, itemPrice, quantity, itemImage);
+                    if (quantity > 0 && quantity <= 5) {
+                        addToCart(itemName, itemPrice, quantity, itemImage);
+                    } else {
+                        alert("Seleziona una quantità valida.");
+                    }
+                });
+            });
+
+            document.getElementById('cart-items').addEventListener('input', event => {
+                if (event.target.classList.contains('quantity-input-cart')) {
+                    const itemName = event.target.getAttribute('data-item');
+                    const newQuantity = parseInt(event.target.value, 10);
+                    console.log('Updating quantity for item:', itemName, newQuantity);
+                    const item = cartItems.find(i => i.name === itemName);
+
+                    if (item && newQuantity > 0) {
+                        item.quantity = newQuantity;
+                        updateSubtotal();
+                    }
                 }
             });
         });
-
-        // Aggiorna la quantità direttamente dal carrello
-        document.getElementById('cart-items').addEventListener('input', event => {
-            if (event.target.classList.contains('quantity-input-cart')) {
-                const itemName = event.target.getAttribute('data-item');
-                const newQuantity = parseInt(event.target.value, 10);
-                const item = cartItems.find(i => i.name === itemName);
-
-                if (item && newQuantity > 0) {
-                    item.quantity = newQuantity;
-                    updateCartDisplay();
-                }
-            }
-        });
-
     </script>
-
-
     <script>
         function searchItems() {
             const query = document.getElementById('search-bar').value.toLowerCase();
@@ -364,7 +379,7 @@
             const visibleCards = Array.from(cards).filter(card => card.style.display === 'block');
 
             // Mostra o nasconde il messaggio "Nessun risultato trovato"
-            document.getElementById('no-results').style.display = hasResults ? 'none' : 'block';
+            document.getElementById('no-results').style.display = visibleCards.length ? 'none' : 'block';
         }
 
     </script>
