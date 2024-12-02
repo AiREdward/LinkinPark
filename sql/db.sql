@@ -71,7 +71,7 @@ VALUES
     ('American Tour', '2025-11-01', '20:00:00', 'Estadio Alberto José Armando', 'Buenos Aires', 'Argentina'),
     ('American Tour', '2025-11-10', '19:30:00', 'Neo Química Arena', 'São Paulo', 'Brasile');
 
-    CREATE TABLE biglietti (
+CREATE TABLE biglietti (
     id INT AUTO_INCREMENT PRIMARY KEY,
     utente_id INT NOT NULL,
     tour_id INT NOT NULL,
