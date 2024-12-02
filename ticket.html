@@ -76,13 +76,9 @@
             background: #0056b3;
         }
 
-        .quantity-select {
-            margin: 20px auto;
-        }
-
         /* Centra il QR Code */
         .ticket .qr-container {
-            text-align: center; /* Aggiungi questa proprietà per centrare */
+            text-align: center;
         }
     </style>
 </head>
@@ -91,18 +87,10 @@
     <main>
         <header>
             <h1>Generatore Biglietti Accessibile</h1>
-            <label for="quantity" class="quantity-select">Quantità Biglietti:</label>
-            <select id="quantity" name="quantity" aria-label="Seleziona la quantità dei biglietti">
-                <option value="1" selected>1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-            </select>
         </header>
         <section id="ticketContainer" aria-labelledby="ticketDetails">
             <!-- Biglietto principale -->
-            <div class="ticket" role="region" aria-label="Biglietto Evento 1">
+            <div class="ticket" role="region" aria-label="Biglietto Evento">
                 <h1 id="ticketDetails">Linkin Park - European Tour</h1>
                 <p><strong>Città:</strong> <span id="event">Roma - Colosseo</span></p>
                 <p><strong>Data:</strong> <span id="date">12 Giugno 2024</span></p>
@@ -116,7 +104,7 @@
                 <p class="note">Presenta questo biglietto all'ingresso. Contiene il codice QR per la verifica.</p>
             </div>
         </section>
-        <button id="printButton" aria-label="Scarica tutti i biglietti in PDF">Scarica Biglietti</button>
+        <button id="printButton" aria-label="Scarica il biglietto in PDF">Scarica Biglietto</button>
     </main>
 
     <script>
@@ -125,12 +113,12 @@
             .then(response => response.json())
             .then(data => {
                 document.getElementById('userEmail').textContent = data.email;
-                generateQRCode(1); // Genera il QR code per il primo biglietto
+                generateQRCode(); // Genera il QR code per il biglietto
             })
             .catch(error => {
                 console.error('Errore nel caricamento dell\'email:', error);
                 document.getElementById('userEmail').textContent = 'Email non disponibile';
-                generateQRCode(1);
+                generateQRCode();
             });
 
         // Carica i parametri dall'URL
@@ -141,7 +129,7 @@
         document.getElementById('userName').textContent = urlParams.get('userName') || 'Nome non disponibile';
 
         // Funzione per generare QR Code
-        function generateQRCode(ticketNumber) {
+        function generateQRCode() {
             const ticketData = {
                 event: document.getElementById('event').textContent,
                 date: document.getElementById('date').textContent,
@@ -151,7 +139,7 @@
             };
             const qrCodeContent = JSON.stringify(ticketData);
 
-            new QRCode(document.getElementById(`qrCode${ticketNumber}`), {
+            new QRCode(document.getElementById(`qrCode1`), {
                 text: qrCodeContent,
                 width: 200,
                 height: 200,
@@ -160,44 +148,12 @@
             });
         }
 
-        // Funzione per aggiornare i biglietti
-        document.getElementById('quantity').addEventListener('change', (e) => {
-            const quantity = parseInt(e.target.value);
-            const container = document.getElementById('ticketContainer');
-
-            // Rimuove i biglietti esistenti eccetto il primo
-            container.innerHTML = container.firstElementChild.outerHTML;
-
-            // Genera biglietti aggiuntivi
-            for (let i = 2; i <= quantity; i++) {
-                const ticket = document.createElement('div');
-                ticket.className = 'ticket';
-                ticket.setAttribute('role', 'region');
-                ticket.setAttribute('aria-label', `Biglietto Evento ${i}`);
-                ticket.innerHTML = `
-                    <h1>Wishbone - European Tour</h1>
-                    <p><strong>Città:</strong> <span id="event">${urlParams.get('city') || 'Città sconosciuto'}</span></p>
-                    <p><strong>Data:</strong> <span id="date">${urlParams.get('date') || 'Data non disponibile'}</span></p>
-                    <p><strong>Orario:</strong> <span id="time">${urlParams.get('time') || 'Orario non disponibile'}</span></p>
-                    <p><strong>Nome Utente:</strong> <input type="text" placeholder="Inserisci il nome" aria-label="Nome Utente Biglietto ${i}" required></p>
-                    <p><strong>Email:</strong> <input type="email" placeholder="Inserisci l'email" aria-label="Email Utente Biglietto ${i}" required></p>
-                    <!-- QR code centrato -->
-                    <div class="qr-container">
-                        <div id="qrCode${i}" role="img" aria-label="Codice QR per verifica biglietto ${i}"></div>
-                    </div>
-                    <p class="note">Presenta questo biglietto all'ingresso. Contiene il codice QR per la verifica.</p>
-                `;
-                container.appendChild(ticket);
-                generateQRCode(i);
-            }
-        });
-
-        // Funzione per scaricare tutti i biglietti
+        // Funzione per scaricare il biglietto
         document.getElementById('printButton').addEventListener('click', () => {
             const container = document.getElementById('ticketContainer');
             const options = {
                 margin: 1,
-                filename: 'biglietti-linkin_park.pdf',
+                filename: 'biglietto-linkin_park.pdf',
                 html2canvas: { scale: 2 },
                 jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
             };
