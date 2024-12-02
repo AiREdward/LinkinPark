@@ -6,6 +6,12 @@
 
 - copia e incolla la creazione del db da file db.sql in localhost/phpmyadmin
 
-## Utente
+## Account
+
+### Utente - Admin
 mail:     admin@test
 password: Admin123?
+
+### Utente - bloccato
+mail:     block@test
+password: Block123?

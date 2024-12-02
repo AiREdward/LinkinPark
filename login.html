@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <title>Accedi</title>
     <style>
-        /* Centra il contenuto verticalmente */
         body {
             display: flex;
             justify-content: center;
@@ -15,13 +14,11 @@
             flex-direction: column;
         }
 
-        /* Contenitore per il modulo */
         main {
             width: 300px;
             text-align: center;
         }
 
-        /* Spaziatura e larghezza uniforme tra i campi */
         form label,
         form input,
         form button {
@@ -29,7 +26,12 @@
             width: 100%;
             margin: 10px 0;
             box-sizing: border-box;
-            /* Assicura che padding e border non alterino la larghezza */
+        }
+
+        .error {
+            color: red;
+            font-size: 0.9em;
+            margin-bottom: 10px;
         }
     </style>
 </head>
@@ -40,6 +42,9 @@
     </header>
 
     <main>
+        <!-- Sezione per i messaggi di errore -->
+        <div id="error-message" class="error"></div>
+
         <form action="php/login.php" method="post">
             <label for="email">Email:</label>
             <input type="email" id="email" name="email" required>
@@ -48,32 +53,46 @@
             <input type="password" id="password" name="password" required>
             <button type="button" onclick="togglePassword()">Mostra/Nascondi</button>
 
-            <!-- Campo nascosto per la pagina di origine -->
             <input type="hidden" name="redirect" id="redirect" value="">
 
             <button type="submit">Accedi</button>
         </form>
 
         <p>Non hai un account? <a href="registration.html">Registrati qui</a></p>
-
-        <script>
-            function togglePassword() {
-                const passwordField = document.getElementById('password');
-                if (passwordField.type === 'password') {
-                    passwordField.type = 'text';
-                } else {
-                    passwordField.type = 'password';
-                }
-            }
-
-            // Recupera il parametro "redirect" dall'URL e lo inserisce nel campo nascosto
-            const params = new URLSearchParams(window.location.search);
-            const redirect = params.get('redirect');
-            if (redirect) {
-                document.getElementById('redirect').value = redirect;
-            }
-        </script>
     </main>
+
+    <script>
+        function togglePassword() {
+            const passwordField = document.getElementById('password');
+            passwordField.type = passwordField.type === 'password' ? 'text' : 'password';
+        }
+
+        // Recupera il parametro "redirect" dall'URL e lo inserisce nel campo nascosto
+        const params = new URLSearchParams(window.location.search);
+        const redirect = params.get('redirect');
+        if (redirect) {
+            document.getElementById('redirect').value = redirect;
+        }
+
+        // Visualizza il messaggio di errore
+        const errorMessage = document.getElementById('error-message');
+        const error = params.get('error');
+        if (error) {
+            switch (error) {
+                case 'bloccato':
+                    errorMessage.textContent = 'Il tuo account è bloccato. Contatta l\'amministratore.';
+                    break;
+                case 'password':
+                    errorMessage.textContent = 'Password errata. Riprova.';
+                    break;
+                case 'utente':
+                    errorMessage.textContent = 'Utente non trovato. Registrati.';
+                    break;
+                default:
+                    errorMessage.textContent = 'Si è verificato un errore. Riprova.';
+            }
+        }
+    </script>
 </body>
 
 </html>

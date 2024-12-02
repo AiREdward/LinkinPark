@@ -17,9 +17,6 @@ if (empty($n_carta) || empty($nome) || empty($ccv)) {
     die("Tutti i campi sono obbligatori.");
 }
 
-
-
-
 $sql = "INSERT INTO transazioni (n_carta, nome, data_scadenza, ccv, costo_tot, el_acquistati, utente_id) VALUES ('$n_carta', '$nome', '$data_scadenza', '$ccv', '$costo_tot', '$el_acquistati', '$utente_id')";
 
 if ($conn->query($sql) === TRUE) {
@@ -32,8 +29,6 @@ if ($conn->query($sql) === TRUE) {
     echo "Errore durante la registrazione del pagamento: "  . $conn->error;  // Messaggio di errore dettagliato
 }
 
-
 // Chiudi la connessione
-$stmt->close();
 $conn->close();
 ?>
