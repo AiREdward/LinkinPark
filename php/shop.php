@@ -29,6 +29,10 @@ function removeFromCart($itemName) {
     });
 }
 
+function clearCart() {
+    $_SESSION['cart'] = [];
+}
+
 // Function to update cart display
 function updateCartDisplay() {
     $cartItems = $_SESSION['cart'];
@@ -43,7 +47,7 @@ function updateCartDisplay() {
                 <div class="cart-item">
                     <img src="' . $item['image'] . '" alt="' . $item['name'] . '" class="cart-item-image">
                     <p>' . $item['name'] . '</p>
-                    <p>Quantità: <input type="number" value="' . $item['quantity'] . '" min="1" class="quantity-input-cart" data-item="' . $item['name'] . '"></p>
+                    <p>Quantità: <input type="number" value="' . $item['quantity'] . '" min="1" max="5" class="quantity-input-cart" data-item="' . $item['name'] . '"></p>
                     <p>Prezzo: €' . number_format($item['price'], 2) . '</p>
                     <button class="remove-btn" onclick="removeFromCart(\'' . $item['name'] . '\')">Rimuovi</button>
                 </div>';
@@ -67,8 +71,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         addToCart($itemName, $itemPrice, $quantity, $itemImage);
     } elseif ($action === 'remove') {
         removeFromCart($itemName);
+    } elseif ($action === 'clear') {
+        clearCart();
     } elseif ($action === 'load') {
         echo updateCartDisplay();
+        exit;
+    } elseif ($action === 'getCart') {
+        echo json_encode($_SESSION['cart']);
         exit;
     }
 
