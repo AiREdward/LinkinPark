@@ -5,9 +5,11 @@ AGGIUNGERE ORARIO
 shop_____________
 
 sposta tutti gli style fuori dal html
-rimetti tasto pagamento sul carrello
+aggiungere icone
+fixa css .checkout contenente "Procedi all'acquisto", "Svuota Carrello" -> needs to be hidden with 0 el in the cart
 
 payment__________
 
+pendee info da shop 
 COLLEGA PAYMENT A RIEPILOGO (STAMPA FATTURA)
 registrazione non fa tornare alla pagina precedente

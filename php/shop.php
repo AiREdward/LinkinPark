@@ -29,6 +29,10 @@ function removeFromCart($itemName) {
     });
 }
 
+function clearCart() {
+    $_SESSION['cart'] = [];
+}
+
 // Function to update cart display
 function updateCartDisplay() {
     $cartItems = $_SESSION['cart'];
@@ -67,6 +71,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         addToCart($itemName, $itemPrice, $quantity, $itemImage);
     } elseif ($action === 'remove') {
         removeFromCart($itemName);
+    } elseif ($action === 'clear') {
+        clearCart();
     } elseif ($action === 'load') {
         echo updateCartDisplay();
         exit;
