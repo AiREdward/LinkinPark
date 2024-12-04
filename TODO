@@ -10,6 +10,7 @@ fixa css .checkout contenente "Procedi all'acquisto", "Svuota Carrello" -> needs
 
 payment__________
 
-pendee info da shop 
+Fai test su item fom shop (funziona a caso)
 COLLEGA PAYMENT A RIEPILOGO (STAMPA FATTURA)
 registrazione non fa tornare alla pagina precedente
+sistema tabindex
