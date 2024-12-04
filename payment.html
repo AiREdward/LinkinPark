@@ -19,8 +19,6 @@
                     </svg>
                 </button>
 
-                <!-- Sostituisci 1 con l'ID dell'utente attuale -->
-                <input type="hidden" name="utente_id" value="<?php echo $user_id; ?>">
                 <img src="https://seeklogo.com/images/V/VISA-logo-62D5B26FE1-seeklogo.com.png" class="logo-card">
 
                 <label>Card number:</label>
@@ -39,20 +37,16 @@
             <div class="receipt">
                 <div class="col">
                     <p>Cost:</p>
-                    <h2 class="cost">$400</h2><br>
+                    <h2 class="cost" id="subtotal">€0.00</h2><br>
                     <p>Nome:</p>
                     <h2 class="seller">Codedgar</h2>
                 </div>
                 
                 <div class="col">
                     <p>Bought Items:</p>
-                    <h3 class="bought-items">Corsair Mouse</h3>
-                    <p class="bought-items description">Gaming mouse with shiny lights</p>
-                    <p class="bought-items price">$200 (50% discount)</p><br>
-                    
-                    <h3 class="bought-items">Gaming keyboard</h3>
-                    <p class="bought-items description">Look mommy, it has colors!</p>
-                    <p class="bought-items price">$200 (50% discount)</p><br>
+                    <div id="bought-items">
+                        <!-- I prodotti del carrello verranno aggiunti qui tramite JavaScript -->
+                    </div>
                 </div>
                 
                 <p class="comprobe">This information will be sent to your email</p>
@@ -91,22 +85,35 @@
             }
         });
 
-        // Final form validation before submission
-        document.getElementById('cardForm').addEventListener('submit', function (e) {
-            // Check if the card number is exactly 16 digits
-            if (nCartaInput.value.length !== 16) {
-                alert('Il numero della carta deve contenere esattamente 16 cifre.');
-                e.preventDefault();
-                return;
-            }
+        // Recupera i dati del carrello e visualizzali
+        fetch('php/shop.php', {
+            method: 'POST',
+            body: new URLSearchParams('action=getCart')
+        })
+        .then(response => response.json())
+        .then(cartItems => {
+            let subtotal = 0;
+            const boughtItemsContainer = document.getElementById('bought-items');
+            boughtItemsContainer.innerHTML = '';
 
-            // Check if the CCV is exactly 3 or 4 digits
-            if (ccvInput.value.length < 3 || ccvInput.value.length > 4) {
-                alert('Il CCV deve contenere esattamente 3 o 4 cifre.');
-                e.preventDefault();
-                return;
-            }
-        });
+            cartItems.forEach(item => {
+                const itemPrice = parseFloat(item.price); // Ensure item.price is a number
+                const itemTotal = itemPrice * item.quantity;
+                subtotal += itemTotal;
+
+                const itemElement = document.createElement('div');
+                itemElement.innerHTML = `
+                    <img src="${item.image}" alt="${item.name}" class="product-image">
+                    <h3 class="bought-items">${item.name}</h3>
+                    <p class="bought-items description">Quantità: ${item.quantity}</p>
+                    <p class="bought-items price">Prezzo: €${itemPrice.toFixed(2)} x ${item.quantity} = €${itemTotal.toFixed(2)}</p>
+                `;
+                boughtItemsContainer.appendChild(itemElement);
+            });
+
+            document.getElementById('subtotal').textContent = `€${subtotal.toFixed(2)}`;
+        })
+        .catch(error => console.error('Errore nel recupero dei dati del carrello:', error));
     </script>
 </body>
 </html>
