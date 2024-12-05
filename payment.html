@@ -36,20 +36,20 @@
             
             <div class="receipt">
                 <div class="col">
-                    <p>Cost:</p>
+                    <p>Costo:</p>
                     <h2 class="cost" id="subtotal">€0.00</h2><br>
-                    <p>Nome:</p>
-                    <h2 class="seller">Codedgar</h2>
+                    <p>Utente:</p>
+                    <h2 class="user" id="user-name">Nome Cognome</h2>
                 </div>
                 
                 <div class="col">
-                    <p>Bought Items:</p>
+                    <p>Lista degli acquisti:</p>
                     <div id="bought-items">
                         <!-- I prodotti del carrello verranno aggiunti qui tramite JavaScript -->
                     </div>
                 </div>
                 
-                <p class="comprobe">This information will be sent to your email</p>
+                <p class="comprobe">Con la <strong>ricevuta di avvenuto pagamento</strong> potrai ritirare la merce nel Linkin Park Store a te più vicino.</p>
             </div>
         </div>
     </form>
@@ -114,6 +114,24 @@
             document.getElementById('subtotal').textContent = `€${subtotal.toFixed(2)}`;
         })
         .catch(error => console.error('Errore nel recupero dei dati del carrello:', error));
+
+        // Recupera il nome e il cognome dell'utente e visualizzali
+        fetch('php/payment.php?action=getUser')
+        .then(response => response.json())
+        .then(user => {
+            const capitalize = str => str.replace(/\b\w/g, char => char.toUpperCase());
+            const nome = capitalize(user.nome);
+            const cognome = capitalize(user.cognome);
+            document.getElementById('user-name').textContent = `${nome} ${cognome}`;
+        })
+        .catch(error => console.error('Errore nel recupero dei dati dell\'utente:', error));
+
+        // Print the page when the form is submitted
+        document.getElementById('cardForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the default form submission
+            window.print(); // Open the print dialog
+            this.submit(); // Submit the form after printing
+        });
     </script>
 </body>
 </html>
