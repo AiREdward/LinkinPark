@@ -12,6 +12,10 @@
 mail:     admin@test
 password: Admin123?
 
+### Utente - cliente attivo
+mail:     user@test
+password: User123?
+
 ### Utente - bloccato
 mail:     block@test
 password: Block123?

@@ -22,6 +22,7 @@ CREATE TABLE utenti (
 INSERT INTO utenti (nome, cognome, email, password, indirizzo, ruolo, stato) 
 VALUES 
     ('admin', 'test', 'admin@test', '$2y$10$fQ2S5rViOrfy9RrcOcUAVuaWgEyaV8KdwqEKGqFLfB0vdphUcyJHO', 'via test', 'admin', 'attivo'),
+    ('utente', 'test', 'user@test', '$2y$10$ZTGUODT.9o6REeHgcYt9tO9OufttUPe6alAfI7VCVSwCTFgXOstAS', 'via test', 'utente', 'attivo'),
     ('block', 'test', 'block@test', '$2y$10$nx0vjdmO/U8dPT0cWS6M5OydWpdwOcTpRUwlaWCphyF57uzjvUUsS', 'via test', 'utente', 'bloccato');
 
 CREATE TABLE transazioni (
