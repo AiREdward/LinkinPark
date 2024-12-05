@@ -2,155 +2,166 @@
 <html lang="it">
 <head>
     <meta charset="UTF-8">
-    <title>Admin Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
     <style>
-        /* CSS per il layout */
+        /* Imposta il body come contenitore flex per centrare il contenuto */
         body {
             font-family: Arial, sans-serif;
             display: flex;
-            flex-direction: column;
+            justify-content: center;
             align-items: center;
+            height: 100vh;
+            margin: 0;
+            flex-direction: column;
         }
-        header, nav, main {
-            width: 80%;
-            max-width: 1200px;
-            margin: 20px;
-        }
-        header {
-            text-align: center;
-        }
-        nav ul {
-            list-style: none;
-            padding: 0;
+
+        /* Menu Orizzontale */
+        #menu {
             display: flex;
-            justify-content: space-around;
-            background-color: #333;
+            margin-bottom: 20px;
+            justify-content: center;
+            width: 100%;
+        }
+        #menu button {
+            margin-right: 20px;
             padding: 10px;
+            cursor: pointer;
         }
-        nav ul li {
-            color: white;
-        }
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-        }
-        .stats {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-            margin-top: 20px;
-        }
-        .stat {
-            border: 1px solid #ccc;
+
+        /* Contenitore per il contenuto */
+        #content {
             padding: 20px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            text-align: center; /* Centra il contenuto dentro il container */
+            width: 800px; /* Larghezza fissa */
+            height: 600px; /* Altezza fissa */
+        }
+
+        /* Titolo */
+        h1 {
             text-align: center;
-            flex: 1;
-            margin: 10px;
-            min-width: 250px;
+            width: 100%;
+        }
+
+        /* Messaggio di feedback */
+        .message {
+            margin-top: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            background-color: #f0f0f0;
         }
     </style>
 </head>
 <body>
-    <?php include 'stats.php'; ?> <!-- Include le statistiche -->
+    <h1>Dashboard</h1>
 
-    <header aria-labelledby="dashboard-title">
-        <h1 id="dashboard-title">Dashboard Admin</h1>
-    </header>
+    <!-- Menu Orizzontale -->
+    <div id="menu">
+        <button id="userManagementBtn">Gestione Utenti</button>
+        <button id="otherFunctionBtn">Altra Funzione</button>
+    </div>
 
-    <!--<nav aria-label="Navigazione principale">
-        <ul>
-            <li><a href="#stats">Statistiche</a></li>
-            <li><a href="#bookings">Prenotazioni</a></li>
-            <li><a href="#orders">Ordini</a></li>
-            <li><a href="#users">Gestione Utenti</a></li>
-        </ul>
-    </nav>-->
+    <!-- Contenitore per il contenuto dinamico -->
+    <div id="content">
+        <!-- Funzione di gestione utenti -->
+        <div id="userManagement" style="display: block;">
+            <form id="searchForm">
+                <label for="email">Cerca utente per email:</label>
+                <input type="email" name="email" id="email" placeholder="Inserisci email utente" required>
+                <button type="submit">Cerca</button>
+            </form>
 
-    <main>
-        <!-- Sezione statistiche giornaliere -->
-        <section id="stats" aria-labelledby="stats-title">
-            <h2 id="stats-title">Statistiche Giornaliere</h2>
-            <div class="stats">
-                <div class="stat" aria-labelledby="bookings-title">
-                    <h3 id="bookings-title">Prenotazioni Giorno</h3>
-                    <p><?php echo $numBookings; ?></p>
-                </div>
-                <div class="stat" aria-labelledby="orders-title">
-                    <h3 id="orders-title">Acquisti Giorno</h3>
-                    <p><?php echo $numOrders; ?></p>
-                </div>
-                <div class="stat" aria-labelledby="revenue-title">
-                    <h3 id="revenue-title">Incassi Giorno</h3>
-                    <p>€ <?php echo number_format($totalRevenue, 2); ?></p>
-                </div>
-                <div class="stat" aria-labelledby="new-users-title">
-                    <h3 id="new-users-title">Nuovi Utenti Giornalieri</h3>
-                    <p><?php echo $numUsers; ?></p>
-                </div>
-            </div>
-        </section>
+            <div id="result"></div>
+        </div>
 
-        <!-- Sezione statistiche settimanali e mensili -->
-        <section id="weekly-stats" aria-labelledby="weekly-stats-title">
-            <h2 id="weekly-stats-title">Statistiche Settimanali e Mensili</h2>
-            <div class="stats">
-                <div class="stat" aria-labelledby="weekly-bookings-title">
-                    <h3 id="weekly-bookings-title">Prenotazioni Settimanali</h3>
-                    <p><?php echo $weeklyBookings; ?></p>
-                </div>
-                <div class="stat" aria-labelledby="monthly-revenue-title">
-                    <h3 id="monthly-revenue-title">Incassi Mensili</h3>
-                    <p>€ <?php echo number_format($monthlyRevenue, 2); ?></p>
-                </div>
-            </div>
-        </section>
+        <!-- Altra funzione -->
+        <div id="otherFunction" style="display: none;">
+            <h2>Altra funzione qui</h2>
+            <p>Puoi aggiungere qui altre funzionalità.</p>
+        </div>
+    </div>
 
-        <!-- Sezione variazione delle prenotazioni rispetto a ieri -->
-        <section id="growth-stats" aria-labelledby="growth-stats-title">
-            <h2 id="growth-stats-title">Crescita Giornaliera delle Prenotazioni</h2>
-            <div class="stat">
-                <h3>Variazione rispetto a ieri</h3>
-                <p><?php echo number_format($bookingGrowth, 2); ?>%</p>
-            </div>
-        </section>
+    <script>
+        // Gestisci il click sui bottoni del menu
+        document.getElementById('userManagementBtn').addEventListener('click', function() {
+            document.getElementById('userManagement').style.display = 'block';
+            document.getElementById('otherFunction').style.display = 'none';
+        });
 
-        <!-- Sezione prenotazioni per tipo di evento -->
-        <section id="event-bookings" aria-labelledby="event-bookings-title">
-            <h2 id="event-bookings-title">Prenotazioni per Tipo di Evento</h2>
-            <div class="stats">
-                <?php foreach ($bookingsByEventType as $eventType => $count): ?>
-                    <div class="stat">
-                        <h3><?php echo htmlspecialchars($eventType); ?></h3>
-                        <p><?php echo $count; ?> prenotazioni</p>
-                    </div>
-                <?php endforeach; ?>
-            </div>
-        </section>
+        document.getElementById('otherFunctionBtn').addEventListener('click', function() {
+            document.getElementById('otherFunction').style.display = 'block';
+            document.getElementById('userManagement').style.display = 'none';
+        });
 
-        <!-- Sezione ordini più recenti -->
-        <section id="recent-orders" aria-labelledby="recent-orders-title">
-            <h2 id="recent-orders-title">Ultimi Ordini</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>ID Ordine</th>
-                        <th>ID Utente</th>
-                        <th>Importo</th>
-                        <th>Data Ordine</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php foreach ($recentOrders as $order): ?>
-                        <tr>
-                            <td><?php echo $order['id']; ?></td>
-                            <td><?php echo $order['user_id']; ?></td>
-                            <td>€ <?php echo number_format($order['amount'], 2); ?></td>
-                            <td><?php echo $order['order_date']; ?></td>
-                        </tr>
-                    <?php endforeach; ?>
-                </tbody>
-            </table>
-        </section>
-    </main>
+        // Gestisci la ricerca dell'utente con AJAX
+        document.getElementById('searchForm').addEventListener('submit', function(e) {
+            e.preventDefault(); // Impedisce il submit del form tradizionale
+
+            var email = document.getElementById('email').value;
+            var formData = new FormData();
+            formData.append('email', email);
+
+            // Esegui richiesta AJAX per la ricerca utente
+            fetch('php/admin.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                var resultDiv = document.getElementById('result');
+                resultDiv.innerHTML = '';
+
+                if (data.message) {
+                    resultDiv.innerHTML = '<div class="message">' + data.message + '</div>';
+                }
+
+                if (data.user) {
+                    var user = data.user;
+                    resultDiv.innerHTML += `
+                        <form id="updateForm">
+                            <input type="hidden" name="user_id" value="${user.id}">
+                            <p>Nome: ${user.nome}</p>
+                            <p>Cognome: ${user.cognome}</p>
+                            <p>Email: ${user.email}</p>
+                            <label for="role">Ruolo:</label>
+                            <select name="role" id="role">
+                                <option value="utente" ${user.ruolo === 'utente' ? 'selected' : ''}>Utente</option>
+                                <option value="admin" ${user.ruolo === 'admin' ? 'selected' : ''}>Admin</option>
+                            </select>
+                            <label for="status">Stato:</label>
+                            <select name="status" id="status">
+                                <option value="attivo" ${user.stato === 'attivo' ? 'selected' : ''}>Attivo</option>
+                                <option value="bloccato" ${user.stato === 'bloccato' ? 'selected' : ''}>Bloccato</option>
+                            </select>
+                            <button type="submit">Aggiorna</button>
+                        </form>
+                    `;
+
+                    // Gestisci l'aggiornamento dell'utente
+                    document.getElementById('updateForm').addEventListener('submit', function(e) {
+                        e.preventDefault();
+
+                        var updateData = new FormData(this);
+
+                        fetch('php/admin.php', {
+                            method: 'POST',
+                            body: updateData
+                        })
+                        .then(response => response.json())
+                        .then(data => {
+                            if (data.message) {
+                                resultDiv.innerHTML = '<div class="message">' + data.message + '</div>';
+                            }
+                        });
+                    });
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        });
+    </script>
 </body>
 </html>
