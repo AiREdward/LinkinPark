@@ -8,7 +8,7 @@ $email = $_POST['email'];
 $password = password_hash($_POST['password'], PASSWORD_BCRYPT); // Cripta la password
 $indirizzo = $_POST['indirizzo'];
 $telefono = $_POST['telefono'];
-$data_di_nascita = $_POST['data_di_nascita'];
+$data_nascita = $_POST['data_nascita'];
 
 // Controlla se l'email è già registrata
 $sql = "SELECT * FROM utenti WHERE email = '$email'";
@@ -18,8 +18,8 @@ if ($result->num_rows > 0) {
     echo "L'email è già registrata. <a href='registration.html'>Torna indietro</a>";
 } else {
     // Inserisci il nuovo utente
-    $sql = "INSERT INTO utenti (nome, cognome, email, password, indirizzo, telefono, data_di_nascita) 
-            VALUES ('$nome', '$cognome', '$email', '$password', '$indirizzo', '$telefono', '$data_di_nascita')";
+    $sql = "INSERT INTO utenti (nome, cognome, email, password, indirizzo, telefono, data_nascita) 
+            VALUES ('$nome', '$cognome', '$email', '$password', '$indirizzo', '$telefono', '$data_nascita')";
 
     if ($conn->query($sql) === TRUE) {
         // Ottieni il percorso dinamico della directory principale

@@ -13,7 +13,7 @@ CREATE TABLE utenti (
     password VARCHAR(255) NOT NULL,
     indirizzo TEXT NOT NULL,
     telefono VARCHAR(20) NULL,
-    data_di_nascita DATE NULL,
+    data_nascita DATE NULL,
     ruolo VARCHAR(20) NOT NULL DEFAULT 'utente',
     stato ENUM('attivo', 'bloccato') NOT NULL DEFAULT 'attivo',
     data_creazione TIMESTAMP DEFAULT CURRENT_TIMESTAMP
