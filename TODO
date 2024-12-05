@@ -7,10 +7,9 @@ shop_____________
 sposta tutti gli style fuori dal html
 aggiungere icone
 fixa css .checkout contenente "Procedi all'acquisto", "Svuota Carrello" -> needs to be hidden with 0 el in the cart
+aggiungi taglia
+Fai test su item fom shop (funziona a caso)
 
 payment__________
 
-Fai test su item fom shop (funziona a caso)
-COLLEGA PAYMENT A RIEPILOGO (STAMPA FATTURA)
-registrazione non fa tornare alla pagina precedente
 sistema tabindex
