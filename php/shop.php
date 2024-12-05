@@ -11,8 +11,14 @@ function addToCart($itemName, $itemPrice, $quantity, $itemImage) {
     foreach ($_SESSION['cart'] as &$item) {
         if ($item['name'] === $itemName) {
             $item['quantity'] += $quantity;
+            if ($item['quantity'] > 5) {
+                $item['quantity'] = 5;
+            }
             return;
         }
+    }
+    if ($quantity > 5) {
+        $quantity = 5;
     }
     $_SESSION['cart'][] = [
         'name' => $itemName,
@@ -54,6 +60,9 @@ function updateCartDisplay() {
             $subtotal += $item['price'] * $item['quantity'];
         }
         $cartHtml .= '<p id="subtotal">Subtotale: €' . number_format($subtotal, 2) . '</p>';
+        $cartHtml .= '<button id="checkout-btn" onclick="handleCheckout()">Procedi all\'acquisto</button>';
+        $cartHtml .= '<button id="clear-cart-btn" onclick="clearCart()">Svuota Carrello</button>';
+
     }
 
     return $cartHtml;
@@ -80,7 +89,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         echo json_encode($_SESSION['cart']);
         exit;
     }
-
     echo updateCartDisplay();
     exit;
 }

@@ -1,15 +1,28 @@
 tour_____________
 
 AGGIUNGERE ORARIO 
+biglietti tour problema salvataggio db
+
 
 shop_____________
 
-sposta tutti gli style fuori dal html
-aggiungere icone
-fixa css .checkout contenente "Procedi all'acquisto", "Svuota Carrello" -> needs to be hidden with 0 el in the cart
-aggiungi taglia
-Fai test su item fom shop (funziona a caso)
+aggiungere icone (lente nel searchbar, cart)
+aggiungi taglia (dovrei cambaire tutto)
+cambiare desc
+
+css bar sopra filters sotto
 
 payment__________
 
 sistema tabindex
+
+
+
+
+
+
+
+all______________
+
+css
+sposta tutti gli style fuori dal html
