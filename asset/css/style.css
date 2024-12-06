@@ -63,7 +63,7 @@ SEZIONE MENU
 */
 
 #menu{
-    float: left;
+    float: right;
     width: 18%;
 }
 
@@ -150,7 +150,7 @@ SEZIONE CONTENUTO
 main{
     background-color: var(--contentbgcolor);
     color: var(--contenttxtcolor);
-    margin-left: 20%;
+    margin-right: 20%;
     /*margin-right: 20%;*/
 }
 

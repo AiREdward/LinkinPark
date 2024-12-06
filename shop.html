@@ -35,8 +35,6 @@
             <div id="cart-items">
                 <!-- Gli articoli del carrello verranno aggiunti qui tramite JavaScript -->
             </div>
-            <button id="checkout-btn" onclick="handleCheckout()">Procedi all'acquisto</button>
-            <button id="clear-cart-btn" onclick="clearCart()">Svuota Carrello</button>
         </div>
     </nav>
 
@@ -305,42 +303,42 @@
         }
 
         document.addEventListener('DOMContentLoaded', () => {
-        loadCart();
+            loadCart();
 
-        document.querySelectorAll('.add-to-cart-btn').forEach(button => {
-            button.addEventListener('click', event => {
-                const card = event.target.closest('.card');
-                const itemName = card.querySelector('h3').textContent;
-                const itemPrice = parseFloat(card.querySelector('.price').textContent.replace('€', '').replace(',', '.'));
-                const quantity = parseInt(card.querySelector('.quantity-input').value, 10);
-                const itemImage = card.querySelector('img').src;
+            document.querySelectorAll('.add-to-cart-btn').forEach(button => {
+                button.addEventListener('click', event => {
+                    const card = event.target.closest('.card');
+                    const itemName = card.querySelector('h3').textContent;
+                    const itemPrice = parseFloat(card.querySelector('.price').textContent.replace('€', '').replace(',', '.'));
+                    const quantity = parseInt(card.querySelector('.quantity-input').value, 10);
+                    const itemImage = card.querySelector('img').src;
 
-                console.log('Adding item:', itemName, itemPrice, quantity, itemImage);
-                if (quantity > 0 && quantity <= 5) {
-                    addToCart(itemName, itemPrice, quantity, itemImage);
-                } else {
-                    alert("Seleziona una quantità valida.");
+                    console.log('Adding item:', itemName, itemPrice, quantity, itemImage);
+                    if (quantity > 0 && quantity <= 5) {
+                        addToCart(itemName, itemPrice, quantity, itemImage);
+                    } else {
+                        alert("Seleziona una quantità valida.");
+                    }
+                });
+            });
+
+            document.getElementById('cart-items').addEventListener('input', event => {
+                if (event.target.classList.contains('quantity-input-cart')) {
+                    const itemName = event.target.getAttribute('data-item');
+                    const newQuantity = parseInt(event.target.value, 10);
+                    console.log('Updating quantity for item:', itemName, newQuantity);
+                    const item = cartItems.find(i => i.name === itemName);
+
+                    if (item && newQuantity > 0) {
+                        item.quantity = newQuantity;
+                        updateSubtotal();
+                    }
                 }
             });
+
+            // Initial check to hide buttons if cart is empty
+            updateSubtotal();
         });
-
-        document.getElementById('cart-items').addEventListener('input', event => {
-            if (event.target.classList.contains('quantity-input-cart')) {
-                const itemName = event.target.getAttribute('data-item');
-                const newQuantity = parseInt(event.target.value, 10);
-                console.log('Updating quantity for item:', itemName, newQuantity);
-                const item = cartItems.find(i => i.name === itemName);
-
-                if (item && newQuantity > 0) {
-                    item.quantity = newQuantity;
-                    updateSubtotal();
-                }
-            }
-        });
-
-        // Initial check to hide buttons if cart is empty
-        updateSubtotal();
-    });
     </script>
 
     <!-- Script per la ricerca degli elementi -->
