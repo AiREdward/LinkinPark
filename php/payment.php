@@ -6,7 +6,8 @@ $utente_id = $_SESSION['user_id'];
 
 // Controlla se la richiesta è per ottenere i dati dell'utente
 if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['action']) && $_GET['action'] === 'getUser') {
-    // Recupera il nome e il cognome dell'utente
+    
+    // Recupera il nome e il cognome dell'utente dal database
     $sql = "SELECT nome, cognome FROM utenti WHERE id = ?";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("i", $utente_id);
