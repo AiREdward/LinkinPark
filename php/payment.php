@@ -1,5 +1,5 @@
 <?php
-session_start(); // Avvia la sessione
+session_start();
 
 include 'db_config.php';
 $utente_id = $_SESSION['user_id'];
@@ -44,7 +44,7 @@ foreach ($cartItems as $item) {
 $el_acquistati_str = implode(', ', $el_acquistati);
 
 // Inserisci i dati nel database
-$sql = "INSERT INTO transazioni (n_carta, nome, data_scadenza, ccv, costo_tot, el_acquistati, utente_id) VALUES ('$n_carta', '$nome', '$data_scadenza', '$ccv', '$subtotal', '$el_acquistati_str', '$utente_id')";
+$sql = "INSERT INTO transazioni (n_carta, nome, data_scadenza, ccv, totale, el_acquistati, utente_id) VALUES ('$n_carta', '$nome', '$data_scadenza', '$ccv', '$subtotal', '$el_acquistati_str', '$utente_id')";
 
 if ($conn->query($sql) === TRUE) {
     // Ottieni il percorso dinamico della directory principale
@@ -56,9 +56,8 @@ if ($conn->query($sql) === TRUE) {
     
     exit();
 } else {
-    echo "Errore durante la registrazione del pagamento: "  . $conn->error;  // Messaggio di errore dettagliato
+    echo "Errore durante la registrazione del pagamento: "  . $conn->error;
 }
 
-// Chiudi la connessione
 $conn->close();
 ?>
