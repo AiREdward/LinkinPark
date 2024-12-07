@@ -1,21 +1,30 @@
-# TecWeb24-25
+# 🌐 TecWeb24-25 - Linkin Park
 
-## Configurazione database
+## 📁 Configurazione del Database
 
-- mettere la cartella del progetto in xampp/htdocs
+1. Posiziona la cartella del progetto nella directory:  
+   `xampp/htdocs`
 
-- copia e incolla la creazione del db da file db.sql in localhost/phpmyadmin
+2. Importa il database:  
+   - Apri [phpMyAdmin](http://localhost/phpmyadmin).
+   - Copia e incolla il contenuto del file **`db.sql`** per creare il database.
 
-## Account
+---
 
-### Utente - Admin
-mail:     admin@test
-password: Admin123?
+## 🔑 Account di Test
 
-### Utente - cliente attivo
-mail:     user@test
-password: User123?
+### 🛠️ **Admin**
+- **Email:** `admin@test`  
+- **Password:** `Admin123?`
 
-### Utente - bloccato
-mail:     block@test
-password: Block123?
+---
+
+### 👤 **Utente Attivo**
+- **Email:** `user@test`  
+- **Password:** `User123?`
+
+---
+
+### 🚫 **Utente Bloccato**
+- **Email:** `block@test`  
+- **Password:** `Block123?`

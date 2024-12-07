@@ -31,16 +31,20 @@ CREATE TABLE transazioni (
     nome VARCHAR(100) NOT NULL,
     data_scadenza DATE NOT NULL,
     ccv VARCHAR(4) NOT NULL,
-    costo_tot DECIMAL(10, 2) NOT NULL,
+    totale DECIMAL(10, 2) NOT NULL,
     el_acquistati TEXT NOT NULL,
     utente_id INT NOT NULL,
     data_creazione TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (utente_id) REFERENCES utenti(id)
 );
 
-INSERT INTO transazioni (n_carta, nome, ccv, data_scadenza, costo_tot, el_acquistati, utente_id) 
+INSERT INTO transazioni (n_carta, nome, ccv, data_scadenza, totale, el_acquistati, utente_id) 
 VALUES 
-    ('1234567890123456', 'Mario Rossi', '123', '2024-12-31', 49.99, 'articolo1, articolo2', 1);
+    ('1234567890123456', 'Mario Rossi', '123', '2029-12-31', 49.99, 'articolo1, articolo2', 2),
+    ('1122334455667788', 'Mario Rossi', '200', '2030-08-20', 49.99, 'articolo1', 2),
+    ('9876543210987654', 'Mario Rossi', '300', '2026-01-10', 49.99, 'articolo1, articolo2, articolo2, articolo2', 2),
+    ('0000111122223333', 'Mario Rossi', '400', '2024-10-25', 49.99, 'articolo1, articolo2, articolo2', 2),
+    ('9999888877776666', 'Mario Rossi', '500', '2024-03-05', 49.99, 'articolo1', 2);
 
 CREATE TABLE tour (
     id INT AUTO_INCREMENT PRIMARY KEY,
@@ -80,3 +84,11 @@ CREATE TABLE biglietti (
     FOREIGN KEY (utente_id) REFERENCES utenti(id),
     FOREIGN KEY (tour_id) REFERENCES tour(id)
 );
+
+INSERT INTO biglietti (utente_id, tour_id)
+VALUES
+    ('2','2'),
+    ('2','3'),
+    ('2','8'),
+    ('2','7'),
+    ('2','4');

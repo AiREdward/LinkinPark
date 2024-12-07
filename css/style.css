@@ -62,24 +62,41 @@ SEZIONE BREADCRUM
 SEZIONE MENU
 */
 
-#menu{
-    float: right;
-    width: 18%;
+#menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 10px;
 }
 
-
-#menu a :link{
-    color: var(--linkcolor);
+#menu ul li {
+    display: inline;
 }
 
-#menu a :visited{
-    color: var(--visitedcolor);
+#menu ul li a {
+    text-decoration: none;
+    color: black;
+    padding: 5px 10px;
+    transition: background-color 0.3s;
 }
+
+#menu ul li a:hover {
+    background-color: #ddd;
+}
+
+/* Stile per la voce attiva */
+#menu ul li a.active {
+    font-weight: bold;
+    color: white;
+    background-color: #007BFF;
+    border-radius: 5px;
+}
+
 
 /*
 FILTEVS
 */ 
-
 
 .filters {
     display: flex;

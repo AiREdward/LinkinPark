@@ -29,7 +29,7 @@ if ($result->num_rows > 0) {
         header("Location: " . $base_url . "login.html");
         exit();
     } else {
-        echo "Errore nell'inserimento: " . $conn->error;  // Messaggio di errore dettagliato
+        echo "Errore nell'inserimento: " . $conn->error;
     }
 }
 
