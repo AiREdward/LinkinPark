@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="it">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,6 +15,7 @@
             height: 100vh;
             margin: 0;
             flex-direction: column;
+            background-color: #f9f9f9;
         }
 
         /* Menu Orizzontale */
@@ -23,10 +25,20 @@
             justify-content: center;
             width: 100%;
         }
+
         #menu button {
             margin-right: 20px;
             padding: 10px;
             cursor: pointer;
+            background-color: #007BFF;
+            border: none;
+            color: white;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        #menu button:hover {
+            background-color: #0056b3;
         }
 
         /* Contenitore per il contenuto */
@@ -34,15 +46,21 @@
             padding: 20px;
             border: 1px solid #ccc;
             box-sizing: border-box;
-            text-align: center; /* Centra il contenuto dentro il container */
-            width: 800px; /* Larghezza fissa */
-            height: 600px; /* Altezza fissa */
+            background-color: white;
+            text-align: center;
+            /* Centra il contenuto dentro il container */
+            width: 800px;
+            /* Larghezza fissa */
+            height: 600px;
+            /* Altezza fissa */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
         /* Titolo */
         h1 {
             text-align: center;
             width: 100%;
+            margin-bottom: 20px;
         }
 
         /* Messaggio di feedback */
@@ -52,15 +70,28 @@
             border: 1px solid #ccc;
             background-color: #f0f0f0;
         }
+
+        /* Stile per le statistiche */
+        .stats {
+            margin-top: 20px;
+            text-align: left;
+        }
+
+        .stats p {
+            font-size: 18px;
+            margin: 5px 0;
+            color: #333;
+        }
     </style>
 </head>
+
 <body>
     <h1>Dashboard</h1>
 
     <!-- Menu Orizzontale -->
     <div id="menu">
         <button id="userManagementBtn">Gestione Utenti</button>
-        <button id="otherFunctionBtn">Altra Funzione</button>
+        <button id="otherFunctionBtn">Statistiche</button>
     </div>
 
     <!-- Contenitore per il contenuto dinamico -->
@@ -76,92 +107,118 @@
             <div id="result"></div>
         </div>
 
-        <!-- Altra funzione -->
+        <!-- Altra funzione (Statistiche) -->
         <div id="otherFunction" style="display: none;">
-            <h2>Altra funzione qui</h2>
-            <p>Puoi aggiungere qui altre funzionalità.</p>
+            <h2>Statistiche delle Transazioni</h2>
+            <div class="stats" id="stats">
+                <!-- Le statistiche verranno caricate qui -->
+            </div>
         </div>
     </div>
 
     <script>
         // Gestisci il click sui bottoni del menu
-        document.getElementById('userManagementBtn').addEventListener('click', function() {
+        document.getElementById('userManagementBtn').addEventListener('click', function () {
             document.getElementById('userManagement').style.display = 'block';
             document.getElementById('otherFunction').style.display = 'none';
         });
 
-        document.getElementById('otherFunctionBtn').addEventListener('click', function() {
-            document.getElementById('otherFunction').style.display = 'block';
+        document.getElementById('otherFunctionBtn').addEventListener('click', function () {
             document.getElementById('userManagement').style.display = 'none';
-        });
+            document.getElementById('otherFunction').style.display = 'block';
 
-        // Gestisci la ricerca dell'utente con AJAX
-        document.getElementById('searchForm').addEventListener('submit', function(e) {
-            e.preventDefault(); // Impedisce il submit del form tradizionale
-
-            var email = document.getElementById('email').value;
-            var formData = new FormData();
-            formData.append('email', email);
-
-            // Esegui richiesta AJAX per la ricerca utente
+            // Carica le statistiche
             fetch('php/admin.php', {
                 method: 'POST',
-                body: formData
+                body: new URLSearchParams({ action: 'get_stats' })
             })
-            .then(response => response.json())
-            .then(data => {
-                var resultDiv = document.getElementById('result');
-                resultDiv.innerHTML = '';
+                .then(response => response.json())
+                .then(data => {
+                    console.log(data);  // Verifica la risposta nel browser
 
-                if (data.message) {
-                    resultDiv.innerHTML = '<div class="message">' + data.message + '</div>';
-                }
+                    const statsDiv = document.getElementById('stats');
+                    if (data.message) {
+                        statsDiv.innerHTML = `<p>${data.message}</p>`;
+                    } else {
+                        // Verifica che total_revenue sia un numero
+                        const totalRevenue = typeof data.total_revenue === 'number' ? data.total_revenue : 0;
 
-                if (data.user) {
-                    var user = data.user;
-                    resultDiv.innerHTML += `
-                        <form id="updateForm">
-                            <input type="hidden" name="user_id" value="${user.id}">
-                            <p>Nome: ${user.nome}</p>
-                            <p>Cognome: ${user.cognome}</p>
-                            <p>Email: ${user.email}</p>
-                            <label for="role">Ruolo:</label>
-                            <select name="role" id="role">
-                                <option value="utente" ${user.ruolo === 'utente' ? 'selected' : ''}>Utente</option>
-                                <option value="admin" ${user.ruolo === 'admin' ? 'selected' : ''}>Admin</option>
-                            </select>
-                            <label for="status">Stato:</label>
-                            <select name="status" id="status">
-                                <option value="attivo" ${user.stato === 'attivo' ? 'selected' : ''}>Attivo</option>
-                                <option value="bloccato" ${user.stato === 'bloccato' ? 'selected' : ''}>Bloccato</option>
-                            </select>
-                            <button type="submit">Aggiorna</button>
-                        </form>
-                    `;
+                        statsDiv.innerHTML = `
+            <p><strong>Totale Guadagno:</strong> €${totalRevenue.toFixed(2)}</p>
+            <p><strong>Numero di Transazioni:</strong> ${data.total_transactions}</p>
+            <p><strong>Articolo più Acquistato:</strong> ${data.most_bought_product} (${data.most_bought_count} volte)</p>
+        `;
+                    }
+                })
+                .catch(error => {
+                    console.error('Errore:', error);
+                    document.getElementById('stats').innerHTML = '<p>Errore nel caricamento delle statistiche.</p>';
+                });
 
-                    // Gestisci l'aggiornamento dell'utente
-                    document.getElementById('updateForm').addEventListener('submit', function(e) {
-                        e.preventDefault();
+        });
 
-                        var updateData = new FormData(this);
+        // Gestisci la ricerca dell'utente
+        document.getElementById('searchForm').addEventListener('submit', function (e) {
+            e.preventDefault();
 
-                        fetch('php/admin.php', {
-                            method: 'POST',
-                            body: updateData
-                        })
-                        .then(response => response.json())
-                        .then(data => {
-                            if (data.message) {
-                                resultDiv.innerHTML = '<div class="message">' + data.message + '</div>';
-                            }
+            const email = document.getElementById('email').value;
+            fetch('php/admin.php', {
+                method: 'POST',
+                body: new URLSearchParams({ action: 'find_user', email: email })
+            })
+                .then(response => response.json())
+                .then(data => {
+                    const resultDiv = document.getElementById('result');
+                    resultDiv.innerHTML = '';
+
+                    if (data.message) {
+                        resultDiv.innerHTML = `<div class="message">${data.message}</div>`;
+                    }
+
+                    if (data.user) {
+                        const user = data.user;
+                        resultDiv.innerHTML += `
+                            <form id="updateForm">
+                                <input type="hidden" name="user_id" value="${user.id}">
+                                <p>Nome: ${user.nome}</p>
+                                <p>Cognome: ${user.cognome}</p>
+                                <p>Email: ${user.email}</p>
+                                <label for="role">Ruolo:</label>
+                                <select name="role" id="role">
+                                    <option value="utente" ${user.ruolo === 'utente' ? 'selected' : ''}>Utente</option>
+                                    <option value="admin" ${user.ruolo === 'admin' ? 'selected' : ''}>Admin</option>
+                                </select>
+                                <label for="status">Stato:</label>
+                                <select name="status" id="status">
+                                    <option value="attivo" ${user.stato === 'attivo' ? 'selected' : ''}>Attivo</option>
+                                    <option value="bloccato" ${user.stato === 'bloccato' ? 'selected' : ''}>Bloccato</option>
+                                </select>
+                                <button type="submit">Aggiorna</button>
+                            </form>
+                        `;
+
+                        document.getElementById('updateForm').addEventListener('submit', function (e) {
+                            e.preventDefault();
+
+                            const formData = new FormData(this);
+                            formData.append('action', 'update_user'); // Aggiungi questa linea
+
+                            fetch('php/admin.php', {
+                                method: 'POST',
+                                body: formData
+                            })
+                                .then(response => response.json())
+                                .then(data => {
+                                    if (data.message) {
+                                        resultDiv.innerHTML = `<div class="message">${data.message}</div>`;
+                                    }
+                                });
                         });
-                    });
-                }
-            })
-            .catch(error => {
-                console.error('Error:', error);
-            });
+                    }
+                })
+                .catch(error => console.error('Errore:', error));
         });
     </script>
 </body>
+
 </html>
