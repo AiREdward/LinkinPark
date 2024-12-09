@@ -1,0 +1,24 @@
+footer ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 2px;
+}
+
+footer ul li {
+    display: inline;
+}
+
+#social img {
+    width: 10%;
+    /* height: 10%; */
+} 
+
+
+#social a:hover img {
+    opacity: 0.8;
+    transform: scale(1.08);
+    transition: transform 0.2s, opacity 0.2s;
+}
+    
