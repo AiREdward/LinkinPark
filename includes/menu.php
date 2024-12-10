@@ -3,8 +3,7 @@ $currentPage = basename($_SERVER['PHP_SELF']);
 ?>
 
 <header>
-    <h1 lang="en">Wishbone</h1>
-    <h2>I vicini ci odiano dal 2007</h2>
+    <h1 lang="en">Linkin Park</h1>
 </header>
 
 <nav id="breadcrumb">

@@ -3,33 +3,21 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>wishbone</title>
+    <title>Tour</title>
+    <meta author="linkins">
     <meta name="description" content="TODO">
     <meta name="keywords" content="TODO">
-    <meta author="">
+    <meta name="viewport" content="width=device-width">
+
     <link rel="stylesheet" href="css/style.css" media="screen">
     <link rel="stylesheet" href="css/timeline.css" media="screen">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 </head>
 
 <body>
-    <header>
-        <h1>wishbone</h1>
-        <h2>I vicini ci odiano dal 2007</h2>
-    </header>
-    <nav id="breadcrumb">
-        <p>Ti trovi in <span lang="Home">Tour</span></p>
-    </nav>
-    <nav id="menu">
-        <ul>
-            <li><a href="index.html" lang="en">Home</a></li>
-            <li><a href="aboutus.html" lang="en">About Us</a></li>
-            <li><a href="journal.html" lang="en">Journal</a></li>
-            <li id="currentLink" lang="en">Tour</li>
-            <li><a href="music.html" lang="en">Music</a></li>
-            <li><a href="shop.html" lang="en">Shop</a></li>
-        </ul>
-    </nav>
+
+    <?php include 'includes/menu.php'; ?>
+    
     <main>
         <h3>Date in Europa</h3>
         <dl id="EuropeanTour">

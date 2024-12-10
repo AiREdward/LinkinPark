@@ -17,25 +17,9 @@
 </head>
 
 <body>
-    <header>
-        <h1 lang="en">Linkin Park</h1>
-    </header>
 
-    <nav id="breadcrumb">
-        <p>Ti trovi in <span lang="en">Home</span></p>
-    </nav>
+    <?php include 'includes/menu.php'; ?>
 
-    <nav id="menu">
-        <ul>
-            <li id="currentLink" lang="en">Home</li>
-            <li><a href="aboutus.html" lang="en">About Us</a></li>
-            <li><a href="journal.html" lang="en">Journal</a></li>
-            <li><a href="tour.html" lang="en">Tour</a></li>
-            <li><a href="music.html" lang="en">Music</a></li>
-            <li><a href="shop.html" lang="en">Shop</a></li>
-            <li><a href="login.html" lang="en">Login</a></li>
-        </ul>
-    </nav>
     <main>
         <h1><span lang="en">Homepage</span></h1>
         <!-- grande immagine del gruppo -->
@@ -62,13 +46,13 @@
         </div>
 
         <!-- Popup per account -->
-        <div id="accountPopup" class="hidden">
+        <!-- <div id="accountPopup" class="hidden">
             <p>Sei loggato come: <span id="accountEmail"></span></p>
             <button id="logoutButton">Log Out</button>
-        </div>
+        </div> -->
     </main>
 
-    <script src="js/index.js"></script>
+    <!-- <script src="js/index.js"></script> -->
 
     <?php include 'includes/footer.php'; ?>
 
