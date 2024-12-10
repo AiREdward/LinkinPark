@@ -14,27 +14,6 @@
     <link rel="stylesheet" href="css/social.css" media="screen">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="stylesheet" href="css/mobile.css" media="screen and (max-width:600px)">
-    
-<!--
-    <style>
-        #accountPopup {
-            position: fixed;
-            top: 20%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            padding: 20px;
-            background-color: white;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-            border-radius: 10px;
-            text-align: center;
-            z-index: 1000;
-        }
-
-        .hidden {
-            display: none;
-        }
-    </style>
--->
 </head>
 
 <body>
@@ -89,36 +68,9 @@
         </div>
     </main>
 
-    <footer>
-        <ul id="social">
-            <li>
-                <a href="https://www.instagram.com/wishbone.band/" target="_blank">
-                    <img id="instagram" src="asset/img/social/instagramLogo.webp" alt="Instagram logo">
-                    <!-- alt: link per instagram o instagram logo-->
-                </a>
-            </li>
-            <li>
-                <a href="https://www.youtube.com/channel/UCGJWoT7QmM3jA1qcVlZPPIQ" target="_blank">
-                    <img id="youtube" src="asset/img/social/youtubeLogo.webp" alt="YouTube logo">
-                </a>
-            </li>
-            <li>
-                <a href="https://open.spotify.com/artist/1JfuoWKSzEiJBqScGT5tvN" target="_blank">
-                    <img id="spotify" src="asset/img/social/spotifyLogo.webp" alt="Spotify logo">
-                </a>
-            </li>
-            <li>
-                <a href="https://music.apple.com/us/artist/wishbone/1669207027" target="_blank">
-                    <img id="appleMusic" src="asset/img/social/appleMusicLogo.webp" alt="Apple Music logo">
-                </a>
-            </li>
-        </ul>
-        <img class="imgValidCode" src="asset/img/codice valido/valid-xhtml10.png" alt="HTML valido">
-        <p>linkins - <span lang="en">All rights Reserved</span></p>
-        <img class="imgValidCode" src="asset/img/codice valido/vcss-blue.gif" alt="CSS valido">
-    </footer>
+    <script src="js/index.js"></script>
 
-    <!-- <script src="js/index.js"></script> -->
+    <?php include 'includes/footer.php'; ?>
 
 </body>
 </html>
