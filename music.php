@@ -2,34 +2,21 @@
 <html lang="it">
     <head>
         <meta charset="UTF-8">
-        <title>Music</title>
+        <title>Musica</title>
         <meta name="description" content="TODO">
         <meta name="keywords" content="TODO">
         <meta author="linkins"> 
         <meta name="viewport" content="width=device-width">
 
-
         <link rel="stylesheet" href="css/style.css" media="screen">
         <link rel="stylesheet" href="css/social.css" media="screen">
         <link rel="preconnect" href="https://fonts.googleapis.com">
     </head>
+    
     <body>
-        <header>
-            <h1 lang="en">Linkin Park</h1>
-        </header>
-        <nav id="breadcrumb">
-            <p>Ti trovi in <span lang="en">Music</span></p>
-        </nav>
-        <nav id="menu">
-            <ul>
-                <li><a href="index.html" lang="en">Home</a></li>
-                <li><a href="aboutus.html" lang="en">About Us</a></li>
-                <li><a href="journal.html" lang="en">Journal</a></li>
-                <li><a href="tour.html" lang="en">Tour</a></li>
-                <li id="currentLink" lang="en">Music</li>
-                <li><a href="shop.html" lang="en">Shop</a></li>
-            </ul>
-        </nav>
+
+        <?php include 'includes/menu.php'; ?>
+
         <main>
             <h2>Discografia</h2>
 
@@ -62,7 +49,6 @@
                 </dd>
             </dl>
 
-
             <!-- One More Light -->
             <h3>One More Light</h3>
             <img src="asset/img/album/One More Light.jpeg" alt="">
@@ -90,7 +76,6 @@
                     </ol>
                 </dd>
             </dl>
-
 
             <!-- living things -->
             <h3>Living Things</h3>
@@ -121,8 +106,6 @@
                     </ol>
                 </dd>
             </dl>
-
-
 
             <!-- A Thousand Suns -->
             <h3>A Thousand Suns</h3>
@@ -157,8 +140,6 @@
                 </dd>
             </dl>
 
-
-
             <!-- Minutes to Midnight -->
             <h3>Minutes to Midnight</h3>
             <img src="asset/img/album/Minutes to Midnight.jpeg" alt="">
@@ -188,9 +169,6 @@
                     </ol>
                 </dd>
             </dl>
-
-
-
 
             <!-- Meteora -->
             <h3>Meteora</h3>
@@ -222,8 +200,6 @@
                     </ol>
                 </dd>
             </dl>
-
-
 
             <!-- Hybrid Theory -->
             <h3>Hybrid Theory</h3>
