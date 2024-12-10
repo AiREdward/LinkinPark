@@ -3,15 +3,19 @@
 <html lang="it">
 
 <head>
+    <title lang="en">Linkin Park</title>
     <meta charset="UTF-8">
     <meta name="description" content="TODO">
-    <meta name="author" content="Nome del nostro team">
+    <meta name="keywords" content="TODO">
+    <meta name="author" content="linkins">
     <meta name="viewport" content="width=device-width">
 
     <link rel="stylesheet" href="css/style.css" media="screen">
+    <link rel="stylesheet" href="css/social.css" media="screen">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="stylesheet" href="css/mobile.css" media="screen and (max-width:600px)">
-    <title lang="en">Wishbone</title>
+    
+<!--
     <style>
         #accountPopup {
             position: fixed;
@@ -30,12 +34,12 @@
             display: none;
         }
     </style>
+-->
 </head>
 
 <body>
     <header>
-        <h1 lang="en">Wishbone</h1>
-        <h2>I vicini ci odiano dal 2007</h2>
+        <h1 lang="en">Linkin Park</h1>
     </header>
 
     <nav id="breadcrumb">
@@ -53,9 +57,40 @@
             <li><a href="login.html" lang="en">Login</a></li>
         </ul>
     </nav>
+    <main>
+        <h1><span lang="en">Homepage</span></h1>
+        <!-- grande immagine del gruppo -->
+        <div id="homeMusic">
+            <!-- immagine ultimo album -->
+            <img src="asset/img/album/From Zero.jpeg" alt="">
+            <h2>From Zero</h2>
+            <!-- <button type="button" class="link" onclick="location.href='music.html'">Scopri di più</button>
+            link?? -->
+            <p>Ascolta su <a href="https://open.spotify.com/album/4R6FV9NSzhPihHR0h4pI93" target="_blank" lang="en">Spotify</a></p>
+        </div>
+        <div id="homeTour">
+            <!-- immagine ultimo evento -->
+            <img src="asset/img/tour/foto tour computer.webp" alt="">
+            <h2>From Zero Tour</h2>
+            <button type="button" class="link" onclick="location.href='tour.html'">Partecipa</button>
+        </div>
+        <div id="homeJournal">
+            <!-- immagine ultima entrata Journal -->
+            <img src="asset/img/diario/LP riunione articolo5.jpg" alt="immagine del gruppo">
+            <h2>Il nuovo capitolo con Emily Armstrong e Colin Brittain</h2>
+            <button type="button" class="link" onclick="location.href='journal.html'">Scopri di più</button>
+            <!-- trovare una frase migliore per il button -->
+        </div>
 
-    <nav id="social">
-        <ul>
+        <!-- Popup per account -->
+        <div id="accountPopup" class="hidden">
+            <p>Sei loggato come: <span id="accountEmail"></span></p>
+            <button id="logoutButton">Log Out</button>
+        </div>
+    </main>
+
+    <footer>
+        <ul id="social">
             <li>
                 <a href="https://www.instagram.com/wishbone.band/" target="_blank">
                     <img id="instagram" src="asset/img/social/instagramLogo.webp" alt="Instagram logo">
@@ -78,37 +113,12 @@
                 </a>
             </li>
         </ul>
-    </nav>
-    <main>
-        <h1><span lang="en">Homepage</span></h1>
-        <!-- grande immagine del gruppo -->
-        <div id="homeMusic">
-            <!-- immagine ultimo album -->
-            <h2>Wishbone</h2>
-            <button type="button" class="link" onclick="location.href='music.html'">Scopri di più</button>
-            <!-- link?? -->
-        </div>
-        <div id="homeTour">
-            <!-- immagine ultimo evento -->
-            <h2>XX evento</h2>
-            <button type="button" class="link" onclick="location.href='tour.html'">Partecipa</button>
-        </div>
-        <div id="homeJournal">
-            <!-- immagine ultima entrata Journal -->
-            <h2>XX entrata</h2>
-            <button type="button" class="link" onclick="location.href='shop.html'">Scopri di più</button>
-            <!-- trovare una frase migliore per il button -->
-        </div>
+        <img class="imgValidCode" src="asset/img/codice valido/valid-xhtml10.png" alt="HTML valido">
+        <p>linkins - <span lang="en">All rights Reserved</span></p>
+        <img class="imgValidCode" src="asset/img/codice valido/vcss-blue.gif" alt="CSS valido">
+    </footer>
 
-        <!-- Popup per account -->
-        <div id="accountPopup" class="hidden">
-            <p>Sei loggato come: <span id="accountEmail"></span></p>
-            <button id="logoutButton">Log Out</button>
-        </div>
-    </main>
-
-    <script src="js/index.js"></script>
+    <!-- <script src="js/index.js"></script> -->
 
 </body>
-
 </html>
