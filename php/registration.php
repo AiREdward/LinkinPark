@@ -1,5 +1,5 @@
 <?php
-include 'db_config.php';
+include '../includes/db_config.php';
 
 // Riceve i dati dal form di registrazione
 $nome = $_POST['nome'];

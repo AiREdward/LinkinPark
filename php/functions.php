@@ -1,5 +1,5 @@
 <?php
-include 'db_config.php';
+include '../includes/db_config.php';
 
 /**
  * Aggiorna il ruolo e lo stato di un utente

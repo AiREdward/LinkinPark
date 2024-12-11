@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-include 'db_config.php';
+include '../includes/db_config.php';
 
 // Recupera i dati dal form
 $email = $_POST['email'];

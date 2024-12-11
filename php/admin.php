@@ -1,5 +1,5 @@
 <?php
-include 'db_config.php';
+include '../includes/db_config.php';
 include 'functions.php'; // File dove sono definite le funzioni
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
