@@ -1,15 +1,20 @@
 <?php
-
 $servername = "localhost";
 $username = "root";
-$password = "";
+$password = ""; // Inserisci la tua password
 $dbname = "lp_db";
 
-// Crea una connessione
-$conn = new mysqli($servername, $username, $password, $dbname);
+try {
+    // Creazione della connessione
+    $conn = new mysqli($servername, $username, $password, $dbname);
 
-// Controlla la connessione
-if ($conn->connect_error) {
-    die("Connessione fallita: " . $conn->connect_error);
+    // Controllo errori
+    if ($conn->connect_error) {
+        throw new Exception("Errore di connessione al database: " . $conn->connect_error);
+    }
+} catch (Exception $e) {
+
+    header("Location: ../error.html?error=db_unreachable");
+    exit();
 }
 ?>

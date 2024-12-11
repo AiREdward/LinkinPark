@@ -21,7 +21,7 @@
                     <i class="fab fa-instagram" style="font-size: 24px; margin-right: 8px;"></i> Instagram
                 </a>
                 <br>
-                <a href="https://www.youtube.com/channel/UCGJWoT7QmM3jA1qcVlZPPIQ" target="_blank"
+                <a href="https://www.youtube.com/channel/UCZU9T1ceaOgwfLRq7OKFU4Q" target="_blank"
                     style="margin-right: 10px; color: #aaa; text-decoration: none;">
                     <i class="fab fa-youtube" style="font-size: 24px; margin-right: 8px;"></i> YouTube
                 </a>
