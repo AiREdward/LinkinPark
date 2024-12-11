@@ -58,7 +58,8 @@
                 <strong>W3C</strong>.
             </p>
             <div>
-                <img class="imgValidCode" src="../asset/img/codice valido/valid-xhtml10.png" alt="W3C HTML5" style="width: 50px; height: auto; vertical-align: middle; margin-right: 15px;">
+                <img class="imgValidCode" src="asset/img/codice_valido/valid-xhtml10.png" alt="W3C HTML5" style="width: 50px; height: auto; vertical-align: middle; margin-right: 15px;">
+                <img class="imgValidCss" src="asset/img/codice_valido/vcss-blue.gif" alt="W3C CSS" style="width: 50px; height: auto; vertical-align: middle; margin-right: 15px;">
                 <img src="ssl-icon.png" alt="SSL" style="width: 40px; height: auto; vertical-align: middle; margin-right: 15px;">
                 <img src="pci-compliant-icon.png" alt="PCI DSS Compliant" style="width: 50px; height: auto; vertical-align: middle;">
             </div>
