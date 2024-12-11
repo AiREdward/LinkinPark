@@ -2,31 +2,19 @@
 <html lang="it">
     <head>
         <meta charset="UTF-8">
-        <title lang="en">wishbone</title>
+        <title>Chi siamo</title>
+        <meta author="linkins">
         <meta name="description" content="TODO">
         <meta name="keywords" content="TODO">
-        <meta author="TODO"> 
-        <link rel="stylesheet" href="css/style.css" media="screen">
+        <meta name="viewport" content="width=device-width">
+
+        <link rel="stylesheet" href="asset/css/style.css" media="screen">
         <link rel="preconnect" href="https://fonts.googleapis.com">
     </head>
     <body>
-        <header>
-            <h1  lang="en">wishbone</h1>
-            <h2>I vicini ci odiano dal 2007</h2>
-        </header>
-        <nav id="breadcrumb">
-            <p>Ti trovi in <span lang="en">About Us</span></p>
-        </nav>
-        <nav id="menu">
-            <ul>
-                <li><a href="index.html" lang="en">Home</a></li>
-                <li id="currentLink" lang="en">About Us</li>
-                <li><a href="journal.html" lang="en">Journal</a></li>
-                <li><a href="tour.html" lang="en">Tour</a></li>
-                <li><a href="music.html" lang="en">Music</a></li>
-                <li><a href="shop.html" lang="en">Shop</a></li>
-            </ul>
-        </nav>
+
+        <?php include 'includes/menu.php'; ?>
+        
         <main>
             <h2>Chi siamo</h2>
             <p>coaimgniatvheiornhvmcigrapimercghiauhcvbIPNMCiNAVONLAKBOKonpmaercmgohuaomeghgaegahaha</p>
@@ -91,9 +79,8 @@
                 <dd>descrizione premio</dd>
             </dl>
         </main>
-        <footer>
-            <img class="imgValidCode" src="asset/img/valid-xhtml10.png" alt="HTML valido">
-            <p>Ombretta Gaggi, Cactus &amp; Federazione Italiana Pallavolo - <span lang="en">All rights Reserved</span></p>
-        </footer>
+
+        <?php include 'includes/footer.php'; ?>
+        
     </body>
 </html>

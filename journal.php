@@ -1,43 +1,23 @@
 <!DOCTYPE html>
 <html lang="it">
 
-
 <head>
     <meta charset="UTF-8">
-
+    <title>Diario</title>
     <meta name="keywords" content="TODO">
     <meta name="description" content="TODO">
-    <meta name = "author" content = "Nome del nostro team">
-    <meta name="viewport" content="width=device-width">   <!--aggiunto. Aggiungerlo in ogni file?-->
+    <meta name = "author" content = "linkins">
+    <meta name="viewport" content="width=device-width">
 
-    <link rel="stylesheet" href="css/style.css" media="screen">
+    <link rel="stylesheet" href="asset/css/style.css" media="screen">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="stylesheet" href="asset/css/mobile.css" media="screen and (max-width:600px)">
 
 </head>
 
 <body>
-    <header>
-        <h1>Conoscete ci</h1>
-        <h2>dal nostro primo...al nostro...</h2>
-    </header>
-    <hr>
-    
-    <nav id="breadcrumb">   <!--ma breadcrumb serve solo per siti con struttura piu' complicata?-->
-        <p>Ti trovi in <span lang="en">Journal</span></p>
-    </nav>
 
-    <nav id="menu">
-        <ul>
-            <li><a href="index.html" lang="en">Home</a></li>     <!--ma perche' abbiamo messo tutti i nomi in inglese?-->
-            <li><a href="aboutus.html" lang="en">About Us</a></li>
-            <li id="currentLink" lang="en">Journal</li>
-            <li><a href="tour.html" lang="en">Tour</a></li>
-            <li><a href="music.html" lang="en">Music</a></li>
-            <li><a href="shop.html" lang="en">Shop</a></li>
-        </ul>
-
-    </nav>
+    <?php include 'includes/menu.php'; ?>
 
     <main>
         <dl id = "storia">
@@ -77,10 +57,8 @@
     </main>
 
     <hr>
-    <footer>
-        <img class="imgValidCode" src="asset/img/valid-xhtml10.png" alt="HTML valido">
-        <p>Ombretta Gaggi, Cactus &amp; Federazione Italiana Pallavolo - <span lang="en">All rights Reserved</span></p>
-    </footer>
+    
+    <?php include 'includes/footer.php'; ?>
 
 </body>
 

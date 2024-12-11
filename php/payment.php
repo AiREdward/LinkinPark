@@ -51,7 +51,7 @@ $stmt->bind_param("ssssiss", $n_carta, $nome, $data_scadenza, $ccv, $subtotal, $
 if ($stmt->execute()) {
     // Ottieni il percorso dinamico della directory principale
     $base_url = "http://" . $_SERVER['HTTP_HOST'] . dirname(dirname($_SERVER['SCRIPT_NAME'])) . "/";
-    header("Location: " . $base_url . 'shop.html'); 
+    header("Location: " . $base_url . 'shop.php'); 
 
     // Cancella il carrello
     unset($_SESSION['cart']);
