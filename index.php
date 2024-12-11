@@ -10,10 +10,10 @@
     <meta name="author" content="linkins">
     <meta name="viewport" content="width=device-width">
 
-    <link rel="stylesheet" href="css/style.css" media="screen">
+    <link rel="stylesheet" href="asset/css/style.css" media="screen">
     <link rel="stylesheet" href="css/social.css" media="screen">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="stylesheet" href="css/mobile.css" media="screen and (max-width:600px)">
+    <link rel="stylesheet" href="asset/css/mobile.css" media="screen and (max-width:600px)">
 </head>
 
 <body>

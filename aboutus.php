@@ -8,7 +8,7 @@
         <meta name="keywords" content="TODO">
         <meta name="viewport" content="width=device-width">
 
-        <link rel="stylesheet" href="css/style.css" media="screen">
+        <link rel="stylesheet" href="asset/css/style.css" media="screen">
         <link rel="preconnect" href="https://fonts.googleapis.com">
     </head>
     <body>
@@ -79,9 +79,8 @@
                 <dd>descrizione premio</dd>
             </dl>
         </main>
-        <footer>
-            <img class="imgValidCode" src="asset/img/valid-xhtml10.png" alt="HTML valido">
-            <p>Ombretta Gaggi, Cactus &amp; Federazione Italiana Pallavolo - <span lang="en">All rights Reserved</span></p>
-        </footer>
+
+        <?php include 'includes/footer.php'; ?>
+        
     </body>
 </html>

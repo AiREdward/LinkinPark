@@ -4,31 +4,20 @@
 <head>
     <meta charset="UTF-8">
     <title>wishbone</title>
+    <meta author="linkins">
     <meta name="description" content="TODO">
     <meta name="keywords" content="TODO">
-    <meta author="">
-    <link rel="stylesheet" href="css/style.css" media="screen">
+    <meta name="viewport" content="width=device-width">
+    
+    <link rel="stylesheet" href="asset/css/style.css" media="screen">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 </head>
 
 <body>
-    <header>
-        <h1>Linkin Park</h1>
-        <h2>I vicini ci odiano dal 2007</h2>
-    </header>
-    <nav id="breadcrumb">
-        <p>Ti trovi in <span lang="Home">Shop</span></p>
-    </nav>
+
+    <?php include 'includes/menu.php'; ?>
 
     <nav id="menu">
-        <ul>
-            <li><a href="index.html" lang="en">Home</a></li>
-            <li><a href="aboutus.html" lang="en">About Us</a></li>
-            <li><a href="journal.html" lang="en">Journal</a></li>
-            <li><a href="tour.html" lang="en">Tour</a></li>
-            <li><a href="music.html" lang="en">Music</a></li>
-            <li id="currentLink" lang="en">Shop</li>
-        </ul>
         <!-- Inizio del Carrello -->
         <div id="cart">
             <h3>Carrello</h3>
@@ -465,6 +454,8 @@
             }
         }
     </script>
+
+    <?php include 'includes/footer.php'; ?>
 
 </body>
 

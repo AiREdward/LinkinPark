@@ -9,8 +9,8 @@
     <meta name="keywords" content="TODO">
     <meta name="viewport" content="width=device-width">
 
-    <link rel="stylesheet" href="css/style.css" media="screen">
-    <link rel="stylesheet" href="css/timeline.css" media="screen">
+    <link rel="stylesheet" href="asset/css/style.css" media="screen">
+    <link rel="stylesheet" href="asset/css/timeline.css" media="screen">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 </head>
 

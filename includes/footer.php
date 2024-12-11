@@ -16,7 +16,7 @@
         <div style="min-width: 200px;">
             <h3 style="font-size: 20px; color: #fff; margin-bottom: 15px;">Seguici</h3>
             <div>
-                <a href="https://www.instagram.com/wishbone.band/" target="_blank"
+                <a href="https://www.instagram.com/linkinpark/" target="_blank"
                     style="margin-right: 10px; color: #aaa; text-decoration: none;">
                     <i class="fab fa-instagram" style="font-size: 24px; margin-right: 8px;"></i> Instagram
                 </a>

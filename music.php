@@ -8,8 +8,8 @@
         <meta author="linkins"> 
         <meta name="viewport" content="width=device-width">
 
-        <link rel="stylesheet" href="css/style.css" media="screen">
-        <link rel="stylesheet" href="css/social.css" media="screen">
+        <link rel="stylesheet" href="asset/css/style.css" media="screen">
+        <link rel="stylesheet" href="asset/css/social.css" media="screen">
         <link rel="preconnect" href="https://fonts.googleapis.com">
     </head>
     
@@ -231,33 +231,8 @@
                 </dd>
             </dl>
         </main>
-        <footer>
-            <ul id="social">
-                <li>
-                    <a href="https://www.instagram.com/wishbone.band/" target="_blank">
-                        <img id="instagram" src="asset/img/social/instagramLogo.webp" alt="Instagram logo">
-                        <!-- alt: link per instagram o instagram logo-->
-                    </a>
-                </li>
-                <li>
-                    <a href="https://www.youtube.com/channel/UCGJWoT7QmM3jA1qcVlZPPIQ" target="_blank">
-                        <img id="youtube" src="asset/img/social/youtubeLogo.webp" alt="YouTube logo">
-                    </a>
-                </li>
-                <li>
-                    <a href="https://open.spotify.com/artist/1JfuoWKSzEiJBqScGT5tvN" target="_blank">
-                        <img id="spotify" src="asset/img/social/spotifyLogo.webp" alt="Spotify logo">
-                    </a>
-                </li>
-                <li>
-                    <a href="https://music.apple.com/us/artist/wishbone/1669207027" target="_blank">
-                        <img id="appleMusic" src="asset/img/social/appleMusicLogo.webp" alt="Apple Music logo">
-                    </a>
-                </li>
-            </ul>
-            <img class="imgValidCode" src="asset/img/codice valido/valid-xhtml10.png" alt="HTML valido">
-            <p>linkins - <span lang="en">All rights Reserved</span></p>
-            <img class="imgValidCode" src="asset/img/codice valido/vcss-blue.gif" alt="CSS valido">
-        </footer>
+
+        <?php include 'includes/footer.php'; ?>
+        
     </body>
 </html>
