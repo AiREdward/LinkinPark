@@ -7,9 +7,9 @@ if (!isset($_SESSION['cart'])) {
 }
 
 // Function to add item to cart
-function addToCart($itemName, $itemPrice, $quantity, $itemImage) {
+function addToCart($itemName, $itemPrice, $quantity, $itemImage, $itemSize) {
     foreach ($_SESSION['cart'] as &$item) {
-        if ($item['name'] === $itemName) {
+        if ($item['name'] === $itemName && $item['size'] === $itemSize) {
             $item['quantity'] += $quantity;
             if ($item['quantity'] > 5) {
                 $item['quantity'] = 5;
@@ -24,7 +24,8 @@ function addToCart($itemName, $itemPrice, $quantity, $itemImage) {
         'name' => $itemName,
         'price' => $itemPrice,
         'quantity' => $quantity,
-        'image' => $itemImage
+        'image' => $itemImage,
+        'size' => $itemSize
     ];
 }
 
@@ -49,20 +50,23 @@ function updateCartDisplay() {
         $cartHtml = '<p>Carrello Vuoto</p>';
     } else {
         foreach ($cartItems as $item) {
+            $sizeHtml = '';
+            if ($item['size'] !== '') {
+                $sizeHtml = ' - Taglia: ' . $item['size'];
+            }
             $cartHtml .= '
                 <div class="cart-item">
                     <img src="' . $item['image'] . '" alt="' . $item['name'] . '" class="cart-item-image">
-                    <p>' . $item['name'] . '</p>
-                    <p>Quantità: <input type="number" value="' . $item['quantity'] . '" min="1" max="5" class="quantity-input-cart" data-item="' . $item['name'] . '"></p>
+                    <p>' . $item['name'] . $sizeHtml . '</p>
+                    <p>Quantità: ' . $item['quantity'] . '</p>
                     <p>Prezzo: €' . number_format($item['price'], 2) . '</p>
-                    <button class="remove-btn" onclick="removeFromCart(\'' . $item['name'] . '\')">Rimuovi</button>
+                    <button class="remove-btn" onclick="removeFromCart(\'' . $item['name'] . '\', \'' . $item['size'] . '\')">Rimuovi</button>
                 </div>';
             $subtotal += $item['price'] * $item['quantity'];
         }
         $cartHtml .= '<p id="subtotal">Subtotale: €' . number_format($subtotal, 2) . '</p>';
         $cartHtml .= '<button id="checkout-btn" onclick="handleCheckout()">Procedi all\'acquisto</button>';
         $cartHtml .= '<button id="clear-cart-btn" onclick="clearCart()">Svuota Carrello</button>';
-
     }
 
     return $cartHtml;
@@ -75,11 +79,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $itemPrice = $_POST['itemPrice'] ?? 0;
     $quantity = $_POST['quantity'] ?? 0;
     $itemImage = $_POST['itemImage'] ?? '';
+    $itemSize = $_POST['itemSize'] ?? '';
 
     if ($action === 'add') {
-        addToCart($itemName, $itemPrice, $quantity, $itemImage);
+        addToCart($itemName, $itemPrice, $quantity, $itemImage, $itemSize);
     } elseif ($action === 'remove') {
-        removeFromCart($itemName);
+        removeFromCart($itemName, $itemSize);
     } elseif ($action === 'clear') {
         clearCart();
     } elseif ($action === 'load') {

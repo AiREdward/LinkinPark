@@ -106,7 +106,8 @@
                     <img src="${item.image}" alt="${item.name}" class="product-image">
                     <h3 class="bought-items">${item.name}</h3>
                     <p class="bought-items description">Quantità: ${item.quantity}</p>
-                    <p class="bought-items price">Prezzo: €${itemPrice.toFixed(2)} x ${item.quantity} = €${itemTotal.toFixed(2)}</p>
+                    <p class="bought-items description">Taglia: ${item.size}</p>
+                    <p class="bought-items price">Prezzo: €${itemPrice.toFixed(2)} cad.</p>
                 `;
                 boughtItemsContainer.appendChild(itemElement);
             });
