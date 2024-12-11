@@ -6,7 +6,6 @@ $utente_id = $_SESSION['user_id'];
 
 // Controlla se la richiesta è per ottenere i dati dell'utente
 if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['action']) && $_GET['action'] === 'getUser') {
-    
     // Recupera il nome e il cognome dell'utente dal database
     $sql = "SELECT nome, cognome FROM utenti WHERE id = ?";
     $stmt = $conn->prepare($sql);
@@ -37,16 +36,19 @@ $subtotal = 0;
 $el_acquistati = [];
 
 foreach ($cartItems as $item) {
-    $subtotal += $item['price'] * $item['quantity'];
-    $el_acquistati[] = $item['name'] . ' x ' . $item['quantity'] . ' - €' . number_format($item['price'] * $item['quantity'], 2);
+    $itemTotal = $item['price'] * $item['quantity'];
+    $subtotal += $itemTotal;
+    $el_acquistati[] = $item['name'] . "\nQuantità: " . $item['quantity'] . "\nTaglia: " . $item['size'] . "\nPrezzo: €" . number_format($item['price'], 2) . " cad.";
 }
 
-$el_acquistati_str = implode(', ', $el_acquistati);
+$el_acquistati_str = implode("\n\n", $el_acquistati);
 
 // Inserisci i dati nel database
-$sql = "INSERT INTO transazioni (n_carta, nome, data_scadenza, ccv, totale, el_acquistati, utente_id) VALUES ('$n_carta', '$nome', '$data_scadenza', '$ccv', '$subtotal', '$el_acquistati_str', '$utente_id')";
+$sql = "INSERT INTO transazioni (n_carta, nome, data_scadenza, ccv, totale, el_acquistati, utente_id) VALUES (?, ?, ?, ?, ?, ?, ?)";
+$stmt = $conn->prepare($sql);
+$stmt->bind_param("ssssiss", $n_carta, $nome, $data_scadenza, $ccv, $subtotal, $el_acquistati_str, $utente_id);
 
-if ($conn->query($sql) === TRUE) {
+if ($stmt->execute()) {
     // Ottieni il percorso dinamico della directory principale
     $base_url = "http://" . $_SERVER['HTTP_HOST'] . dirname(dirname($_SERVER['SCRIPT_NAME'])) . "/";
     header("Location: " . $base_url . 'shop.html'); 
@@ -56,7 +58,7 @@ if ($conn->query($sql) === TRUE) {
     
     exit();
 } else {
-    echo "Errore durante la registrazione del pagamento: "  . $conn->error;
+    echo "Errore durante la registrazione del pagamento: "  . $stmt->error;
 }
 
 $conn->close();
