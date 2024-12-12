@@ -7,24 +7,18 @@ biglietti tour problema salvataggio db
 shop_____________
 
 aggiungere icone (lente nel searchbar, cart)
-aggiungi taglia (dovrei cambaire tutto)
-cambiare desc
-sistema quantity nel cart
-
 css bar sopra filters sotto
 
-togli funzioni superflue per quantity item in cart
 
 payment__________
 
 sistema tabindex + selectable text
-
+aggiorna salvataggio nel db
 
 
 footer___________
 
 fixa css + class per <footer></footer>
-
 
 
 all______________
