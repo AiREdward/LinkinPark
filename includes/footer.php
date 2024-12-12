@@ -49,8 +49,7 @@
         <div style="min-width: 250px;">
             <h3>Linkin Park</h2>
             <p style="color: #aaa; line-height: 1.6;">
-                Siamo una band che mescola energia, passione e musica per regalarti emozioni indimenticabili.
-                Seguici per rimanere aggiornato sui prossimi eventi e novità!
+                Iconica band che combina rock e innovazione. Scopri musica senza tempo e resta aggiornato sulle novità!
             </p>
         </div>
 

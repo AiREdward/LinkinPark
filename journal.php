@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="asset/css/style.css" media="screen">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="stylesheet" href="asset/css/mobile.css" media="screen and (max-width:600px)">
-
+    <link rel="icon" href="asset/img/favicon.ico" type="image/x-icon">
 </head>
 
 <body>
