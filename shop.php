@@ -18,13 +18,10 @@
 
     <?php include 'includes/menu.php'; ?>
 
-    <nav id="menu">
-        <!-- Inizio del Carrello -->
-        <div id="cart">
-            <h3>Carrello</h3>
-            <div id="cart-items">
-                <!-- Gli articoli del carrello verranno aggiunti qui tramite JavaScript -->
-            </div>
+    <nav id="cart">
+        <h3>Carrello</h3>
+        <div id="cart-items">
+            <!-- Gli articoli del carrello verranno aggiunti qui tramite JavaScript -->
         </div>
     </nav>
 
@@ -299,13 +296,10 @@
             document.getElementsByClassName('cart-total-price')[0].innerText = '$' + total;
 
             // Show or hide buttons based on cart items
-            var checkoutBtn = document.getElementById('checkout-btn');
             var clearCartBtn = document.getElementById('clear-cart-btn');
             if (cartRows.length === 0) {
-                checkoutBtn.classList.add('hidden');
                 clearCartBtn.classList.add('hidden');
             } else {
-                checkoutBtn.classList.remove('hidden');
                 clearCartBtn.classList.remove('hidden');
             }
         }
