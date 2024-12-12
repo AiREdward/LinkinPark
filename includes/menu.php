@@ -13,7 +13,7 @@ $ruolo = $_SESSION['ruolo'] ?? null; // Recupera il ruolo dell'utente loggato
     <p>Ti trovi in <span lang="en">Home</span></p>
 </nav>
 
-<nav id="menu">
+<nav id="menu" role="navigation" aria-label="Menu principale">
     <ul>
         <li><a href="index.php" class="<?= $currentPage == 'index.php' ? 'active' : '' ?>">Home</a></li>
         <li><a href="aboutus.php" class="<?= $currentPage == 'aboutus.php' ? 'active' : '' ?>">About Us</a></li>
@@ -22,7 +22,6 @@ $ruolo = $_SESSION['ruolo'] ?? null; // Recupera il ruolo dell'utente loggato
         <li><a href="music.php" class="<?= $currentPage == 'music.php' ? 'active' : '' ?>">Music</a></li>
         <li><a href="shop.php" class="<?= $currentPage == 'shop.php' ? 'active' : '' ?>">Shop</a></li>
 
-        <!-- Mostra admin solo se l'utente è admin -->
         <?php if ($ruolo === 'admin'): ?>
             <li><a href="admin.html" class="<?= $currentPage == 'admin.html' ? 'active' : '' ?>">Admin</a></li>
         <?php endif; ?>
