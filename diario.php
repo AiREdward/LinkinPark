@@ -31,17 +31,7 @@
         <p>Ti trovi in Diario</p>
     </nav>
 
-    <nav id="menu">
-        <ul>
-            <li><a href="index.html" lang="en">Home</a></li>     <!--modificare i nomi delle pagine?-->
-            <li><a href="aboutus.html">Chi siamo</a></li>
-            <li id="currentLink">Diario</li>
-            <li><a href="tour.html" lang="en">Tour</a></li>
-            <li><a href="music.html" lang="en">Music</a></li>
-            <li><a href="shop.html" lang="en">Shop</a></li>
-        </ul>
-
-    </nav>
+    <?php include 'includes/menu.php'; ?>
 
     <main>
 
@@ -207,6 +197,8 @@
         <!-- aggiungere social -->
     </footer>
 
+    <?php include 'includes/footer.php'; ?>
+    
 </body>
 
 </html>
