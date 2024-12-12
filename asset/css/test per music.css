@@ -1,0 +1,148 @@
+:root{
+    --bgcolor1: #000000; 
+    --bgcolor2: #0B1520;
+    --txtcolor: #ECDDEE;
+    --breadcolor: #6C3450;
+    /*
+    --newscolor: #F3C42B;
+    --contenttxtcolor: #000; 
+    --contentbgcolor: #FFF;
+    */
+    --linkcolor: #CE929D;
+    --visitedcolor: #AC95AA;
+}
+
+html, body {
+    color: var(--txtcolor);
+    background-color: var(--bgcolor2);
+    font-size: 100%; 
+    font-family: Arial, Helvetica, sans-serif; 
+    line-height: 1.5em; 
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+html a:link {
+    color: var(--linkcolor);
+}
+
+html a:visited {
+    color: var(--visitedcolor);
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--bgcolor2);
+}
+
+header h1 {
+    /* margin: em; */
+    font-size: 3em;
+}
+
+#menu ul {
+    list-style: none;
+    display: flex;
+    gap: 2em;
+}
+
+#menu li {
+    font-size: 1.5em;
+}
+
+
+
+
+/*
+
+MAIN
+
+*/
+
+main h2 {
+    font-size: 2.5em;
+    text-align: center;
+    margin: 0em;
+    padding: 1em;
+}
+
+.albumCard {
+    display: flex;
+    flex-flow: row wrap;
+    /*justify-content: left;*/
+    background-color: var(--bgcolor1);
+    align-items: flex-start;
+    padding: 0;
+    flex: 1 1 30%;
+    /*
+    gap: 0;
+    padding: 0; 
+    margin: 0 auto;
+    */
+}
+
+.albumInfo, .albumMain, .tracklist {
+    flex: 0 0 20%;
+    background-color: var(--bgcolor2);
+    gap: 1em;
+}
+
+
+
+
+main p {
+    width: 40%;
+    margin-right: 0 !important;
+    margin-top: 0;
+}
+
+main img {
+    width: 40%;
+    height: auto; 
+}
+
+.albumInfo h3 {
+    font-size: 1.5em;
+}
+
+.albumInfo dt {
+    font-weight: bold;
+}
+
+.tracklist h4 {
+    font-weight: bold;
+}
+
+
+
+
+/*
+
+FOOTER
+
+*/
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer ul {
+    display: flex;
+    list-style: none;
+    gap: 0em;
+}
+
+footer img {
+    filter: invert(1);
+    width: 10%;
+}
+
+
+
+
+
+
