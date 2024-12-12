@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>wishbone</title>
+    <title>Shop</title>
     <meta author="linkins">
     <meta name="description" content="TODO">
     <meta name="keywords" content="TODO">

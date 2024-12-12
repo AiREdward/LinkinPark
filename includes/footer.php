@@ -26,12 +26,12 @@
                     <i class="fab fa-youtube" style="font-size: 24px; margin-right: 8px;"></i> YouTube
                 </a>
                 <br>
-                <a href="https://open.spotify.com/artist/1JfuoWKSzEiJBqScGT5tvN" target="_blank"
+                <a href="https://open.spotify.com/intl-it/artist/6XyY86QOPPrYVGvF9ch6wz" target="_blank"
                     style="margin-right: 10px; color: #aaa; text-decoration: none;">
                     <i class="fab fa-spotify" style="font-size: 24px; margin-right: 8px;"></i> Spotify
                 </a>
                 <br>
-                <a href="https://music.apple.com/us/artist/wishbone/1669207027" target="_blank"
+                <a href="https://music.apple.com/it/artist/linkin-park/148662" target="_blank"
                     style="margin-right: 10px; color: #aaa; text-decoration: none;">
                     <i class="fab fa-apple" style="font-size: 24px; margin-right: 8px;"></i> Apple Music
                 </a>
