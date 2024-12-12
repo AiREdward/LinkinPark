@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="asset/css/style.css" media="screen">
     <link rel="stylesheet" href="asset/css/timeline.css" media="screen">
     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="icon" href="asset/img/favicon.ico" type="image/x-icon">
 </head>
 
 <body>
