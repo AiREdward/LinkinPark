@@ -143,15 +143,6 @@ FILTEVS
     color: #f0f0f0;
 }
 
-.filters button[data-type="tour"] {
-    border: 2px solid #007bff;
-    color: #007bff;
-}
-.filters button[data-type="tour"]:hover {
-    background-color: #007bff;
-    color: #f0f0f0;
-}
-
 .filters button[data-type="all"] {
     border: 2px solid #28a745;
     color: #28a745;

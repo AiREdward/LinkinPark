@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-include 'db_config.php';
+include '../includes/db_config.php';
 $utente_id = $_SESSION['user_id'];
 
 // Controlla se la richiesta è per ottenere i dati dell'utente
