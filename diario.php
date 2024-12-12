@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
 
-    <title>Il Nostro Viaggio nel Tempo e Musica, Linkin Park</title>    <!--accorciato da: Il Nostro Viaggio nel Tempo e nella Musica, Linkin Park ,per staci in 50char-->
+    <title>Il Nostro Viaggio - Linkin Park</title>    <!--accorciato da: Il Nostro Viaggio nel Tempo e nella Musica, Linkin Park ,per staci in 50char-->
 
     <meta name="keywords" content="linkin park,linkin park storia,chester bennington,hybrid theory,xero band,one more light,grammy linkin park,live in texas,
         meteora album,emily armstrong,colin brittain,band alternative rock">
