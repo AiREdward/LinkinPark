@@ -46,13 +46,13 @@
         </div>
 
         <!-- Popup per account -->
-        <!-- <div id="accountPopup" class="hidden">
+        <div id="accountPopup" class="hidden">
             <p>Sei loggato come: <span id="accountEmail"></span></p>
             <button id="logoutButton">Log Out</button>
-        </div> -->
+        </div>
     </main>
 
-    <!-- <script src="js/index.js"></script> -->
+    <script src="js/index.js"></script>
 
     <?php include 'includes/footer.php'; ?>
 

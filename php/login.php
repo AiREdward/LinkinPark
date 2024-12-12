@@ -30,6 +30,7 @@ if ($result->num_rows > 0) {
         $_SESSION['logged_in'] = true;
         $_SESSION['user_id'] = $utenti['id'];
         $_SESSION['email'] = $utenti['email'];
+        $_SESSION['ruolo'] = $utenti['ruolo']; // Salva il ruolo nella sessione
         
         // Reindirizza alla pagina specificata
         header("Location: $redirectPath");
