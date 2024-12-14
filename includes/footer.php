@@ -1,46 +1,5 @@
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-
-<style>
-    footer {
-        background-color: #111;
-        color: #fff;
-        padding: 40px 20px;
-        font-family: 'Arial', sans-serif;
-    }
-
-    footer a {
-        margin-right: 10px; 
-        color: #aaa; 
-        text-decoration: none;
-    }
-
-    .footerContainer {
-        max-width: 1200px; 
-        margin: 0 auto; 
-        display: grid; 
-        grid-template-columns: 
-        repeat(3, 1fr); 
-        gap: 20px;
-    }
-    
-    .footerContainer h3 {
-        font-size: 18px; 
-        color: #fff;
-    }
-
-    .imgValidCode {
-        width: 50px;
-        height: auto;
-        vertical-align: middle;
-        margin-right: 15px;
-    }
-
-    .social i {
-        font-size: 24px; 
-        margin-right: 8px;
-    }
-    
-</style>
+<link rel="stylesheet" href="asset/css/style.css" media="screen">
 
 <footer>
     <div class="footerContainer">

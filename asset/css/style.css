@@ -16,6 +16,23 @@ body {
     line-height: 1.5em;
     font-family: Arial, Helvetica, sans-serif; 
     margin: auto;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+/* ----------------------------------------------- */
+
+/* HEADER */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--bgcolor2);
+}
+
+header h1 {
+    font-size: 5em;
 }
 
 /* ----------------------------------------------- */
@@ -45,7 +62,6 @@ body {
     background-color: #ddd;
 }
 
-/* Stile per la voce attiva */
 #menu ul li a.active {
     font-weight: bold;
     color: white;
@@ -55,7 +71,74 @@ body {
 
 /* ----------------------------------------------- */
 
-/* SHOP */
+/* INDEX */
+
+#accountPopup {
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    text-align: center;
+    z-index: 1000;
+}
+
+.hidden {
+    display: none;
+}
+
+/* ----------------------------------------------- */
+
+/* MUSIC */
+
+.albumContainer  {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5em;
+    justify-content: center;
+}
+
+.albumCard {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    background-color: var(--bgcolor1);
+    color: var(--txtcolor);
+    border-radius: 8px;
+    padding: 1em;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    flex: 1 1 40%;
+    max-width: 600px;
+    box-sizing: border-box;
+}
+
+.albumMain, .albumInfo, .tracklist {
+    flex: 1 1 auto;
+    padding: 0.5em;
+    box-sizing: border-box;
+}
+
+.albumMain img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 4px;
+}
+
+.albumInfo h3, .tracklist h4 {
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.tracklist ol {
+    margin: 0;
+    padding-left: 1em;
+    list-style-position: inside;
+}
 
 /* ----------------------------------------------- */
 
@@ -75,6 +158,49 @@ body {
 a {
     text-decoration: none;
     color: blue;
+}
+
+/* ----------------------------------------------- */
+
+/* FOOTER */
+
+footer {
+    background-color: #111;
+    color: #fff;
+    padding: 40px 20px;
+    font-family: 'Arial', sans-serif;
+}
+
+footer a {
+    margin-right: 10px; 
+    color: #aaa; 
+    text-decoration: none;
+}
+
+.footerContainer {
+    max-width: 1200px; 
+    margin: 0 auto; 
+    display: grid; 
+    grid-template-columns: 
+    repeat(3, 1fr); 
+    gap: 20px;
+}
+
+.footerContainer h3 {
+    font-size: 18px; 
+    color: #fff;
+}
+
+.imgValidCode {
+    width: 50px;
+    height: auto;
+    vertical-align: middle;
+    margin-right: 15px;
+}
+
+.social i {
+    font-size: 24px; 
+    margin-right: 8px;
 }
 
 /* ----------------------------------------------- */
