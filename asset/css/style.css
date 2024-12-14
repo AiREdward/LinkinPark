@@ -16,6 +16,8 @@ body {
     line-height: 1.5em;
     font-family: Arial, Helvetica, sans-serif; 
     margin: auto;
+    padding-left: 1em;
+    padding-right: 1em;
 }
 
 /* ----------------------------------------------- */
@@ -55,7 +57,24 @@ body {
 
 /* ----------------------------------------------- */
 
-/* SHOP */
+/* INDEX */
+
+#accountPopup {
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    text-align: center;
+    z-index: 1000;
+}
+
+.hidden {
+    display: none;
+}
 
 /* ----------------------------------------------- */
 
