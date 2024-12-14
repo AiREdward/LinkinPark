@@ -12,10 +12,10 @@ $ruolo = $_SESSION['ruolo'] ?? null; // Recupera il ruolo dell'utente loggato
 <nav id="menu" role="navigation" aria-label="Menu principale">
     <ul>
         <li><a href="index.php" class="<?= $currentPage == 'index.php' ? 'active' : '' ?>">Home</a></li>
-        <li><a href="aboutus.php" class="<?= $currentPage == 'aboutus.php' ? 'active' : '' ?>">About Us</a></li>
-        <li><a href="journal.php" class="<?= $currentPage == 'journal.php' ? 'active' : '' ?>">Journal</a></li>
+        <li><a href="chisiamo.php" class="<?= $currentPage == 'chisiamo.php' ? 'active' : '' ?>">Chi Siamo</a></li>
+        <li><a href="diario.php" class="<?= $currentPage == 'diario.php' ? 'active' : '' ?>">Diario</a></li>
         <li><a href="tour.php" class="<?= $currentPage == 'tour.php' ? 'active' : '' ?>">Tour</a></li>
-        <li><a href="music.php" class="<?= $currentPage == 'music.php' ? 'active' : '' ?>">Music</a></li>
+        <li><a href="musica.php" class="<?= $currentPage == 'musica.php' ? 'active' : '' ?>">Musica</a></li>
         <li><a href="shop.php" class="<?= $currentPage == 'shop.php' ? 'active' : '' ?>">Shop</a></li>
 
         <?php if ($ruolo === 'admin'): ?>

@@ -36,7 +36,7 @@
             <!--ho messo due <dd> per avere piu' flessibililta' con layout della preview immagine e del preview testo-->
 
             <dt class="long-article"><time datetime="1999">1999</time></dt>
-            <dd><img src="asset/img/diario/articolo1 prima foto.jpg" alt="TO DO"></dd>
+            <dd><img src="asset/img/diario/articolo1 prima foto.webp" alt="TO DO"></dd>
             <dd><p>Nel 1999 eravamo ancora un gruppo che cercava di capire cosa fare della propria vita. Ci chiamavamo Xero
                 (sì, lo sappiamo, non proprio il nome più ispirato di sempre)...
                 <a href="#article1" class="readMore">scopri di più</a></p></dd>
@@ -51,17 +51,17 @@
             <dd><p>TO DO</p></dd>
 
             <dt class="long-article"><time datetime="2004">2004</time></dt>
-            <dd><img src="asset/img/diario/articolo3_live_in_texas.jpg" alt="TO DO"></dd>
+            <dd><img src="asset/img/diario/articolo3_live_in_texas.webp" alt="TO DO"></dd>
             <dd><p>Abbiamo sempre amato suonare dal vivo. C’è qualcosa di magico in quei momenti sul palco: l’adrenalina, il pubblico che canta 
                 a squarciagola, la connessione unica che si crea...<a href="#article1" class="readMore">scopri di più</a></p></dd>
 
             <dt class="long-article"><time datetime="2017">2017</time></dt>
-            <dd><img src="asset/img/diario/articolo4 chester foto2.jpg" alt="TO DO"></dd>
+            <dd><img src="asset/img/diario/articolo4 chester foto2.webp" alt="TO DO"></dd>
             <dd><p>Il 20 luglio 2017 è stato il giorno più buio della nostra vita. Chester, il nostro amico, fratello, anima e voce, ci ha lasciati. 
                 È impossibile descrivere quanto ha significato per noi...<a href="#article2" class="readMore">scopri di più</a></p></dd>
 
             <dt class="long-article"><time datetime="2024">2024</time></dt>
-            <dd><img src="asset/img/diario/LP riunione articolo5.jpg" alt="TO DO"></dd>
+            <dd><img src="asset/img/diario/LP riunione articolo5.webp" alt="TO DO"></dd>
             <dd><p>Dopo la perdita di Chester, abbiamo passato un periodo difficile, ma ora finalmente siamo pronti per un nuovo inizio con Emily 
                 e Colin. Quando ci siamo incontrati per la prima volta...<a href="#article3" class="readMore">scopri di più</a></p></dd>
         </dl>
@@ -79,7 +79,7 @@
             <h2>L’arrivo di Chester e il nuovo nome</h2>
             <button type="button" class="closePopUp">X</button>
 
-            <img src="asset/img/diario/articolo1 prima foto.jpg" alt="TO DO">
+            <img src="asset/img/diario/articolo1 prima foto.webp" alt="TO DO">
             <p>Nel 1999 eravamo ancora un gruppo che cercava di capire cosa fare della propria vita. Ci chiamavamo Xero
                 (sì, lo sappiamo, non proprio il nome più ispirato di sempre), e la nostra musica aveva un grande potenziale.</p>
             <p>Poi è arrivato Chester Bennington. Con la sua voce capace di passare in un attimo da urla potenti a toni dolci e malinconici,
@@ -98,7 +98,7 @@
             <button type="button" class="closePopUp">X</button>
 
             <img src="asset/img/diario/LP vecchia composizione.webp" alt="TO DO">
-            <img src="asset/img/diario/articolo2_foto1.png" alt="TO DO">
+            <img src="asset/img/diario/articolo2_foto1.webp" alt="TO DO">
             <p>Parliamoci chiaro: quando abbiamo iniziato a lavorare su Hybrid Theory, non avevamo idea di cosa stessimo facendo. Sapevamo 
                 solo che avevamo un sacco di idee, un budget minuscolo e un’enorme voglia di farcela. Eravamo giovani, affamati e determinati
                 a creare qualcosa che nessuno aveva mai sentito prima.</p>
@@ -128,7 +128,7 @@
             <h2>Il delirio di Live in Texas: quando il palco è diventato casa</h2>
             <button type="button" class="closePopUp">X</button>
 
-            <img src="asset/img/diario/articolo3_live_in_texas.jpg" alt="TO DO">
+            <img src="asset/img/diario/articolo3_live_in_texas.webp" alt="TO DO">
             <p>Abbiamo sempre amato suonare dal vivo. C’è qualcosa di magico in quei momenti sul palco: l’adrenalina, il pubblico che canta 
                 a squarciagola, la connessione unica che si crea. Quindi, nel 2003, durante il nostro tour per Meteora, abbiamo deciso di 
                 catturare quell’energia in un album live. E così è nato Live in Texas.</p>
@@ -145,8 +145,8 @@
             <h2>Un addio che non dimenticheremo mai: Chester e One More Light Live</h2>
             <button type="button" class="closePopUp">X</button>
 
-            <img src="asset/img/diario/articolo4 chester foto2.jpg" alt="TO DO">
-            <img src="asset/img/diario/chester foto4 one_more_light.jpeg" alt="TO DO">
+            <img src="asset/img/diario/articolo4 chester foto2.webp" alt="TO DO">
+            <img src="asset/img/diario/chester foto4 one_more_light.webp" alt="TO DO">
             <p>Il 20 luglio 2017 è stato il giorno più buio della nostra vita. Chester, il nostro amico, fratello, anima e voce, ci ha lasciati. 
             È impossibile descrivere quanto ha significato per noi, non solo come artista, ma come persona. La sua energia, la sua risata 
             contagiosa, il modo in cui riusciva a trovare sempre la cosa giusta da dire… tutto questo lo rendeva speciale.</p>
@@ -165,8 +165,8 @@
             <h2>Il nuovo capitolo con Emily Armstrong e Colin Brittain</h2>
             <button type="button" class="closePopUp">X</button>
 
-            <img src="asset/img/diario/LP riunione articolo5.jpg" alt="TO DO">
-            <img src="asset/img/diario/reunion concert articolo5.jpg" alt="TO DO">
+            <img src="asset/img/diario/LP riunione articolo5.webp" alt="TO DO">
+            <img src="asset/img/diario/reunion concert articolo5.webp" alt="TO DO">
             <p>Dopo la perdita di Chester, abbiamo passato un periodo difficile, ma ora finalmente siamo pronti per un nuovo inizio con Emily 
             e Colin.</p>
             <p>Quando ci siamo incontrati per la prima volta con Emily, c'è stata subito una connessione speciale. La sua energia, la sua passione 
