@@ -78,6 +78,61 @@ body {
 
 /* ----------------------------------------------- */
 
+/* MUSIC */
+
+.albumContainer  {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping to next row if space is insufficient */
+    gap: 1.5em; /* Add spacing between cards */
+    justify-content: center; /* Center the row of cards */
+}
+
+/* Each album card as a single box */
+.albumCard {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1em;
+    background-color: var(--bgcolor1);
+    color: var(--txtcolor);
+    border-radius: 8px;
+    padding: 1em;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow for a lifted effect */
+    flex: 1 1 40%; /* Each card takes 45% of the parent container's width */
+    max-width: 600px; /* Set a maximum width for cards */
+    box-sizing: border-box; /* Include padding and borders in the card's width */
+}
+
+/* Individual sections inside the card */
+.albumMain, .albumInfo, .tracklist {
+    flex: 1 1 auto; /* Allow sections to grow/shrink equally */
+    padding: 0.5em;
+    box-sizing: border-box;
+}
+
+/* Style the image to fit well in its section */
+.albumMain img {
+    max-width: 100%; /* Scale image to fit its container */
+    height: auto;
+    display: block;
+    border-radius: 4px; /* Optional: Slightly round image corners */
+}
+
+.albumInfo h3, .tracklist h4 {
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+/* Tracklist styling */
+.tracklist ol {
+    margin: 0;
+    padding-left: 1em; /* Indentation for the ordered list */
+    list-style-position: inside;
+}
+
+/* ----------------------------------------------- */
+
 /* ERRORE DI CONNESSIONE */
 
 .errorPage {
