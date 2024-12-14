@@ -39,7 +39,7 @@ header {
 
 header h1 {
     /* margin: em; */
-    font-size: 3em;
+    font-size: 5em;
 }
 
 #menu ul {
@@ -52,6 +52,9 @@ header h1 {
     font-size: 1.5em;
 }
 
+#breadcrumb {
+    font-size: 1.5em;
+}
 
 
 
@@ -68,55 +71,68 @@ main h2 {
     padding: 1em;
 }
 
+.albumContainer  {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping to next row if space is insufficient */
+    gap: 1.5em; /* Add spacing between cards */
+    justify-content: center; /* Center the row of cards */
+}
+
+/* Each album card as a single box */
 .albumCard {
     display: flex;
-    flex-flow: row wrap;
-    /*justify-content: left;*/
-    background-color: var(--bgcolor1);
-    align-items: flex-start;
-    padding: 0;
-    flex: 1 1 30%;
-    /*
-    gap: 0;
-    padding: 0; 
-    margin: 0 auto;
-    */
+    flex-direction: row; /* Align sections in a row */
+    flex-wrap: wrap; /* Wrap sections within the card if needed */
+    gap: 1em; /* Space between internal sections */
+    background-color: var(--bgcolor1); /* Background for the card */
+    color: var(--txtcolor); /* Text color */
+    border-radius: 8px; /* Rounded corners */
+    padding: 1em;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow for a lifted effect */
+    flex: 1 1 40%; /* Each card takes 45% of the parent container's width */
+    max-width: 600px; /* Set a maximum width for cards */
+    box-sizing: border-box; /* Include padding and borders in the card's width */
 }
 
-.albumInfo, .albumMain, .tracklist {
-    flex: 0 0 20%;
-    background-color: var(--bgcolor2);
-    gap: 1em;
+/* Individual sections inside the card */
+.albumMain, .albumInfo, .tracklist {
+    flex: 1 1 auto; /* Allow sections to grow/shrink equally */
+    padding: 0.5em;
+    box-sizing: border-box;
 }
 
-
-
-
-main p {
-    width: 40%;
-    margin-right: 0 !important;
-    margin-top: 0;
+/* Style the image to fit well in its section */
+.albumMain img {
+    max-width: 100%; /* Scale image to fit its container */
+    height: auto;
+    display: block;
+    border-radius: 4px; /* Optional: Slightly round image corners */
 }
 
-main img {
-    width: 40%;
-    height: auto; 
-}
-
-.albumInfo h3 {
-    font-size: 1.5em;
-}
-
-.albumInfo dt {
+/* Center-align headings for consistency */
+.albumInfo h3, .tracklist h4 {
+    text-align: center;
+    font-size: 1.2em;
     font-weight: bold;
 }
 
-.tracklist h4 {
-    font-weight: bold;
+/* Tracklist styling */
+.tracklist ol {
+    margin: 0;
+    padding-left: 1em; /* Indentation for the ordered list */
+    list-style-position: inside;
 }
 
+/* Add responsiveness */
+@media (max-width: 768px) {
+    .albumCard {
+        flex: 1 1 100%; /* Make each card take full width on smaller screens */
+    }
 
-
+    .albumCard {
+        flex-direction: column; /* Stack sections vertically within the card */
+    }
+}
 
 /*
 
@@ -124,6 +140,7 @@ FOOTER
 
 */
 
+/*
 footer {
     display: flex;
     justify-content: space-between;
@@ -140,6 +157,66 @@ footer img {
     filter: invert(1);
     width: 10%;
 }
+*/
+
+footer {
+    display: flex;
+    justify-content: space-between; /* Distribute items evenly across the footer */
+    align-items: center; /* Vertically center items */
+    background-color: var(--bgcolor2); /* Optional: Background color for footer */
+    padding: 1em;
+    color: var(--txtcolor); /* Text color for footer content */
+    gap: 2em; /* Additional space between the left and right parts of the footer */
+}
+
+#social {
+    display: flex;
+    gap: 1em; /* Add spacing between social icons */
+    list-style: none; /* Remove default list styling */
+}
+
+#social a img {
+    width: 24px; /* Set the width of social media icons */
+    height: 24px; /* Set the height of social media icons */
+    filter: invert(1);
+}
+
+.footer-content {
+    display: flex;
+    align-items: center;
+    gap: 1em; /* Space between the image and the paragraph */
+}
+
+.footer-content img {
+    margin-right: 0; /* Remove right margin for the image */
+    margin-bottom: 0.5em; /* Add space between the images on smaller screens */
+}
+
+.footer-content p {
+    margin: 0; /* Remove default margin */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    footer {
+        flex-direction: column; /* Stack footer items vertically */
+        align-items: flex-start; /* Align items to the start */
+    }
+
+    #social {
+        margin-top: 1em; /* Move social icons below the text content on smaller screens */
+    }
+
+    .footer-content {
+        flex-direction: column; /* Stack image and text vertically */
+        align-items: flex-start; /* Align image and text to the start */
+    }
+
+    .footer-content img {
+        margin: 0 0 0.5em 0; /* Adjust spacing for images on smaller screens */
+    }
+}
+
 
 
 
