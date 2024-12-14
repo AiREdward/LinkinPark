@@ -165,6 +165,9 @@
             html2pdf().from(container).set(options).save();
         });
     </script>
+
+    <?php include 'includes/footer.php'; ?>
+
 </body>
 
 </html>

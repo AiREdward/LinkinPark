@@ -14,7 +14,7 @@ try {
     }
 } catch (Exception $e) {
 
-    header("Location: ../error.html?error=db_unreachable");
+    header("Location: ../template/error.html?error=db_unreachable");
     exit();
 }
 ?>
