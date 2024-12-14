@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
 
-    <title>Il Nostro Viaggio nel Tempo e Musica, Linkin Park</title>    <!--accorciato da: Il Nostro Viaggio nel Tempo e nella Musica, Linkin Park ,per staci in 50char-->
+    <title>Il Nostro Viaggio - Linkin Park</title>    <!--accorciato da: Il Nostro Viaggio nel Tempo e nella Musica, Linkin Park ,per staci in 50char-->
 
     <meta name="keywords" content="linkin park,linkin park storia,chester bennington,hybrid theory,xero band,one more light,grammy linkin park,live in texas,
         meteora album,emily armstrong,colin brittain,band alternative rock">
@@ -20,28 +20,12 @@
 </head>
 
 <body>
-    <header>
-        <!--header non modificato perche' abbiamo detto che lo mettiamo in un unico file-->
-        <h1>Conoscete ci</h1>
-        <h2>dal nostro primo...al nostro...</h2>
-    </header>
-    <hr>
     
     <nav id="breadcrumb">
         <p>Ti trovi in Diario</p>
     </nav>
 
-    <nav id="menu">
-        <ul>
-            <li><a href="index.html" lang="en">Home</a></li>     <!--modificare i nomi delle pagine?-->
-            <li><a href="aboutus.html">Chi siamo</a></li>
-            <li id="currentLink">Diario</li>
-            <li><a href="tour.html" lang="en">Tour</a></li>
-            <li><a href="music.html" lang="en">Music</a></li>
-            <li><a href="shop.html" lang="en">Shop</a></li>
-        </ul>
-
-    </nav>
+    <?php include 'includes/menu.php'; ?>
 
     <main>
 
@@ -200,13 +184,9 @@
     </main>
 
     <hr>
-    <footer>
-        <!--footer non modificato perche' abbiamo detto che lo mettiamo in un unico file-->
-        <img class="imgValidCode" src="asset/img/valid-xhtml10.png" alt="HTML valido">
-        <p>Ombretta Gaggi, Cactus &amp; Federazione Italiana Pallavolo - <span lang="en">All rights Reserved</span></p>
-        <!-- aggiungere social -->
-    </footer>
 
+    <?php include 'includes/footer.php'; ?>
+    
 </body>
 
 </html>
