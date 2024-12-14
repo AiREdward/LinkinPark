@@ -9,10 +9,6 @@ $ruolo = $_SESSION['ruolo'] ?? null; // Recupera il ruolo dell'utente loggato
     <h1 lang="en">Linkin Park</h1>
 </header>
 
-<nav id="breadcrumb">
-    <p>Ti trovi in <span lang="en">Home</span></p>
-</nav>
-
 <nav id="menu" role="navigation" aria-label="Menu principale">
     <ul>
         <li><a href="index.php" class="<?= $currentPage == 'index.php' ? 'active' : '' ?>">Home</a></li>

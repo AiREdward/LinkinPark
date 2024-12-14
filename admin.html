@@ -14,7 +14,7 @@
 
     <style>
         /* Imposta il body come contenitore flex per centrare il contenuto */
-        body {
+        .adminPage {
             font-family: Arial, sans-serif;
             display: flex;
             justify-content: center;
@@ -93,32 +93,34 @@
 </head>
 
 <body>
-    <h1>Dashboard</h1>
+    <div class="adminPage">
+        <h1>Dashboard</h1>
 
-    <!-- Menu Orizzontale -->
-    <div id="menu">
-        <button id="userManagementBtn">Gestione Utenti</button>
-        <button id="otherFunctionBtn">Statistiche</button>
-    </div>
-
-    <!-- Contenitore per il contenuto dinamico -->
-    <div id="content">
-        <!-- Funzione di gestione utenti -->
-        <div id="userManagement" style="display: block;">
-            <form id="searchForm">
-                <label for="email">Cerca utente per email:</label>
-                <input type="email" name="email" id="email" placeholder="Inserisci email utente" required>
-                <button type="submit">Cerca</button>
-            </form>
-
-            <div id="result"></div>
+        <!-- Menu Orizzontale -->
+        <div id="menu">
+            <button id="userManagementBtn">Gestione Utenti</button>
+            <button id="otherFunctionBtn">Statistiche</button>
         </div>
 
-        <!-- Altra funzione (Statistiche) -->
-        <div id="otherFunction" style="display: none;">
-            <h2>Statistiche delle Transazioni</h2>
-            <div class="stats" id="stats">
-                <!-- Le statistiche verranno caricate qui -->
+        <!-- Contenitore per il contenuto dinamico -->
+        <div id="content">
+            <!-- Funzione di gestione utenti -->
+            <div id="userManagement" style="display: block;">
+                <form id="searchForm">
+                    <label for="email">Cerca utente per email:</label>
+                    <input type="email" name="email" id="email" placeholder="Inserisci email utente" required>
+                    <button type="submit">Cerca</button>
+                </form>
+
+                <div id="result"></div>
+            </div>
+
+            <!-- Altra funzione (Statistiche) -->
+            <div id="otherFunction" style="display: none;">
+                <h2>Statistiche delle Transazioni</h2>
+                <div class="stats" id="stats">
+                    <!-- Le statistiche verranno caricate qui -->
+                </div>
             </div>
         </div>
     </div>

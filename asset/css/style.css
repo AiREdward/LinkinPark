@@ -1,6 +1,65 @@
+/* GENERALE */
+
+:root{
+    --bgcolor1: #000000; 
+    --bgcolor2: #0B1520;
+    --txtcolor: #ECDDEE;
+    --linkcolor: #CE929D;
+    --visitedcolor: #AC95AA;
+}
+
+body {
+    max-width: 1024px;
+    color: var(--txtcolor);
+    background-color: var(--bgcolor2);
+    font-size: 100%;
+    line-height: 1.5em;
+    font-family: Arial, Helvetica, sans-serif; 
+    margin: auto;
+}
+
 /* ----------------------------------------------- */
 
-/* Pagina errore di connessione */
+/* MENU */
+
+#menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 10px;
+}
+
+#menu ul li {
+    display: inline;
+}
+
+#menu ul li a {
+    text-decoration: none;
+    color: var(--txtcolor);
+    padding: 5px 10px;
+    transition: background-color 0.3s;
+}
+
+#menu ul li a:hover {
+    background-color: #ddd;
+}
+
+/* Stile per la voce attiva */
+#menu ul li a.active {
+    font-weight: bold;
+    color: white;
+    background-color: #007BFF;
+    border-radius: 5px;
+}
+
+/* ----------------------------------------------- */
+
+/* SHOP */
+
+/* ----------------------------------------------- */
+
+/* ERRORE DI CONNESSIONE */
 
 .errorPage {
     font-family: Arial, sans-serif;

@@ -8,7 +8,7 @@
         <meta author="linkins"> 
         <meta name="viewport" content="width=device-width">
 
-        <link rel="stylesheet" href="asset/css/style.css" media="screen">
+        <link rel="stylesheet" href="asset/css/test per music.css" media="screen">
         <link rel="stylesheet" href="asset/css/social.css" media="screen">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="icon" href="asset/img/favicon.ico" type="image/x-icon">
