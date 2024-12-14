@@ -47,7 +47,6 @@ body {
     background-color: #ddd;
 }
 
-/* Stile per la voce attiva */
 #menu ul li a.active {
     font-weight: bold;
     color: white;
@@ -82,12 +81,11 @@ body {
 
 .albumContainer  {
     display: flex;
-    flex-wrap: wrap; /* Allow wrapping to next row if space is insufficient */
-    gap: 1.5em; /* Add spacing between cards */
-    justify-content: center; /* Center the row of cards */
+    flex-wrap: wrap;
+    gap: 1.5em;
+    justify-content: center;
 }
 
-/* Each album card as a single box */
 .albumCard {
     display: flex;
     flex-direction: row;
@@ -97,25 +95,23 @@ body {
     color: var(--txtcolor);
     border-radius: 8px;
     padding: 1em;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow for a lifted effect */
-    flex: 1 1 40%; /* Each card takes 45% of the parent container's width */
-    max-width: 600px; /* Set a maximum width for cards */
-    box-sizing: border-box; /* Include padding and borders in the card's width */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    flex: 1 1 40%;
+    max-width: 600px;
+    box-sizing: border-box;
 }
 
-/* Individual sections inside the card */
 .albumMain, .albumInfo, .tracklist {
-    flex: 1 1 auto; /* Allow sections to grow/shrink equally */
+    flex: 1 1 auto;
     padding: 0.5em;
     box-sizing: border-box;
 }
 
-/* Style the image to fit well in its section */
 .albumMain img {
-    max-width: 100%; /* Scale image to fit its container */
+    max-width: 100%;
     height: auto;
     display: block;
-    border-radius: 4px; /* Optional: Slightly round image corners */
+    border-radius: 4px;
 }
 
 .albumInfo h3, .tracklist h4 {
@@ -124,10 +120,9 @@ body {
     font-weight: bold;
 }
 
-/* Tracklist styling */
 .tracklist ol {
     margin: 0;
-    padding-left: 1em; /* Indentation for the ordered list */
+    padding-left: 1em;
     list-style-position: inside;
 }
 
