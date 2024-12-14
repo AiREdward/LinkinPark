@@ -20,12 +20,6 @@
 </head>
 
 <body>
-    <header>
-        <!--header non modificato perche' abbiamo detto che lo mettiamo in un unico file-->
-        <h1>Conoscete ci</h1>
-        <h2>dal nostro primo...al nostro...</h2>
-    </header>
-    <hr>
     
     <nav id="breadcrumb">
         <p>Ti trovi in Diario</p>
@@ -190,12 +184,6 @@
     </main>
 
     <hr>
-    <footer>
-        <!--footer non modificato perche' abbiamo detto che lo mettiamo in un unico file-->
-        <img class="imgValidCode" src="asset/img/valid-xhtml10.png" alt="HTML valido">
-        <p>Ombretta Gaggi, Cactus &amp; Federazione Italiana Pallavolo - <span lang="en">All rights Reserved</span></p>
-        <!-- aggiungere social -->
-    </footer>
 
     <?php include 'includes/footer.php'; ?>
     
