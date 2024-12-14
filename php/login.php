@@ -23,7 +23,7 @@ if ($result->num_rows > 0) {
     $utenti = $result->fetch_assoc();
     
     if ($utenti['stato'] === 'bloccato') {
-        header("Location: ../login.html?error=bloccato");
+        header("Location: ../login.php?error=bloccato");
         exit();
     } elseif (password_verify($password, $utenti['password'])) {
         // Imposta la sessione
@@ -36,11 +36,11 @@ if ($result->num_rows > 0) {
         header("Location: $redirectPath");
         exit();
     } else {
-        header("Location: ../login.html?error=password");
+        header("Location: ../login.php?error=password");
         exit();
     }
 } else {
-    header("Location: ../login.html?error=utente");
+    header("Location: ../login.php?error=utente");
     exit();
 }
 

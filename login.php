@@ -66,7 +66,7 @@
             <button type="submit">Accedi</button>
         </form>
 
-        <p>Non hai un account? <a href="registration.html">Registrati qui</a></p>
+        <p>Non hai un account? <a href="registration.php">Registrati qui</a></p>
     </main>
 
     <script>
@@ -101,6 +101,7 @@
             }
         }
     </script>
+    
 </body>
 
 </html>

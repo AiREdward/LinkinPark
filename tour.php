@@ -259,11 +259,11 @@
 
             if (isLoggedIn) {
                 // Utente loggato: vai direttamente alla pagina di acquisto
-                window.location.href = `ticket.html?city=${encodeURIComponent(city)}`;
+                window.location.href = `ticket.php?city=${encodeURIComponent(city)}`;
             } else {
                 // Utente non loggato: reindirizza alla pagina di login con redirect alla pagina di acquisto
-                const redirectUrl = encodeURIComponent(`ticket.html?city=${city}`);
-                window.location.href = `login.html?redirect=${redirectUrl}`;
+                const redirectUrl = encodeURIComponent(`ticket.php?city=${city}`);
+                window.location.href = `login.php?redirect=${redirectUrl}`;
             }
         }
 
