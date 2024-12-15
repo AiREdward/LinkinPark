@@ -94,11 +94,16 @@ header h1 {
 
 /* SHOP */
 
-.shop {
+#main{
+    display: flex;
+}
+
+#shop {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
     justify-content: center;
+    flex: 0 0 75%;
 }
 
 /* FILTERS */ 
@@ -261,7 +266,7 @@ header h1 {
     padding: 20px;
     background-color: #f9f9f9;
     border: 1px solid #ddd;
-    max-width: 300px;
+    flex: 0 0 25%;
 }
 
 .cart-item {
