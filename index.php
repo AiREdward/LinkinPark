@@ -42,7 +42,7 @@
             <!-- immagine ultima entrata Journal -->
             <img src="asset/img/diario/LP riunione articolo5.jpg" alt="immagine del gruppo">
             <h2>Il nuovo capitolo con Emily Armstrong e Colin Brittain</h2>
-            <button type="button" class="link" onclick="location.href='journal.php'">Scopri di più</button>
+            <button type="button" class="link" onclick="location.href='diario.php'">Scopri di più</button>
             <!-- trovare una frase migliore per il button -->
         </div>
 
