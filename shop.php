@@ -12,6 +12,8 @@
     <link rel="stylesheet" href="asset/css/style.css" media="screen">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="icon" href="asset/img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
 </head>
 
 <body>
@@ -27,13 +29,21 @@
 
     <main>
 
-        <div class="filters">
+    <div class="filters">
+        <!-- Search Bar -->
+        <div class="search-container">
             <input type="text" id="search-bar" placeholder="Cerca prodotti..." oninput="searchItems()">
+            <i class="search-icon fas fa-search"></i>
+        </div>
+    
+        <!-- Contenitore dei Filtri -->
+        <div class="filters-buttons">
             <button data-type="all" class="active-filter" onclick="filterItems('all')">Mostra Tutto</button>
             <button data-type="abbigliamento" onclick="filterItems('type', 'maglietta')">Magliette</button>
             <button data-type="abbigliamento" onclick="filterItems('type', 'felpa')">Felpe</button>
             <button data-type="abbigliamento" onclick="filterItems('type', 'accessori')">Accessori</button>
         </div>
+    </div>
 
         <section class="shop">
 
@@ -222,7 +232,7 @@
 
         </section>
         <p id="no-results" style="display: none;">Nessun risultato trovato.</p>
-    </main>
+</main>
 
     <!-- Script per la gestione del carrello -->
     <script>
