@@ -11,20 +11,23 @@
     <title>Accedi</title>
 
     <link rel="icon" href="asset/img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="asset/css/style.css" media="screen">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
     <style>
-        body {
-            display: flex;
+        .main-container {
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            margin: 0;
-            flex-direction: column;
-        }
-
-        main {
-            width: 300px;
+            width: 350px;
+            padding: 20px;
             text-align: center;
+            border-radius: 15px;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2),
+                0 1px 3px rgba(0, 0, 0, 0.1);
+            color: #000;
         }
 
         form label,
@@ -36,44 +39,117 @@
             box-sizing: border-box;
         }
 
+        input,
+        button {
+            padding: 10px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1em;
+        }
+
+        input {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+        }
+
+        .input-container {
+            position: relative;
+        }
+
+        .input-with-icon {
+            padding-left: 30px;
+        }
+
+        .input-icon {
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            opacity: 0.5;
+        }
+
+        .icon-right {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
         .error {
             color: red;
             font-size: 0.9em;
             margin-bottom: 10px;
         }
+
+        a {
+            color: #80d4ff;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 
 <body>
-    <header>
-        <h1>Accedi</h1>
-    </header>
 
-    <main>
+    <div class="main-container">
         <!-- Sezione per i messaggi di errore -->
         <div id="error-message" class="error"></div>
 
         <form action="php/login.php" method="post">
             <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
+            <div class="input-container">
+                <input type="email" id="email" name="email" required placeholder="Inserisci la tua email"
+                    class="input-with-icon">
+                <i class="fa-solid fa-envelope input-icon"></i>
+            </div>
 
             <label for="password">Password:</label>
-            <input type="password" id="password" name="password" required>
-            <button type="button" onclick="togglePassword()">Mostra/Nascondi</button>
+            <div class="input-container">
+                <input type="password" id="password" name="password" required placeholder="Inserisci la tua password"
+                    class="input-with-icon">
+                <i class="fa-solid fa-lock input-icon"></i>
+                <i id="togglePassword" class="fa-solid fa-eye icon-right"></i>
+            </div>
 
             <input type="hidden" name="redirect" id="redirect" value="">
 
             <button type="submit">Accedi</button>
         </form>
 
-        <p>Non hai un account? <a href="registration.php">Registrati qui</a></p>
-    </main>
+
+        <p>Non hai un account? <a href="registration.html">Registrati qui</a></p>
+    </div>
 
     <script>
-        function togglePassword() {
-            const passwordField = document.getElementById('password');
-            passwordField.type = passwordField.type === 'password' ? 'text' : 'password';
-        }
+        const passwordField = document.getElementById('password');
+        const togglePassword = document.getElementById('togglePassword');
+
+        // Evento per alternare la visibilità della password e cambiare icona
+        togglePassword.addEventListener('click', () => {
+            const type = passwordField.type === 'password' ? 'text' : 'password';
+            passwordField.type = type;
+
+            // Cambia l'icona in base alla visibilità della password
+            togglePassword.classList.toggle('fa-eye');
+            togglePassword.classList.toggle('fa-eye-slash');
+        });
 
         // Recupera il parametro "redirect" dall'URL e lo inserisce nel campo nascosto
         const params = new URLSearchParams(window.location.search);
@@ -101,7 +177,7 @@
             }
         }
     </script>
-    
+
 </body>
 
 </html>
