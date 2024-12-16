@@ -39,6 +39,10 @@ header h1 {
 
 /* MENU */
 
+#menu {
+    margin-bottom: 20px;
+}
+
 #menu ul {
     list-style: none;
     padding: 0;
@@ -56,6 +60,10 @@ header h1 {
     color: var(--txtcolor);
     padding: 5px 10px;
     transition: background-color 0.3s;
+    display: inline-block;
+    text-align: center;
+    width: 120px;
+    box-sizing: border-box;
 }
 
 #menu ul li a:hover {
