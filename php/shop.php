@@ -52,12 +52,13 @@ function updateCartDisplay() {
         foreach ($cartItems as $item) {
             $sizeHtml = '';
             if ($item['size'] !== '') {
-                $sizeHtml = ' - Taglia: ' . $item['size'];
+                $sizeHtml = 'Taglia: ' . $item['size'];
             }
             $cartHtml .= '
                 <div class="cart-item">
                     <img src="' . $item['image'] . '" alt="' . $item['name'] . '" class="cart-item-image">
-                    <p>' . $item['name'] . $sizeHtml . '</p>
+                    <p>' . $item['name'] . '</p>
+                    <p>' . $sizeHtml . '</p>
                     <p>Quantità: ' . $item['quantity'] . '</p>
                     <p>Prezzo: €' . number_format($item['price'], 2) . '</p>
                     <button class="remove-btn" onclick="removeFromCart(\'' . $item['name'] . '\', \'' . $item['size'] . '\')">Rimuovi</button>
