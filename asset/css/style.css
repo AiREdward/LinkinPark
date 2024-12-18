@@ -612,9 +612,25 @@ footer a {
     margin-right: 15px;
 }
 
+.social {
+    display: flex;
+    flex-direction: column; /* Disporre gli elementi in colonna */
+    align-items: flex-start; /* Allinea gli elementi all'inizio */
+    gap: 10px; /* Spazio tra le icone */
+}
+
+.social a {
+    display: flex; /* Mantieni le icone e il testo sulla stessa linea */
+    align-items: center; /* Centra verticalmente */
+    color: #aaa; 
+    text-decoration: none;
+}
+
 .social i {
     font-size: 24px; 
     margin-right: 8px;
+    color: #fff; /* Colore delle icone */
 }
+
 
 /* ----------------------------------------------- */

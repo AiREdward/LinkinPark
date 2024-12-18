@@ -3,13 +3,14 @@
 
 <footer>
     <div class="footerContainer">
-        
+
         <!-- Sezione Logo e Descrizione -->
         <div style="min-width: 250px;">
             <h3>Linkin Park</h2>
-            <p style="color: #aaa; line-height: 1.6;">
-                Iconica band che combina rock e innovazione. Scopri musica senza tempo e resta aggiornato sulle novità!
-            </p>
+                <p style="color: #aaa; line-height: 1.6;">
+                    Iconica band che combina rock e innovazione. Scopri musica senza tempo e resta aggiornato sulle
+                    novità!
+                </p>
         </div>
 
         <!-- Social Media -->
@@ -50,8 +51,16 @@
         <div style="margin-top: 10px; color: #aaa;">
             <p>Questo sito rispetta gli standard di sicurezza di <strong>W3C</strong>.</p>
             <div>
-                <img class="imgValidCode" src="asset/img/codice_valido/valid-xhtml10.png" alt="W3C HTML5">
-                <img class="imgValidCode" src="asset/img/codice_valido/vcss-blue.gif" alt="W3C CSS">
+                <a href="http://jigsaw.w3.org/css-validator/check/referer">
+                    <img style="border:0;width:88px;height:31px" src="http://jigsaw.w3.org/css-validator/images/vcss"
+                        alt="CSS Valido!" />
+                </a>
+
+                <a href="http://jigsaw.w3.org/css-validator/check/referer">
+                    <img style="border:0;width:88px;height:31px"
+                        src="http://jigsaw.w3.org/css-validator/images/vcss-blue" alt="CSS Valido!" />
+                </a>
+
                 <img class="imgValidCode" src="asset/img/codice_valido/pci-dss.png" alt="PCI DSS Compliant">
             </div>
         </div>
