@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta author="linkins">
+    <meta name="author" content="linkins">
     <meta name="description" content="TODO">
     <meta name="keywords" content="TODO">
     <meta name="viewport" content="width=device-width">
@@ -11,104 +11,18 @@
     <title>Accedi</title>
 
     <link rel="icon" href="asset/img/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="asset/css/style.css" media="screen">
+    <link rel="stylesheet" href="asset/css/login.css" media="screen">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-
-    <style>
-        .main-container {
-            justify-content: center;
-            align-items: center;
-            width: 350px;
-            padding: 20px;
-            text-align: center;
-            border-radius: 15px;
-            background: rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2),
-                0 1px 3px rgba(0, 0, 0, 0.1);
-            color: #000;
-        }
-
-        form label,
-        form input,
-        form button {
-            display: block;
-            width: 100%;
-            margin: 10px 0;
-            box-sizing: border-box;
-        }
-
-        input,
-        button {
-            padding: 10px;
-            border: none;
-            border-radius: 8px;
-            font-size: 1em;
-        }
-
-        input {
-            background: rgba(255, 255, 255, 0.7);
-            backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px);
-            border: 1px solid rgba(255, 255, 255, 0.4);
-        }
-
-        .input-container {
-            position: relative;
-        }
-
-        .input-with-icon {
-            padding-left: 30px;
-        }
-
-        .input-icon {
-            position: absolute;
-            left: 10px;
-            top: 50%;
-            transform: translateY(-50%);
-            opacity: 0.5;
-        }
-
-        .icon-right {
-            position: absolute;
-            right: 10px;
-            top: 50%;
-            transform: translateY(-50%);
-            cursor: pointer;
-        }
-
-        button {
-            background-color: #4CAF50;
-            color: white;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-
-        button:hover {
-            background-color: #45a049;
-        }
-
-        .error {
-            color: red;
-            font-size: 0.9em;
-            margin-bottom: 10px;
-        }
-
-        a {
-            color: #80d4ff;
-            text-decoration: none;
-        }
-
-        a:hover {
-            text-decoration: underline;
-        }
-    </style>
 </head>
 
 <body>
 
     <div class="main-container">
+        
+        <header>
+            <h1>Accedi</h1>
+        </header>
+        
         <!-- Sezione per i messaggi di errore -->
         <div id="error-message" class="error"></div>
 
@@ -132,7 +46,6 @@
 
             <button type="submit">Accedi</button>
         </form>
-
 
         <p>Non hai un account? <a href="registration.html">Registrati qui</a></p>
     </div>

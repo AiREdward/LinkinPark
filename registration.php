@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta author="linkins">
+    <meta name="author" content="linkins">
     <meta name="description" content="TODO">
     <meta name="keywords" content="TODO">
     <meta name="viewport" content="width=device-width">
@@ -11,317 +11,191 @@
     <title>Registrati</title>
 
     <link rel="icon" href="asset/img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="asset/css/login.css" media="screen">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
     <style>
-        /* Centra il contenuto verticalmente */
-        body {
+        .button-container {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        .icon-button.left {
+            position: absolute;
+            left: 20px;
+        }
+
+        .icon-button.right {
+            position: absolute;
+            right: 40px;
+        }
+
+        .icon-button {
+            background-color: transparent;
+            color: #4CAF50;
+            border: 2px solid #4CAF50;
+            border-radius: 50%;
+            padding: 12px;
+            width: 50px;
+            height: 50px;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            margin: 0;
-            flex-direction: column;
-        }
-
-        /* Contenitore per il modulo */
-        main {
-            width: 300px;
-            text-align: center;
-        }
-
-        /* Spaziatura tra i campi */
-        form label,
-        form input,
-        .password-strength,
-        form button,
-        form small {
-            display: block;
-            width: 100%;
-            margin: 10px 0;
-        }
-
-        /* Barra di forza della password */
-        .password-strength {
-            width: 80%;
-            height: 10px;
-            background-color: #e0e0e0;
-            margin: 5px auto;
-            overflow: hidden;
-        }
-
-        .password-strength div {
-            height: 100%;
-            width: 0%;
-            transition: width 0.3s ease;
-        }
-
-        .checkbox-container {
-            text-align: left;
-        }
-
-        .checkbox-container label {
-            display: inline-block;
-            margin: 5px 0;
-        }
-
-        /* Stile del Modale */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.4);
-        }
-
-        .modal-content {
-            background-color: #fff;
-            margin: 10% auto;
-            padding: 20px;
-            border: 1px solid #888;
-            width: 80%;
-            max-width: 600px;
-            max-height: 70vh;
-            overflow-y: auto;
-            opacity: 0;
-            transform: scale(0.8);
-            transition: all 0.3s ease;
-        }
-
-        .modal.show .modal-content {
-            opacity: 1;
-            transform: scale(1);
-        }
-
-        .close {
-            color: #aaa;
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
-        }
-
-        .close:hover,
-        .close:focus {
-            color: black;
-            text-decoration: none;
             cursor: pointer;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .icon-button i {
+            font-size: 1.5em;
+        }
+
+        .icon-button:hover {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .icon-button:focus {
+            outline: none;
+        }
+
+        .step-container {
+            display: none;
+        }
+
+        .step-container.active {
+            display: block;
         }
     </style>
 </head>
 
 <body>
-    <header>
-        <h1>Registrati</h1>
-    </header>
+    <div class="main-container">
+        <header>
+            <h1>Registrati</h1>
+        </header>
 
-    <main>
         <form action="php/registration.php" method="post" onsubmit="return validateForm()">
-            <label for="nome">Nome:</label>
-            <input type="text" id="nome" name="nome" required>
+            <div id="step-1" class="step-container active">
+                <label for="email">Email:</label>
+                <div class="input-container">
+                    <input type="email" id="email" name="email" required placeholder="Inserisci la tua email" aria-required="true">
+                </div>
 
-            <label for="cognome">Cognome:</label>
-            <input type="text" id="cognome" name="cognome" required>
+                <label for="password">Password:</label>
+                <div class="input-container">
+                    <input type="password" id="password" name="password" required oninput="checkPasswordStrength()" placeholder="Inserisci la tua password" aria-required="true" aria-describedby="passwordHint">
+                    <div class="password-strength" aria-live="polite">
+                        <div id="strength-bar" role="progressbar" aria-labelledby="password-strength-label"></div>
+                    </div>
+                    <small id="passwordHint">La password deve contenere almeno 8 caratteri, una maiuscola, una minuscola, un numero e un carattere speciale.</small>
+                </div>
 
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
+                <label for="conferma-password">Conferma Password:</label>
+                <div class="input-container">
+                    <input type="password" id="conferma-password" name="conferma-password" required placeholder="Conferma la tua password" class="input-with-icon" aria-required="true" aria-describedby="confirmPasswordHint">
+                    <i class="fa-solid fa-lock input-icon"></i>
+                    <i id="toggleConfirmPassword" class="fa-solid fa-eye icon-right" role="button" aria-label="Mostra/Nascondi la password"></i>
+                </div>
+                <small id="confirmPasswordHint">Assicurati che la password e la conferma siano identiche.</small>
 
-            <label for="indirizzo">Indirizzo:</label>
-            <input id="indirizzo" name="indirizzo" required></input>
-
-            <label for="telefono">Telefono:</label>
-            <input type="tel" id="telefono" name="telefono" oninput="validatePhone()" required>
-            <small id="telefono-error" style="color: red; display: none;">Inserisci solo caratteri numerici.</small>
-
-            <label for="data_nascita">Data di Nascita:</label>
-            <input type="date" id="data_nascita" name="data_nascita">
-
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" required oninput="checkPasswordStrength()">
-
-            <button type="button" onclick="togglePassword()">Mostra/Nascondi</button>
-
-            <div class="password-strength">
-                <div id="strength-bar"></div>
-            </div>
-            <small id="password-hint">La password deve contenere almeno 8 caratteri, una maiuscola, una minuscola, un
-                numero e un carattere speciale.</small>
-
-            <label for="conferma-password">Conferma Password:</label>
-            <input type="password" id="conferma-password" name="conferma-password" required>
-
-            <div class="checkbox-container">
-                <label>
-                    <input type="checkbox" id="privacy" name="privacy" required>
-                    Accetto la <a href="#" onclick="openModal('privacyModal')">Privacy Policy</a>.
-                </label>
+                <div class="button-container">
+                    <button type="button" onclick="nextStep(2)" class="icon-button right" aria-label="Passa al passo successivo">
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
             </div>
 
-            <div class="checkbox-container">
-                <label>
-                    <input type="checkbox" id="termini" name="termini" required>
-                    Accetto i <a href="#" onclick="openModal('termsModal')">Termini di Servizio</a>.
-                </label>
+            <div id="step-2" class="step-container">
+                <label for="nome">Nome:</label>
+                <div class="input-container">
+                    <input type="text" id="nome" name="nome" required placeholder="Inserisci il tuo nome" aria-required="true">
+                </div>
+
+                <label for="cognome">Cognome:</label>
+                <div class="input-container">
+                    <input type="text" id="cognome" name="cognome" required placeholder="Inserisci il tuo cognome" aria-required="true">
+                </div>
+
+                <label for="indirizzo">Indirizzo:</label>
+                <div class="input-container">
+                    <input type="text" id="indirizzo" name="indirizzo" required placeholder="Inserisci il tuo indirizzo" aria-required="true">
+                </div>
+
+                <label for="telefono">Telefono:</label>
+                <div class="input-container">
+                    <input type="tel" id="telefono" name="telefono" oninput="validatePhone()" required placeholder="Inserisci il tuo telefono" aria-required="true" aria-describedby="telefono-error">
+                    <small id="telefono-error" style="color: red; display: none;" role="alert">Inserisci solo caratteri numerici.</small>
+                </div>
+
+                <label for="data_nascita">Data di Nascita:</label>
+                <div class="input-container">
+                    <input type="date" id="data_nascita" name="data_nascita" aria-label="Inserisci la tua data di nascita">
+                </div>
+
+                <div class="button-container">
+                    <button type="button" onclick="previousStep(1)" class="icon-button" aria-label="Passa al passo precedente">
+                        <i class="fa-solid fa-arrow-left"></i>
+                    </button>
+
+                    <button type="button" onclick="nextStep(3)" class="icon-button" aria-label="Passa al passo successivo">
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
             </div>
 
-            <button type="submit">Registrati</button>
+            <div id="step-3" class="step-container">
+                <div class="checkbox-container">
+                    <label>
+                        <input type="checkbox" id="privacy" name="privacy" required aria-required="true">
+                        Accetto la <a href="#" onclick="openModal('privacyModal')" aria-label="Leggi la Privacy Policy">Privacy Policy</a>.
+                    </label>
+                </div>
+
+                <div class="checkbox-container">
+                    <label>
+                        <input type="checkbox" id="termini" name="termini" required aria-required="true">
+                        Accetto i <a href="#" onclick="openModal('termsModal')" aria-label="Leggi i Termini di Servizio">Termini di Servizio</a>.
+                    </label>
+                </div>
+
+                <button type="submit" aria-label="Completa la registrazione">Registrati</button>
+
+                <div class="button-container">
+                    <button type="button" onclick="previousStep(2)" class="icon-button" aria-label="Passa al passo precedente">
+                        <i class="fa-solid fa-arrow-left"></i>
+                    </button>
+                </div>
+            </div>
         </form>
+    </div>
 
-        <!-- Modale Privacy Policy -->
-        <div id="privacyModal" class="modal" onclick="closeModalOutside(event, 'privacyModal')">
-            <div class="modal-content">
-                <span class="close" onclick="closeModal('privacyModal')">&times;</span>
-                <section>
-                    <h2>1. Titolare del Trattamento</h2>
-                    <p>
-                        Il titolare del trattamento dei dati è Linkin Park, con sede legale in
-                        Piazza delle Erbe, 35 35122 Padova PD. Puoi contattarci all'indirizzo email:
-                        linkinpark@assistenza.it.
-                    </p>
-                </section>
+    <script src="js/registration.js"></script>
+    <script>
 
-                <section>
-                    <h2>2. Tipologie di Dati Raccolti</h2>
-                    <p>
-                        Raccogliamo dati personali come nome, email, dati di pagamento e dati di navigazione sul sito. I
-                        dati vengono raccolti al momento della registrazione, dell'acquisto e della navigazione.
-                    </p>
-                </section>
+        const passwordField = document.getElementById('conferma-password');
+        const toggleConfirmPassword = document.getElementById('toggleConfirmPassword');
 
-                <section>
-                    <h2>3. Finalità e Basi Giuridiche del Trattamento</h2>
-                    <p>
-                        I dati vengono utilizzati per completare gli acquisti, gestire le prenotazioni e migliorare
-                        l'esperienza utente, in conformità con il GDPR. Utilizziamo i dati personali esclusivamente con
-                        il
-                        consenso dell'utente o in base ad altre basi legali previste dal GDPR.
-                    </p>
-                </section>
+        toggleConfirmPassword.addEventListener('click', () => {
+            const type = passwordField.type === 'password' ? 'text' : 'password';
+            passwordField.type = type;
 
-                <section>
-                    <h2>4. Conservazione dei Dati</h2>
-                    <p>
-                        I tuoi dati personali saranno conservati per il tempo strettamente necessario a soddisfare le
-                        finalità indicate o come richiesto dalla legge.
-                    </p>
-                </section>
+            toggleConfirmPassword.classList.toggle('fa-eye');
+            toggleConfirmPassword.classList.toggle('fa-eye-slash');
+        });
 
-                <section>
-                    <h2>5. Condivisione dei Dati</h2>
-                    <p>
-                        Condividiamo i dati personali con fornitori terzi per l'elaborazione delle transazioni, le
-                        spedizioni e per obblighi legali.
-                    </p>
-                </section>
+        function nextStep(step) {
+            document.getElementById('step-' + (step - 1)).classList.remove('active');
+            document.getElementById('step-' + step).classList.add('active');
+        }
 
-                <section>
-                    <h2>6. Diritti dell'Interessato</h2>
-                    <p>
-                        Ai sensi del GDPR, hai il diritto di accedere, rettificare, cancellare e limitare il trattamento
-                        dei
-                        tuoi dati personali. Per esercitare questi diritti, contattaci all'indirizzo
-                        linkinpark@assistenza.it.
-                    </p>
-                </section>
+        function previousStep(step) {
+            document.getElementById('step-' + (step + 1)).classList.remove('active');
+            document.getElementById('step-' + step).classList.add('active');
+        }
 
-                <section>
-                    <h2>7. Cookie e Tecnologie di Tracciamento</h2>
-                    <p>
-                        Utilizziamo i cookie per migliorare l'esperienza utente e per analizzare il traffico.
-                    </p>
-                </section>
-
-                <section>
-                    <h2>8. Sicurezza dei Dati</h2>
-                    <p>
-                        Adottiamo misure tecniche e organizzative per proteggere i dati personali, in conformità
-                        all'Articolo 32 del GDPR.
-                    </p>
-                </section>
-
-                <section>
-                    <h2>9. Modifiche all'Informativa</h2>
-                    <p>
-                        La presente informativa può essere aggiornata periodicamente. Ti consigliamo di verificare
-                        regolarmente gli aggiornamenti su questa pagina.
-                    </p>
-                </section>
-
-                <section>
-                    <h2>10. Contatti e Reclami</h2>
-                    <p>
-                        Per domande o reclami, contattaci all'indirizzo linkinpark@assistenza.it. Se ritieni che i tuoi
-                        diritti siano stati
-                        violati, hai il diritto di rivolgerti al Garante per la protezione dei dati personali.
-                    </p>
-                </section>
-            </div>
-        </div>
-
-        <!-- Modale Termini di Servizio -->
-        <div id="termsModal" class="modal" onclick="closeModalOutside(event, 'termsModal')">
-            <div class="modal-content">
-                <span class="close" onclick="closeModal('termsModal')">&times;</span>
-                <section>
-                    <h2>1. Accettazione dei Termini</h2>
-                    <p>
-                        Utilizzando il nostro sito web, accetti i presenti Termini e Condizioni, applicabili a tutti gli
-                        utenti che visitano o effettuano acquisti su Linkin Park. Se non accetti i termini, ti invitiamo
-                        a non utilizzare il sito.
-                    </p>
-                </section>
-
-                <section>
-                    <h2>2. Servizi Offerti</h2>
-                    <p>
-                        Linkin Park offre ai fan della nostra band la possibilità di acquistare prodotti ufficiali,
-                        come
-                        abbigliamento e accessori, e di prenotare biglietti per le date del tour. Tutti i prodotti e i
-                        biglietti sono soggetti a disponibilità e possono essere modificati senza preavviso.
-                    </p>
-                </section>
-
-                <section>
-                    <h2>3. Condizioni di Acquisto</h2>
-                    <p>
-                        Gli acquisti effettuati su questo sito sono vincolati alla disponibilità dei prodotti. Al
-                        completamento dell'acquisto, riceverai una conferma via email con i dettagli dell'ordine. Per i
-                        biglietti, assicurati di conservare la conferma, che sarà richiesta per l'ingresso agli eventi.
-                    </p>
-                </section>
-
-                <section>
-                    <h2>4. Politica di Reso e Rimborso</h2>
-                    <p>
-                        Se desideri restituire un prodotto acquistato, puoi contattare il nostro servizio clienti entro
-                        14
-                        giorni dalla consegna. I biglietti per gli eventi, tuttavia, non sono rimborsabili, salvo
-                        cancellazione o modifiche dell'evento.
-                    </p>
-                </section>
-
-                <section>
-                    <h2>5. Modifiche ai Termini e Servizi</h2>
-                    <p>
-                        Linkin Park si riserva il diritto di modificare questi Termini e Servizi in qualsiasi
-                        momento.
-                        Le modifiche verranno comunicate sul sito e, se rilevanti, tramite email agli utenti registrati.
-                    </p>
-                </section>
-
-                <section>
-                    <h2>6. Contatti</h2>
-                    <p>
-                        Per qualsiasi domanda, contatta il nostro servizio clienti all'indirizzo email:
-                        linkinpark@assistenza.it.
-                    </p>
-                </section>
-            </div>
-        </div>
-
-        <script src="js/registration.js"></script>
-
+    </script>
 </body>
 
 </html>
