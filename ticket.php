@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta author="linkins">
+    <meta name="author" content="linkins">
     <meta name="description" content="TODO">
     <meta name="keywords" content="TODO">
     <meta name="viewport" content="width=device-width">
