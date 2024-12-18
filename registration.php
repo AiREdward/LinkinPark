@@ -172,30 +172,7 @@
     </div>
 
     <script src="js/registration.js"></script>
-    <script>
 
-        const passwordField = document.getElementById('conferma-password');
-        const toggleConfirmPassword = document.getElementById('toggleConfirmPassword');
-
-        toggleConfirmPassword.addEventListener('click', () => {
-            const type = passwordField.type === 'password' ? 'text' : 'password';
-            passwordField.type = type;
-
-            toggleConfirmPassword.classList.toggle('fa-eye');
-            toggleConfirmPassword.classList.toggle('fa-eye-slash');
-        });
-
-        function nextStep(step) {
-            document.getElementById('step-' + (step - 1)).classList.remove('active');
-            document.getElementById('step-' + step).classList.add('active');
-        }
-
-        function previousStep(step) {
-            document.getElementById('step-' + (step + 1)).classList.remove('active');
-            document.getElementById('step-' + step).classList.add('active');
-        }
-
-    </script>
 </body>
 
 </html>
