@@ -20,15 +20,6 @@
 
     <?php include 'includes/menu.php'; ?>
 
-    <nav id="cart">
-        <h3>Carrello</h3>
-        <div id="cart-items">
-            <!-- Gli articoli del carrello verranno aggiunti qui tramite JavaScript -->
-        </div>
-    </nav>
-
-    <main>
-
     <div class="filters">
         <!-- Search Bar -->
         <div class="search-container">
@@ -45,7 +36,8 @@
         </div>
     </div>
 
-        <section class="shop">
+    <div id="main">
+        <section id="shop">
 
             <!-- Sez. Maglie -->
             <div class="card" id="TracksWhiteTee" data-type="maglietta">
@@ -231,8 +223,15 @@
             </div>
 
         </section>
-        <p id="no-results" style="display: none;">Nessun risultato trovato.</p>
-</main>
+
+        <nav id="cart">
+            <h3>Carrello</h3>
+            <div id="cart-items">
+                <!-- Gli articoli del carrello verranno aggiunti qui tramite JavaScript -->
+            </div>
+        </nav>
+    </div>
+    <p id="no-results" style="display: none;">Nessun risultato trovato.</p>
 
     <!-- Script per la gestione del carrello -->
     <script>
@@ -280,7 +279,7 @@
             console.log('Loading cart');
             fetch('./php/shop.php', {
                 method: 'POST',
-                body: new URLSearchParams('action=load')
+                body: new URLSearchParams({ action: 'load' })
             })
                 .then(response => response.text())
                 .then(data => {
