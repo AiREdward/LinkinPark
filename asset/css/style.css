@@ -394,9 +394,9 @@ footer a {
     max-width: 1200px; 
     margin: 0 auto; 
     display: grid; 
-    grid-template-columns: repeat(3, 1fr); /* Tre colonne uguali */
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
-    text-align: center; /* Centra il contenuto */
+    text-align: center;
 }
 
 .footerContainer h3 {

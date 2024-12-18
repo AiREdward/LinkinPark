@@ -14,60 +14,6 @@
     <link rel="stylesheet" href="asset/css/login.css" media="screen">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
-    <style>
-        .button-container {
-            display: flex;
-            justify-content: space-between;
-            width: 100%;
-            margin-top: 20px;
-        }
-
-        .icon-button.left {
-            position: absolute;
-            left: 20px;
-        }
-
-        .icon-button.right {
-            position: absolute;
-            right: 40px;
-        }
-
-        .icon-button {
-            background-color: transparent;
-            color: #4CAF50;
-            border: 2px solid #4CAF50;
-            border-radius: 50%;
-            padding: 12px;
-            width: 50px;
-            height: 50px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            cursor: pointer;
-            transition: background-color 0.3s ease, color 0.3s ease;
-        }
-
-        .icon-button i {
-            font-size: 1.5em;
-        }
-
-        .icon-button:hover {
-            background-color: #4CAF50;
-            color: white;
-        }
-
-        .icon-button:focus {
-            outline: none;
-        }
-
-        .step-container {
-            display: none;
-        }
-
-        .step-container.active {
-            display: block;
-        }
-    </style>
 </head>
 
 <body>
