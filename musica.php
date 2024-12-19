@@ -5,7 +5,7 @@
         <title>Musica</title>
         <meta name="description" content="TODO">
         <meta name="keywords" content="TODO">
-        <meta author="linkins"> 
+        <meta name="author" content="linkins">
         <meta name="viewport" content="width=device-width">
 
         <link rel="stylesheet" href="asset/css/style.css" media="screen">
