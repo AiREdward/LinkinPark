@@ -19,7 +19,7 @@ $ruolo = $_SESSION['ruolo'] ?? null; // Recupera il ruolo dell'utente loggato
         <li><a href="shop.php" class="<?= $currentPage == 'shop.php' ? 'active' : '' ?>">Shop</a></li>
 
         <?php if ($ruolo === 'admin'): ?>
-            <li><a href="admin.html" class="<?= $currentPage == 'admin.html' ? 'active' : '' ?>">Admin</a></li>
+            <li><a href="template/admin.html" class="<?= $currentPage == 'template/admin.html' ? 'active' : '' ?>">Admin</a></li>
         <?php endif; ?>
 
         <li><a href="login.php" class="<?= $currentPage == 'login.php' ? 'active' : '' ?>">Login</a></li>
