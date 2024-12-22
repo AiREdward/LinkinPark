@@ -109,6 +109,9 @@ header h1 {
 
 #main{
     display: flex;
+    gap: 20px; /* Gestisce lo spazio tra #shop e #cart */
+    padding: 20px; /* Eventuale padding per #main */
+    box-sizing: border-box; /* Include padding e border nel calcolo delle dimensioni */
 }
 
 #shop {
@@ -116,7 +119,8 @@ header h1 {
     flex-wrap: wrap;
     gap: 20px;
     justify-content: center;
-    flex: 0 0 75%;
+    flex: 0 0 calc(75% - 20px); /* Considera il gap */
+    box-sizing: border-box; /* Include padding e border nel calcolo delle dimensioni */
 }
 
 /* FILTERS */ 
@@ -203,7 +207,7 @@ header h1 {
     border: 2px solid #000;
 }
 
-/* CARD ELEMENT */
+/* CARD ELEMENT SHOP */
 
 .card {
     width: 30%;
@@ -250,7 +254,7 @@ header h1 {
 }
 
 .card-front h3 {
-    font-size: 10%;
+    font-size: 1em;
     text-align: center;
     color: #000;
     font-weight: bold;
@@ -265,7 +269,7 @@ header h1 {
 }
 
 .card-front .price {
-    font-size: 8%;
+    font-size: 0.9em;
     color: #333;
     margin-bottom: 10px;
 }
@@ -353,34 +357,35 @@ header h1 {
 
 #cart {
     padding: 20px;
-    background-color: #f8f9fa;
-    border: 1px solid #ddd;
+    background-color: #343a40;
+    border: 2.5px solid #17A2B8;
     border-radius: 8px;
-    flex: 0 0 25%;
+    flex: 0 0 calc(25% - 20px); /* Considera il gap */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     font-family: 'Arial', sans-serif;
+    box-sizing: border-box; /* Include padding e border nel calcolo delle dimensioni */
 }
 
 #cart p {
     font-size: 1rem;
     text-align: center;
     color: #6c757d;
-    margin: 20px 0;
+    margin: 5px 0;
 }
 
 #cart h3 {
     font-size: 1.5rem;
     margin-bottom: 15px;
-    color: #343a40;
+    color: #fff;
     text-align: center;
-    border-bottom: 2px solid #007BFF;
+    border-bottom: 2px solid #17A2B8;
     padding-bottom: 5px;
 }
 
 #cart-items {
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    gap: 15px;
 }
 
 .cart-item {
@@ -395,7 +400,7 @@ header h1 {
 }
 
 .cart-item img.cart-item-image {
-    width: 60%;
+    width: 40%;
     height: auto;
     border-radius: 8px;
     object-fit: cover;
@@ -443,7 +448,6 @@ header h1 {
     background-color: #c82333;
 }
 
-/* Subtotale */
 #subtotal {
     font-size: 1.2rem;
     font-weight: bold;
@@ -454,7 +458,6 @@ header h1 {
     padding-top: 10px;
 }
 
-/* Pulsante "Procedi all'acquisto" */
 #checkout-btn, #clear-cart-btn {
     display: block;
     width: 100%;
@@ -486,7 +489,6 @@ header h1 {
     background-color: #e0a800;
 }
 
-/* Carrello vuoto */
 .empty-cart {
     text-align: center;
     color: #6c757d;
