@@ -61,7 +61,6 @@
                         src="http://jigsaw.w3.org/css-validator/images/vcss-blue" alt="CSS Valido!" />
                 </a>
 
-                <img class="imgValidCode" src="asset/img/codice_valido/pci-dss.png" alt="PCI DSS Compliant">
             </div>
         </div>
     </div>
