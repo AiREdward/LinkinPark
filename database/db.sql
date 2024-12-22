@@ -3,6 +3,7 @@ CREATE DATABASE lp_db;
 DROP TABLE IF EXISTS biglietti;
 DROP TABLE IF EXISTS tour;
 DROP TABLE IF EXISTS transazioni;
+DROP TABLE IF EXISTS transazione;
 DROP TABLE IF EXISTS utenti;
 
 CREATE TABLE utenti (
@@ -25,10 +26,10 @@ VALUES
     ('utente', 'test', 'user@test', '$2y$10$ZTGUODT.9o6REeHgcYt9tO9OufttUPe6alAfI7VCVSwCTFgXOstAS', 'via test', 'utente', 'attivo'),
     ('block', 'test', 'block@test', '$2y$10$nx0vjdmO/U8dPT0cWS6M5OydWpdwOcTpRUwlaWCphyF57uzjvUUsS', 'via test', 'utente', 'bloccato');
 
-CREATE TABLE transazioni (
+CREATE TABLE transazione (
     id INT AUTO_INCREMENT PRIMARY KEY,
     n_carta VARCHAR(20) NOT NULL,
-    nome VARCHAR(100) NOT NULL,
+    titolare VARCHAR(100) NOT NULL,
     data_scadenza DATE NOT NULL,
     ccv VARCHAR(4) NOT NULL,
     totale DECIMAL(10, 2) NOT NULL,
@@ -38,7 +39,7 @@ CREATE TABLE transazioni (
     FOREIGN KEY (utente_id) REFERENCES utenti(id)
 );
 
-INSERT INTO transazioni (n_carta, nome, ccv, data_scadenza, totale, el_acquistati, utente_id) 
+INSERT INTO transazione (n_carta, titolare, ccv, data_scadenza, totale, el_acquistati, utente_id) 
 VALUES 
     ('1234567890123456', 'Lorenzo Chiesa', '123', '2029-12-31', 49.99, 'articolo1, articolo2', 2),
     ('1122334455667788', 'Mario Retegui', '200', '2030-08-20', 49.99, 'articolo1', 2),

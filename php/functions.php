@@ -37,7 +37,7 @@ function getTransactionStats($conn) {
     $stats = [];
 
     // Totale guadagno e numero di transazioni
-    $stmt = $conn->query("SELECT COUNT(*) AS total_transactions, SUM(totale) AS total_revenue FROM transazioni");
+    $stmt = $conn->query("SELECT COUNT(*) AS total_transactions, SUM(totale) AS total_revenue FROM transazione");
     if ($stmt) {
         $stats = $stmt->fetch_assoc();
         // Assicurati che total_revenue sia un numero, se è null metti 0
@@ -47,7 +47,7 @@ function getTransactionStats($conn) {
     }
 
     // Articolo più acquistato
-    $stmt2 = $conn->query("SELECT el_acquistati FROM transazioni");
+    $stmt2 = $conn->query("SELECT el_acquistati FROM transazione");
     if ($stmt2) {
         $products = [];
         while ($row = $stmt2->fetch_assoc()) {
