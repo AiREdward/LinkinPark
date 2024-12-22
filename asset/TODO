@@ -16,11 +16,6 @@ sistema tabindex + selectable text
 aggiorna salvataggio nel db
 
 
-footer___________
-
-fixa css + class per <footer></footer>
-
-
 all______________
 
 css
@@ -29,3 +24,7 @@ aggiungere nuovo footer
 
 togli $ su shop perche' usiamo €
 sistema filti su shop pe la selezione
+
+
+
+metti icona banca al posto di visa su payment

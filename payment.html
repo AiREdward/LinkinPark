@@ -15,45 +15,58 @@
 <body>
     <form id="cardForm" action="php/payment.php" method="POST">
         <div class="container">
-            <div class="card">
-                <button class="proceed" type="submit">
-                    <svg class="sendicon" width="24" height="24" viewBox="0 0 24 24">
-                        <path d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z"></path>
-                    </svg>
-                </button>
-
-                <img src="https://seeklogo.com/images/V/VISA-logo-62D5B26FE1-seeklogo.com.png" class="logo-card">
-
-                <label>Card number:</label>
-                <input id="n_carta" type="text" class="input n_carta" name="n_carta" placeholder="1234 5678 9101 1121" maxlength="16" required>
-                
-                <label>Nome Completo Proprietario Carta:</label>
-                <input id="nome" class="input nome" name="nome" placeholder="Mario Rossi" required>
-                
-                <label for="data_scadenza">Data di Scadenza:</label>
-                <input type="date" id="data_scadenza" name="data_scadenza" required>
-                
-                <label class="toleft">CCV:</label>
-                <input id="ccv" class="input toleft ccv" name="ccv" placeholder="321" maxlength="4" required>
+            <!-- Sezione sinistra: carta e dati -->
+            <div class="left-section">
+                <!-- Sezione dettagli della carta -->
+                <section class="card" aria-labelledby="card-section" role="form">
+                    <h2 id="card-section">Dettagli della Carta</h2>
+                    
+                    <button class="proceed" type="submit" aria-label="Procedi al pagamento" accesskey="p">
+                        <svg class="sendicon" width="24" height="24" viewBox="0 0 24 24">
+                            <path d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z"></path>
+                        </svg>
+                    </button>
+        
+                    <i class="fa-solid fa-building-columns" aria-hidden="true"></i>
+        
+                    <label for="n_carta" accesskey="n">Numero della carta:</label>
+                    <input id="n_carta" type="text" class="input n_carta" name="n_carta" 
+                        placeholder="1234 5678 9101 1121" maxlength="16" required aria-required="true">
+        
+                    <label for="nome" accesskey="o">Nome completo del proprietario della carta:</label>
+                    <input id="nome" class="input nome" name="nome" placeholder="Mario Rossi" required aria-required="true">
+        
+                    <label for="data_scadenza" accesskey="d">Data di scadenza:</label>
+                    <input type="date" id="data_scadenza" name="data_scadenza" required aria-required="true">
+        
+                    <label for="ccv" class="toleft" accesskey="c">CCV (codice di sicurezza):</label>
+                    <input id="ccv" class="input toleft ccv" name="ccv" placeholder="321" maxlength="4" 
+                        required aria-required="true">
+                </section>
+        
+                <!-- Sezione dati -->
+                <section class="data" role="data" aria-labelledby="data-section">
+                    <article class="col receipt-details" aria-labelledby="receipt-details">
+                        <h3 id="receipt-details">Dettagli del pagamento</h3>
+                        <p>Costo:</p>
+                        <h2 class="cost" id="subtotal" aria-live="polite">€0.00</h2><br>
+                        <p>Utente:</p>
+                        <h2 class="user" id="user-name" aria-live="polite">Nome Cognome</h2>
+                    </article>
+                </section>
             </div>
-            
-            <div class="receipt">
-                <div class="col">
-                    <p>Costo:</p>
-                    <h2 class="cost" id="subtotal">€0.00</h2><br>
-                    <p>Utente:</p>
-                    <h2 class="user" id="user-name">Nome Cognome</h2>
-                </div>
+
+            <!-- Sezione destra: ricevuta -->
+            <section class="receipt" role="region" aria-labelledby="receipt-section">
+                <h2 id="receipt-section">Dettagli della ricevuta</h2>
                 
-                <div class="col">
-                    <p>Lista degli acquisti:</p>
-                    <div id="bought-items">
+                <article class="col" id="bought-items-container" aria-labelledby="bought-items-title">
+                    <h3 id="bought-items-title">Lista degli acquisti:</h3>
+                    <div id="bought-items" aria-live="polite">
                         <!-- I prodotti del carrello verranno aggiunti qui tramite JavaScript -->
                     </div>
-                </div>
-                
-                <p class="comprobe">Con la <strong>ricevuta di avvenuto pagamento</strong> potrai ritirare la merce nel Linkin Park Store a te più vicino.</p>
-            </div>
+                </article>
+            </section>
         </div>
     </form>
     

@@ -8,153 +8,185 @@ body {
     background: linear-gradient(to right, #3a7bd5, #00d2ff);
 }
 
-.card {
-    background: #16181a;
-    border-radius: 14px;
-    max-width: 300px;
-    display: block;
-    margin: auto;
-    padding: 60px;
-    padding-left: 20px;
-    padding-right: 20px;
-    box-shadow: 2px 10px 40px black;
-    z-index: 99;
-}
-
-.logo-card {
-    max-width: 50px;
-    margin-bottom: 15px;
-    margin-top: -19px;
-}
-
-label {
+/* Contenitore principale */
+#cardForm .container {
     display: flex;
-    font-size: 10px;
-    color: white;
-    opacity: .4;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
 }
 
-input {
+/* Sezioni carta e dati */
+#cardForm .container .left-section {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    flex: 0 0 calc(60% - 20px); /* Considera il gap */
+}
+
+/* Card di pagamento */
+#cardForm .container .card {
+    background: linear-gradient(135deg, #2c3e50, #34495e);
+    border-radius: 14px;
+    max-width: 400px;
+    margin: auto;
+    padding: 30px;
+    box-shadow: 4px 8px 20px rgba(0, 0, 0, 0.5);
+    position: relative;
+    z-index: 2;
+    color: #ecf0f1;
+}
+
+#cardForm .container .card .logo-card {
+    max-width: 80px;
+    margin: 10px auto;
+    display: block;
+}
+
+/* Etichette e input */
+#cardForm .container .card label {
+    display: block;
+    font-size: 12px;
+    color: #bdc3c7;
+    margin-bottom: 5px;
+}
+
+#cardForm .container .card input {
+    width: 100%;
     font-family: 'Work Sans', sans-serif;
     background: transparent;
     border: none;
-    border-bottom: 1px solid transparent;
-    color: #dbdce0;
-    transition: border-bottom .4s;
+    border-bottom: 1px solid #7f8c8d;
+    color: #ecf0f1;
+    padding: 5px;
+    margin-bottom: 15px;
+    transition: border-bottom 0.4s;
 }
 
-input:focus {
+#cardForm .container .card input:focus {
     border-bottom: 1px solid #1abc9c;
     outline: none;
 }
 
-.n_carta {
-    display: block;
-    font-size: 20px;
-    margin-bottom: 8px;
+#cardForm .container .card input.n_carta {
+    font-size: 18px;
 }
 
-.nome {
-    display: block;
-    font-size: 15px;
-    max-width: 200px;
-    float: left;
-    margin-bottom: 15px;
+#cardForm .container .card input.nome {
+    font-size: 16px;
 }
 
-.toleft {
-    float: left;
+#cardForm .container .card input.ccv {
+    width: 60px;
 }
 
-.ccv {
-    width: 50px;
-    margin-top: -5px;
-    font-size: 15px;
-}
-
-.receipt {
-    background: #dbdce0;
-    border-radius: 4px;
-    padding: 5%;
-    padding-top: 200px;
-    max-width: 600px;
-    display: block;
-    margin: auto;
-    margin-top: -180px;
-    z-index: -999;
-    position: relative;
-}
-
-.col {
-    width: 50%;
-    float: left;
-}
-
-.bought-item {
-    background: #f5f5f5;
-    padding: 2px;
-}
-
-.bought-items {
-    margin-top: -3px;
-}
-
-.cost {
-    color: #3a7bd5;
-}
-
-.seller {
-    color: #3a7bd5;
-}
-
-.description {
-    font-size: 13px;
-}
-
-.price {
-    font-size: 12px;
-}
-
-.comprobe {
-    text-align: center;
-}
-
-.proceed {
+/* Pulsante di conferma */
+#cardForm .container .card .proceed {
     position: absolute;
-    transform: translate(300px, 10px);
-    width: 50px;
-    height: 50px;
+    top: -25px;
+    right: -25px;
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
     background: #1abc9c;
     border: none;
     color: white;
-    transition: box-shadow .2s, transform .4s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
 }
 
-.proceed:active {
-    outline: none;
+#cardForm .container .card .proceed:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
 }
 
-.proceed:focus {
-    outline: none;
-    box-shadow: inset 0px 0px 5px white;
+#cardForm .container .card .proceed:active {
+    transform: scale(1);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.4);
 }
 
-.sendicon {
+#cardForm .container .card .sendicon {
     filter: invert(100%);
-    padding-top: 2px;
 }
 
-@media (max-width: 600px) {
-    .proceed {
-        transform: translate(250px, 10px);
-    }
+/* Disclaimer */
+#cardForm .container #disclaimer {
+    font-size: 12px;
+    color: #bdc3c7;
+    text-align: center;
+    margin-top: 20px;
+}
 
-    .col {
-        display: block;
-        margin: auto;
-        width: 100%;
-        text-align: center;
-    }
+/* Sezione ricevuta */
+#cardForm .container .receipt {
+    flex: 0 0 calc(40% - 20px); /* Considera il gap */
+    background: #ecf0f1;
+    border-radius: 8px;
+    padding: 20px;
+    max-width: 500px;
+    margin-top: 20px;
+    box-shadow: 2px 4px 15px rgba(0, 0, 0, 0.2);
+    color: #2c3e50;
+    position: relative;
+}
+
+#cardForm .container .receipt .col {
+    width: 48%;
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 4%;
+}
+
+#cardForm .container .receipt .col:last-child {
+    margin-right: 0;
+}
+
+#cardForm .container .receipt .col p {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #34495e;
+}
+
+#cardForm .container .receipt .col h2 {
+    margin: 5px 0;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#cardForm .container .receipt .bought-items {
+    border-top: 1px solid #bdc3c7;
+    padding-top: 10px;
+    margin-top: 10px;
+}
+
+#cardForm .container .receipt .bought-items .bought-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #f5f5f5;
+    padding: 10px;
+    border-radius: 6px;
+    margin-bottom: 10px;
+}
+
+#cardForm .container .receipt .bought-items .bought-item p {
+    margin: 0;
+    font-size: 14px;
+    color: #2c3e50;
+}
+
+#cardForm .container .receipt .bought-items .bought-item .price {
+    font-weight: bold;
+    color: #1abc9c;
+}
+
+/* Pulsanti e azioni */
+#cardForm button {
+    cursor: pointer;
+}
+
+#cardForm button:focus {
+    outline: none;
 }

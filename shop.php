@@ -368,7 +368,7 @@
         });
     </script>
 
-    <!-- Script per la ricerca degli elementi -->
+    <!-- Script per la ricerca degli elementi e gestione del filtro-->
     <script>
         function searchItems() {
             const query = document.getElementById('search-bar').value.toLowerCase();
@@ -388,10 +388,7 @@
             // Mostra o nasconde il messaggio "Nessun risultato trovato"
             document.getElementById('no-results').style.display = hasResults ? 'none' : 'block';
         }
-    </script>
 
-    <!-- Script per la gestione del filtro -->
-    <script>
         document.querySelectorAll('.card').forEach(card => {
             card.querySelectorAll('.info-btn').forEach(button => {
                 button.addEventListener('click', () => {
