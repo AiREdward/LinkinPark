@@ -2,6 +2,7 @@
 session_start();
 
 include '../includes/db_config.php';
+
 $utente_id = $_SESSION['user_id'];
 
 // Controlla se la richiesta è per ottenere i dati dell'utente
@@ -21,7 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['action']) && $_GET['act
 
 // Recupera i dati dal form
 $n_carta = $_POST['n_carta'] ?? '';
-$nome = $_POST['nome'] ?? '';
+$titolare = $_POST['titolare'] ?? '';
 $data_scadenza = $_POST['data_scadenza'] ?? '';
 $ccv = $_POST['ccv'] ?? '';
 
@@ -44,9 +45,9 @@ foreach ($cartItems as $item) {
 $el_acquistati_str = implode("\n\n", $el_acquistati);
 
 // Inserisci i dati nel database
-$sql = "INSERT INTO transazioni (n_carta, nome, data_scadenza, ccv, totale, el_acquistati, utente_id) VALUES (?, ?, ?, ?, ?, ?, ?)";
+$sql = "INSERT INTO transazione (n_carta, titolare, data_scadenza, ccv, totale, el_acquistati, utente_id) VALUES (?, ?, ?, ?, ?, ?, ?)";
 $stmt = $conn->prepare($sql);
-$stmt->bind_param("ssssiss", $n_carta, $nome, $data_scadenza, $ccv, $subtotal, $el_acquistati_str, $utente_id);
+$stmt->bind_param("ssssiss", $n_carta, $titolare, $data_scadenza, $ccv, $subtotal, $el_acquistati_str, $utente_id);
 
 if ($stmt->execute()) {
     // Ottieni il percorso dinamico della directory principale

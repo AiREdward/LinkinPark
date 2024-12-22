@@ -32,6 +32,9 @@ if (error) {
         case 'utente':
             errorMessage.textContent = 'Utente non trovato. Registrati.';
             break;
+        case 'invalid_redirect':
+            errorMessage.textContent = 'Il percorso di destinazione non è valido. Riprova.';
+            break;
         default:
             errorMessage.textContent = 'Si è verificato un errore. Riprova.';
     }
