@@ -380,7 +380,7 @@ header h1 {
 #cart-items {
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    gap: 15px;
 }
 
 .cart-item {
