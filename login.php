@@ -16,39 +16,42 @@
 </head>
 
 <body>
+    <main>
 
-    <div class="main-container">
+        <div class="main-container">
+
+            <header>
+                <h1>Accedi</h1>
+            </header>
+
+            <!-- Sezione per i messaggi di errore -->
+            <div id="error-message" class="error"></div>
+
+            <form action="php/login.php" method="post">
+                <label for="email">Email:</label>
+                <div class="input-container">
+                    <input type="email" id="email" name="email" required placeholder="Inserisci la tua email"
+                        class="input-with-icon">
+                    <i class="fa-solid fa-envelope input-icon"></i>
+                </div>
+
+                <label for="password">Password:</label>
+                <div class="input-container">
+                    <input type="password" id="password" name="password" required
+                        placeholder="Inserisci la tua password" class="input-with-icon">
+                    <i class="fa-solid fa-lock input-icon"></i>
+                    <i id="togglePassword" class="fa-solid fa-eye icon-right"></i>
+                </div>
+
+                <input type="hidden" name="redirect" id="redirect" value="">
+
+                <button type="submit">Accedi</button>
+            </form>
+
+            <p>Non hai un account? <a href="registration.html">Registrati qui</a></p>
+        </div>
         
-        <header>
-            <h1>Accedi</h1>
-        </header>
-        
-        <!-- Sezione per i messaggi di errore -->
-        <div id="error-message" class="error"></div>
-
-        <form action="php/login.php" method="post">
-            <label for="email">Email:</label>
-            <div class="input-container">
-                <input type="email" id="email" name="email" required placeholder="Inserisci la tua email"
-                    class="input-with-icon">
-                <i class="fa-solid fa-envelope input-icon"></i>
-            </div>
-
-            <label for="password">Password:</label>
-            <div class="input-container">
-                <input type="password" id="password" name="password" required placeholder="Inserisci la tua password"
-                    class="input-with-icon">
-                <i class="fa-solid fa-lock input-icon"></i>
-                <i id="togglePassword" class="fa-solid fa-eye icon-right"></i>
-            </div>
-
-            <input type="hidden" name="redirect" id="redirect" value="">
-
-            <button type="submit">Accedi</button>
-        </form>
-
-        <p>Non hai un account? <a href="registration.html">Registrati qui</a></p>
-    </div>
+    </main>
 
     <script src="js/login.js"></script>
 
