@@ -29,7 +29,7 @@
             // Imposta il locale italiano per la formattazione delle date
             setlocale(LC_TIME, 'it_IT.UTF-8', 'it_IT', 'Italian');
 
-            $sql = "SELECT citta, data, orario, luogo, paese FROM tour ORDER BY data";
+            $sql = "SELECT citta, data, orario, luogo, paese, descrizione FROM tour ORDER BY data";
             $result = $conn->query($sql);
 
             if ($result->num_rows > 0) {
@@ -39,6 +39,7 @@
                     $orario = substr(htmlspecialchars($row['orario']), 0, 5); // Estrae HH:MM
                     $luogo = htmlspecialchars($row['luogo']);
                     $paese = htmlspecialchars($row['paese']);
+                    $descrizione = htmlspecialchars($row['descrizione']);
 
                     // Converte la data in formato italiano
                     $formattedDate = strftime("%d %B %Y", strtotime($data));
@@ -50,20 +51,21 @@
                         <p>
                             <strong>
                                 <?php echo $citta; ?>
-                            </strong> - 
-                            <?php echo $luogo; ?> -
-                            <time datetime="<?php echo $data; ?>"><?php echo $formattedDate; ?></time> alle 
-                            <span><?php echo $orario; ?></span>
+                            </strong> -
+                            <time datetime="<?php echo $data; ?>"><?php echo $formattedDate; ?></time>
                         </p>
 
                         <div class="extra-details" hidden aria-hidden="true">
                             <button class="close-details" onclick="closeDetails(event, this)">Chiudi</button>
 
-                            <p>Grande serata al <a href="https://www.google.com/maps?q=<?php echo urlencode($luogo); ?>" target="_blank">
+                            <p>
+                                <?php echo $descrizione; ?> Alle ore 
+                                <strong><?php echo $orario; ?></strong>.
+                            </p>
+                            <p>Luogo: <a href="https://www.google.com/maps?q=<?php echo urlencode($luogo); ?>" target="_blank">
                                     <?php echo $luogo; ?>
                                 </a> di
-                                <?php echo $citta; ?> alle 
-                                <?php echo $orario; ?>.
+                                <?php echo $citta; ?>.
                             </p>
                             <button aria-label="Compra Biglietto per <?php echo $citta; ?>"
                                 onclick="handleTicketPurchase(event, '<?php echo $citta; ?>')">Compra Biglietto</button>
