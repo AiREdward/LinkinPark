@@ -22,9 +22,7 @@
                     <h2 id="card-section">Dettagli della Carta</h2>
                     
                     <button class="proceed" type="submit" aria-label="Procedi al pagamento" accesskey="p">
-                        <svg class="sendicon" width="24" height="24" viewBox="0 0 24 24">
-                            <path d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z"></path>
-                        </svg>
+                        <p class="confirmation">Conferma Pagamento</p>
                     </button>
         
                     <i class="fa-solid fa-building-columns" aria-hidden="true"></i>
@@ -49,7 +47,7 @@
                     <article class="col receipt-details" aria-labelledby="receipt-details">
                         <h3 id="receipt-details">Dettagli del pagamento</h3>
                         <p>Costo:</p>
-                        <h2 class="cost" id="subtotal" aria-live="polite">€0.00</h2><br>
+                        <h2 class="cost" id="subtotal" aria-live="polite">€0.00</h2>
                         <p>Utente:</p>
                         <h2 class="user" id="user-name" aria-live="polite">Nome Cognome</h2>
                     </article>
@@ -120,10 +118,12 @@
                 const itemElement = document.createElement('div');
                 itemElement.innerHTML = `
                     <img src="${item.image}" alt="${item.name}" class="product-image">
-                    <h3 class="bought-items">${item.name}</h3>
-                    <p class="bought-items description">Quantità: ${item.quantity}</p>
-                    <p class="bought-items description">Taglia: ${item.size}</p>
-                    <p class="bought-items price">Prezzo: €${itemPrice.toFixed(2)} cad.</p>
+                    <div class="bought-item-details">
+                        <h3 class="bought-items">${item.name}</h3>
+                        <p class="bought-items description">Quantità: ${item.quantity}</p>
+                        <p class="bought-items description">Taglia: ${item.size}</p>
+                        <p class="bought-items price">Prezzo: €${itemPrice.toFixed(2)} cad.</p>
+                    </div>
                 `;
                 boughtItemsContainer.appendChild(itemElement);
             });
