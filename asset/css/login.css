@@ -17,7 +17,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    color: var(--text-color);
+    
 }
 
 .main-container {
@@ -30,6 +30,7 @@ body {
     border-radius: 20px;
     box-shadow: 0 10px 30px var(--box-shadow-color);
     text-align: center;
+    color: var(--text-color);
 }
 
 form label {

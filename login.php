@@ -11,6 +11,7 @@
     <title>Accedi</title>
 
     <link rel="icon" href="asset/img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="asset/css/style.css" media="screen">
     <link rel="stylesheet" href="asset/css/login.css" media="screen">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
