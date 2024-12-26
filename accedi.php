@@ -49,7 +49,7 @@
                 <button type="submit">Accedi</button>
             </form>
 
-            <p>Non hai un account? <a href="registration.html">Registrati qui</a></p>
+            <p>Non hai un account? <a href="registrazione.php">Registrati qui</a></p>
         </div>
         
     </main>
