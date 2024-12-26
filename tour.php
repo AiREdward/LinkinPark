@@ -79,6 +79,9 @@
             $conn->close();
             ?>
         </dl>
+
+        <?php include 'includes/scrollToTop.php'; ?>
+
     </main>
 
     <script>

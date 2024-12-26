@@ -136,3 +136,16 @@ function validateForm() {
 
     return true; // Form valido
 }
+
+// Visualizza il messaggio di errore
+const errorMessage = document.getElementById('error-message');
+const error = params.get('error');
+if (error) {
+    switch (error) {
+        case 'used':
+            errorMessage.textContent = 'Mail già utilizzata. Riprova.';
+            break;
+        default:
+            errorMessage.textContent = 'Si è verificato un errore. Riprova.';
+    }
+}

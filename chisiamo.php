@@ -116,6 +116,8 @@
                     da Aerosmith. La sua precisione e versatilità sono fondamentali per il sound della band.</p></dd>
                 
             </dl>
+
+            <?php include 'includes/scrollToTop.php'; ?>
             
         </main>
 

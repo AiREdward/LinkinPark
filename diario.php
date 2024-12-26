@@ -178,6 +178,8 @@
 
         <div class="overlay"></div>
 
+        <?php include 'includes/scrollToTop.php'; ?>
+
     </main>
 
     <hr>
