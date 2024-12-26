@@ -14,6 +14,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="stylesheet" href="asset/css/mobile.css" media="screen and (max-width:600px)">
     <link rel="icon" href="asset/img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
 </head>
 
@@ -51,8 +52,12 @@
             <p>Sei loggato come: <span id="accountEmail"></span></p>
             <button id="logoutButton">Log Out</button>
         </div>
+
+        <?php include 'includes/scrollToTop.php'; ?>
+
     </main>
 
+    
     <script src="js/index.js"></script>
 
     <?php include 'includes/footer.php'; ?>

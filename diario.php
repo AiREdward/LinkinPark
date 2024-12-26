@@ -177,6 +177,8 @@
             E vi assicuriamo, il meglio deve ancora venire!</p>
         </article>
 
+        <?php include 'includes/scrollToTop.php'; ?>
+
     </main>
 
     <hr>

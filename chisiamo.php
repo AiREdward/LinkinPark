@@ -79,6 +79,9 @@
                 <dt><time datetime="2024-10-29">29 ottobre 2024</time>:</dt>
                 <dd>descrizione premio</dd>
             </dl>
+
+            <?php include 'includes/scrollToTop.php'; ?>
+            
         </main>
 
         <?php include 'includes/footer.php'; ?>
