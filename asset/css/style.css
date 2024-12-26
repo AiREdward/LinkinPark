@@ -1,7 +1,7 @@
 /* GENERALE */
 
 :root{
-    --bgcolor1: #000000; 
+    --bgcolor1: #050505; 
     --bgcolor2: #0B1520;
     --txtcolor: #ECDDEE;
     --linkcolor: blue;
@@ -559,6 +559,195 @@ header h1 {
     padding-left: 1em;
     list-style-position: inside;
 }
+
+
+/* ===== DIARIO =====*/
+
+/* Timeline container and structure */
+#storia {
+    position: relative;
+    margin: 2em 0;
+    padding: 0;
+}
+
+/* Central timeline line */
+#storia::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    width: 2px;
+    height: 100%;
+    background: var(--txtcolor);
+    transform: translateX(-50%);
+}
+
+/* Timeline entries styling */
+#storia dt {
+    width: 120px;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--bgcolor1);
+    border: 2px solid var(--txtcolor);
+    border-radius: 20px;
+    padding: 0.5em;
+    margin: 2em 0;
+    text-align: center;
+    z-index: 1;
+}
+
+/* Article preview containers */
+#storia dd {
+    width: 45%;
+    margin: 1em 0;
+    padding: 1em;
+    background: var(--bgcolor1);
+    border-radius: 8px;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+/* Position articles alternately */
+#storia dt + dd {
+    margin-left: auto;  /* Push even articles to the right */
+}
+
+#storia dt + dd:nth-of-type(odd) {
+    margin-right: auto;
+    margin-left: 0; /* Push odd articles to the left */
+}
+
+/* Special handling for short articles */
+.short-article + dd {
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.short-article + dd:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Preview images */
+#storia dd img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 1em;
+    transition: transform 0.3s ease;
+}
+
+/*Text content of the preview*/
+#storia dd p {
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* Read more link */
+.readMore {
+    color: var(--linkcolor);
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 0.5em;
+}
+
+.readMore:visited {
+    color: var(--visitedcolor);
+}
+
+.readMore:hover {
+    text-decoration: underline;
+}
+
+/* Popup article styling */
+article[id^="article"] {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: var(--bgcolor1);
+    width: 80%;
+    max-width: 800px;
+    max-height: 90vh;
+    overflow-y: auto;
+    padding: 2em;
+    border-radius: 12px;
+    z-index: 1000;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+article[id^="article"].active {
+    display: block;
+}
+
+/* Popup overlay */
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 999;
+}
+
+.overlay.active {
+    display: block;
+}
+
+/* Close button */
+.closePopUp {
+    position: absolute;
+    top: 1em;
+    right: 1em;
+    background: none;
+    border: none;
+    color: var(--txtcolor);
+    font-size: 1.5em;
+    cursor: pointer;
+    padding: 0.5em;
+}
+
+.closePopUp:hover {
+    color: var(--linkcolor);
+}
+
+/* Article content styling */
+article[id^="article"] img {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    margin: 1em auto;
+    display: block;
+    border-radius: 8px;
+}
+
+article[id^="article"] h2 {
+    color: var(--linkcolor);
+    margin-bottom: 1em;
+}
+
+article[id^="article"] p {
+    margin-bottom: 1em;
+    line-height: 1.6;
+}
+
+/* Add space between multiple images in articles */
+article[id^="article"] img + img {
+    margin-top: 1.5em;
+}
+
+/* Horizontal rule styling */
+hr {
+    border: none;
+    border-top: 1px solid var(--txtcolor);
+    margin: 2em 0;
+}
+/*====================*/
+
+
 
 /* ----------------------------------------------- */
 
