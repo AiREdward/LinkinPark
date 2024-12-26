@@ -33,7 +33,6 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: var(--bgcolor2);
 }
 
 header h1 {
@@ -364,6 +363,7 @@ header h1 {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     font-family: 'Arial', sans-serif;
     box-sizing: border-box; /* Include padding e border nel calcolo delle dimensioni */
+    overflow-y: scroll;
 }
 
 #cart p {
