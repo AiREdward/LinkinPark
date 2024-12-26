@@ -1,160 +1,273 @@
-/* If you like this, please check my blog at codedgar.com.ve */
 @import url('https://fonts.googleapis.com/css?family=Work+Sans');
 
+:root{
+    --bgcolor1: #000000; 
+    --bgcolor2: #0B1520;
+    --txtcolor: #ECDDEE;
+    --linkcolor: #CE929D;
+    --visitedcolor: #AC95AA;
+}
+
 body {
-    font-family: 'Work Sans', sans-serif;
-    background: #00d2ff;
-    background: -webkit-linear-gradient(to right, #3a7bd5, #00d2ff);
-    background: linear-gradient(to right, #3a7bd5, #00d2ff);
-}
-
-.card {
-    background: #16181a;
-    border-radius: 14px;
-    max-width: 300px;
-    display: block;
+    max-width: 1024px;
+    color: var(--txtcolor);
+    background-color: var(--bgcolor2);
+    font-size: 1rem;
+    line-height: 1.5em;
+    font-family: Arial, Helvetica, sans-serif; 
     margin: auto;
-    padding: 60px;
-    padding-left: 20px;
-    padding-right: 20px;
-    box-shadow: 2px 10px 40px black;
-    z-index: 99;
+    padding-left: 1em;
+    padding-right: 1em;
 }
 
-.logo-card {
-    max-width: 50px;
-    margin-bottom: 15px;
-    margin-top: -19px;
+#cardForm {
+    margin-top: 2%; /* Aggiungi la spaziatura desiderata */
 }
 
-label {
+/* Contenitore principale */
+#cardForm .container {
     display: flex;
-    font-size: 10px;
-    color: white;
-    opacity: .4;
+    flex-wrap: nowrap; /* Impedisce il wrapping degli elementi */
+    gap: 4%;
+    justify-content: space-between; /* Distribuisce lo spazio tra gli elementi */
+    padding: 2%;
 }
 
-input {
+/* Sezioni carta e dati */
+#cardForm .container .left-section {
+    flex-direction: column;
+    gap: 2%;
+    flex: 0 0 calc(60% - 2%); /* Larghezza del 60% */
+    align-items: flex-start; /* Allinea gli elementi in alto */
+}
+
+#cardForm .container .left-section .card {
+    margin-bottom: 2%; /* Aggiungi spaziatura sotto la card */
+}
+
+/* Card di pagamento */
+#cardForm .container .card {
+    background: linear-gradient(135deg, #2c3e50, #34495e);
+    border-radius: 15px;
+    width: 100% - 30px;
+    height: auto;
+    margin-top: 30px;
+    margin: auto;
+    padding: 30px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    box-shadow: 4px 8px 20px rgba(0, 0, 0, 0.5);
+    position: relative;
+    color: #ecf0f1;
+}
+
+#cardForm .container .card .logo-card {
+    max-width: 80px;
+    margin: 10px auto;
+    display: block;
+}
+
+/* Etichette e input */
+#cardForm .container .card label {
+    display: block;
+    font-size: 12px;
+    color: #bdc3c7;
+    margin-bottom: 5px;
+}
+
+#cardForm .container .card input {
+    width: 100%;
     font-family: 'Work Sans', sans-serif;
     background: transparent;
     border: none;
-    border-bottom: 1px solid transparent;
-    color: #dbdce0;
-    transition: border-bottom .4s;
+    border-bottom: 1px solid #7f8c8d;
+    color: #ecf0f1;
+    padding: 5px;
+    margin-bottom: 15px;
+    transition: border-bottom 0.4s;
 }
 
-input:focus {
+#cardForm .container .card input:focus {
     border-bottom: 1px solid #1abc9c;
     outline: none;
 }
 
-.n_carta {
-    display: block;
-    font-size: 20px;
-    margin-bottom: 8px;
+#cardForm .container .card input.n_carta {
+    font-size: 18px;
 }
 
-.nome {
-    display: block;
-    font-size: 15px;
-    max-width: 200px;
-    float: left;
-    margin-bottom: 15px;
+#cardForm .container .card input.nome {
+    font-size: 16px;
 }
 
-.toleft {
-    float: left;
+#cardForm .container .card input.ccv {
+    width: 60px;
 }
 
-.ccv {
-    width: 50px;
-    margin-top: -5px;
-    font-size: 15px;
-}
-
-.receipt {
-    background: #dbdce0;
-    border-radius: 4px;
-    padding: 5%;
-    padding-top: 200px;
-    max-width: 600px;
-    display: block;
-    margin: auto;
-    margin-top: -180px;
-    z-index: -999;
-    position: relative;
-}
-
-.col {
-    width: 50%;
-    float: left;
-}
-
-.bought-item {
-    background: #f5f5f5;
-    padding: 2px;
-}
-
-.bought-items {
-    margin-top: -3px;
-}
-
-.cost {
-    color: #3a7bd5;
-}
-
-.seller {
-    color: #3a7bd5;
-}
-
-.description {
-    font-size: 13px;
-}
-
-.price {
-    font-size: 12px;
-}
-
-.comprobe {
-    text-align: center;
-}
-
-.proceed {
+/* Pulsante di conferma */
+#cardForm .container .card .proceed {
     position: absolute;
-    transform: translate(300px, 10px);
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
+    bottom: 5%; /* Posiziona il bottone al 5% dal fondo della card */
+    right: 5%; /* Posiziona il bottone al 5% dal lato destro della card */
+    width: 25%; /* Larghezza del bottone in percentuale rispetto alla card */
+    height: auto; /* Mantiene le proporzioni dell'altezza */
+    border-radius: 14px;
     background: #1abc9c;
     border: none;
     color: white;
-    transition: box-shadow .2s, transform .4s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 10px;
+}
+
+#cardForm .container .card .proceed .confirmation {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+#cardForm .container .card .proceed:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+#cardForm .container .card .proceed:active {
+    transform: scale(1);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.4);
+}
+
+#cardForm .container .data {
+    flex: 0 0 calc(40% - 20px);
+    background: #ecf0f1;
+    border-radius: 15px;
+    width: 100% - 30px;
+    height: auto;
+    margin-top: 30px;
+    margin: auto;
+    padding-left: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    box-shadow: 4px 8px 20px rgba(0, 0, 0, 0.5);
+    position: relative;
+    color: #2c3e50;
+}
+
+/* Sezione ricevuta */
+#cardForm .container .receipt {
+    flex: 0 0 calc(40% - 20px);
+    background: #ecf0f1;
+    border-radius: 8px;
+    padding: 20px;
+    max-height: 665px;
+    box-shadow: 2px 4px 15px rgba(0, 0, 0, 0.2);
+    color: #2c3e50;
+    position: relative;
+    overflow-y: auto;
+    overflow-x: hidden; /* Aggiunge una barra di scorrimento se il contenuto esce dall'elemento */
+    box-sizing: border-box; /* Include padding e bordo nelle dimensioni dell'elemento */
+    width: 100%; /* Assicura che l'elemento prenda tutta la larghezza disponibile */
+    height: 100%; /* Assicura che l'elemento prenda tutta l'altezza disponibile */
+}
+
+#cardForm .container .receipt img {
+    width: 100%; /* Ridimensiona l'immagine per occupare il 100% della larghezza del contenitore */
+    height: auto; /* Mantiene le proporzioni dell'immagine */
+    max-width: 100%; /* Assicura che l'immagine non superi la larghezza del contenitore */
+}
+
+#cardForm .container .receipt .col {
+    width: 48%;
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 4%;
+}
+
+#cardForm .container .receipt .col:last-child {
+    margin-right: 0;
+}
+
+#cardForm .container .receipt .col p {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #34495e;
+}
+
+#cardForm .container .receipt .col h2 {
+    margin: 5px 0;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#cardForm .container .receipt .bought-items {
+    border-top: 1px solid #bdc3c7;
+    margin-top: 10px;
+}
+
+#cardForm .container .receipt .bought-items .bought-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #f5f5f5;
+    padding: 10px;
+    border-radius: 6px;
+    margin-bottom: 10px;
+}
+
+#cardForm .container .receipt .bought-items .bought-item p {
+    margin: 0;
+    font-size: 14px;
+    color: #2c3e50;
+}
+
+#cardForm .container .receipt .bought-items .bought-item .price {
+    font-weight: bold;
+    color: #1abc9c;
+}
+
+#cardForm .container .receipt #bought-items > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #f5f5f5;
+    padding: 10px;
+    border-radius: 6px;
+    margin-bottom: 10px;
+}
+
+#cardForm .container .receipt #bought-items > div img {
+    margin-left: 20px;
+    width: 100px; /* Regola la dimensione dell'immagine */
+    height: auto; /* Mantieni le proporzioni */
+}
+
+#cardForm .container .receipt #bought-items > div .bought-item-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#cardForm .container .receipt #bought-items > div h3,
+#cardForm .container .receipt #bought-items > div p {
+    margin: 0;
+    font-size: 14px;
+    color: #2c3e50;
+}
+
+#cardForm .container .receipt #bought-items > div .price {
+    font-weight: bold;
+    color: #1abc9c;
+}
+
+/* Pulsanti e azioni */
+#cardForm button {
     cursor: pointer;
 }
 
-.proceed:active {
+#cardForm button:focus {
     outline: none;
-}
-
-.proceed:focus {
-    outline: none;
-    box-shadow: inset 0px 0px 5px white;
-}
-
-.sendicon {
-    filter: invert(100%);
-    padding-top: 2px;
-}
-
-@media (max-width: 600px) {
-    .proceed {
-        transform: translate(250px, 10px);
-    }
-
-    .col {
-        display: block;
-        margin: auto;
-        width: 100%;
-        text-align: center;
-    }
 }

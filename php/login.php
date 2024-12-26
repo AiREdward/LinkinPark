@@ -3,7 +3,6 @@ session_start();
 
 include '../includes/db_config.php';
 
-// Recupera i dati dal form
 $email = $_POST['email'];
 $password = $_POST['password'];
 
@@ -12,7 +11,12 @@ $redirect = $_POST['redirect'] ?? 'homepage.html'; // Percorso di default
 $redirect = ltrim($redirect, '/'); // Rimuove eventuali '/' iniziali
 $redirectPath = "../$redirect"; // Naviga al percorso corretto fuori da 'php'
 
-// Query al database
+// Prevenzione di open redirect
+if (!preg_match('/^[a-zA-Z0-9\/\-]+$/', $redirect)) {
+    header("Location: ../login.php?error=invalid_redirect");
+    exit();
+}
+
 $sql = "SELECT * FROM utenti WHERE email = ?";
 $stmt = $conn->prepare($sql);
 $stmt->bind_param("s", $email);
@@ -30,7 +34,7 @@ if ($result->num_rows > 0) {
         $_SESSION['logged_in'] = true;
         $_SESSION['user_id'] = $utenti['id'];
         $_SESSION['email'] = $utenti['email'];
-        $_SESSION['ruolo'] = $utenti['ruolo']; // Salva il ruolo nella sessione
+        $_SESSION['ruolo'] = $utenti['ruolo'];
         
         // Reindirizza alla pagina specificata
         header("Location: $redirectPath");

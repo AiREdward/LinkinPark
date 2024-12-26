@@ -20,10 +20,6 @@
 </head>
 
 <body>
-    
-    <nav id="breadcrumb">
-        <p>Ti trovi in Diario</p>
-    </nav>
 
     <?php include 'includes/menu.php'; ?>
 
