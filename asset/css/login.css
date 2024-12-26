@@ -5,19 +5,16 @@
     --button-bg: #4CAF50;
     --button-hover-bg: #45a049;
     --text-color: white;
-    --link-color: #80d4ff;
     --error-color: #FF4C4C;
     --box-shadow-color: rgba(0, 0, 0, 0.2);
 }
 
 body {
-    font-family: 'Arial', sans-serif;
     height: 100vh;
     margin: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    
 }
 
 .main-container {
@@ -31,6 +28,7 @@ body {
     box-shadow: 0 10px 30px var(--box-shadow-color);
     text-align: center;
     color: var(--text-color);
+    font-family: 'Arial', sans-serif;
 }
 
 form label {
@@ -102,7 +100,7 @@ button:hover {
 }
 
 a {
-    color: var(--link-color);
+    color: var(--linkcolor);
     font-size: 1em;
     text-decoration: none;
 }
