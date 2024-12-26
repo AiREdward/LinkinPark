@@ -15,7 +15,8 @@ $sql = "SELECT * FROM utenti WHERE email = '$email'";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
-    echo "L'email è già registrata. <a href='registrazione.php'>Torna indietro</a>";
+    header("Location: ../registrazione.php?error=used");
+    exit();
 } else {
     // Inserisci il nuovo utente
     $sql = "INSERT INTO utenti (nome, cognome, email, password, indirizzo, telefono, data_nascita) 
