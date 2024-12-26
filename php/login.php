@@ -11,12 +11,6 @@ $redirect = $_POST['redirect'] ?? 'homepage.html'; // Percorso di default
 $redirect = ltrim($redirect, '/'); // Rimuove eventuali '/' iniziali
 $redirectPath = "../$redirect"; // Naviga al percorso corretto fuori da 'php'
 
-// Prevenzione di open redirect
-if (!preg_match('/^[a-zA-Z0-9\/\-]+$/', $redirect)) {
-    header("Location: ../login.php?error=invalid_redirect");
-    exit();
-}
-
 $sql = "SELECT * FROM utenti WHERE email = ?";
 $stmt = $conn->prepare($sql);
 $stmt->bind_param("s", $email);
@@ -30,6 +24,11 @@ if ($result->num_rows > 0) {
         header("Location: ../login.php?error=bloccato");
         exit();
     } elseif (password_verify($password, $utenti['password'])) {
+        $updateSql = "UPDATE utenti SET lastLogin = NOW() WHERE id = ?";
+        $updateStmt = $conn->prepare($updateSql);
+        $updateStmt->bind_param("i", $utenti['id']);
+        $updateStmt->execute();
+
         // Imposta la sessione
         $_SESSION['logged_in'] = true;
         $_SESSION['user_id'] = $utenti['id'];
