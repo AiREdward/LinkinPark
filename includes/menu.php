@@ -2,7 +2,7 @@
 session_start();
 
 $currentPage = basename($_SERVER['PHP_SELF']);
-$ruolo = $_SESSION['ruolo'] ?? null; // Recupera il ruolo dell'utente loggato
+$ruolo = $_SESSION['ruolo'] ?? null;
 ?>
 
 <header>
