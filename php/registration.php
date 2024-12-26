@@ -26,7 +26,7 @@ if ($result->num_rows > 0) {
         $base_url = "http://" . $_SERVER['HTTP_HOST'] . dirname(dirname($_SERVER['SCRIPT_NAME'])) . "/";
 
         // Redirect alla pagina di login
-        header("Location: " . $base_url . "login.php");
+        header("Location: " . $base_url . "accedi.php");
         exit();
     } else {
         echo "Errore nell'inserimento: " . $conn->error;

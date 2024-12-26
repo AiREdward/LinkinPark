@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const accountPopup = document.getElementById('accountPopup');
     const accountEmail = document.getElementById('accountEmail');
     const logoutButton = document.getElementById('logoutButton');
-    const loginLink = document.querySelector("#menu li a[href='login.php']");
+    const loginLink = document.querySelector("#menu li a[href='accedi.php']");
 
     fetch('php/check_login.php')
         .then(response => response.json())

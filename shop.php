@@ -439,7 +439,7 @@
             } else {
                 // Utente non loggato: reindirizza alla pagina di login con redirect alla pagina di acquisto
                 const redirectUrl = encodeURIComponent(`payment.html`);
-                window.location.href = `login.php?redirect=${redirectUrl}`;
+                window.location.href = `accedi.php?redirect=${redirectUrl}`;
             }
         }
 

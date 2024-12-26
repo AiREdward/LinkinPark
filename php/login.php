@@ -21,7 +21,7 @@ if ($result->num_rows > 0) {
     $utenti = $result->fetch_assoc();
     
     if ($utenti['stato'] === 'bloccato') {
-        header("Location: ../login.php?error=bloccato");
+        header("Location: ../accedi.php?error=bloccato");
         exit();
     } elseif (password_verify($password, $utenti['password'])) {
         $updateSql = "UPDATE utenti SET lastLogin = NOW() WHERE id = ?";
@@ -39,11 +39,11 @@ if ($result->num_rows > 0) {
         header("Location: $redirectPath");
         exit();
     } else {
-        header("Location: ../login.php?error=password");
+        header("Location: ../accedi.php?error=password");
         exit();
     }
 } else {
-    header("Location: ../login.php?error=utente");
+    header("Location: ../accedi.php?error=utente");
     exit();
 }
 
