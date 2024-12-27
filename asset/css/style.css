@@ -108,9 +108,9 @@ header h1 {
 
 #main{
     display: flex;
-    gap: 20px; /* Gestisce lo spazio tra #shop e #cart */
-    padding: 20px; /* Eventuale padding per #main */
-    box-sizing: border-box; /* Include padding e border nel calcolo delle dimensioni */
+    gap: 20px;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
 #shop {
@@ -118,11 +118,11 @@ header h1 {
     flex-wrap: wrap;
     gap: 20px;
     justify-content: center;
-    flex: 0 0 calc(75% - 20px); /* Considera il gap */
-    box-sizing: border-box; /* Include padding e border nel calcolo delle dimensioni */
+    flex: 0 0 calc(75% - 20px);
+    box-sizing: border-box;
 }
 
-/* FILTERS */ 
+/* FILTERS */
 
 .filters {
     display: flex;

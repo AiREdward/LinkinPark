@@ -3,11 +3,6 @@ tour_____________
 AGGIUNGERE ORARIO 
 biglietti tour problema salvataggio db
 
-shop_____________
-
-aggiungere icone (lente nel searchbar, cart)
-css bar sopra filters sotto
-
 payment__________
 
 aggiorna salvataggio nel db
@@ -16,10 +11,8 @@ all______________
 
 sposta tutti gli style fuori dal html
 
-togli taglia su elementi accessori su payment
 sistema filtri su shop pe la selezione
 
 rendi flex questo elemento: #bought-items > div:nth-child(1) > div
 
 
-metti icona banca al posto di visa su payment
