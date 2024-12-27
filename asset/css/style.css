@@ -220,10 +220,18 @@ header h1 {
     flex-direction: column;
 }
 
+.card * {
+    box-sizing: border-box;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
 .card-front, .card-back {
     width: 100%;
     height: 100%;
     background: #f4f4f9;
+    color: #333;
     padding: 5%;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     position: absolute;
@@ -276,7 +284,7 @@ header h1 {
 .card-front .size-select, 
 .card-front .quantity-input {
     width: 45%; 
-    font-size: 8%;
+    font-size: 0.8rem;
     padding: 5px;
     text-align: center;
     border: 1px solid #ccc;
@@ -292,10 +300,9 @@ header h1 {
     margin-bottom: 10px;
 }
 
-/* Pulsanti */
 .card-front .add-to-cart-btn, 
 .card-front .info-btn {
-    font-size: 8%;
+    font-size: 0.8rem;
     padding: 5%;
     border: none;
     cursor: pointer;
@@ -322,19 +329,10 @@ header h1 {
     background-color: #0056b3;
 }
 
-/* Pulsanti allineati sullo stesso piano */
 .card-front .button-wrapper {
     display: flex;
     justify-content: space-between;
     width: 100%;
-}
-
-/* Evitare che gli elementi escano dalla carta */
-.card * {
-    box-sizing: border-box;
-    max-width: 100%;
-    overflow: hidden;
-    text-overflow: ellipsis;
 }
 
 .info-btn {
