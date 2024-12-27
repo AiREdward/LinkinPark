@@ -44,34 +44,38 @@
                     // Converte la data in formato italiano
                     $formattedDate = strftime("%d %B %Y", strtotime($data));
                     ?>
-                    <dt>
-                        <?php echo $paese; ?>
-                    </dt>
-                    <dd id="<?php echo $citta . '_' . $data; ?>" onclick="toggleDetails(this)">
-                        <p>
-                            <strong>
-                                <?php echo $citta; ?>
-                            </strong> -
-                            <time datetime="<?php echo $data; ?>"><?php echo $formattedDate; ?></time>
-                        </p>
+            <dt>
+                <?php echo $paese; ?>
+            </dt>
+            <dd id="<?php echo $citta . '_' . $data; ?>" onclick="toggleDetails(this)">
+                <p>
+                    <strong>
+                        <?php echo $citta; ?>
+                    </strong> -
+                    <time datetime="<?php echo $data; ?>">
+                        <?php echo $formattedDate; ?>
+                    </time>
+                </p>
 
-                        <div class="extra-details" hidden aria-hidden="true">
-                            <button class="close-details" onclick="closeDetails(event, this)">Chiudi</button>
+                <div class="extra-details" hidden aria-hidden="true">
+                    <button class="close-details" onclick="closeDetails(event, this)">Chiudi</button>
 
-                            <p>
-                                <?php echo $descrizione; ?> Alle ore 
-                                <strong><?php echo $orario; ?></strong>.
-                            </p>
-                            <p>Luogo: <a href="https://www.google.com/maps?q=<?php echo urlencode($luogo); ?>" target="_blank">
-                                    <?php echo $luogo; ?>
-                                </a> di
-                                <?php echo $citta; ?>.
-                            </p>
-                            <button aria-label="Compra Biglietto per <?php echo $citta; ?>"
-                                onclick="handleTicketPurchase(event, '<?php echo $citta; ?>')">Compra Biglietto</button>
-                        </div>
-                    </dd>
-                    <?php
+                    <p>
+                        <?php echo $descrizione; ?> Alle ore
+                        <strong>
+                            <?php echo $orario; ?>
+                        </strong>.
+                    </p>
+                    <p>Luogo: <a href="https://www.google.com/maps?q=<?php echo urlencode($luogo); ?>" target="_blank">
+                            <?php echo $luogo; ?>
+                        </a> di
+                        <?php echo $citta; ?>.
+                    </p>
+                    <button aria-label="Compra Biglietto per <?php echo $citta; ?>"
+                        onclick="handleTicketPurchase(event, '<?php echo $citta; ?>')">Compra Biglietto</button>
+                </div>
+            </dd>
+            <?php
                 }
             } else {
                 echo "<p>Nessun evento disponibile al momento.</p>";
@@ -104,10 +108,33 @@
             }
         }
 
-        function handleTicketPurchase(event, city) {
-            alert(`Biglietto per ${city} acquistato!`);
+        async function handleTicketPurchase(event, city) {
+            event.stopPropagation(); // Evita che il clic chiami `toggleDetails`
+            const isLoggedIn = await checkLoginStatus();
+
+            if (isLoggedIn) {
+                // Utente loggato: vai direttamente alla pagina di acquisto
+                window.location.href = `ticket.html`;
+            } else {
+                // Utente non loggato: reindirizza alla pagina di login con redirect alla pagina di acquisto
+                const redirectUrl = encodeURIComponent(`ticket.html`);
+                window.location.href = `accedi.php?redirect=${redirectUrl}`;
+            }
+        }
+
+        async function checkLoginStatus() {
+            // Verifica lo stato di login tramite una chiamata al server
+            const response = await fetch("php/check_login.php", { method: "GET" });
+            if (response.ok) {
+                const data = await response.json();
+                return data.logged_in; // Ritorna true o false in base alla risposta del server
+            } else {
+                console.error("Errore durante il controllo dello stato di login.");
+                return false;
+            }
         }
     </script>
+
 </body>
 
 </html>
