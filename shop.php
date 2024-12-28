@@ -40,7 +40,7 @@
         <section id="shop">
 
             <!-- Sez. Maglie -->
-            <div class="card" id="TracksWhiteTee">
+            <div class="card" id="TracksWhiteTee" data-type="maglietta">
                 <div class="card-front">
                     <h3>Tracks White Tee</h3>
                     <img src="asset/img/merch/maglietta1_fronte.webp" alt="Tracks White Tee">
@@ -60,7 +60,7 @@
                     <button class="info-btn">Indietro</button>
                 </div>
             </div>
-            <div class="card" id="BlackTee">
+            <div class="card" id="BlackTee" data-type="maglietta">
                 <div class="card-front">
                     <h3>Black Tee</h3>
                     <img src="asset/img/merch/maglietta2_fronte.webp" alt="Black Tee">
@@ -80,7 +80,7 @@
                     <button class="info-btn">Indietro</button>
                 </div>
             </div>
-            <div class="card" id="PhotoCollageBlackTee">
+            <div class="card" id="PhotoCollageBlackTee" data-type="maglietta">
                 <div class="card-front">
                     <h3>Photo Collage Black Tee</h3>
                     <img src="asset/img/merch/maglietta3_fronte.webp" alt="Photo Collage Black Tee">
@@ -100,7 +100,7 @@
                     <button class="info-btn">Indietro</button>
                 </div>
             </div>
-            <div class="card" id="Cover4OrchidCropTee">
+            <div class="card" id="Cover4OrchidCropTee" data-type="maglietta">
                 <div class="card-front">
                     <h3>Cover 4 Orchid Crop Tee</h3>
                     <img src="asset/img/merch/maglietta4_fronte.webp" alt="Cover 4 Orchid Crop Tee">
@@ -122,7 +122,7 @@
             </div>
 
             <!-- Sez. Felpe -->
-            <div class="card" id="TextureBlackLSTee">
+            <div class="card" id="TextureBlackLSTee" data-type="felpa">
                 <div class="card-front">
                     <h3>Texture Black LS Tee</h3>
                     <img src="asset/img/merch/felpa1_fronte.webp" alt="Texture Black LS Tee">
@@ -142,7 +142,7 @@
                     <button class="info-btn">Indietro</button>
                 </div>
             </div>
-            <div class="card" id="OrchidCrewneck">
+            <div class="card" id="OrchidCrewneck" data-type="felpa">
                 <div class="card-front">
                     <h3>Orchid Crewneck</h3>
                     <img src="asset/img/merch/felpa2_fronte.webp" alt="Orchid Crewneck">
@@ -165,7 +165,7 @@
 
 
             <!-- Sez. Accessori -->
-            <div class="card" id="TieDyeBeanie">
+            <div class="card" id="TieDyeBeanie" data-type="accessori">
                 <div class="card-front">
                     <h3>Tie Dye Beanie</h3>
                     <img src="asset/img/merch/berretto.webp" alt="TieDyeBeanie">
@@ -179,7 +179,7 @@
                     <button class="info-btn">Indietro</button>
                 </div>
             </div>
-            <div class="card" id="ToteBag">
+            <div class="card" id="ToteBag" data-type="accessori">
                 <div class="card-front">
                     <h3>Tote Bag</h3>
                     <img src="asset/img/merch/borsa.webp" alt="Tote Bag">
@@ -193,7 +193,7 @@
                     <button class="info-btn">Indietro</button>
                 </div>
             </div>
-            <div class="card" id="PewterKeychain">
+            <div class="card" id="PewterKeychain" data-type="accessori">
                 <div class="card-front">
                     <h3>Pewter Keychain</h3>
                     <img src="asset/img/merch/portachiavi.webp" alt="Pewter Keychain">
@@ -207,7 +207,7 @@
                     <button class="info-btn">Indietro</button>
                 </div>
             </div>
-            <div class="card" id="StickerSet">
+            <div class="card" id="StickerSet" data-type="accessori">
                 <div class="card-front">
                     <h3>Sticker Set</h3>
                     <img src="asset/img/merch/stckers.webp" alt="Sticker Set">
