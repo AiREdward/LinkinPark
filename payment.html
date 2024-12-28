@@ -63,6 +63,7 @@
         </div>
     </form>
     
+    <!-- Gestione Carta-->
     <script>
         // Real-time validation for the card number input
         const nCartaInput = document.getElementById('n_carta');
@@ -143,6 +144,23 @@
             event.preventDefault(); // Prevent the default form submission
             window.print(); // Open the print dialog
             this.submit(); // Submit the form after printing
+        });
+    </script>
+
+    <!-- Controllo dell'altezza dello scontrino --> <!-- NON TOGLIERE -->
+    <script>
+        function setRelativeHeight(referenceSelector, targetSelector) {
+            var referenceElement = document.querySelector(referenceSelector);
+            var targetElement = document.querySelector(targetSelector);
+
+            if (referenceElement && targetElement) {
+                var referenceHeight = referenceElement.offsetHeight;
+                targetElement.style.maxHeight = referenceHeight + 'px';
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", function() {
+            setRelativeHeight('.left-section', '.receipt');
         });
     </script>
 </body>

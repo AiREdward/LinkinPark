@@ -304,7 +304,7 @@
             total = Math.round(total * 100) / 100;
             document.getElementsByClassName('cart-total-price')[0].innerText = '$' + total;
 
-            // Show or hide buttons based on cart items
+            // Show/Hide buttons if cart items > 0
             var clearCartBtn = document.getElementById('clear-cart-btn');
             if (cartRows.length === 0) {
                 clearCartBtn.classList.add('hidden');
@@ -454,6 +454,22 @@
         }
     </script>
 
+    <!-- Script per il controllo dell'altezza del carrello --> <!-- NON TOGLIERE -->
+    <script>
+        function setRelativeHeight(referenceSelector, targetSelector) {
+            var referenceElement = document.querySelector(referenceSelector);
+            var targetElement = document.querySelector(targetSelector);
+                
+            if (referenceElement && targetElement) {
+                var referenceHeight = referenceElement.offsetHeight;
+                targetElement.style.maxHeight = referenceHeight + 'px';
+            }
+        }
+        
+        document.addEventListener("DOMContentLoaded", function() {
+            setRelativeHeight('#shop', '#cart');
+        });
+    </script>
     <?php include 'includes/footer.php'; ?>
 
 </body>

@@ -347,10 +347,10 @@ header h1 {
     background-color: #343a40;
     border: 2.5px solid #17A2B8;
     border-radius: 8px;
-    flex: 0 0 calc(25% - 20px); /* Considera il gap */
+    flex: 0 0 calc(25% - 20px);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     font-family: 'Arial', sans-serif;
-    box-sizing: border-box; /* Include padding e border nel calcolo delle dimensioni */
+    box-sizing: border-box;
     overflow-y: scroll;
 }
 
