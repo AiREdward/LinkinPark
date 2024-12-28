@@ -15,7 +15,6 @@
     <title>Eventi del Tour</title>
 
     <link rel="icon" href="asset/img/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="asset/css/style.css" media="screen">
     <link rel="stylesheet" href="asset/css/timeline.css" media="screen">
 
 </head>
@@ -85,6 +84,8 @@
         </dl>
 
         <?php include 'includes/scrollToTop.php'; ?>
+
+        <?php include 'includes/footer.php'; ?>
 
     </main>
 

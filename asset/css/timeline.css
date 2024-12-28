@@ -1,5 +1,17 @@
 /* Styles */
 
+main {
+  display: block; /* Per assicurarsi che il main sia considerato un contenitore normale */
+  overflow: auto; /* Gestisce i contenuti flottanti o non posizionati */
+  min-height: 100vh; /* Assicura che copra almeno l'altezza della finestra */
+}
+
+main::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
 /* Stile per .extra-details */
 .extra-details {
   margin-top: 10px;

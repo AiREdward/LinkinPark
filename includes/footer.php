@@ -5,7 +5,7 @@
     <div class="footerContainer">
 
         <!-- Sezione Logo e Descrizione -->
-        <div style="min-width: 250px;">
+        <div>
             <h3>Linkin Park</h2>
                 <p style="color: #aaa; line-height: 1.6;">
                     Iconica band che combina rock e innovazione. Scopri musica senza tempo e resta aggiornato sulle
@@ -14,7 +14,7 @@
         </div>
 
         <!-- Social Media -->
-        <div style="min-width: 200px;">
+        <div>
             <h3>Seguici</h3>
             <div class="social">
                 <a href="https://www.instagram.com/linkinpark/" target="_blank">
@@ -36,7 +36,7 @@
         </div>
 
         <!-- Sezione Contatti -->
-        <div style="text-align: center; margin-top: 20px;">
+        <div>
             <h3>Hai bisogno di aiuto?</h3>
             <a href="mailto:support@linkinpark.com" style="color: #aaa; text-decoration: none;">Contatta il Supporto</a>
         </div>
