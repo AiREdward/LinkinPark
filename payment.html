@@ -42,7 +42,7 @@
                 <section class="data" role="data" aria-labelledby="data-section">
                     <article class="col receipt-details" aria-labelledby="receipt-details">
                         <h2 id="receipt-details">Dettagli del pagamento</h2>
-                        <p>Costo:</p>
+                        <p>Totale:</p>
                         <h3 class="cost" id="subtotal" aria-live="polite">€0.00</h3>
                         <p>Utente:</p>
                         <h3 class="user" id="user-name" aria-live="polite">Nome Cognome</h3>
@@ -117,7 +117,7 @@
                         <h4 class="bought-items">${item.name}</h4>
                         <p class="bought-items description">Quantità: ${item.quantity}</p>
                         ${item.size ? `<p class="bought-items description">Taglia: ${item.size}</p>` : ''}
-                        <p class="bought-items price">Prezzo: €${itemPrice.toFixed(2)} cad.</p>
+                        <p class="bought-items price">Prezzo: €${itemPrice.toFixed(2)} <abbr title="ciascuno">cad.</abbr></p>
                     </div>
                 `;
                 boughtItemsContainer.appendChild(itemElement);

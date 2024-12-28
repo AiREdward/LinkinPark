@@ -184,26 +184,16 @@ header h1 {
     transform: scale(1.05);
 }
 
-.filters button[data-type="all"] {
-    background-color: #28a745;
-}
-
-.filters button[data-type="all"]:hover {
-    background-color: #218838;
-}
-
-.filters button[data-type="abbigliamento"] {
+.filters button{
     background-color: #17a2b8;
 }
 
-.filters button[data-type="abbigliamento"]:hover {
+.filters button:hover{
     background-color: #138496;
 }
 
-.filters .active-filter {
-    background-color: #ffdd00;
-    transform: scale(1.05);
-    border: 2px solid #000;
+.filters-buttons button.active-filter {
+    background-color: #28a745;
 }
 
 /* CARD ELEMENT SHOP */
