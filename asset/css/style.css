@@ -796,6 +796,7 @@ footer {
     padding: 40px 20px;
     font-family: 'Arial', sans-serif;
     margin-top: 20px;
+    clear: both;
 }
 
 footer a {
@@ -808,14 +809,15 @@ footer a {
     max-width: 1200px; 
     margin: 0 auto; 
     display: grid; 
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    text-align: center;
+    grid-template-columns: repeat(3, 1fr); /* 3 colonne di larghezza uguale */
+    text-align: center; /* Centra il testo */
+    justify-items: center; /* Allinea orizzontalmente ogni elemento */
 }
 
 .footerContainer h3 {
     font-size: 18px; 
     color: #fff;
+    text-align: center;
 }
 
 .imgValidCode {
