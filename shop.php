@@ -29,10 +29,10 @@
     
         <!-- Contenitore dei Filtri -->
         <div class="filters-buttons">
-            <button data-type="all" class="active-filter" onclick="filterItems('all')">Mostra Tutto</button>
-            <button data-type="abbigliamento" onclick="filterItems('type', 'maglietta')">Magliette</button>
-            <button data-type="abbigliamento" onclick="filterItems('type', 'felpa')">Felpe</button>
-            <button data-type="abbigliamento" onclick="filterItems('type', 'accessori')">Accessori</button>
+            <button class="active-filter" onclick="filterItems('all')">Mostra Tutto</button>
+            <button onclick="filterItems('type', 'maglietta')">Magliette</button>
+            <button onclick="filterItems('type', 'felpa')">Felpe</button>
+            <button onclick="filterItems('type', 'accessori')">Accessori</button>
         </div>
     </div>
 
@@ -40,7 +40,7 @@
         <section id="shop">
 
             <!-- Sez. Maglie -->
-            <div class="card" id="TracksWhiteTee" data-type="maglietta">
+            <div class="card" id="TracksWhiteTee">
                 <div class="card-front">
                     <h3>Tracks White Tee</h3>
                     <img src="asset/img/merch/maglietta1_fronte.webp" alt="Tracks White Tee">
@@ -60,7 +60,7 @@
                     <button class="info-btn">Indietro</button>
                 </div>
             </div>
-            <div class="card" id="BlackTee" data-type="maglietta">
+            <div class="card" id="BlackTee">
                 <div class="card-front">
                     <h3>Black Tee</h3>
                     <img src="asset/img/merch/maglietta2_fronte.webp" alt="Black Tee">
@@ -80,7 +80,7 @@
                     <button class="info-btn">Indietro</button>
                 </div>
             </div>
-            <div class="card" id="PhotoCollageBlackTee" data-type="maglietta">
+            <div class="card" id="PhotoCollageBlackTee">
                 <div class="card-front">
                     <h3>Photo Collage Black Tee</h3>
                     <img src="asset/img/merch/maglietta3_fronte.webp" alt="Photo Collage Black Tee">
@@ -100,7 +100,7 @@
                     <button class="info-btn">Indietro</button>
                 </div>
             </div>
-            <div class="card" id="Cover4OrchidCropTee" data-type="maglietta">
+            <div class="card" id="Cover4OrchidCropTee">
                 <div class="card-front">
                     <h3>Cover 4 Orchid Crop Tee</h3>
                     <img src="asset/img/merch/maglietta4_fronte.webp" alt="Cover 4 Orchid Crop Tee">
@@ -122,7 +122,7 @@
             </div>
 
             <!-- Sez. Felpe -->
-            <div class="card" id="TextureBlackLSTee" data-type="felpa">
+            <div class="card" id="TextureBlackLSTee">
                 <div class="card-front">
                     <h3>Texture Black LS Tee</h3>
                     <img src="asset/img/merch/felpa1_fronte.webp" alt="Texture Black LS Tee">
@@ -142,7 +142,7 @@
                     <button class="info-btn">Indietro</button>
                 </div>
             </div>
-            <div class="card" id="OrchidCrewneck" data-type="felpa">
+            <div class="card" id="OrchidCrewneck">
                 <div class="card-front">
                     <h3>Orchid Crewneck</h3>
                     <img src="asset/img/merch/felpa2_fronte.webp" alt="Orchid Crewneck">
@@ -165,7 +165,7 @@
 
 
             <!-- Sez. Accessori -->
-            <div class="card" id="TieDyeBeanie" data-type="accessori">
+            <div class="card" id="TieDyeBeanie">
                 <div class="card-front">
                     <h3>Tie Dye Beanie</h3>
                     <img src="asset/img/merch/berretto.webp" alt="TieDyeBeanie">
@@ -179,7 +179,7 @@
                     <button class="info-btn">Indietro</button>
                 </div>
             </div>
-            <div class="card" id="ToteBag" data-type="accessori">
+            <div class="card" id="ToteBag">
                 <div class="card-front">
                     <h3>Tote Bag</h3>
                     <img src="asset/img/merch/borsa.webp" alt="Tote Bag">
@@ -193,7 +193,7 @@
                     <button class="info-btn">Indietro</button>
                 </div>
             </div>
-            <div class="card" id="PewterKeychain" data-type="accessori">
+            <div class="card" id="PewterKeychain">
                 <div class="card-front">
                     <h3>Pewter Keychain</h3>
                     <img src="asset/img/merch/portachiavi.webp" alt="Pewter Keychain">
@@ -207,7 +207,7 @@
                     <button class="info-btn">Indietro</button>
                 </div>
             </div>
-            <div class="card" id="StickerSet" data-type="accessori">
+            <div class="card" id="StickerSet">
                 <div class="card-front">
                     <h3>Sticker Set</h3>
                     <img src="asset/img/merch/stckers.webp" alt="Sticker Set">
@@ -304,7 +304,7 @@
             total = Math.round(total * 100) / 100;
             document.getElementsByClassName('cart-total-price')[0].innerText = '$' + total;
 
-            // Show or hide buttons based on cart items
+            // Show/Hide buttons if cart items > 0
             var clearCartBtn = document.getElementById('clear-cart-btn');
             if (cartRows.length === 0) {
                 clearCartBtn.classList.add('hidden');
@@ -398,17 +398,15 @@
         });
 
         function filterItems(type, value) {
-            // Rimuovi lo stato 'active' da tutti i bottoni di filtro
-            document.querySelectorAll('.filters button').forEach(button => {
+            // Rimuovi lo stato 'active-filter' da tutti i bottoni all'interno del contenitore .filters-buttons
+            document.querySelectorAll('.filters-buttons button').forEach(button => {
                 button.classList.remove('active-filter');
             });
-
-            // Aggiungi lo stato 'active' al bottone corrispondente
-            const button = document.querySelector(`button[data-type="${type}"][onclick*="${value}"]`);
-            if (button) {
-                button.classList.add('active-filter');
-            }
-
+        
+            // Aggiungi lo stato 'active-filter' al bottone cliccato
+            const button = event.target;
+            button.classList.add('active-filter');
+        
             // Filtra gli elementi in base al tipo e valore specificati
             const cards = document.querySelectorAll('.card');
             cards.forEach(card => {
@@ -418,12 +416,12 @@
                     card.style.display = 'none';
                 }
             });
-
-            const visibleCards = Array.from(cards).filter(card => card.style.display === 'block');
-
+        
             // Mostra o nasconde il messaggio "Nessun risultato trovato"
+            const visibleCards = Array.from(cards).filter(card => card.style.display === 'block');
             document.getElementById('no-results').style.display = visibleCards.length ? 'none' : 'block';
         }
+
     </script>
 
     <!-- Script per il controllo dello stato di login e reindirizzamento -->
@@ -456,6 +454,22 @@
         }
     </script>
 
+    <!-- Script per il controllo dell'altezza del carrello --> <!-- NON TOGLIERE -->
+    <script>
+        function setRelativeHeight(referenceSelector, targetSelector) {
+            var referenceElement = document.querySelector(referenceSelector);
+            var targetElement = document.querySelector(targetSelector);
+                
+            if (referenceElement && targetElement) {
+                var referenceHeight = referenceElement.offsetHeight;
+                targetElement.style.maxHeight = referenceHeight + 'px';
+            }
+        }
+        
+        document.addEventListener("DOMContentLoaded", function() {
+            setRelativeHeight('#shop', '#cart');
+        });
+    </script>
     <?php include 'includes/footer.php'; ?>
 
 </body>
