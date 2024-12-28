@@ -1,18 +1,14 @@
-tour_____________
-
-AGGIUNGERE ORARIO 
-biglietti tour problema salvataggio db
-
 payment__________
 
 aggiorna salvataggio nel db
+rendi flex questo elemento: #bought-items > div:nth-child(1) > div
+
+shop_____________
+
+sistema flexbox
+sistema colori
 
 all______________
 
 sposta tutti gli style fuori dal html
-
-sistema filtri su shop pe la selezione
-
-rendi flex questo elemento: #bought-items > div:nth-child(1) > div
-
-
+sposta tutti gli script fuori dal html

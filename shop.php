@@ -29,10 +29,10 @@
     
         <!-- Contenitore dei Filtri -->
         <div class="filters-buttons">
-            <button data-type="all" class="active-filter" onclick="filterItems('all')">Mostra Tutto</button>
-            <button data-type="abbigliamento" onclick="filterItems('type', 'maglietta')">Magliette</button>
-            <button data-type="abbigliamento" onclick="filterItems('type', 'felpa')">Felpe</button>
-            <button data-type="abbigliamento" onclick="filterItems('type', 'accessori')">Accessori</button>
+            <button class="active-filter" onclick="filterItems('all')">Mostra Tutto</button>
+            <button onclick="filterItems('type', 'maglietta')">Magliette</button>
+            <button onclick="filterItems('type', 'felpa')">Felpe</button>
+            <button onclick="filterItems('type', 'accessori')">Accessori</button>
         </div>
     </div>
 
@@ -304,7 +304,7 @@
             total = Math.round(total * 100) / 100;
             document.getElementsByClassName('cart-total-price')[0].innerText = '$' + total;
 
-            // Show or hide buttons based on cart items
+            // Show/Hide buttons if cart items > 0
             var clearCartBtn = document.getElementById('clear-cart-btn');
             if (cartRows.length === 0) {
                 clearCartBtn.classList.add('hidden');
@@ -398,17 +398,15 @@
         });
 
         function filterItems(type, value) {
-            // Rimuovi lo stato 'active' da tutti i bottoni di filtro
-            document.querySelectorAll('.filters button').forEach(button => {
+            // Rimuovi lo stato 'active-filter' da tutti i bottoni all'interno del contenitore .filters-buttons
+            document.querySelectorAll('.filters-buttons button').forEach(button => {
                 button.classList.remove('active-filter');
             });
-
-            // Aggiungi lo stato 'active' al bottone corrispondente
-            const button = document.querySelector(`button[data-type="${type}"][onclick*="${value}"]`);
-            if (button) {
-                button.classList.add('active-filter');
-            }
-
+        
+            // Aggiungi lo stato 'active-filter' al bottone cliccato
+            const button = event.target;
+            button.classList.add('active-filter');
+        
             // Filtra gli elementi in base al tipo e valore specificati
             const cards = document.querySelectorAll('.card');
             cards.forEach(card => {
@@ -418,12 +416,12 @@
                     card.style.display = 'none';
                 }
             });
-
-            const visibleCards = Array.from(cards).filter(card => card.style.display === 'block');
-
+        
             // Mostra o nasconde il messaggio "Nessun risultato trovato"
+            const visibleCards = Array.from(cards).filter(card => card.style.display === 'block');
             document.getElementById('no-results').style.display = visibleCards.length ? 'none' : 'block';
         }
+
     </script>
 
     <!-- Script per il controllo dello stato di login e reindirizzamento -->
@@ -456,6 +454,22 @@
         }
     </script>
 
+    <!-- Script per il controllo dell'altezza del carrello --> <!-- NON TOGLIERE -->
+    <script>
+        function setRelativeHeight(referenceSelector, targetSelector) {
+            var referenceElement = document.querySelector(referenceSelector);
+            var targetElement = document.querySelector(targetSelector);
+                
+            if (referenceElement && targetElement) {
+                var referenceHeight = referenceElement.offsetHeight;
+                targetElement.style.maxHeight = referenceHeight + 'px';
+            }
+        }
+        
+        document.addEventListener("DOMContentLoaded", function() {
+            setRelativeHeight('#shop', '#cart');
+        });
+    </script>
     <?php include 'includes/footer.php'; ?>
 
 </body>
