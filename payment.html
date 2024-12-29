@@ -15,9 +15,7 @@
 <body>
     <form id="cardForm" action="php/payment.php" method="POST">
         <div class="container">
-            <!-- Sezione sinistra: carta e dati -->
             <div class="left-section">
-                <!-- Sezione dettagli della carta -->
                 <section class="card" aria-labelledby="card-section" role="form">
                     <h2 id="card-section">Dettagli della Carta</h2>
                     
@@ -38,23 +36,20 @@
                     <input type="date" id="data_scadenza" name="data_scadenza" required aria-required="true">
         
                     <label for="ccv" class="toleft" accesskey="c">CCV (codice di sicurezza):</label>
-                    <input id="ccv" class="input toleft ccv" name="ccv" placeholder="321" maxlength="4" 
-                        required aria-required="true">
+                    <input id="ccv" class="input toleft ccv" name="ccv" placeholder="321" maxlength="4" required aria-required="true">
                 </section>
         
-                <!-- Sezione dati -->
                 <section class="data" role="data" aria-labelledby="data-section">
                     <article class="col receipt-details" aria-labelledby="receipt-details">
-                        <h3 id="receipt-details">Dettagli del pagamento</h3>
-                        <p>Costo:</p>
-                        <h2 class="cost" id="subtotal" aria-live="polite">€0.00</h2>
+                        <h2 id="receipt-details">Dettagli del pagamento</h2>
+                        <p>Totale:</p>
+                        <h3 class="cost" id="subtotal" aria-live="polite">€0.00</h3>
                         <p>Utente:</p>
-                        <h2 class="user" id="user-name" aria-live="polite">Nome Cognome</h2>
+                        <h3 class="user" id="user-name" aria-live="polite">Nome Cognome</h3>
                     </article>
                 </section>
             </div>
 
-            <!-- Sezione destra: ricevuta -->
             <section class="receipt" role="region" aria-labelledby="receipt-section">
                 <h2 id="receipt-section">Dettagli della ricevuta</h2>
                 
@@ -68,6 +63,7 @@
         </div>
     </form>
     
+    <!-- Gestione Carta-->
     <script>
         // Real-time validation for the card number input
         const nCartaInput = document.getElementById('n_carta');
@@ -119,10 +115,10 @@
                 itemElement.innerHTML = `
                     <img src="${item.image}" alt="${item.name}" class="product-image">
                     <div class="bought-item-details">
-                        <h3 class="bought-items">${item.name}</h3>
+                        <h4 class="bought-items">${item.name}</h4>
                         <p class="bought-items description">Quantità: ${item.quantity}</p>
-                        <p class="bought-items description">Taglia: ${item.size}</p>
-                        <p class="bought-items price">Prezzo: €${itemPrice.toFixed(2)} cad.</p>
+                        ${item.size ? `<p class="bought-items description">Taglia: ${item.size}</p>` : ''}
+                        <p class="bought-items price">Prezzo: €${itemPrice.toFixed(2)} <abbr title="ciascuno">cad.</abbr></p>
                     </div>
                 `;
                 boughtItemsContainer.appendChild(itemElement);
@@ -148,6 +144,23 @@
             event.preventDefault(); // Prevent the default form submission
             window.print(); // Open the print dialog
             this.submit(); // Submit the form after printing
+        });
+    </script>
+
+    <!-- Controllo dell'altezza dello scontrino --> <!-- NON TOGLIERE -->
+    <script>
+        function setRelativeHeight(referenceSelector, targetSelector) {
+            var referenceElement = document.querySelector(referenceSelector);
+            var targetElement = document.querySelector(targetSelector);
+
+            if (referenceElement && targetElement) {
+                var referenceHeight = referenceElement.offsetHeight;
+                targetElement.style.maxHeight = referenceHeight + 'px';
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", function() {
+            setRelativeHeight('.left-section', '.receipt');
         });
     </script>
 </body>

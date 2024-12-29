@@ -1,41 +1,60 @@
+// Cambia il titolo della pagina in base al contenuto attivo
+function updatePageTitle(title) {
+    document.getElementById('pageTitle').textContent = title;
+}
+
 // Gestisci il click sui bottoni del menu
 document.getElementById('userManagementBtn').addEventListener('click', function () {
     document.getElementById('userManagement').style.display = 'block';
     document.getElementById('otherFunction').style.display = 'none';
+    updatePageTitle('Gestione Utenti');
 });
 
 document.getElementById('otherFunctionBtn').addEventListener('click', function () {
     document.getElementById('userManagement').style.display = 'none';
     document.getElementById('otherFunction').style.display = 'block';
+    updatePageTitle('Statistiche');
 
     // Carica le statistiche
-    fetch('php/admin.php', {
+    fetch('../php/admin.php', {
         method: 'POST',
         body: new URLSearchParams({ action: 'get_stats' })
     })
         .then(response => response.json())
         .then(data => {
-            console.log(data);  // Verifica la risposta nel browser
+            // Aggiorna i dati delle card
+            const totalRevenue = typeof data.total_revenue === 'number' ? data.total_revenue : 0;
+            document.getElementById('totalRevenue').textContent = `€${totalRevenue.toFixed(2)}`;
+            document.getElementById('totalTransactions').textContent = data.total_transactions || 0;
+            document.getElementById('mostBoughtProduct').textContent = 
+                `${data.most_bought_product || '-'} (${data.most_bought_count || 0} volte)`;
 
-            const statsDiv = document.getElementById('stats');
-            if (data.message) {
-                statsDiv.innerHTML = `<p>${data.message}</p>`;
-            } else {
-                // Verifica che total_revenue sia un numero
-                const totalRevenue = typeof data.total_revenue === 'number' ? data.total_revenue : 0;
-
-                statsDiv.innerHTML = `
-    <p><strong>Totale Guadagno:</strong> €${totalRevenue.toFixed(2)}</p>
-    <p><strong>Numero di Transazioni:</strong> ${data.total_transactions}</p>
-    <p><strong>Articolo più Acquistato:</strong> ${data.most_bought_product} (${data.most_bought_count} volte)</p>
-`;
-            }
+            // Crea il grafico
+            const ctx = document.getElementById('revenueChart').getContext('2d');
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['Guadagno Totale', 'Transazioni', 'Articolo più Acquistato'],
+                    datasets: [{
+                        label: 'Statistiche',
+                        data: [totalRevenue, data.total_transactions, data.most_bought_count || 0],
+                        backgroundColor: ['#4caf50', '#2196f3', '#ffc107'],
+                        borderColor: ['#388e3c', '#1976d2', '#fbc02d'],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: { display: false },
+                    },
+                }
+            });
         })
         .catch(error => {
             console.error('Errore:', error);
             document.getElementById('stats').innerHTML = '<p>Errore nel caricamento delle statistiche.</p>';
         });
-
 });
 
 // Gestisci la ricerca dell'utente
@@ -43,7 +62,7 @@ document.getElementById('searchForm').addEventListener('submit', function (e) {
     e.preventDefault();
 
     const email = document.getElementById('email').value;
-    fetch('php/admin.php', {
+    fetch('../php/admin.php', {
         method: 'POST',
         body: new URLSearchParams({ action: 'find_user', email: email })
     })
@@ -59,30 +78,39 @@ document.getElementById('searchForm').addEventListener('submit', function (e) {
             if (data.user) {
                 const user = data.user;
                 resultDiv.innerHTML += `
-                    <form id="updateForm">
-                        <input type="hidden" name="user_id" value="${user.id}">
-                        <p>Nome: ${user.nome}</p>
-                        <p>Cognome: ${user.cognome}</p>
-                        <p>Email: ${user.email}</p>
-                        <label for="role">Ruolo:</label>
-                        <select name="role" id="role">
-                            <option value="utente" ${user.ruolo === 'utente' ? 'selected' : ''}>Utente</option>
-                            <option value="admin" ${user.ruolo === 'admin' ? 'selected' : ''}>Admin</option>
-                        </select>
-                        <label for="status">Stato:</label>
-                        <select name="status" id="status">
-                            <option value="attivo" ${user.stato === 'attivo' ? 'selected' : ''}>Attivo</option>
-                            <option value="bloccato" ${user.stato === 'bloccato' ? 'selected' : ''}>Bloccato</option>
-                        </select>
-                        <button type="submit">Aggiorna</button>
-                    </form>
+                    <div>
+                        <h3>Informazioni Utente</h3>
+                        <p><strong>Nome:</strong> ${user.nome}</p>
+                        <p><strong>Cognome:</strong> ${user.cognome}</p>
+                        <p><strong>Email:</strong> ${user.email}</p>
+                        <p><strong>Ruolo:</strong> ${user.ruolo === 'utente' ? 'Utente' : 'Admin'}</p>
+                        <p><strong>Stato:</strong> ${user.stato === 'attivo' ? 'Attivo' : 'Bloccato'}</p>
+                    </div>
+                    <hr>
+                    <div>
+                        <h3>Aggiorna Utente</h3>
+                        <form id="updateForm">
+                            <input type="hidden" name="user_id" value="${user.id}">
+                            <label for="role">Ruolo:</label>
+                            <select name="role" id="role">
+                                <option value="utente" ${user.ruolo === 'utente' ? 'selected' : ''}>Utente</option>
+                                <option value="admin" ${user.ruolo === 'admin' ? 'selected' : ''}>Admin</option>
+                            </select>
+                            <label for="status">Stato:</label>
+                            <select name="status" id="status">
+                                <option value="attivo" ${user.stato === 'attivo' ? 'selected' : ''}>Attivo</option>
+                                <option value="bloccato" ${user.stato === 'bloccato' ? 'selected' : ''}>Bloccato</option>
+                            </select>
+                            <button type="submit">Aggiorna</button>
+                        </form>
+                    </div>
                 `;
 
                 document.getElementById('updateForm').addEventListener('submit', function (e) {
                     e.preventDefault();
 
                     const formData = new FormData(this);
-                    formData.append('action', 'update_user'); // Aggiungi questa linea
+                    formData.append('action', 'update_user');
 
                     fetch('php/admin.php', {
                         method: 'POST',
@@ -98,4 +126,15 @@ document.getElementById('searchForm').addEventListener('submit', function (e) {
             }
         })
         .catch(error => console.error('Errore:', error));
+});
+
+
+// Gestisci il logout
+document.getElementById('logoutBtn').addEventListener('click', function () {
+    fetch('php/logout.php', { method: 'POST' })
+        .then(() => {
+            // Reindirizza alla pagina index
+            window.location.href = '../index.php';
+        })
+        .catch(error => console.error('Errore durante il logout:', error));
 });

@@ -15,7 +15,8 @@ $sql = "SELECT * FROM utenti WHERE email = '$email'";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
-    echo "L'email è già registrata. <a href='registration.php'>Torna indietro</a>";
+    header("Location: ../registrazione.php?error=used");
+    exit();
 } else {
     // Inserisci il nuovo utente
     $sql = "INSERT INTO utenti (nome, cognome, email, password, indirizzo, telefono, data_nascita) 
@@ -26,7 +27,7 @@ if ($result->num_rows > 0) {
         $base_url = "http://" . $_SERVER['HTTP_HOST'] . dirname(dirname($_SERVER['SCRIPT_NAME'])) . "/";
 
         // Redirect alla pagina di login
-        header("Location: " . $base_url . "login.php");
+        header("Location: " . $base_url . "accedi.php");
         exit();
     } else {
         echo "Errore nell'inserimento: " . $conn->error;

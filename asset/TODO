@@ -1,30 +1,36 @@
-tour_____________
+payment__________
 
-AGGIUNGERE ORARIO 
-biglietti tour problema salvataggio db
-
+aggiorna salvataggio nel db
+rendi flex questo elemento: #bought-items > div:nth-child(1) > div
 
 shop_____________
 
-aggiungere icone (lente nel searchbar, cart)
-css bar sopra filters sotto
+sistema flexbox
+sistema colori
 
+admin____________
 
-payment__________
+quando viene fatto l'accesso "login" (sulla navbar) deve sparire o diventare logout
 
-sistema tabindex + selectable text
-aggiorna salvataggio nel db
+cambiare colore logout perchè sembra obbligatorio da cliccare con quel rosso acceso, per me va bene anche senza riquadro rosso ma solo testo bianco su sfondo blu
 
+sistemare statistiche: cambierei la disposizione delle statistiche delle transazioni
+sistemare statistiche: modificare ampiezze grafico, non possono avere tutti la stessa ampiezza perchè non si capisce bene il valore di transazioni e articolo più acquistato
+sistemare statistiche: la navbar si ferma ad un certo punto e non continua per tutta la pagina, io la fisserei a destra senza farla scorrere
+
+tour non riporta a niente // TODO
+logout non funziona // TODO
+
+gestione utenti: fare in modo che trovi anche email parziali topo "admin@t" oppure "adm"
+gestione utenti: togliere la ricerca dalla barra spaziatrice una volta completata la ricerca
+gestione utenti: sistemare css (metterei informazioni utente a sinistra e aggiorna utente a destra)
 
 all______________
 
-css
 sposta tutti gli style fuori dal html
-aggiungere nuovo footer
+sposta tutti gli script fuori dal html
 
-togli $ su shop perche' usiamo €
-sistema filti su shop pe la selezione
+controlla shortcut per ciechi e disabili
+controlla scrollbar per applicare css
 
-
-
-metti icona banca al posto di visa su payment
+sistema altezza shop coi filtri

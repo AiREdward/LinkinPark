@@ -11,6 +11,7 @@
     <title>Registrati</title>
 
     <link rel="icon" href="asset/img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="asset/css/style.css" media="screen">
     <link rel="stylesheet" href="asset/css/login.css" media="screen">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
@@ -22,6 +23,9 @@
             <header>
                 <h1>Registrati</h1>
             </header>
+
+            <!-- Sezione per i messaggi di errore -->
+            <div id="error-message" class="error"></div>
 
             <form action="php/registration.php" method="post" onsubmit="return validateForm()">
                 <div id="step-1" class="step-container active">

@@ -108,9 +108,9 @@ header h1 {
 
 #main{
     display: flex;
-    gap: 20px; /* Gestisce lo spazio tra #shop e #cart */
-    padding: 20px; /* Eventuale padding per #main */
-    box-sizing: border-box; /* Include padding e border nel calcolo delle dimensioni */
+    gap: 20px;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
 #shop {
@@ -118,11 +118,11 @@ header h1 {
     flex-wrap: wrap;
     gap: 20px;
     justify-content: center;
-    flex: 0 0 calc(75% - 20px); /* Considera il gap */
-    box-sizing: border-box; /* Include padding e border nel calcolo delle dimensioni */
+    flex: 0 0 calc(75% - 20px);
+    box-sizing: border-box;
 }
 
-/* FILTERS */ 
+/* FILTERS */
 
 .filters {
     display: flex;
@@ -184,26 +184,16 @@ header h1 {
     transform: scale(1.05);
 }
 
-.filters button[data-type="all"] {
-    background-color: #28a745;
-}
-
-.filters button[data-type="all"]:hover {
-    background-color: #218838;
-}
-
-.filters button[data-type="abbigliamento"] {
+.filters button{
     background-color: #17a2b8;
 }
 
-.filters button[data-type="abbigliamento"]:hover {
+.filters button:hover{
     background-color: #138496;
 }
 
-.filters .active-filter {
-    background-color: #ffdd00;
-    transform: scale(1.05);
-    border: 2px solid #000;
+.filters-buttons button.active-filter {
+    background-color: #28a745;
 }
 
 /* CARD ELEMENT SHOP */
@@ -220,10 +210,18 @@ header h1 {
     flex-direction: column;
 }
 
+.card * {
+    box-sizing: border-box;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
 .card-front, .card-back {
     width: 100%;
     height: 100%;
     background: #f4f4f9;
+    color: #333;
     padding: 5%;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     position: absolute;
@@ -276,7 +274,7 @@ header h1 {
 .card-front .size-select, 
 .card-front .quantity-input {
     width: 45%; 
-    font-size: 8%;
+    font-size: 0.8rem;
     padding: 5px;
     text-align: center;
     border: 1px solid #ccc;
@@ -292,10 +290,9 @@ header h1 {
     margin-bottom: 10px;
 }
 
-/* Pulsanti */
 .card-front .add-to-cart-btn, 
 .card-front .info-btn {
-    font-size: 8%;
+    font-size: 0.8rem;
     padding: 5%;
     border: none;
     cursor: pointer;
@@ -322,19 +319,10 @@ header h1 {
     background-color: #0056b3;
 }
 
-/* Pulsanti allineati sullo stesso piano */
 .card-front .button-wrapper {
     display: flex;
     justify-content: space-between;
     width: 100%;
-}
-
-/* Evitare che gli elementi escano dalla carta */
-.card * {
-    box-sizing: border-box;
-    max-width: 100%;
-    overflow: hidden;
-    text-overflow: ellipsis;
 }
 
 .info-btn {
@@ -359,10 +347,10 @@ header h1 {
     background-color: #343a40;
     border: 2.5px solid #17A2B8;
     border-radius: 8px;
-    flex: 0 0 calc(25% - 20px); /* Considera il gap */
+    flex: 0 0 calc(25% - 20px);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     font-family: 'Arial', sans-serif;
-    box-sizing: border-box; /* Include padding e border nel calcolo delle dimensioni */
+    box-sizing: border-box;
     overflow-y: scroll;
 }
 
@@ -766,6 +754,40 @@ hr {
 
 /* ----------------------------------------------- */
 
+/* SCROLL BUTTON */
+
+#scrollToTop {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    display: none; /* Nascondi di default */
+}
+
+#scrollToTop button {
+    background-color: #333;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+#scrollToTop button img {
+    width: 24px;
+    height: 24px;
+}
+
+#scrollToTop button:hover {
+    background-color: #555;
+}
+
+/* ----------------------------------------------- */
+
 /* FOOTER */
 
 footer {
@@ -774,6 +796,7 @@ footer {
     padding: 40px 20px;
     font-family: 'Arial', sans-serif;
     margin-top: 20px;
+    clear: both;
 }
 
 footer a {
@@ -786,14 +809,15 @@ footer a {
     max-width: 1200px; 
     margin: 0 auto; 
     display: grid; 
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    text-align: center;
+    grid-template-columns: repeat(3, 1fr); /* 3 colonne di larghezza uguale */
+    text-align: center; /* Centra il testo */
+    justify-items: center; /* Allinea orizzontalmente ogni elemento */
 }
 
 .footerContainer h3 {
     font-size: 18px; 
     color: #fff;
+    text-align: center;
 }
 
 .imgValidCode {

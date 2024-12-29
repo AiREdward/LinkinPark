@@ -17,6 +17,7 @@ CREATE TABLE utenti (
     data_nascita DATE NULL,
     ruolo VARCHAR(20) NOT NULL DEFAULT 'utente',
     stato ENUM('attivo', 'bloccato') NOT NULL DEFAULT 'attivo',
+    lastLogin TIMESTAMP NULL DEFAULT NULL,
     data_creazione TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 

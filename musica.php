@@ -1,37 +1,39 @@
 <!DOCTYPE html>
 <html lang="it">
-    <head>
-        <meta charset="UTF-8">
-        <title>Musica</title>
-        <meta name="description" content="TODO">
-        <meta name="keywords" content="TODO">
-        <meta name="author" content="linkins">
-        <meta name="viewport" content="width=device-width">
 
-        <link rel="stylesheet" href="asset/css/style.css" media="screen">
-        <!--<link rel="stylesheet" href="asset/css/test per music.css" media="screen">-->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="icon" href="asset/img/favicon.ico" type="image/x-icon">
-    </head>
-    
-    <body>
+<head>
+    <meta charset="UTF-8">
+    <title>Musica</title>
+    <meta name="description" content="TODO">
+    <meta name="keywords" content="TODO">
+    <meta name="author" content="linkins">
+    <meta name="viewport" content="width=device-width">
 
-        <?php include 'includes/menu.php'; ?>
+    <link rel="stylesheet" href="asset/css/style.css" media="screen">
+    <!--<link rel="stylesheet" href="asset/css/test per music.css" media="screen">-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="icon" href="asset/img/favicon.ico" type="image/x-icon">
+</head>
 
-        <main>
-            <h2>Discografia</h2>
+<body>
 
-            <div class="albumContainer">
+    <?php include 'includes/menu.php'; ?>
+
+    <main>
+        <h2>Discografia</h2>
+
+        <div class="albumContainer">
             <!-- from zero -->
-            <div class="albumCard">   
-                <div class="albumMain">          
+            <div class="albumCard">
+                <div class="albumMain">
                     <img src="asset/img/album/From Zero.jpeg" alt="">
-                    <p>Ascolta su <a href="https://open.spotify.com/album/4R6FV9NSzhPihHR0h4pI93" target="_blank" lang="en">Spotify</a></p>
+                    <p>Ascolta su <a href="https://open.spotify.com/album/4R6FV9NSzhPihHR0h4pI93" target="_blank"
+                            lang="en">Spotify</a></p>
                 </div>
-                <div class="albumInfo">    
-                    <h3>From Zero</h3> 
+                <div class="albumInfo">
+                    <h3>From Zero</h3>
                     <dl>
-                        <dt>Data di pubblicazione</dt> 
+                        <dt>Data di pubblicazione</dt>
                         <dd><time datetime="2024-11-15">15 novembre 2024</time></dd>
                         <dt>Genere</dt>
                         <dd>Metal, rock</dd>
@@ -57,17 +59,17 @@
                 </div>
             </div>
 
-
             <!-- One More Light -->
-            <div class="albumCard">   
+            <div class="albumCard">
                 <div class="albumMain">
                     <img src="asset/img/album/One More Light.jpeg" alt="">
-                    <p>Ascolta su <a href="https://open.spotify.com/track/3xXBsjrbG1xQIm1xv1cKOt" target="_blank" lang="en">Spotify</a></p>
+                    <p>Ascolta su <a href="https://open.spotify.com/track/3xXBsjrbG1xQIm1xv1cKOt" target="_blank"
+                            lang="en">Spotify</a></p>
                 </div>
-                <div class="albumInfo">  
+                <div class="albumInfo">
                     <h3>One More Light</h3>
                     <dl>
-                        <dt>Data di pubblicazione</dt> 
+                        <dt>Data di pubblicazione</dt>
                         <dd><time datetime="2017-05-19">19 maggio 2017</time></dd>
                         <dt>Genere</dt>
                         <dd>Pop, rock</dd>
@@ -96,12 +98,13 @@
             <div class="albumCard">
                 <div class="albumMain">
                     <img src="asset/img/album/Living Things.jpeg" alt="">
-                    <p>Ascolta su <a href="https://open.spotify.com/album/4XHIjbhjRmqWlosjj5rqSI" target="_blank" lang="en">Spotify</a></p>        
+                    <p>Ascolta su <a href="https://open.spotify.com/album/4XHIjbhjRmqWlosjj5rqSI" target="_blank"
+                            lang="en">Spotify</a></p>
                 </div>
                 <div class="albumInfo">
                     <h3>Living Things</h3>
                     <dl>
-                        <dt>Data di pubblicazione</dt> 
+                        <dt>Data di pubblicazione</dt>
                         <dd><time datetime="2012-06-20">20 giugno 2012</time></dd>
                         <dt>Genere</dt>
                         <dd>Metal, rock</dd>
@@ -132,12 +135,13 @@
             <div class="albumCard">
                 <div class="albumMain">
                     <img src="asset/img/album/A Thousand Suns.jpeg" alt="">
-                    <p>Ascolta su <a href="https://open.spotify.com/album/5uvXx5ZQswNRFCdHR521YZ" target="_blank" lang="en">Spotify</a></p>
+                    <p>Ascolta su <a href="https://open.spotify.com/album/5uvXx5ZQswNRFCdHR521YZ" target="_blank"
+                            lang="en">Spotify</a></p>
                 </div>
                 <div class="albumInfo">
                     <h3>A Thousand Suns</h3>
                     <dl>
-                        <dt>Data di pubblicazione</dt> 
+                        <dt>Data di pubblicazione</dt>
                         <dd><time datetime="2010-09-08">8 settembre 2010</time></dd>
                         <dt>Genere</dt>
                         <dd>Rock</dd>
@@ -167,17 +171,17 @@
                 </div>
             </div>
 
-
             <!-- Minutes to Midnight -->
             <div class="albumCard">
                 <div class="albumMain">
                     <img src="asset/img/album/Minutes to Midnight.jpeg" alt="">
-                    <p>Ascolta su <a href="https://open.spotify.com/album/2tlTBLz2w52rpGCLBGyGw6" target="_blank" lang="en">Spotify</a></p>    
+                    <p>Ascolta su <a href="https://open.spotify.com/album/2tlTBLz2w52rpGCLBGyGw6" target="_blank"
+                            lang="en">Spotify</a></p>
                 </div>
                 <div class="albumInfo">
                     <h3>Minutes to Midnight</h3>
                     <dl>
-                        <dt>Data di pubblicazione</dt> 
+                        <dt>Data di pubblicazione</dt>
                         <dd><time datetime="2007-05-17">17 maggio 2007</time></dd>
                         <dt>Genere</dt>
                         <dd>Metal, rock</dd>
@@ -204,17 +208,17 @@
                 </div>
             </div>
 
-
             <!-- Meteora -->
             <div class="albumCard">
                 <div class="albumMain">
                     <img src="asset/img/album/Meteora.jpeg" alt="">
-                    <p>Ascolta su <a href="https://open.spotify.com/album/4Gfnly5CzMJQqkUFfoHaP3" target="_blank" lang="en">Spotify</a></p>  
+                    <p>Ascolta su <a href="https://open.spotify.com/album/4Gfnly5CzMJQqkUFfoHaP3" target="_blank"
+                            lang="en">Spotify</a></p>
                 </div>
                 <div class="albumInfo">
                     <h3>Meteora</h3>
                     <dl>
-                        <dt>Data di pubblicazione</dt> 
+                        <dt>Data di pubblicazione</dt>
                         <dd><time datetime="2003-03-25">25 marzo 2003</time></dd>
                         <dt>Genere</dt>
                         <dd>Metal, rock</dd>
@@ -242,17 +246,17 @@
                 </div>
             </div>
 
-
             <!-- Hybrid Theory -->
             <div class="albumCard">
                 <div class="albumMain">
                     <img src="asset/img/album/Hybrid Theory.jpeg" alt="">
-                    <p>Ascolta su <a href="https://open.spotify.com/album/6PFPjumGRpZnBzqnDci6qJ" target="_blank" lang="en">Spotify</a></p>      
+                    <p>Ascolta su <a href="https://open.spotify.com/album/6PFPjumGRpZnBzqnDci6qJ" target="_blank"
+                            lang="en">Spotify</a></p>
                 </div>
                 <div class="albumInfo">
                     <h3>Hybrid Theory</h3>
                     <dl>
-                        <dt>Data di pubblicazione</dt> 
+                        <dt>Data di pubblicazione</dt>
                         <dd><time datetime="2000-10-24">24 ottobre 2000</time></dd>
                         <dt>Genere</dt>
                         <dd>Metal, rock</dd>
@@ -278,10 +282,14 @@
                     </ol>
                 </div>
             </div>
-            </div>
-        </main>
+        </div>
 
-        <?php include 'includes/footer.php'; ?>
-        
-    </body>
+        <?php include 'includes/scrollToTop.php'; ?>
+
+    </main>
+
+    <?php include 'includes/footer.php'; ?>
+
+</body>
+
 </html>

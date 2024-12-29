@@ -2,7 +2,7 @@
 session_start();
 
 $currentPage = basename($_SERVER['PHP_SELF']);
-$ruolo = $_SESSION['ruolo'] ?? null; // Recupera il ruolo dell'utente loggato
+$ruolo = $_SESSION['ruolo'] ?? null;
 ?>
 
 <header>
@@ -22,6 +22,6 @@ $ruolo = $_SESSION['ruolo'] ?? null; // Recupera il ruolo dell'utente loggato
             <li><a href="template/admin.html" class="<?= $currentPage == 'template/admin.html' ? 'active' : '' ?>">Admin</a></li>
         <?php endif; ?>
 
-        <li><a href="login.php" class="<?= $currentPage == 'login.php' ? 'active' : '' ?>">Login</a></li>
+        <li><a href="accedi.php" class="<?= $currentPage == 'accedi.php' ? 'active' : '' ?>">Login</a></li>
     </ul>
 </nav>
