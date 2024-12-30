@@ -21,7 +21,6 @@
             color: #333;
         }
 
-        /* Menu laterale */
         .sidebar {
             width: 250px;
             background-color: #1f2937;
@@ -57,7 +56,6 @@
             background-color: #4b5563;
         }
 
-        /* Stile del pulsante Logout */
         .sidebar #logoutBtn {
             margin-top: auto;
             background-color: #f87171;
@@ -67,7 +65,6 @@
             background-color: #ef4444;
         }
 
-        /* Contenuto principale */
         .main {
             flex-grow: 1;
             display: flex;
@@ -119,11 +116,6 @@
             color: #1f2937;
         }
 
-        #revenueChart {
-            max-width: 100%;
-            margin-top: 20px;
-        }
-
         form {
             display: flex;
             flex-direction: column;
@@ -151,14 +143,12 @@
             background-color: #0056b3;
         }
 
-        /* Contenitore per l'input */
         .input-container {
             position: relative;
             width: 90%;
             margin-bottom: 15px;
         }
 
-        /* Icona lente di ingrandimento */
         .input-container i {
             position: absolute;
             left: 12px;
@@ -169,7 +159,6 @@
             pointer-events: none;
         }
 
-        /* Stile del campo di input */
         .input-container input {
             padding-left: 35px;
             font-size: 16px;
@@ -186,7 +175,7 @@
     <div class="sidebar">
         <h2>Admin Dashboard</h2>
         <button id="userManagementBtn">Gestione Utenti</button>
-        <button id="otherFunctionBtn">Statistiche</button>
+        <button id="venditeBtn">Statistiche</button>
         <button id="dateTour">Tour</button>
         <button id="logoutBtn">Logout</button>
     </div>
@@ -197,7 +186,7 @@
 
         <div id="content" class="content">
             <!-- Gestione Utenti -->
-            <div id="userManagement" style="display: block;">
+            <div id="userManagement">
                 <form id="searchForm">
                     <label for="email">Cerca utente per email:</label>
                     <div class="input-container">
@@ -211,7 +200,7 @@
             </div>
 
             <!-- Statistiche -->
-            <div id="otherFunction" style="display: none;">
+            <div id="vendite" style="display: none;">
                 <h2>Statistiche delle Transazioni</h2>
                 <div class="stats">
                     <div class="stat-card">
@@ -235,15 +224,19 @@
                             <p class="stat-value" id="mostBoughtProduct">-</p>
                         </div>
                     </div>
-                    <canvas id="revenueChart"></canvas>
                 </div>
             </div>
+
+            <!-- Tour -->
+            <div id="tour" style="display: none;">
+                <h2>Nuova data</h2>
+
+            </div>
+
         </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="../js/admin.js"></script>
-
 </body>
 
 </html>
