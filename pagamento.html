@@ -8,12 +8,12 @@
     <meta name="keywords" content="TODO">
     <meta name="viewport" content="width=device-width">
     
-    <link rel="stylesheet" href="asset/css/payment.css" media="screen">
+    <link rel="stylesheet" href="asset/css/pagamento.css" media="screen">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="icon" href="asset/img/favicon.ico" type="image/x-icon">
 </head>
 <body>
-    <form id="cardForm" action="php/payment.php" method="POST">
+    <form id="cardForm" action="php/pagamento.php" method="POST">
         <div class="container">
             <div class="left-section">
                 <section class="card" aria-labelledby="card-section" role="form">
@@ -129,7 +129,7 @@
         .catch(error => console.error('Errore nel recupero dei dati del carrello:', error));
 
         // Recupera il nome e il cognome dell'utente e visualizzali
-        fetch('php/payment.php?action=getUser')
+        fetch('php/pagamento.php?action=getUser')
         .then(response => response.json())
         .then(user => {
             const capitalize = str => str.replace(/\b\w/g, char => char.toUpperCase());
@@ -141,9 +141,13 @@
 
         // Print the page when the form is submitted
         document.getElementById('cardForm').addEventListener('submit', function(event) {
-            event.preventDefault(); // Prevent the default form submission
-            window.print(); // Open the print dialog
-            this.submit(); // Submit the form after printing
+            if (nomeInput.value.trim() === '') {
+                alert('Il campo del nome non può essere vuoto o contenere solo spazi.');
+                event.preventDefault(); // Prevent the form from being submitted
+            } else {
+                window.print(); // Open the print dialog
+                this.submit(); // Submit the form after printing
+            }
         });
     </script>
 

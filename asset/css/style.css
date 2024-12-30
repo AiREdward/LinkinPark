@@ -1,17 +1,19 @@
 /* GENERALE */
 
 :root{
-    --bgcolor1: #050505; 
-    --bgcolor2: #0B1520;
-    --txtcolor: #ECDDEE;
-    --linkcolor: blue;
-    --visitedcolor: #AC95AA;
+    --bgcolor1: #0B1520;
+    --bgcolor2: #04060F;
+    --txtcolor: #EEE0F1;
+    --linkcolor: #BC6779;
+    --visitedcolor: #767CA2;
+    --shopcardcolor: #CAC5C0;
+    --pulsantecolor1: #934458;
 }
 
 body {
     max-width: 1024px;
     color: var(--txtcolor);
-    background-color: var(--bgcolor2);
+    background-color: var(--bgcolor1);
     font-size: 100%;
     line-height: 1.5em;
     font-family: Arial, Helvetica, sans-serif; 
@@ -70,14 +72,10 @@ header h1 {
     box-sizing: border-box;
 }
 
-#menu ul li a:hover {
-    background-color: #ddd;
-}
-
 #menu ul li a.active {
     font-weight: bold;
     color: white;
-    background-color: #007BFF;
+    background-color: var(--visitedcolor);
     border-radius: 5px;
 }
 
@@ -173,27 +171,24 @@ header h1 {
     border: none;
     border-radius: 5px;
     color: #fff;
-    background-color: #6c757d;
+    background-color: var(--visitedcolor);
     text-align: center;
     cursor: pointer;
     transition: all 0.3s ease;
 }
 
 .filters button:hover {
-    background-color: #5a6268;
+    background-color: var(--linkcolor);
     transform: scale(1.05);
 }
 
 .filters button{
-    background-color: #17a2b8;
+    background-color: var(--visitedcolor);
 }
 
-.filters button:hover{
-    background-color: #138496;
-}
 
 .filters-buttons button.active-filter {
-    background-color: #28a745;
+    background-color: var(--pulsantecolor1);
 }
 
 /* CARD ELEMENT SHOP */
@@ -220,10 +215,12 @@ header h1 {
 .card-front, .card-back {
     width: 100%;
     height: 100%;
-    background: #f4f4f9;
-    color: #333;
+    background: var(--shopcardcolor);
+    color: var(--bgcolor2);
     padding: 5%;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: solid white 2px;
+    border-radius: 10px;
     position: absolute;
     backface-visibility: hidden;
     display: flex;
@@ -253,7 +250,7 @@ header h1 {
 .card-front h3 {
     font-size: 1em;
     text-align: center;
-    color: #000;
+    color: var(--bgcolor2);
     font-weight: bold;
     margin-bottom: 10px;
 }
@@ -267,7 +264,7 @@ header h1 {
 
 .card-front .price {
     font-size: 0.9em;
-    color: #333;
+    color: var(--bgcolor2);
     margin-bottom: 10px;
 }
 
@@ -300,13 +297,13 @@ header h1 {
 }
 
 .card-front .add-to-cart-btn {
-    background-color: #28a745;
+    background-color: var(--pulsantecolor1);
     color: white;
     border-radius: 4px;
 }
 
 .card-front .add-to-cart-btn:hover {
-    background-color: #218838;
+    background-color: var(--pulsantecolor1);
 }
 
 .card-front .info-btn {
@@ -344,8 +341,8 @@ header h1 {
 
 #cart {
     padding: 20px;
-    background-color: #343a40;
-    border: 2.5px solid #17A2B8;
+    background-color: var(--bgcolor2);
+    border: 2px solid var(--txtcolor);
     border-radius: 8px;
     flex: 0 0 calc(25% - 20px);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -357,16 +354,16 @@ header h1 {
 #cart p {
     font-size: 1rem;
     text-align: center;
-    color: #6c757d;
+    color: var(--bgcolor2);
     margin: 5px 0;
 }
 
 #cart h3 {
     font-size: 1.5rem;
     margin-bottom: 15px;
-    color: #fff;
+    color: var(--txtcolor);
     text-align: center;
-    border-bottom: 2px solid #17A2B8;
+    border-bottom: 2px solid var(--txtcolor);
     padding-bottom: 5px;
 }
 
@@ -380,9 +377,9 @@ header h1 {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    background-color: #ffffff;
+    background-color: var(--shopcardcolor);
     padding: 15px;
-    border: 1px solid #e9ecef;
+    border: 1px solid white;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
@@ -421,7 +418,7 @@ header h1 {
 /* Pulsante "Rimuovi" */
 .cart-item .remove-btn {
     margin-top: 10px;
-    background-color: #dc3545;
+    background-color: var(--pulsantecolor1);
     color: #ffffff;
     border: none;
     padding: 5px 10px;
@@ -433,7 +430,7 @@ header h1 {
 }
 
 .cart-item .remove-btn:hover {
-    background-color: #c82333;
+    background-color: var(--pulsantecolor1);
 }
 
 #subtotal {
@@ -442,7 +439,7 @@ header h1 {
     color: #343a40;
     margin-top: 15px;
     text-align: center;
-    border-top: 2px solid #007BFF;
+    border-top: 2px solid var(--txtcolor);
     padding-top: 10px;
 }
 
@@ -462,19 +459,19 @@ header h1 {
 }
 
 #checkout-btn {
-    background-color: #28a745;
+    background-color: var(--linkcolor);
 }
 
 #checkout-btn:hover {
-    background-color: #218838;
+    background-color: var(--linkcolor);
 }
 
 #clear-cart-btn {
-    background-color: #ffc107;
+    background-color: var(--visitedcolor);
 }
 
 #clear-cart-btn:hover {
-    background-color: #e0a800;
+    background-color: var(--visitedcolor);
 }
 
 .empty-cart {
@@ -513,7 +510,7 @@ header h1 {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    background-color: var(--bgcolor1);
+    background-color: var(--bgcolor2);
     color: var(--txtcolor);
     border-radius: 8px;
     padding: 1em;
@@ -575,7 +572,7 @@ header h1 {
     position: relative;
     left: 50%;
     transform: translateX(-50%);
-    background: var(--bgcolor1);
+    background: var(--bgcolor2);
     border: 2px solid var(--txtcolor);
     border-radius: 20px;
     padding: 0.5em;
@@ -589,7 +586,7 @@ header h1 {
     width: 45%;
     margin: 1em 0;
     padding: 1em;
-    background: var(--bgcolor1);
+    background: var(--bgcolor2);
     border-radius: 8px;
     position: relative;
     transition: all 0.3s ease;
@@ -654,7 +651,7 @@ article[id^="article"] {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background: var(--bgcolor1);
+    background: var(--bgcolor2);
     width: 80%;
     max-width: 800px;
     max-height: 90vh;
@@ -791,7 +788,7 @@ hr {
 /* FOOTER */
 
 footer {
-    background-color: #111;
+    background-color: var(--bgcolor2);
     color: #fff;
     padding: 40px 20px;
     font-family: 'Arial', sans-serif;
