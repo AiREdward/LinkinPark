@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 // Cambia il titolo della pagina in base al contenuto attivo
 function updatePageTitle(title) {
     document.getElementById('pageTitle').textContent = title;
