@@ -94,8 +94,11 @@
                 this.value = ''; // Clear the invalid input
             }
         });
+    </script>
 
-        // Recupera i dati del carrello e visualizzali
+    <!-- Recupera i dati del carrello e visualizzali -->
+    <script>
+
         fetch('php/shop.php', {
             method: 'POST',
             body: new URLSearchParams('action=getCart')

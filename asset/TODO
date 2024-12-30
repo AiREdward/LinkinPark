@@ -1,12 +1,12 @@
 payment__________
 
 aggiorna salvataggio nel db
-rendi flex questo elemento: #bought-items > div:nth-child(1) > div
+nome con tanti spazi funziona e crea una pagina che non esiste (deve diventare un avviso)
 
 shop_____________
 
 sistema flexbox
-sistema colori
+sistema altezza shop coi filtri
 
 admin____________
 
@@ -21,7 +21,6 @@ sistemare statistiche: la navbar si ferma ad un certo punto e non continua per t
 tour non riporta a niente // TODO
 logout non funziona // TODO
 
-gestione utenti: fare in modo che trovi anche email parziali topo "admin@t" oppure "adm"
 gestione utenti: togliere la ricerca dalla barra spaziatrice una volta completata la ricerca
 gestione utenti: sistemare css (metterei informazioni utente a sinistra e aggiorna utente a destra)
 
@@ -29,8 +28,7 @@ all______________
 
 sposta tutti gli style fuori dal html
 sposta tutti gli script fuori dal html
+rimuovi ts ignore + prova a fixare warning
 
 controlla shortcut per ciechi e disabili
 controlla scrollbar per applicare css
-
-sistema altezza shop coi filtri
