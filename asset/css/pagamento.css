@@ -259,6 +259,7 @@ body {
     padding: 10px;
     border-radius: 6px;
     margin-bottom: 10px;
+    border-top: 1px solid #000000; /* Aggiungi questa linea */
 }
 
 #cardForm .container .receipt #bought-items > div img {
@@ -290,4 +291,43 @@ body {
 
 #cardForm button:focus {
     outline: none;
+}
+
+
+
+@media print {
+    /* Nascondi elementi non necessari nella stampa */
+    body * {
+        visibility: hidden;
+    }
+
+    /* Mostra solo il contenuto della ricevuta */
+    .receipt, .receipt * {
+        visibility: visible;
+    }
+
+    /* Assicurati che la ricevuta occupi l'intera pagina */
+    .receipt {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+
+    /* Stili aggiuntivi per migliorare l'aspetto della stampa */
+    .receipt h2, .receipt h3, .receipt p {
+        margin: 0;
+        padding: 0;
+    }
+
+    .receipt .bought-item-details {
+        margin-bottom: 10px;
+    }
+
+    .receipt .product-image {
+        display: none; /* Nascondi le immagini dei prodotti */
+    }
 }
