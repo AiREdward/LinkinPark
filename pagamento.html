@@ -63,11 +63,11 @@
         </div>
     </form>
     
-    <!-- Gestione Carta-->
     <script>
         // Real-time validation for the card number input
         const nCartaInput = document.getElementById('n_carta');
         const ccvInput = document.getElementById('ccv');
+        const nomeInput = document.getElementById('nome');
 
         // Allow only numbers and restrict length to 16 digits for card number
         nCartaInput.addEventListener('input', function () {
@@ -80,7 +80,7 @@
         });
 
         // Real-time validation for the name input
-        document.getElementById('nome').addEventListener('input', function () {
+        nomeInput.addEventListener('input', function () {
             // Allow only letters and spaces
             this.value = this.value.replace(/[^A-Za-z\s]/g, '');
         });
@@ -94,11 +94,8 @@
                 this.value = ''; // Clear the invalid input
             }
         });
-    </script>
 
-    <!-- Recupera i dati del carrello e visualizzali -->
-    <script>
-
+        // Recupera i dati del carrello e visualizzali
         fetch('php/shop.php', {
             method: 'POST',
             body: new URLSearchParams('action=getCart')
@@ -142,7 +139,7 @@
         })
         .catch(error => console.error('Errore nel recupero dei dati dell\'utente:', error));
 
-        // Print the page when the form is submitted
+        // Stampa la pagina
         document.getElementById('cardForm').addEventListener('submit', function(event) {
             if (nomeInput.value.trim() === '') {
                 alert('Il campo del nome non può essere vuoto o contenere solo spazi.');
@@ -152,17 +149,15 @@
                 this.submit(); // Submit the form after printing
             }
         });
-    </script>
 
-    <!-- Controllo dell'altezza dello scontrino --> <!-- NON TOGLIERE -->
-    <script>
+        // Controllo dell'altezza dello scontrino
         function setRelativeHeight(referenceSelector, targetSelector) {
             var referenceElement = document.querySelector(referenceSelector);
             var targetElement = document.querySelector(targetSelector);
 
             if (referenceElement && targetElement) {
-                var referenceHeight = referenceElement.offsetHeight;
-                targetElement.style.maxHeight = referenceHeight + 'px';
+            var referenceHeight = referenceElement.offsetHeight;
+            targetElement.style.height = referenceHeight + 'px';
             }
         }
 

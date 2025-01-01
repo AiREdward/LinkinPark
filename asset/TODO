@@ -30,5 +30,20 @@ sposta tutti gli style fuori dal html
 sposta tutti gli script fuori dal html
 rimuovi ts ignore + prova a fixare warning
 
-controlla shortcut per ciechi e disabili
+controlla shortcut per ciechi e disabili    accesskey="c"
 controlla scrollbar per applicare css
+
+
+
+
+fai classe .hasScrollbar e adegua css in tutte le pagine
+
+cambai nomi item in shop in italiano
+
+Fain in modod che payment si apra in una nuova scheda + cambia colori
+
+Aggiungi titolo "Riepilogo Pagamento"
+
+Cambiare titoli "Dettagli"
+
+Crea pulsante "annulla pagamento"
