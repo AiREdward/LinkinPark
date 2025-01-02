@@ -116,10 +116,10 @@
 
             if (isLoggedIn) {
                 // Utente loggato: vai direttamente alla pagina di acquisto
-                window.location.href = `ticket.html`;
+                window.location.href = `pagamento.html`;
             } else {
                 // Utente non loggato: reindirizza alla pagina di login con redirect alla pagina di acquisto
-                const redirectUrl = encodeURIComponent(`ticket.html`);
+                const redirectUrl = encodeURIComponent(`pagamento.html`);
                 window.location.href = `accedi.php?redirect=${redirectUrl}`;
             }
         }
