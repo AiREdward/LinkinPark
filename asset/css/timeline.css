@@ -14,16 +14,54 @@ main::after {
 
 /* Stile per .extra-details */
 .extra-details {
-  margin-top: 10px;
+  padding: 15px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
+.extra-details[aria-hidden="true"] {
+  opacity: 0;
+  transform: translateY(-10px);
+  pointer-events: none;
+}
 
-h3 {
-  font-size: 1.8em;
-  margin-top: 30px;
-  text-align: left;
-  padding-bottom: 5px;
-  margin-bottom: 20px;
+.extra-details[aria-hidden="false"] {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stile per pulsanti */
+button {
+  font-size: 1rem;
+  padding: 10px 15px;
+  margin: 5px 0;
+  border: none;
+  border-radius: 5px;
+  background-color: #007BFF;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.2s ease;
+}
+
+button:hover,
+button:focus {
+  background-color: #0056b3;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+button:active {
+  background-color: #003d82;
+}
+
+button.close-details {
+  background-color: #dc3545;
+}
+
+button.close-details:hover,
+button.close-details:focus {
+  background-color: #b21f2d;
 }
 
 dl {
@@ -36,6 +74,8 @@ dt {
   float: left;
   clear: both;
   width: 30%;
+  padding: 1.2em 1.5em;
+
   font-weight: bold;
   text-transform: uppercase;
   direction: rtl;
@@ -45,38 +85,50 @@ dt {
 dd {
   position: relative;
   float: left;
-  padding-bottom: 1.2em;
-  padding-left: 1.5em;
+  padding: 1.2em 1.5em;
   width: 65%;
-  opacity: 0.6;
+  opacity: 0.8;
+  border-radius: 5px;
+  transition: opacity 0.3s ease, background-color 0.3s ease;
 }
-dd:hover {
-  opacity: 1;
-}
+
 dd + dd {
   clear: both;
 }
+
 dd::before {
   content: "";
   position: absolute;
-  top: 0.15em;
-  left: 0;
-  z-index: 1;
-  display: inline-block;
+  top: 1.2em;
+  left: -0.8em;
+  z-index: 1; /* Per evitare che il bordo venga coperto dal contenuto */
   border: 2px solid #fff;
   border-radius: 50%;
   width: 0.5em;
   height: 0.5em;
   background: currentColor;
 }
+
 dd:not(:last-of-type)::after {
   content: "";
-  display: block;
   position: absolute;
-  top: 0.15em;
-  left: calc(0.25em + 1px);
+  top: 1.2em;
+  left: -0.55em;
   border-left: 1px solid #888;
-  height: 100%;
+  height: calc(100% - 1.2em);
+}
+
+/* Stile per link */
+a {
+  color: #007BFF;
+  text-decoration: underline;
+  transition: color 0.3s ease;
+}
+
+a:hover,
+a:focus {
+  color: #0056b3;
+  outline: none;
 }
 
 /* Responsive adjustments */
@@ -99,4 +151,24 @@ dd:not(:last-of-type)::after {
   dd {
       width: 75%;
   }
+  button {
+    font-size: 0.9rem;
+    padding: 8px 12px;
+  }
+}
+
+/* Animazioni per apertura dettagli */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.extra-details[aria-hidden="false"] {
+  animation: fadeIn 0.3s ease;
 }

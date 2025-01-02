@@ -13,8 +13,6 @@
         live, biglietti concerti, luoghi tour, Linkin Park eventi">
     <meta name="viewport" content="width=device-width">
 
-    
-
     <link rel="icon" href="asset/img/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="asset/css/timeline.css" media="screen">
 
@@ -23,7 +21,7 @@
 <body>
     <main>
         <?php include 'includes/menu.php'; ?>
-        <h1>Prossimi Eventi del Tour</h1>
+        <h2>Prossimi Eventi del Tour</h2>
         <dl>
             <?php
             // Imposta il locale italiano per la formattazione delle date
@@ -47,7 +45,7 @@
             <dt>
                 <?php echo $paese; ?>
             </dt>
-            <dd id="<?php echo $citta . '_' . $data; ?>" onclick="toggleDetails(this)">
+            <dd id="<?php echo $citta . '_' . $data; ?>" onclick="openDetails(this)">
                 <p>
                     <strong>
                         <?php echo $citta; ?>
@@ -92,12 +90,11 @@
 
     <script>
         // JavaScript Integrato
-        function toggleDetails(element) {
+        function openDetails(element) {
             const details = element.querySelector('.extra-details');
             if (details) {
-                const isHidden = details.hasAttribute('hidden');
-                details.toggleAttribute('hidden');
-                details.setAttribute('aria-hidden', isHidden ? 'false' : 'true');
+                details.removeAttribute('hidden');
+                details.setAttribute('aria-hidden', 'false');
             }
         }
 
