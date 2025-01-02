@@ -88,9 +88,9 @@
 
         <?php include 'includes/scrollToTop.php'; ?>
 
-        <?php include 'includes/footer.php'; ?>
-
     </main>
+
+    <?php include 'includes/footer.php'; ?>
 
     <script>
         function openDetails(element) {
