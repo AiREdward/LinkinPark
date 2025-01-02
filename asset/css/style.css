@@ -27,6 +27,19 @@ a {
     color: var(--linkcolor);;
 }
 
+h1 {
+    font-size: 3em;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+h2 {
+    font-size: 2em;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    line-height: 1.5em;
+}
+
 /* ----------------------------------------------- */
 
 /* HEADER */
@@ -47,6 +60,10 @@ header h1 {
 
 #menu {
     margin-bottom: 20px;
+    padding-bottom: 0.6em;
+    padding-top: 0.6em;
+    border-bottom: 2px solid var(--txtcolor);
+    border-top: 2px solid var(--txtcolor);
 }
 
 #menu ul {
@@ -74,7 +91,7 @@ header h1 {
 
 #menu ul li a.active {
     font-weight: bold;
-    color: white;
+    color: var(--bgcolor1);
     background-color: var(--visitedcolor);
     border-radius: 5px;
 }
@@ -98,6 +115,144 @@ header h1 {
 
 .hidden {
     display: none;
+}
+
+/* ----------------------------------------------- */
+
+/* CHI SIAMO */
+
+#integranti, #ex-integranti {
+    display: flex;
+    flex-direction: column;
+    gap: 1em; 
+}
+
+#integranti dd, #ex-integranti dd {
+    display: flex;
+    flex-direction: row; 
+    flex-wrap: wrap; 
+    position: relative;
+    width: 20%; 
+    height: 20em; 
+    background-color: var(--bgcolor1); 
+    border: 2px solid var(--txtcolor); 
+    border-radius: 8px; 
+    overflow: hidden; 
+    transition: transform 0.3s ease-in-out; 
+    padding: 0; 
+}
+
+#integranti dt, #ex-integranti dt {
+    max-width: 30%;
+    font-weight: bold;
+    text-align: center;
+    color: var(--txtcolor); 
+    margin: 0;
+    padding: 0.5em; 
+    background-color: var(--bgcolor1); 
+    width: fit-content; 
+    height: fit-content;
+    border-radius: 8px; 
+    border: 2px solid var(--txtcolor);
+    z-index: 2;
+}
+
+#integranti img, #ex-integranti img {
+    position: absolute;
+    border-radius: 8px; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; 
+    padding: 1em; 
+    box-sizing: border-box; 
+    object-fit: cover; 
+    z-index: 1; 
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+#integranti p, #ex-integranti p {
+    z-index: 2; 
+    display: flex; 
+    font-size: 0.9rem; 
+    color: var(--txtcolor); 
+    text-align: center;
+    overflow-y: auto;
+    height: 100%;
+    background-color: var(--bgcolor1); 
+    box-sizing: border-box;
+    opacity: 0; 
+    overflow-y: auto; 
+    padding: 2em;
+    flex-grow: 1;
+}
+
+#integranti dd:hover p, #ex-integranti dd:hover img {
+    opacity: 0;
+}
+
+#integranti dd:hover p, #ex-integranti dd:hover p {
+    display: block;
+    opacity: 1; 
+}
+
+/* ----------------------------------------------- */
+
+/* MUSIC */
+
+#discografia {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1em;
+    justify-content: space-evenly;
+}
+
+.album { 
+    border: 4px solid var(--txtcolor);
+    border-radius: 1.5em;
+    padding: 0 0.5em 0;
+    flex: 0 0 40%;
+}
+
+.album img  {
+    max-width: 100%;
+    max-height: auto;
+    border-radius: 1em;
+    border: 2px solid var(--txtcolor);
+}
+
+.album h2 {
+    text-align: center;
+}
+
+.album dt {
+    font-weight: bold;
+    font-size: 1.2em;
+    margin-bottom: 0.2em;
+}
+
+.album dd {
+    padding-bottom: 1.5em;
+}
+
+.album dt:not(:last-of-type) {
+    float: left; /* Move to the left */
+    margin: 0;
+    text-align: left;
+}
+
+.album dd:not(:last-of-type) {
+    text-align: right;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.album p {
+    margin-top: 0;
+    padding: 0 1em 1em;
+    text-align: right;
+    border-bottom: 2px solid var(--txtcolor);
 }
 
 /* ----------------------------------------------- */
@@ -495,56 +650,6 @@ header h1 {
     opacity: 0.6;
 }
 
-/* ----------------------------------------------- */
-
-/* MUSIC */
-
-.albumContainer  {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.5em;
-    justify-content: center;
-}
-
-.albumCard {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    background-color: var(--bgcolor2);
-    color: var(--txtcolor);
-    border-radius: 8px;
-    padding: 1em;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    flex: 1 1 40%;
-    max-width: 600px;
-    box-sizing: border-box;
-}
-
-.albumMain, .albumInfo, .tracklist {
-    flex: 1 1 auto;
-    padding: 0.5em;
-    box-sizing: border-box;
-}
-
-.albumMain img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    border-radius: 4px;
-}
-
-.albumInfo h3, .tracklist h4 {
-    text-align: center;
-    font-size: 1.2em;
-    font-weight: bold;
-}
-
-.tracklist ol {
-    margin: 0;
-    padding-left: 1em;
-    list-style-position: inside;
-}
-
 
 /* ===== DIARIO =====*/
 
@@ -762,7 +867,7 @@ hr {
 }
 
 #scrollToTop button {
-    background-color: #333;
+    background-color: var(--visitedcolor);
     border: none;
     border-radius: 50%;
     width: 50px;
@@ -770,17 +875,16 @@ hr {
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     cursor: pointer;
 }
 
 #scrollToTop button img {
-    width: 24px;
-    height: 24px;
+    width: 10%;
+    height: auto;
 }
 
 #scrollToTop button:hover {
-    background-color: #555;
+    background-color: var(--visitedcolor);
 }
 
 /* ----------------------------------------------- */
@@ -788,17 +892,16 @@ hr {
 /* FOOTER */
 
 footer {
+    color: var(--txtcolor);
     background-color: var(--bgcolor2);
-    color: #fff;
-    padding: 40px 20px;
-    font-family: 'Arial', sans-serif;
-    margin-top: 20px;
+    padding: 2.5em 1.25em;
+    margin-top: 4em;
     clear: both;
+    border-top: 2px solid var(--txtcolor);
 }
 
 footer a {
     margin-right: 10px; 
-    color: #aaa; 
     text-decoration: none;
 }
 
@@ -813,7 +916,6 @@ footer a {
 
 .footerContainer h3 {
     font-size: 18px; 
-    color: #fff;
     text-align: center;
 }
 
@@ -833,14 +935,12 @@ footer a {
 .social a {
     display: flex;
     align-items: center;
-    color: #aaa; 
     text-decoration: none;
 }
 
 .social i {
     font-size: 24px; 
     margin-right: 8px;
-    color: #fff;
 }
 
 /* ----------------------------------------------- */

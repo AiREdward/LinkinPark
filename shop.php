@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Shop</title>
+    <title>Shop - Linkin Park</title>
     <meta name="author" content="linkins">
     <meta name="description" content="TODO">
     <meta name="keywords" content="TODO">
