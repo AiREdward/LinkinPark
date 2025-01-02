@@ -18,7 +18,8 @@ function updateUser($conn, $user_id, $role, $status) {
  * Cerca un utente per email
  */
 function findUserByEmail($conn, $email) {
-    $stmt = $conn->prepare("SELECT id, nome, cognome, email, ruolo, stato FROM utenti WHERE email = ?");
+    $stmt = $conn->prepare("SELECT id, nome, cognome, email, ruolo, stato FROM utenti WHERE email LIKE ?");
+    $email = "%" . $email . "%";
     $stmt->bind_param('s', $email);
     $stmt->execute();
     $result = $stmt->get_result();

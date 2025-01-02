@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Shop</title>
+    <title>Shop - Linkin Park</title>
     <meta name="author" content="linkins">
     <meta name="description" content="TODO">
     <meta name="keywords" content="TODO">
@@ -433,10 +433,10 @@
 
             if (isLoggedIn) {
                 // Utente loggato: vai direttamente alla pagina di acquisto
-                window.location.href = `payment.html`;
+                window.location.href = `pagamento.html`;
             } else {
                 // Utente non loggato: reindirizza alla pagina di login con redirect alla pagina di acquisto
-                const redirectUrl = encodeURIComponent(`payment.html`);
+                const redirectUrl = encodeURIComponent(`pagamento.html`);
                 window.location.href = `accedi.php?redirect=${redirectUrl}`;
             }
         }
