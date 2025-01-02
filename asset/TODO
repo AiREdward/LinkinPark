@@ -7,6 +7,7 @@ shop_____________
 
 sistema flexbox
 sistema altezza shop coi filtri
+metti keywords su shop
 
 admin____________
 
@@ -36,14 +37,15 @@ controlla scrollbar per applicare css
 
 
 
+
+in tour ci sarebbe da decidere se mettere solo gli stati americani o la scritta USA
+
 fai classe .hasScrollbar e adegua css in tutte le pagine
 
 cambai nomi item in shop in italiano
 
-Fain in modod che payment si apra in una nuova scheda + cambia colori
+Fain in modod che payment si apra in una nuova scheda ///SPIEGA CHE NON HA SENSO FARLO PERCHE' E' TROPPO DA CAMBAIRE 
+Crea pulsante "annulla pagamento"     + cambia colori 
 
 Aggiungi titolo "Riepilogo Pagamento"
-
 Cambiare titoli "Dettagli"
-
-Crea pulsante "annulla pagamento"

@@ -23,67 +23,68 @@
         <?php include 'includes/menu.php'; ?>
         <h2>Prossimi Eventi del Tour</h2>
         
-        <section id="tour-dates">
-            <dl>
-                <?php
-                // Imposta il locale italiano per la formattazione delle date
-                setlocale(LC_TIME, 'it_IT.UTF-8', 'it_IT', 'Italian');
-    
-                $sql = "SELECT citta, data, orario, luogo, paese, descrizione FROM tour ORDER BY data";
-                $result = $conn->query($sql);
-    
-                if ($result->num_rows > 0) {
-                    while ($row = $result->fetch_assoc()) {
-                        $citta = htmlspecialchars($row['citta']);
-                        $data = htmlspecialchars($row['data']);
-                        $orario = substr(htmlspecialchars($row['orario']), 0, 5); // Estrae HH:MM
-                        $luogo = htmlspecialchars($row['luogo']);
-                        $paese = htmlspecialchars($row['paese']);
-                        $descrizione = htmlspecialchars($row['descrizione']);
-                    
-                        // Converte la data in formato italiano
-                        $formattedDate = strftime("%d %B %Y", strtotime($data));
-                        ?>
-                <dt>
+        <dl id="tour-dates">
+            <?php
+            // Imposta il locale italiano per la formattazione delle date
+            setlocale(LC_TIME, 'it_IT.UTF-8', 'it_IT', 'Italian');
+ 
+            $sql = "SELECT citta, data, orario, luogo, paese, descrizione FROM tour ORDER BY data";
+            $result = $conn->query($sql);
+ 
+            if ($result->num_rows > 0) {
+                while ($row = $result->fetch_assoc()) {
+                    $citta = htmlspecialchars($row['citta']);
+                    $data = htmlspecialchars($row['data']);
+                    $orario = substr(htmlspecialchars($row['orario']), 0, 5); // Estrae HH:MM
+                    $luogo = htmlspecialchars($row['luogo']);
+                    $paese = htmlspecialchars($row['paese']);
+                    $descrizione = htmlspecialchars($row['descrizione']);
+ 
+                    // Converte la data in formato italiano
+                    $formattedDate = strftime("%d %B %Y", strtotime($data));
+                    ?>
+            <dt>
+                <h3>
                     <?php echo $paese; ?>
-                </dt>
-                <dd id="<?php echo $citta . '_' . $data; ?>" onclick="openDetails(this)">
+                </h3>
+            </dt>
+            <dd id="<?php echo $citta . '_' . $data; ?>" onclick="openDetails(this)">
+                <p>
+                    <strong>
+                        <?php echo $citta; ?>
+                    </strong> -
+                    <time datetime="<?php echo $data; ?>">
+                        <?php echo $formattedDate; ?>
+                    </time>
+                </p>
+ 
+                <div class="extra-details" hidden aria-hidden="true">
+ 
                     <p>
+                        <?php echo $descrizione; ?> Alle ore
                         <strong>
-                            <?php echo $citta; ?>
-                        </strong> -
-                        <time datetime="<?php echo $data; ?>">
-                            <?php echo $formattedDate; ?>
-                        </time>
+                            <?php echo $orario; ?>
+                        </strong>.
                     </p>
-                    
-                    <div class="extra-details" hidden aria-hidden="true">
+                    <p>Luogo: <a href="https://www.google.com/maps?q=<?php echo urlencode($luogo); ?>" target="_blank">
+                            <?php echo $luogo; ?>
+                        </a> di
+                        <?php echo $citta; ?>.
+                    </p>
+                    <div class="button-container">
+                        <button aria-label="Compra Biglietto per <?php echo $citta; ?>" onclick="handleTicketPurchase(event, '<?php echo $citta; ?>')">Compra Biglietto</button>                    
                         <button class="close-details" onclick="closeDetails(event, this)">Chiudi</button>
-                    
-                        <p>
-                            <?php echo $descrizione; ?> Alle ore
-                            <strong>
-                                <?php echo $orario; ?>
-                            </strong>.
-                        </p>
-                        <p>Luogo: <a href="https://www.google.com/maps?q=<?php echo urlencode($luogo); ?>" target="_blank">
-                                <?php echo $luogo; ?>
-                            </a> di
-                            <?php echo $citta; ?>.
-                        </p>
-                        <button aria-label="Compra Biglietto per <?php echo $citta; ?>"
-                            onclick="handleTicketPurchase(event, '<?php echo $citta; ?>')">Compra Biglietto</button>
                     </div>
-                </dd>
-                <?php
-                    }
-                } else {
-                    echo "<p>Nessun evento disponibile al momento.</p>";
+                </div>
+            </dd>
+            <?php
                 }
-                $conn->close();
-                ?>
-            </dl>
-        </section>
+            } else {
+                echo "<p>Nessun evento disponibile al momento.</p>";
+            }
+            $conn->close();
+            ?>
+        </dl>
 
         <?php include 'includes/scrollToTop.php'; ?>
 

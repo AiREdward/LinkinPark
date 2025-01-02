@@ -222,6 +222,8 @@
                 </div>
             </div>
 
+            <p id="no-results">Nessun risultato trovato.</p>
+
         </section>
 
         <nav id="cart">
@@ -231,7 +233,6 @@
             </div>
         </nav>
     </div>
-    <p id="no-results" style="display: none;">Nessun risultato trovato.</p>
 
     <!-- Script per la gestione del carrello -->
     <script>
@@ -469,7 +470,9 @@
         document.addEventListener("DOMContentLoaded", function() {
             setRelativeHeight('#shop', '#cart');
         });
-    </script>
+    </script>    
+
+    <?php include 'includes/scrollToTop.php'; ?>
     <?php include 'includes/footer.php'; ?>
 
 </body>
