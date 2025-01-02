@@ -1,9 +1,9 @@
 /* Styles */
 
 main {
-  display: block; /* Per assicurarsi che il main sia considerato un contenitore normale */
-  overflow: auto; /* Gestisce i contenuti flottanti o non posizionati */
-  min-height: 100vh; /* Assicura che copra almeno l'altezza della finestra */
+  display: block;  
+  overflow: auto;  
+  min-height: 100vh; 
 }
 
 main::after {
@@ -12,7 +12,6 @@ main::after {
   clear: both;
 }
 
-/* Stile per .extra-details */
 .extra-details {
   padding: 15px;
   background-color: #f9f9f9;
@@ -32,7 +31,6 @@ main::after {
   transform: translateY(0);
 }
 
-/* Stile per pulsanti */
 button {
   font-size: 1rem;
   padding: 10px 15px;
@@ -65,7 +63,7 @@ button.close-details:focus {
 }
 
 dl {
-  padding-left: 10%;
+  padding-left: 20%;
   max-width: 80%;
   margin: auto;
 }
@@ -118,7 +116,6 @@ dd:not(:last-of-type)::after {
   height: calc(100% - 1.2em);
 }
 
-/* Stile per link */
 a {
   color: #007BFF;
   text-decoration: underline;
@@ -131,7 +128,6 @@ a:focus {
   outline: none;
 }
 
-/* Responsive adjustments */
 @media (max-width: 768px) {
   dt {
       width: 25%;
@@ -145,7 +141,7 @@ a:focus {
 @media (max-width: 480px) {
   dt {
       width: 20%;
-      margin-left: -20%;
+      margin-left: -20%;  /* DA FIXARE */
       font-size: 0.9em;
   }
   dd {
@@ -157,7 +153,6 @@ a:focus {
   }
 }
 
-/* Animazioni per apertura dettagli */
 @keyframes fadeIn {
   from {
     opacity: 0;
