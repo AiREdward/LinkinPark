@@ -31,7 +31,14 @@ main::after {
   transform: translateY(0);
 }
 
-button {
+.extra-details .button-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 1em 0; /* Optional: Add some padding for better spacing */
+}
+
+.extra-details .button-container button {
   font-size: 1rem;
   padding: 10px 15px;
   margin: 5px 0;
@@ -43,22 +50,22 @@ button {
   transition: background-color 0.3s ease, box-shadow 0.2s ease;
 }
 
-button:hover,
-button:focus {
+.extra-details .button-container button:hover,
+.extra-details .button-container button:focus {
   background-color: #0056b3;
   box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
 }
 
-button:active {
+.extra-details .button-container button:active {
   background-color: #003d82;
 }
 
-button.close-details {
+.extra-details .button-container button.close-details {
   background-color: #dc3545;
 }
 
-button.close-details:hover,
-button.close-details:focus {
+.extra-details .button-container button.close-details:hover,
+.extra-details .button-container button.close-details:focus {
   background-color: #b21f2d;
 }
 
@@ -86,8 +93,8 @@ dd {
   padding: 1.2em 1.5em;
   width: 65%;
   opacity: 0.8;
-  border-radius: 5px;
   transition: opacity 0.3s ease, background-color 0.3s ease;
+  margin-top: 0.5em; /* Riduci il margine superiore */
 }
 
 dd + dd {
@@ -97,7 +104,7 @@ dd + dd {
 dd::before {
   content: "";
   position: absolute;
-  top: 1.2em;
+  top: 0.7em; /* Regola la posizione per far toccare i puntini le linee */
   left: -0.8em;
   z-index: 1; /* Per evitare che il bordo venga coperto dal contenuto */
   border: 2px solid #fff;
@@ -111,9 +118,18 @@ dd:not(:last-of-type)::after {
   content: "";
   position: absolute;
   top: 1.2em;
-  left: -0.55em;
+  left: -0.45em;
   border-left: 1px solid #888;
-  height: calc(100% - 1.2em);
+  height: 100%;
+}
+
+dd p {
+  margin-top: -11.5px;
+}
+
+dl dt {
+  margin-top: -23px;
+  margin-right: -20px;
 }
 
 a {

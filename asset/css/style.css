@@ -492,6 +492,15 @@ header h1 {
     background-color: #0056b3;
 }
 
+#no-results {
+    display: none;
+    font-size: 1.2em;
+    color: var(--linkcolor);
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px;
+}
+
 /* CART */
 
 #cart {
