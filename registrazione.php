@@ -90,7 +90,7 @@
                         <input type="tel" id="telefono" name="telefono" oninput="validatePhone()" required
                             placeholder="Inserisci il tuo telefono" aria-required="true"
                             aria-describedby="telefono-error">
-                        <small id="telefono-error" style="color: red; display: none;" role="alert">Inserisci solo
+                        <small id="telefono-error" role="alert">Inserisci solo
                             caratteri numerici.</small>
                     </div>
 

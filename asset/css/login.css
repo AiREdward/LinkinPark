@@ -175,3 +175,8 @@ p {
 .step-container.active {
     display: block;
 }
+
+#telefono-error {
+    color: red; 
+    display: none;
+}

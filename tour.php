@@ -79,7 +79,9 @@
             <?php
                 }
             } else {
-                echo "<p>Nessun evento disponibile al momento.</p>";
+                ?>
+                <p id="no-events">Nessun evento disponibile al momento. Torna a trovarci presto!</p>
+                <?php
             }
             $conn->close();
             ?>
