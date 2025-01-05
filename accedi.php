@@ -21,9 +21,7 @@
 
         <div class="main-container">
 
-            <header>
-                <h1>Accedi</h1>
-            </header>
+            <h1>Accedi</h1>
 
             <!-- Sezione per i messaggi di errore -->
             <div id="error-message" class="error"></div>
