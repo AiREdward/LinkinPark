@@ -19,29 +19,29 @@
                 <section class="card" aria-labelledby="card-section" role="form">
                     <h2 id="card-section">Dettagli della Carta</h2>
                     
-                    <button class="proceed" type="submit" aria-label="Procedi al pagamento" accesskey="p">
+                    <button class="proceed" type="submit" aria-label="Procedi al pagamento">
                         <p class="confirmation">Conferma Pagamento</p>
                     </button>
         
                     <i class="fa-solid fa-building-columns" aria-hidden="true"></i>
         
-                    <label for="n_carta" accesskey="n">Numero della carta:</label>
+                    <label for="n_carta">Numero della carta:</label>
                     <input id="n_carta" type="text" class="input n_carta" name="n_carta" 
                         placeholder="1234 5678 9101 1121" maxlength="16" required aria-required="true">
         
-                    <label for="nome" accesskey="o">Nome completo del proprietario della carta:</label>
+                    <label for="nome">Nome completo del proprietario della carta:</label>
                     <input id="nome" class="input nome" name="nome" placeholder="Mario Rossi" required aria-required="true">
         
-                    <label for="data_scadenza" accesskey="d">Data di scadenza:</label>
+                    <label for="data_scadenza">Data di scadenza:</label>
                     <input type="date" id="data_scadenza" name="data_scadenza" required aria-required="true">
         
-                    <label for="ccv" class="toleft" accesskey="c">CCV (codice di sicurezza):</label>
+                    <label for="ccv" class="toleft">CCV (codice di sicurezza):</label>
                     <input id="ccv" class="input toleft ccv" name="ccv" placeholder="321" maxlength="4" required aria-required="true">
                 </section>
         
                 <section class="data" role="data" aria-labelledby="data-section">
                     <article class="col receipt-details" aria-labelledby="receipt-details">
-                        <h2 id="receipt-details">Dettagli del pagamento</h2>
+                        <h2 id="receipt-details">Dati Utente</h2>
                         <p>Totale:</p>
                         <h3 class="cost" id="subtotal" aria-live="polite">€0.00</h3>
                         <p>Utente:</p>
@@ -51,7 +51,7 @@
             </div>
 
             <section class="receipt" role="region" aria-labelledby="receipt-section">
-                <h2 id="receipt-section">Dettagli della ricevuta</h2>
+                <h2 id="receipt-section">Ricevuta</h2>
                 
                 <article class="col" id="bought-items-container" aria-labelledby="bought-items-title">
                     <h3 id="bought-items-title">Lista degli acquisti:</h3>

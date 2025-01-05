@@ -2,12 +2,23 @@ payment__________
 
 aggiorna salvataggio nel db
 nome con tanti spazi funziona e crea una pagina che non esiste (deve diventare un avviso)
+Crea pulsante "annulla pagamento" + cambia colori 
+
 
 shop_____________
 
 sistema flexbox
 sistema altezza shop coi filtri
 metti keywords su shop
+cambia nomi item in italiano
+
+
+tour_____________
+
+fix tabindex tour
+fix carte tour
+importa colori
+
 
 admin____________
 
@@ -25,27 +36,10 @@ logout non funziona // TODO
 gestione utenti: togliere la ricerca dalla barra spaziatrice una volta completata la ricerca
 gestione utenti: sistemare css (metterei informazioni utente a sinistra e aggiorna utente a destra)
 
+
 all______________
 
-sposta tutti gli style fuori dal html
-sposta tutti gli script fuori dal html
-rimuovi ts ignore + prova a fixare warning
-
-controlla shortcut per ciechi e disabili    accesskey="c"
-controlla scrollbar per applicare css
-
-
-
-
-
-in tour ci sarebbe da decidere se mettere solo gli stati americani o la scritta USA
-
+aggiungi keywords dove mancano
 fai classe .hasScrollbar e adegua css in tutte le pagine
-
-cambai nomi item in shop in italiano
-
-Fain in modod che payment si apra in una nuova scheda ///SPIEGA CHE NON HA SENSO FARLO PERCHE' E' TROPPO DA CAMBAIRE 
-Crea pulsante "annulla pagamento"     + cambia colori 
-
-Aggiungi titolo "Riepilogo Pagamento"
-Cambiare titoli "Dettagli"
+sposta tutti gli style fuori dal html + rimuovi ts ignore + prova a fixare warning per js
+sposta tutti gli script fuori dal html
