@@ -106,6 +106,9 @@
 
             </form>
         </div>
+
+        <p>Hai già un account? <a href="accedi.php">Accedi qui</a></p>
+
     </main>
 
     <script src="js/registration.js"></script>
