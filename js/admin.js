@@ -103,7 +103,7 @@ function searchUser() {
                     const formData = new FormData(this);
                     formData.append('action', 'update_user');
 
-                    fetch('php/admin.php', {
+                    fetch('../php/admin.php', {
                         method: 'POST',
                         body: formData
                     })

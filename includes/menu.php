@@ -19,7 +19,7 @@ $ruolo = $_SESSION['ruolo'] ?? null;
         <li><a href="shop.php" class="<?= $currentPage == 'shop.php' ? 'active' : '' ?>" lang="en">Shop</a></li>
 
         <?php if ($ruolo === 'admin'): ?>
-            <li><a href="template/admin.html" class="<?= $currentPage == 'template/admin.html' ? 'active' : '' ?>" lang="en">Admin</a></li>
+            <li><a href="template/admin.html" target="_blank" class="<?= $currentPage == 'template/admin.html' ? 'active' : '' ?>" lang="en">Admin</a></li>
         <?php endif; ?>
 
         <li><a href="accedi.php" class="<?= $currentPage == 'accedi.php' ? 'active' : '' ?>" lang="en">Login</a></li>
