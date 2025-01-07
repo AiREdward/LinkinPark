@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="author" content="linkins">
-    <meta name="description" content="TODO">
-    <meta name="keywords" content="TODO">
+    <meta name="description" content="Crea un account sul nostro sito per accedere a tutte le funzionalità. Compila il modulo di registrazione in modo rapido e sicuro.">
+    <meta name="keywords" content="registrazione account, crea account, registrati online, registrazione sicura, modulo di registrazione, accesso account, registrazione sito web">
     <meta name="viewport" content="width=device-width">
 
     <title>Registrati</title>

@@ -7,10 +7,8 @@
     <meta charset="UTF-8">
     <title>Eventi del Tour - Linkin Park</title>
     <meta name="author" content="linkins">
-    <meta name="description"
-        content="Scopri le date del tour dei Linkin Park: luoghi, orari e dettagli degli eventi in tutto il mondo. Unisciti a noi per una serata indimenticabile con la tua band preferita!">
-    <meta name="keywords"
-        content="Linkin Park tour, concerti Linkin Park, date tour, eventi musicali, concerti live, biglietti concerti, luoghi tour, Linkin Park eventi">
+    <meta name="description" content="Scopri le date del tour dei Linkin Park: luoghi, orari e dettagli degli eventi in tutto il mondo. Unisciti a noi per una serata indimenticabile con la tua band preferita!">
+    <meta name="keywords" content="Linkin Park tour, concerti Linkin Park, date tour, eventi musicali, concerti live, biglietti concerti, luoghi tour, Linkin Park eventi">
     <meta name="viewport" content="width=device-width">
 
     <link rel="icon" href="asset/img/favicon.ico" type="image/x-icon">

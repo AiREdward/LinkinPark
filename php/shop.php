@@ -49,11 +49,6 @@ function updateCartDisplay() {
     if (empty($cartItems)) {
         $cartHtml = '<p>Carrello Vuoto</p>';
     } else {
-
-        $cartHtml .= '<p id="subtotal">Subtotale: €' . number_format($subtotal, 2) . '</p>';
-        $cartHtml .= '<button id="checkout-btn" onclick="handleCheckout()">Procedi all\'acquisto</button>';
-        $cartHtml .= '<button id="clear-cart-btn" onclick="clearCart()">Svuota Carrello</button>';
-
         foreach ($cartItems as $item) {
             $sizeHtml = '';
             if ($item['size'] !== '') {
@@ -65,11 +60,14 @@ function updateCartDisplay() {
                     <p>' . $item['name'] . '</p>
                     <p>' . $sizeHtml . '</p>
                     <p>Quantità: ' . $item['quantity'] . '</p>
-                    <p>Prezzo: €' . number_format($item['price'], 2) . '</p>
+                    <p class="price">Prezzo: €' . number_format($item['price'], 2) . '</p>
                     <button class="remove-btn" onclick="removeFromCart(\'' . $item['name'] . '\', \'' . $item['size'] . '\')">Rimuovi</button>
                 </div>';
             $subtotal += $item['price'] * $item['quantity'];
         }
+        $cartHtml .= '<p id="subtotal">Subtotale: €' . number_format($subtotal, 2) . '</p>';
+        $cartHtml .= '<button id="checkout-btn" onclick="handleCheckout()">Procedi all\'acquisto</button>';
+        $cartHtml .= '<button id="clear-cart-btn" onclick="clearCart()">Svuota Carrello</button>';
     }
 
     return $cartHtml;
