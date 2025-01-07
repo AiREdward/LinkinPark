@@ -7,8 +7,10 @@
     <meta charset="UTF-8">
     <title>Eventi del Tour - Linkin Park</title>
     <meta name="author" content="linkins">
-    <meta name="description" content="Scopri le date del tour dei Linkin Park: luoghi, orari e dettagli degli eventi in tutto il mondo. Unisciti a noi per una serata indimenticabile con la tua band preferita!">
-    <meta name="keywords" content="Linkin Park tour, concerti Linkin Park, date tour, eventi musicali, concerti live, biglietti concerti, luoghi tour, Linkin Park eventi">
+    <meta name="description"
+        content="Scopri le date del tour dei Linkin Park: luoghi, orari e dettagli degli eventi in tutto il mondo. Unisciti a noi per una serata indimenticabile con la tua band preferita!">
+    <meta name="keywords"
+        content="Linkin Park tour, concerti Linkin Park, date tour, eventi musicali, concerti live, biglietti concerti, luoghi tour, Linkin Park eventi">
     <meta name="viewport" content="width=device-width">
 
     <link rel="icon" href="asset/img/favicon.ico" type="image/x-icon">
@@ -19,7 +21,7 @@
     <main>
         <?php include 'includes/menu.php'; ?>
         <h2>Prossimi Eventi del Tour</h2>
-        
+
         <dl id="tour-dates">
             <?php
             setlocale(LC_TIME, 'it_IT.UTF-8', 'it_IT', 'Italian');
@@ -44,7 +46,8 @@
                     <?php echo $paese; ?>
                 </h3>
             </dt>
-            <dd id="<?php echo $citta . '_' . $data; ?>" onclick="openDetails(this)">
+            <dd id="<?php echo $citta . '_' . $data; ?>" onclick="openDetails(this)" role="button" tabindex="0"
+                aria-expanded="false" aria-controls="<?php echo $citta . '_' . $data; ?>_details">
                 <p>
                     <strong>
                         <?php echo $citta; ?>
@@ -53,9 +56,8 @@
                         <?php echo $formattedDate; ?>
                     </time>
                 </p>
-                
-                <div class="extra-details" hidden aria-hidden="true">
-               
+
+                <div id="<?php echo $citta . '_' . $data; ?>_details" class="extra-details" hidden aria-hidden="true">
                     <p>
                         <?php echo $descrizione; ?> Alle ore
                         <strong>
@@ -68,11 +70,15 @@
                         <?php echo $citta; ?>.
                     </p>
                     <p>
-                        Prezzo del biglietto: <strong>&euro; <?php echo $prezzo; ?></strong>
+                        Prezzo del biglietto: <strong>&euro;
+                            <?php echo $prezzo; ?>
+                        </strong>
                     </p>
                     <div class="button-container">
-                        <button aria-label="Compra Biglietto per <?php echo $citta; ?>" onclick="handleTicketPurchase(event, '<?php echo $citta; ?>')">Compra Biglietto</button>                    
-                        <button class="close-details" onclick="closeDetails(event, this)">Chiudi</button>
+                        <button aria-label="Compra Biglietto per <?php echo $citta; ?>"
+                            onclick="handleTicketPurchase(event, '<?php echo $citta; ?>')">Compra Biglietto</button>
+                        <button class="close-details" aria-label="Chiudi dettagli per <?php echo $citta; ?>"
+                            onclick="closeDetails(event, this)">Chiudi</button>
                     </div>
                 </div>
             </dd>
@@ -80,8 +86,8 @@
                 }
             } else {
                 ?>
-                <p id="no-events">Nessun evento disponibile al momento. Torna a trovarci presto!</p>
-                <?php
+            <p id="no-events">Nessun evento disponibile al momento. Torna a trovarci presto!</p>
+            <?php
             }
             $conn->close();
             ?>
@@ -94,11 +100,25 @@
     <?php include 'includes/footer.php'; ?>
 
     <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const tourItems = document.querySelectorAll('#tour-dates dd');
+
+            tourItems.forEach(item => {
+                item.addEventListener('keydown', (event) => {
+                    if (event.key === 'Enter') {
+                        event.preventDefault(); // Evita l'eventuale comportamento predefinito
+                        openDetails(item);
+                    }
+                });
+            });
+        });
+
         function openDetails(element) {
             const details = element.querySelector('.extra-details');
             if (details) {
                 details.removeAttribute('hidden');
                 details.setAttribute('aria-hidden', 'false');
+                element.setAttribute('aria-expanded', 'true');
             }
         }
 
@@ -108,6 +128,8 @@
             if (details) {
                 details.setAttribute('hidden', '');
                 details.setAttribute('aria-hidden', 'true');
+                const parent = details.parentElement;
+                if (parent) parent.setAttribute('aria-expanded', 'false');
             }
         }
 

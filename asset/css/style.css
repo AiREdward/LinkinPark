@@ -905,49 +905,66 @@ footer {
     margin-top: 4em;
     clear: both;
     border-top: 2px solid var(--txtcolor);
+    text-align: center; /* Centra tutto il contenuto del footer */
 }
 
 footer a {
-    margin-right: 10px; 
+    margin-right: 10px;
     text-decoration: none;
+    color: var(--txtcolor);
 }
 
 .footerContainer {
-    max-width: 1200px; 
-    margin: 0 auto; 
-    display: grid; 
-    grid-template-columns: repeat(3, 1fr); /* 3 colonne di larghezza uguale */
-    text-align: center; /* Centra il testo */
-    justify-items: center; /* Allinea orizzontalmente ogni elemento */
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Tre colonne di larghezza uguale */
+    gap: 2em; /* Spazio tra le colonne */
+    padding-bottom: 2em;
+    justify-items: center; /* Allinea orizzontalmente ogni colonna */
+    text-align: center; /* Centra il testo in tutte le sezioni */
 }
 
-.footerContainer h3 {
-    font-size: 18px; 
-    text-align: center;
+.footerContainer > div {
+    padding: 0 1em; /* Spazio interno per ogni colonna */
 }
 
-.imgValidCode {
-    width: 50px;
-    height: auto;
-    vertical-align: middle;
-    margin-right: 15px;
+.footerContainer h2 {
+    font-size: 1.5em;
+    margin-bottom: 0.5em;
+}
+
+.footerContainer p,
+.footerContainer a {
+    line-height: 1.6; /* Migliora la leggibilità del testo */
 }
 
 .social {
-    display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center; /* Centra i link social */
 }
 
 .social a {
     display: flex;
     align-items: center;
     text-decoration: none;
+    color: var(--txtcolor);
 }
 
 .social i {
-    font-size: 24px; 
+    font-size: 20px;
     margin-right: 8px;
 }
+
+footer > div:last-of-type {
+    text-align: center;
+    margin-top: 2em; /* Spazio sopra la sezione inferiore */
+}
+
+footer > div:last-of-type p {
+    margin: 0.5em 0; /* Spazio tra i paragrafi della sezione inferiore */
+}
+
+
 
 /* ----------------------------------------------- */
