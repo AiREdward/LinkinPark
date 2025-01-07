@@ -49,6 +49,11 @@ function updateCartDisplay() {
     if (empty($cartItems)) {
         $cartHtml = '<p>Carrello Vuoto</p>';
     } else {
+
+        $cartHtml .= '<p id="subtotal">Subtotale: €' . number_format($subtotal, 2) . '</p>';
+        $cartHtml .= '<button id="checkout-btn" onclick="handleCheckout()">Procedi all\'acquisto</button>';
+        $cartHtml .= '<button id="clear-cart-btn" onclick="clearCart()">Svuota Carrello</button>';
+
         foreach ($cartItems as $item) {
             $sizeHtml = '';
             if ($item['size'] !== '') {
@@ -65,9 +70,6 @@ function updateCartDisplay() {
                 </div>';
             $subtotal += $item['price'] * $item['quantity'];
         }
-        $cartHtml .= '<p id="subtotal">Subtotale: €' . number_format($subtotal, 2) . '</p>';
-        $cartHtml .= '<button id="checkout-btn" onclick="handleCheckout()">Procedi all\'acquisto</button>';
-        $cartHtml .= '<button id="clear-cart-btn" onclick="clearCart()">Svuota Carrello</button>';
     }
 
     return $cartHtml;

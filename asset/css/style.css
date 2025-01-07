@@ -600,11 +600,9 @@ header h1 {
 #subtotal {
     font-size: 1.2rem;
     font-weight: bold;
-    color: #343a40;
-    margin-top: 15px;
     text-align: center;
-    border-top: 2px solid var(--txtcolor);
     padding-top: 10px;
+    color: white; /* Aggiungi questa linea per rendere il testo bianco */
 }
 
 #checkout-btn, #clear-cart-btn {
