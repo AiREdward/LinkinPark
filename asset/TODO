@@ -7,39 +7,17 @@ Crea pulsante "annulla pagamento" + cambia colori
 
 shop_____________
 
-sistema flexbox
 sistema altezza shop coi filtri
-metti keywords su shop
-cambia nomi item in italiano
-
+colora subtotale e nessun articolo selezionato
 
 tour_____________
 
-fix tabindex tour
 fix carte tour
 importa colori
 
 
-admin____________
-
-quando viene fatto l'accesso "login" (sulla navbar) deve sparire o diventare logout
-
-cambiare colore logout perchè sembra obbligatorio da cliccare con quel rosso acceso, per me va bene anche senza riquadro rosso ma solo testo bianco su sfondo blu
-
-sistemare statistiche: cambierei la disposizione delle statistiche delle transazioni
-sistemare statistiche: modificare ampiezze grafico, non possono avere tutti la stessa ampiezza perchè non si capisce bene il valore di transazioni e articolo più acquistato
-sistemare statistiche: la navbar si ferma ad un certo punto e non continua per tutta la pagina, io la fisserei a destra senza farla scorrere
-
-tour non riporta a niente // TODO
-logout non funziona // TODO
-
-gestione utenti: togliere la ricerca dalla barra spaziatrice una volta completata la ricerca
-gestione utenti: sistemare css (metterei informazioni utente a sinistra e aggiorna utente a destra)
-
-
 all______________
 
-aggiungi keywords dove mancano
 fai classe .hasScrollbar e adegua css in tutte le pagine
 sposta tutti gli style fuori dal html + rimuovi ts ignore + prova a fixare warning per js
 sposta tutti gli script fuori dal html

@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="author" content="linkins">
-    <meta name="description" content="TODO">
-    <meta name="keywords" content="TODO">
+    <meta name="description" content="Accedi al tuo account per continuare a esplorare tutte le funzionalità del nostro sito. Inserisci email e password per un accesso sicuro e rapido.">
+    <meta name="keywords" content="accedi, login, accesso account, entra nel tuo account, accedi online, accesso sicuro, login utente, pagina di accesso, autenticazione">
     <meta name="viewport" content="width=device-width">
 
     <title>Accedi</title>
