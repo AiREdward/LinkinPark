@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="author" content="linkins">
-    <meta name="description" content="TODO">
-    <meta name="keywords" content="TODO">
+    <meta name="description" content="Accedi al tuo account per continuare a esplorare tutte le funzionalità del nostro sito. Inserisci email e password per un accesso sicuro e rapido.">
+    <meta name="keywords" content="accedi, login, accesso account, entra nel tuo account, accedi online, accesso sicuro, login utente, pagina di accesso, autenticazione">
     <meta name="viewport" content="width=device-width">
 
     <title>Accedi</title>
@@ -18,44 +18,44 @@
 
 <body>
     <main>
-
         <div class="main-container">
+            <!-- Left Section -->
+            <div class="left-section">
+                <h1>Ciao!</h1>
+                <p>Accedi per continuare a esplorare tutte le funzionalità del nostro sito.</p>
+                <p>Non hai un account? <a href="registrazione.php">Registrati qui</a></p>
+            </div>
 
-            <header>
-                <h1>Accedi</h1>
-            </header>
+            <!-- Right Section -->
+            <div class="right-section">
+                <h1 class="title">Accedi</h1>
 
-            <!-- Sezione per i messaggi di errore -->
-            <div id="error-message" class="error"></div>
+                <!-- Sezione per i messaggi di errore -->
+                <div id="error-message" class="error"></div>
 
-            <form action="php/login.php" method="post">
-                <label for="email">Email:</label>
-                <div class="input-container">
-                    <input type="email" id="email" name="email" required placeholder="Inserisci la tua email"
-                        class="input-with-icon">
-                    <i class="fa-solid fa-envelope input-icon"></i>
-                </div>
+                <form action="php/login.php" method="post">
+                    <div class="input-container full-width">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required placeholder="Inserisci la tua email"
+                            class="input">
+                    </div>
 
-                <label for="password">Password:</label>
-                <div class="input-container">
-                    <input type="password" id="password" name="password" required
-                        placeholder="Inserisci la tua password" class="input-with-icon">
-                    <i class="fa-solid fa-lock input-icon"></i>
-                    <i id="togglePassword" class="fa-solid fa-eye icon-right"></i>
-                </div>
+                    <div class="input-container full-width">
+                        <label for="password">Password:</label>
+                        <input type="password" id="password" name="password" required
+                            placeholder="Inserisci la tua password" class="input-with-icon">
+                        <i id="togglePassword" class="fa-solid fa-eye icon-right"></i>
+                    </div>
 
-                <input type="hidden" name="redirect" id="redirect" value="">
+                    <input type="hidden" name="redirect" id="redirect" value="">
 
-                <button type="submit">Accedi</button>
-            </form>
-
-            <p>Non hai un account? <a href="registrazione.php">Registrati qui</a></p>
+                    <button type="submit">Accedi</button>
+                </form>
+            </div>
         </div>
-        
     </main>
 
     <script src="js/login.js"></script>
-
 </body>
 
 </html>

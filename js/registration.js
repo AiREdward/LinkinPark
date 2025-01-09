@@ -21,16 +21,6 @@ toggleConfirmPassword.addEventListener('click', () => {
     toggleConfirmPassword.classList.toggle('fa-eye-slash');
 });
 
-function nextStep(step) {
-    document.getElementById('step-' + (step - 1)).classList.remove('active');
-    document.getElementById('step-' + step).classList.add('active');
-}
-
-function previousStep(step) {
-    document.getElementById('step-' + (step + 1)).classList.remove('active');
-    document.getElementById('step-' + step).classList.add('active');
-}
-
 // Funzione per aprire il modale
 function openModal(modalId) {
     const modal = document.getElementById(modalId);

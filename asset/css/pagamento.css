@@ -1,0 +1,333 @@
+@import url('https://fonts.googleapis.com/css?family=Work+Sans');
+
+:root{
+    --bgcolor1: #000000; 
+    --bgcolor2: #0B1520;
+    --txtcolor: #ECDDEE;
+    --linkcolor: #CE929D;
+    --visitedcolor: #AC95AA;
+}
+
+body {
+    max-width: 1024px;
+    color: var(--txtcolor);
+    background-color: var(--bgcolor2);
+    font-size: 1rem;
+    line-height: 1.5em;
+    font-family: Arial, Helvetica, sans-serif; 
+    margin: auto;
+    padding-left: 1em;
+    padding-right: 1em;
+    height: 100%;
+}
+
+#cardForm {
+    margin-top: 2%; /* Aggiungi la spaziatura desiderata */
+}
+
+/* Contenitore principale */
+#cardForm .container {
+    display: flex;
+    flex-wrap: nowrap; /* Impedisce il wrapping degli elementi */
+    gap: 4%;
+    justify-content: space-between; /* Distribuisce lo spazio tra gli elementi */
+    padding: 2%;
+    box-sizing: border-box; /* Include padding e bordo nel calcolo delle dimensioni */
+}
+
+/* Sezioni carta e dati */
+#cardForm .container .left-section {
+    flex-direction: column;
+    gap: 2%;
+    flex: 0 0 calc(60% - 2%); /* Larghezza del 60% */
+    align-items: flex-start; /* Allinea gli elementi in alto */
+}
+
+#cardForm .container .left-section .card {
+    margin-bottom: 2%; /* Aggiungi spaziatura sotto la card */
+}
+
+/* Card di pagamento */
+#cardForm .container .card {
+    background: linear-gradient(135deg, #2c3e50, #34495e);
+    border-radius: 15px;
+    width: 100% - 30px;
+    height: auto;
+    margin-top: 30px;
+    margin: auto;
+    padding: 30px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    box-shadow: 4px 8px 20px rgba(0, 0, 0, 0.5);
+    position: relative;
+    color: #ecf0f1;
+}
+
+#cardForm .container .card .logo-card {
+    max-width: 80px;
+    margin: 10px auto;
+    display: block;
+}
+
+/* Etichette e input */
+#cardForm .container .card label {
+    display: block;
+    font-size: 12px;
+    color: #bdc3c7;
+    margin-bottom: 5px;
+}
+
+#cardForm .container .card input {
+    width: 100%;
+    font-family: 'Work Sans', sans-serif;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #7f8c8d;
+    color: #ecf0f1;
+    padding: 5px;
+    margin-bottom: 15px;
+    transition: border-bottom 0.4s;
+}
+
+#cardForm .container .card input:focus {
+    border-bottom: 1px solid #1abc9c;
+    outline: none;
+}
+
+#cardForm .container .card input.n_carta {
+    font-size: 18px;
+}
+
+#cardForm .container .card input.nome {
+    font-size: 16px;
+}
+
+#cardForm .container .card input.ccv {
+    width: 60px;
+}
+
+#data_scadenza::-webkit-calendar-picker-indicator {
+    background-color: #f5f5f5;
+}
+
+/* Pulsante di conferma */
+#cardForm .container .card .proceed {
+    position: absolute;
+    bottom: 5%; 
+    right: 5%; 
+    width: 25%; 
+    height: auto;
+    border-radius: 14px;
+    background: #1abc9c;
+    border: none;
+    color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 10px;
+}
+
+#cardForm .container .card .proceed .confirmation {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+#cardForm .container .card .proceed:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+#cardForm .container .card .proceed:active {
+    transform: scale(1);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.4);
+}
+
+#cardForm .container .data {
+    flex: 0 0 calc(40% - 20px);
+    background: #ecf0f1;
+    border-radius: 15px;
+    width: 100% - 30px;
+    height: auto;
+    margin-top: 30px;
+    margin: auto;
+    padding-left: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    box-shadow: 4px 8px 20px rgba(0, 0, 0, 0.5);
+    position: relative;
+    color: #2c3e50;
+}
+
+/* Sezione ricevuta */
+#cardForm .container .receipt {
+    flex: 0 0 calc(40% - 20px);
+    background: #ecf0f1;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 2px 4px 15px rgba(0, 0, 0, 0.2);
+    color: #2c3e50;
+    position: relative;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    box-sizing: border-box; 
+    width: 100%;
+    height: 100%; 
+}
+
+#cardForm .container .receipt::-webkit-scrollbar {
+    width: 12px;
+}
+
+#cardForm .container .receipt::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+#cardForm .container .receipt::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+}
+
+#cardForm .container .receipt::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+#cardForm .container .receipt img {
+    width: 100%; 
+    height: auto;
+    max-width: 100%;
+}
+
+#cardForm .container .receipt #bought-items-container {
+    width: 100%;
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 4%;
+}
+
+#cardForm .container .receipt #bought-items-container:last-child {
+    margin-right: 0;
+}
+
+#cardForm .container .receipt #bought-items-container #bought-items-title {
+    font-size: 0.8em;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+#cardForm .container .receipt .bought-items {
+    border-top: 1px solid #bdc3c7;
+    margin-top: 10px;
+}
+
+#cardForm .container .receipt .bought-items:first-child {
+    border-top: none;
+}
+
+#cardForm .container .receipt .bought-items .bought-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #f5f5f5;
+    padding: 10px;
+    border-radius: 6px;
+    margin-bottom: 10px;
+}
+
+#cardForm .container .receipt .bought-items .bought-item p {
+    margin: 0;
+    font-size: 14px;
+    color: #2c3e50;
+}
+
+#cardForm .container .receipt .bought-items .bought-item .price {
+    font-weight: bold;
+    color: #1abc9c;
+}
+
+#cardForm .container .receipt #bought-items > div {
+    display: flex;
+    justify-content: left;
+    gap: 15px;
+    align-items: center;
+    background: #f5f5f5;
+    padding: 10px;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    border-top: 1px solid #000000; /* Aggiungi questa linea */
+}
+
+#cardForm .container .receipt #bought-items > div img {
+    margin-left: 20px;
+    width: 100px;
+    height: auto;
+}
+
+#cardForm .container .receipt #bought-items > div .bought-item-details {
+    flex-direction: column;
+    justify-content: center;
+}
+
+#cardForm .container .receipt #bought-items > div h4,
+#cardForm .container .receipt #bought-items > div p {
+    margin: 0;
+    font-size: 14px;
+    color: #2c3e50;
+}
+
+#cardForm .container .receipt #bought-items > div .price {
+    font-weight: bold;
+    color: #1abc9c;
+}
+
+#cardForm button {
+    cursor: pointer;
+}
+
+#cardForm button:focus {
+    outline: none;
+}
+
+
+
+@media print {
+    /* Nascondi elementi non necessari nella stampa */
+    body * {
+        visibility: hidden;
+    }
+
+    /* Mostra solo il contenuto della ricevuta */
+    .receipt, .receipt * {
+        visibility: visible;
+    }
+
+    /* Assicurati che la ricevuta occupi l'intera pagina */
+    .receipt {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+
+    /* Stili aggiuntivi per migliorare l'aspetto della stampa */
+    .receipt h2, .receipt h3, .receipt p {
+        margin: 0;
+        padding: 0;
+    }
+
+    .receipt .bought-item-details {
+        margin-bottom: 10px;
+    }
+
+    .receipt .product-image {
+        display: none; /* Nascondi le immagini dei prodotti */
+    }
+}

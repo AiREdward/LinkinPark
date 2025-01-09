@@ -3,7 +3,7 @@
 <html lang="it">
 
 <head>
-    <title lang="en">Linkin Park</title>
+    <title>Home - Linkin Park</title>
     <meta charset="UTF-8">
     <meta name="description" content="TODO">
     <meta name="keywords" content="TODO">
