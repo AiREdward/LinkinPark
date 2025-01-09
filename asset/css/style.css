@@ -376,7 +376,14 @@ header h1 {
     flex-direction: column;
 }
 
-.card-front, .card-back {
+.card * {
+    box-sizing: border-box;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.card-front{
     width: 100%;
     height: 100%;
     background: var(--shopcardcolor);
@@ -392,23 +399,6 @@ header h1 {
     align-items: center;
     justify-content: space-between;
     transition: transform 0.6s ease;
-}
-
-.card-front {
-    z-index: 2;
-    transform: rotateY(0deg);
-}
-
-.card-back {
-    transform: rotateY(180deg);
-}
-
-.card.flipped .card-front {
-    transform: rotateY(-180deg);
-}
-
-.card.flipped .card-back {
-    transform: rotateY(0deg);
 }
 
 .card-front h3 {
@@ -442,7 +432,6 @@ header h1 {
     border-radius: 4px;
 }
 
-
 .card-front .size-quantity-wrapper {
     display: flex;
     justify-content: space-between;
@@ -451,10 +440,8 @@ header h1 {
     margin-bottom: 10px;
 }
 
-/* Pulsanti */
-.card-front .add-to-cart-btn, 
-.card-front .info-btn {
-    font-size: 8%;
+.card-front .add-to-cart-btn{
+    font-size: 0.8rem;
     padding: 5%;
     border: none;
     cursor: pointer;
@@ -471,44 +458,19 @@ header h1 {
     background-color: var(--pulsantecolor1);
 }
 
-.card-front .info-btn {
-    background-color: #007bff;
-    color: white;
-    border-radius: 0;
-}
-
-.card-front .info-btn:hover {
-    background-color: #0056b3;
-}
-
-/* Pulsanti allineati sullo stesso piano */
 .card-front .button-wrapper {
     display: flex;
     justify-content: space-between;
     width: 100%;
 }
 
-/* Evitare che gli elementi escano dalla carta */
-.card * {
-    box-sizing: border-box;
-    max-width: 100%;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-.info-btn {
-    margin-top: 10px;
-    padding: 8px 16px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background 0.3s ease;
-}
-
-.info-btn:hover {
-    background-color: #0056b3;
+#no-results {
+    display: none;
+    font-size: 1.2em;
+    color: var(--linkcolor);
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px;
 }
 
 /* CART */
@@ -572,7 +534,7 @@ header h1 {
     font-weight: bold;
     font-size: 1.5rem;
     margin: 0;
-    color: #343a40;
+    color: white;
     align-self: stretch;
     border-bottom: 1px solid #e9ecef;
 }
@@ -585,7 +547,7 @@ header h1 {
 .cart-item p {
     margin: 0;
     font-size: 0.9rem;
-    color: #495057;
+    color: white;
     text-align: left;
 }
 
@@ -610,11 +572,9 @@ header h1 {
 #subtotal {
     font-size: 1.2rem;
     font-weight: bold;
-    color: #343a40;
-    margin-top: 15px;
     text-align: center;
-    border-top: 2px solid var(--txtcolor);
     padding-top: 10px;
+    color: white; /* Aggiungi questa linea per rendere il testo bianco */
 }
 
 #checkout-btn, #clear-cart-btn {
@@ -959,49 +919,66 @@ footer {
     margin-top: 4em;
     clear: both;
     border-top: 2px solid var(--txtcolor);
+    text-align: center; /* Centra tutto il contenuto del footer */
 }
 
 footer a {
-    margin-right: 10px; 
+    margin-right: 10px;
     text-decoration: none;
+    color: var(--txtcolor);
 }
 
 .footerContainer {
-    max-width: 1200px; 
-    margin: 0 auto; 
-    display: grid; 
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Tre colonne di larghezza uguale */
+    gap: 2em; /* Spazio tra le colonne */
+    padding-bottom: 2em;
+    justify-items: center; /* Allinea orizzontalmente ogni colonna */
+    text-align: center; /* Centra il testo in tutte le sezioni */
 }
 
-.footerContainer h3 {
-    font-size: 18px; 
-    text-align: center;
+.footerContainer > div {
+    padding: 0 1em; /* Spazio interno per ogni colonna */
 }
 
-.imgValidCode {
-    width: 50px;
-    height: auto;
-    vertical-align: middle;
-    margin-right: 15px;
+.footerContainer h2 {
+    font-size: 1.5em;
+    margin-bottom: 0.5em;
+}
+
+.footerContainer p,
+.footerContainer a {
+    line-height: 1.6; /* Migliora la leggibilità del testo */
 }
 
 .social {
-    display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center; /* Centra i link social */
 }
 
 .social a {
     display: flex;
     align-items: center;
     text-decoration: none;
+    color: var(--txtcolor);
 }
 
 .social i {
-    font-size: 24px; 
+    font-size: 20px;
     margin-right: 8px;
 }
+
+footer > div:last-of-type {
+    text-align: center;
+    margin-top: 2em; /* Spazio sopra la sezione inferiore */
+}
+
+footer > div:last-of-type p {
+    margin: 0.5em 0; /* Spazio tra i paragrafi della sezione inferiore */
+}
+
+
 
 /* ----------------------------------------------- */

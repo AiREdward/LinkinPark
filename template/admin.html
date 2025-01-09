@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta author="linkins">
-    <meta name="description" content="Admin Dashboard">
-    <meta name="keywords" content="Admin, Dashboard, Gestione">
+    <meta name="description" content="Dashboard Admin per la gestione utenti, statistiche delle vendite e gestione delle date dei tour. Accesso rapido e funzionalità avanzate per amministratori.">
+    <meta name="keywords" content="Admin Dashboard, gestione utenti, statistiche vendite, gestione tour, pannello di controllo, amministrazione, transazioni, statistiche, utenti, tour, gestione ecommerce">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin</title>
     <link rel="icon" href="../asset/img/favicon.ico" type="image/x-icon">
@@ -175,6 +175,26 @@
         #vendite {
             display: none;
         }
+
+        .message {
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 20px;
+            font-size: 1.1rem;
+            text-align: center;
+        }
+
+        .message.not-found {
+            background-color: #ffdddd;
+            border: 1px solid #f5c6cb;
+            color: #721c24;
+        }
+
+        .message.not-found i {
+            margin-right: 8px;
+            color: #f5c6cb;
+            font-size: 1.3rem;
+        }
     </style>
 </head>
 
@@ -184,7 +204,7 @@
         <h2>Admin Dashboard</h2>
         <button id="userManagementBtn">Gestione Utenti</button>
         <button id="venditeBtn">Statistiche</button>
-        <button id="dateTour">Tour</button>
+        <button id="dateTourBtn">Tour</button>
         <button id="logoutBtn">Logout</button>
     </div>
 

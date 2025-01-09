@@ -63,8 +63,11 @@ function searchUser() {
             resultDiv.innerHTML = '';
 
             if (data.message) {
-                resultDiv.innerHTML = `<div class="message">${data.message}</div>`;
-            }
+                resultDiv.innerHTML = `
+                    <div class="message not-found">
+                        <i class="fas fa-exclamation-circle"></i> ${data.message}
+                    </div>`;
+            }            
 
             if (data.user) {
                 const user = data.user;
@@ -103,7 +106,7 @@ function searchUser() {
                     const formData = new FormData(this);
                     formData.append('action', 'update_user');
 
-                    fetch('php/admin.php', {
+                    fetch('../php/admin.php', {
                         method: 'POST',
                         body: formData
                     })
@@ -121,7 +124,7 @@ function searchUser() {
 
 // Gestisci il logout
 document.getElementById('logoutBtn').addEventListener('click', function () {
-    fetch('php/logout.php', { method: 'POST' })
+    fetch('../php/logout.php', { method: 'POST' })
         .then(() => {
             // Reindirizza alla pagina index
             window.location.href = '../index.php';

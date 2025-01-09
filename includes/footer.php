@@ -51,7 +51,6 @@
         <div>
             <p>Questo sito rispetta gli standard di sicurezza di <strong>W3C</strong>.</p>
             <div>
-                <!--
                 <a href="http://jigsaw.w3.org/css-validator/check/referer">
                     <img src="http://jigsaw.w3.org/css-validator/images/vcss"
                         alt="CSS Valido!" />
@@ -60,7 +59,6 @@
                 <a href="http://jigsaw.w3.org/css-validator/check/referer">
                     <img src="http://jigsaw.w3.org/css-validator/images/vcss-blue" alt="CSS Valido!" />
                 </a>
--->
             </div>
         </div>
     </div>
