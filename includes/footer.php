@@ -6,8 +6,8 @@
 
         <!-- Sezione Logo e Descrizione -->
         <div>
-            <h3>Linkin Park</h2>
-                <p style="color: #aaa; line-height: 1.6;">
+            <h2>Linkin Park</h2>
+                <p>
                     Iconica band che combina rock e innovazione. Scopri musica senza tempo e resta aggiornato sulle
                     novità!
                 </p>
@@ -15,7 +15,7 @@
 
         <!-- Social Media -->
         <div>
-            <h3>Seguici</h3>
+            <h2>Seguici</h2>
             <div class="social">
                 <a href="https://www.instagram.com/linkinpark/" target="_blank">
                     <i class="fab fa-instagram"></i> Instagram
@@ -37,30 +37,30 @@
 
         <!-- Sezione Contatti -->
         <div>
-            <h3>Hai bisogno di aiuto?</h3>
-            <a href="mailto:support@linkinpark.com" style="color: #aaa; text-decoration: none;">Contatta il Supporto</a>
+            <h2>Hai bisogno di aiuto?</h2>
+            <a href="mailto:support@linkinpark.com">Contatta il Supporto</a>
         </div>
 
     </div>
 
     <!-- Sezione Certificati di Sicurezza e Privacy -->
-    <div style="text-align: center; padding-top: 20px; border-top: 1px solid #333; margin-top: 20px;">
-        <div style="color: #aaa; font-size: 14px;">
+    <div>
+        <div>
             <p>&copy; 2024 Linkin Park. Tutti i diritti riservati.</p>
         </div>
-        <div style="margin-top: 10px; color: #aaa;">
+        <div>
             <p>Questo sito rispetta gli standard di sicurezza di <strong>W3C</strong>.</p>
             <div>
+                <!--
                 <a href="http://jigsaw.w3.org/css-validator/check/referer">
-                    <img style="border:0;width:88px;height:31px" src="http://jigsaw.w3.org/css-validator/images/vcss"
+                    <img src="http://jigsaw.w3.org/css-validator/images/vcss"
                         alt="CSS Valido!" />
                 </a>
 
                 <a href="http://jigsaw.w3.org/css-validator/check/referer">
-                    <img style="border:0;width:88px;height:31px"
-                        src="http://jigsaw.w3.org/css-validator/images/vcss-blue" alt="CSS Valido!" />
+                    <img src="http://jigsaw.w3.org/css-validator/images/vcss-blue" alt="CSS Valido!" />
                 </a>
-
+-->
             </div>
         </div>
     </div>

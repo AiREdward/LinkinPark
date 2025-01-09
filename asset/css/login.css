@@ -2,12 +2,19 @@
     --glass-bg: rgba(255, 255, 255, 0.1);
     --glass-bg-focus: rgba(255, 255, 255, 0.7);
     --input-bg: rgba(255, 255, 255, 0.4);
-    --button-bg: #4CAF50;
-    --button-hover-bg: #45a049;
-    --text-color: white;
     --error-color: #FF4C4C;
     --box-shadow-color: rgba(0, 0, 0, 0.2);
 }
+
+/* :root{
+    --bgcolor1: #0B1520;
+    --bgcolor2: #04060F;
+    --txtcolor: #EEE0F1;
+    --linkcolor: #BC6779;
+    --visitedcolor: #767CA2;
+    --shopcardcolor: #CAC5C0;
+    --pulsantecolor1: #934458;
+} */
 
 body {
     height: 100vh;
@@ -26,7 +33,7 @@ body {
     border-radius: 20px;
     box-shadow: 0 10px 30px var(--box-shadow-color);
     text-align: center;
-    color: var(--text-color);
+    color: var(--txtcolor);
     font-family: 'Arial', sans-serif;
 }
 
@@ -49,7 +56,7 @@ input {
     border: none;
     border-radius: 8px;
     background: var(--input-bg);
-    color: var(--text-color);
+    color: var(--txtcolor);
     box-sizing: border-box;
     outline: none;
     transition: background 0.3s ease;
@@ -82,8 +89,8 @@ input:focus {
 }
 
 button {
-    background-color: var(--button-bg);
-    color: var(--text-color);
+    background-color: var(--pulsantecolor1);
+    color: var(--txtcolor);
     padding: 15px;
     font-size: 1.1em;
     border: none;
@@ -92,10 +99,6 @@ button {
     transition: background-color 0.3s ease;
     margin-top: 20px;
     width: 100%;
-}
-
-button:hover {
-    background-color: var(--button-hover-bg);
 }
 
 a {

@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 // Cambia il titolo della pagina in base al contenuto attivo
 function updatePageTitle(title) {
     document.getElementById('pageTitle').textContent = title;
@@ -6,13 +8,13 @@ function updatePageTitle(title) {
 // Gestisci il click sui bottoni del menu
 document.getElementById('userManagementBtn').addEventListener('click', function () {
     document.getElementById('userManagement').style.display = 'block';
-    document.getElementById('otherFunction').style.display = 'none';
+    document.getElementById('vendite').style.display = 'none';
     updatePageTitle('Gestione Utenti');
 });
 
-document.getElementById('otherFunctionBtn').addEventListener('click', function () {
+document.getElementById('venditeBtn').addEventListener('click', function () {
     document.getElementById('userManagement').style.display = 'none';
-    document.getElementById('otherFunction').style.display = 'block';
+    document.getElementById('vendite').style.display = 'block';
     updatePageTitle('Statistiche');
 
     // Carica le statistiche
@@ -28,28 +30,6 @@ document.getElementById('otherFunctionBtn').addEventListener('click', function (
             document.getElementById('totalTransactions').textContent = data.total_transactions || 0;
             document.getElementById('mostBoughtProduct').textContent = 
                 `${data.most_bought_product || '-'} (${data.most_bought_count || 0} volte)`;
-
-            // Crea il grafico
-            const ctx = document.getElementById('revenueChart').getContext('2d');
-            new Chart(ctx, {
-                type: 'bar',
-                data: {
-                    labels: ['Guadagno Totale', 'Transazioni', 'Articolo più Acquistato'],
-                    datasets: [{
-                        label: 'Statistiche',
-                        data: [totalRevenue, data.total_transactions, data.most_bought_count || 0],
-                        backgroundColor: ['#4caf50', '#2196f3', '#ffc107'],
-                        borderColor: ['#388e3c', '#1976d2', '#fbc02d'],
-                        borderWidth: 1
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    plugins: {
-                        legend: { display: false },
-                    },
-                }
-            });
         })
         .catch(error => {
             console.error('Errore:', error);
@@ -58,9 +38,20 @@ document.getElementById('otherFunctionBtn').addEventListener('click', function (
 });
 
 // Gestisci la ricerca dell'utente
-document.getElementById('searchForm').addEventListener('submit', function (e) {
+const searchForm = document.getElementById('searchForm');
+searchForm.addEventListener('submit', function (e) {
     e.preventDefault();
+    searchUser();
+});
 
+document.getElementById('email').addEventListener('keydown', function (e) {
+    if (e.key === 'Enter') {
+        e.preventDefault();
+        searchUser();
+    }
+});
+
+function searchUser() {
     const email = document.getElementById('email').value;
     fetch('../php/admin.php', {
         method: 'POST',
@@ -126,8 +117,7 @@ document.getElementById('searchForm').addEventListener('submit', function (e) {
             }
         })
         .catch(error => console.error('Errore:', error));
-});
-
+}
 
 // Gestisci il logout
 document.getElementById('logoutBtn').addEventListener('click', function () {
