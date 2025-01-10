@@ -1,8 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Work+Sans');
 
 :root{
-    --bgcolor1: #000000; 
-    --bgcolor2: #0B1520;
+    --bgcolor1: #0B1520; 
     --txtcolor: #ECDDEE;
     --linkcolor: #CE929D;
     --visitedcolor: #AC95AA;
@@ -11,10 +10,10 @@
 body {
     max-width: 1024px;
     color: var(--txtcolor);
-    background-color: var(--bgcolor2);
+    background-color: var(--bgcolor1);
     font-size: 1rem;
     line-height: 1.5em;
-    font-family: Arial, Helvetica, sans-serif; 
+    font-family: 'Lato', sans-serif;
     margin: auto;
     padding-left: 1em;
     padding-right: 1em;
@@ -22,29 +21,29 @@ body {
 }
 
 #cardForm {
-    margin-top: 2%; /* Aggiungi la spaziatura desiderata */
+    margin-top: 2%;
 }
 
 /* Contenitore principale */
 #cardForm .container {
     display: flex;
-    flex-wrap: nowrap; /* Impedisce il wrapping degli elementi */
+    flex-wrap: nowrap;
     gap: 4%;
-    justify-content: space-between; /* Distribuisce lo spazio tra gli elementi */
+    justify-content: space-between;
     padding: 2%;
-    box-sizing: border-box; /* Include padding e bordo nel calcolo delle dimensioni */
+    box-sizing: border-box;
 }
 
 /* Sezioni carta e dati */
 #cardForm .container .left-section {
     flex-direction: column;
     gap: 2%;
-    flex: 0 0 calc(60% - 2%); /* Larghezza del 60% */
-    align-items: flex-start; /* Allinea gli elementi in alto */
+    flex: 0 0 calc(60% - 2%);
+    align-items: flex-start;
 }
 
 #cardForm .container .left-section .card {
-    margin-bottom: 2%; /* Aggiungi spaziatura sotto la card */
+    margin-bottom: 2%;
 }
 
 /* Card di pagamento */
@@ -259,7 +258,7 @@ body {
     padding: 10px;
     border-radius: 6px;
     margin-bottom: 10px;
-    border-top: 1px solid #000000; /* Aggiungi questa linea */
+    border-top: 1px solid #000000;
 }
 
 #cardForm .container .receipt #bought-items > div img {
@@ -293,6 +292,69 @@ body {
     outline: none;
 }
 
+button.cancel {
+    background-color: #f44336;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin: 2%;
+    width: 96%;
+}
+
+button.cancel:hover {
+    background-color: #d32f2f;
+}
+
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.popup-content {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+.popup h3 {
+    margin-bottom: 10px;
+}
+
+.popup p {
+    margin-bottom: 20px;
+}
+
+.popup-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.popup-btn:hover {
+    background-color: #0056b3;
+}
+
+.hidden {
+    display: none;
+}
 
 
 @media print {
@@ -328,6 +390,6 @@ body {
     }
 
     .receipt .product-image {
-        display: none; /* Nascondi le immagini dei prodotti */
+        display: none;
     }
 }
