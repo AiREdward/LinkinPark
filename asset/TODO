@@ -43,3 +43,7 @@ aggiungi keywords dove mancano
 fai classe .hasScrollbar e adegua css in tutte le pagine
 sposta tutti gli style fuori dal html + rimuovi ts ignore + prova a fixare warning per js
 sposta tutti gli script fuori dal html
+
+TEST COLORI:
+blu: #445993
+verde: #589344
