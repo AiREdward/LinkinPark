@@ -425,7 +425,6 @@ header h1 {
 .card-front .size-select, 
 .card-front .quantity-input {
     width: 45%; 
-    font-size: 8%;
     padding: 5px;
     text-align: center;
     border: 1px solid #ccc;
@@ -495,94 +494,12 @@ header h1 {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     max-height: 1676px; /* Prova a mettere dello stile a #main che magari riusciamo a sistemare l'altezza */ 
 }
 
 #cart p {
     font-size: 1rem;
     text-align: center;
-    color: var(--bgcolor2);
     margin: 5px 0;
 }
 
@@ -626,7 +543,6 @@ header h1 {
     font-weight: bold;
     font-size: 1.5rem;
     margin: 0;
-    color: white;
     align-self: stretch;
     border-bottom: 1px solid #e9ecef;
 }
@@ -639,7 +555,7 @@ header h1 {
 .cart-item p {
     margin: 0;
     font-size: 0.9rem;
-    color: white;
+    color: var(--bgcolor2);
     text-align: left;
 }
 
