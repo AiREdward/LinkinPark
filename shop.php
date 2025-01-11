@@ -341,16 +341,16 @@
         }
 
         function filterItems(type, value) {
-            // Rimuovi lo stato 'active-filter' da tutti i bottoni all'interno del contenitore .filters-buttons
+            // Rimuovi lo stato 'active-filter' dai bottoni
             document.querySelectorAll('.filters-buttons button').forEach(button => {
                 button.classList.remove('active-filter');
             });
-        
+
             // Aggiungi lo stato 'active-filter' al bottone cliccato
             const button = event.target;
             button.classList.add('active-filter');
-        
-            // Filtra gli elementi in base al tipo e valore specificati
+
+            // Filtra le card
             const cards = document.querySelectorAll('.card');
             cards.forEach(card => {
                 if (type === 'all' || (card.dataset[type] && card.dataset[type] === value)) {
@@ -359,8 +359,8 @@
                     card.style.display = 'none';
                 }
             });
-        
-            // Mostra o nasconde il messaggio "Nessun risultato trovato"
+
+            // Controlla se ci sono risultati visibili
             const visibleCards = Array.from(cards).filter(card => card.style.display === 'block');
             document.getElementById('no-results').style.display = visibleCards.length ? 'none' : 'block';
         }
@@ -396,23 +396,6 @@
             }
         }
     </script>
-
-    <!-- Script per il controllo dell'altezza del carrello --> <!-- NON TOGLIERE -->
-    <script>
-        function setRelativeHeight(referenceSelector, targetSelector) {
-            var referenceElement = document.querySelector(referenceSelector);
-            var targetElement = document.querySelector(targetSelector);
-                
-            if (referenceElement && targetElement) {
-                var referenceHeight = referenceElement.offsetHeight;
-                targetElement.style.maxHeight = referenceHeight + 'px';
-            }
-        }
-        
-        document.addEventListener("DOMContentLoaded", function() {
-            setRelativeHeight('#shop', '#cart');
-        });
-    </script>    
 
     <?php include 'includes/scrollToTop.php'; ?>
     <?php include 'includes/footer.php'; ?>
