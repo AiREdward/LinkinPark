@@ -5,8 +5,7 @@
     --linkcolor: #BC6779;
     --visitedcolor: #767CA2;
     --shopcardcolor: #CAC5C0;
-    --pulsantecolor1: #934458;
-    --pulsante-hover: #BC6779;
+    --btnConferma: #589344;
     --input-bg: #1C2733;
     --input-border: #505C6D;
     --error-bg: #472D35;
@@ -70,10 +69,6 @@ body {
     transition: color 0.3s ease;
 }
 
-.left-section a:hover {
-    color: var(--pulsante-hover);
-}
-
 .main-container .right-section form {
     width: 100%;
     display: grid;
@@ -123,7 +118,7 @@ body {
 
 button[type="submit"] {
     grid-column: span 2;
-    background: var(--pulsantecolor1);
+    background: var(--btnConferma);
     color: var(--txtcolor);
     border: none;
     padding: 1rem;
@@ -132,10 +127,6 @@ button[type="submit"] {
     border-radius: 5px;
     cursor: pointer;
     transition: background 0.3s ease;
-}
-
-button[type="submit"]:hover {
-    background: var(--pulsante-hover);
 }
 
 .input-with-icon {
