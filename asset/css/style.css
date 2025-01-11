@@ -448,17 +448,17 @@ header h1 {
     width: 100%;
 }
 
+/* Non ci dovrebbe mai essere all'interno della pagina ma serve in caso venisse aggiunto un filtro senza item collegati*/
 #no-results {
     display: none;
     font-size: 1.2em;
-    color: var(--linkcolor);
+    color: white;
     text-align: center;
     margin-top: 20px;
     padding: 10px;
 }
 
 /* CART */
-
 #cart {
     padding: 20px;
     background-color: var(--bgcolor2);
@@ -468,7 +468,99 @@ header h1 {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     font-family: 'Arial', sans-serif;
     box-sizing: border-box;
-    overflow-y: scroll;
+    overflow-y: auto; /* Ensure scrolling works */
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    max-height: 1676px; /* Prova a mettere dello stile a #main che magari riusciamo a sistemare l'altezza */ 
 }
 
 #cart p {
