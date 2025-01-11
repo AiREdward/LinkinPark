@@ -265,7 +265,6 @@ body {
 #cardForm .container .receipt #bought-items > div p {
     margin: 0;
     font-size: 14px;
-    color: var(--visitedcolor);
 }
 
 #cardForm .container .receipt #bought-items > div .price {

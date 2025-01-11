@@ -10,17 +10,6 @@ function validatePhone() {
     }
 }
 
-const passwordField = document.getElementById('conferma-password');
-const toggleConfirmPassword = document.getElementById('toggleConfirmPassword');
-
-toggleConfirmPassword.addEventListener('click', () => {
-    const type = passwordField.type === 'password' ? 'text' : 'password';
-    passwordField.type = type;
-
-    toggleConfirmPassword.classList.toggle('fa-eye');
-    toggleConfirmPassword.classList.toggle('fa-eye-slash');
-});
-
 // Funzione per aprire il modale
 function openModal(modalId) {
     const modal = document.getElementById(modalId);
