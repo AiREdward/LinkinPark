@@ -425,7 +425,6 @@ header h1 {
 .card-front .size-select, 
 .card-front .quantity-input {
     width: 45%; 
-    font-size: 8%;
     padding: 5px;
     text-align: center;
     border: 1px solid #ccc;
