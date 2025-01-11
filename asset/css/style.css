@@ -8,7 +8,9 @@
     --visitedcolor: #767CA2;
     --shopcardcolor: #CAC5C0;
     --pulsantecolor1: #934458;
+    --btnConferma: #589344;
 }
+
 
 body {
     max-width: 1024px;
@@ -448,13 +450,9 @@ header h1 {
 }
 
 .card-front .add-to-cart-btn {
-    background-color: var(--pulsantecolor1);
+    background-color: var(--btnConferma);
     color: white;
     border-radius: 4px;
-}
-
-.card-front .add-to-cart-btn:hover {
-    background-color: var(--pulsantecolor1);
 }
 
 .card-front .button-wrapper {
@@ -463,17 +461,17 @@ header h1 {
     width: 100%;
 }
 
+/* Non ci dovrebbe mai essere all'interno della pagina ma serve in caso venisse aggiunto un filtro senza item collegati*/
 #no-results {
     display: none;
     font-size: 1.2em;
-    color: var(--linkcolor);
+    color: white;
     text-align: center;
     margin-top: 20px;
     padding: 10px;
 }
 
 /* CART */
-
 #cart {
     padding: 20px;
     background-color: var(--bgcolor2);
@@ -482,14 +480,24 @@ header h1 {
     flex: 0 0 calc(25% - 20px); /* Considera il gap */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     font-family: 'Arial', sans-serif;
-    box-sizing: border-box; /* Include padding e border nel calcolo delle dimensioni */
-    overflow-y: scroll;
+    box-sizing: border-box;
+    overflow-y: auto; /* Ensure scrolling works */
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    max-height: 1676px; /* Prova a mettere dello stile a #main che magari riusciamo a sistemare l'altezza */ 
 }
 
 #cart p {
     font-size: 1rem;
     text-align: center;
-    color: var(--bgcolor2);
     margin: 5px 0;
 }
 
@@ -533,7 +541,6 @@ header h1 {
     font-weight: bold;
     font-size: 1.5rem;
     margin: 0;
-    color: white;
     align-self: stretch;
     border-bottom: 1px solid #e9ecef;
 }
@@ -546,7 +553,7 @@ header h1 {
 .cart-item p {
     margin: 0;
     font-size: 0.9rem;
-    color: white;
+    color: var(--bgcolor2);
     text-align: left;
 }
 
@@ -573,7 +580,7 @@ header h1 {
     font-weight: bold;
     text-align: center;
     padding-top: 10px;
-    color: white; /* Aggiungi questa linea per rendere il testo bianco */
+    color: var(--txtcolor); /* Aggiungi questa linea per rendere il testo bianco */
 }
 
 #checkout-btn, #clear-cart-btn {
@@ -583,7 +590,7 @@ header h1 {
     margin-top: 10px;
     font-size: 1rem;
     font-weight: bold;
-    color: var(--bgcolor2);
+    color: var(--txtcolor);
     border: none;
     border-radius: 8px;
     cursor: pointer;
@@ -592,19 +599,11 @@ header h1 {
 }
 
 #checkout-btn {
-    background-color: var(--linkcolor);
-}
-
-#checkout-btn:hover {
-    background-color: var(--linkcolor);
+    background-color: var(--btnConferma);
 }
 
 #clear-cart-btn {
-    background-color: var(--visitedcolor);
-}
-
-#clear-cart-btn:hover {
-    background-color: var(--visitedcolor);
+    background-color: var(--pulsantecolor1);
 }
 
 .empty-cart {
