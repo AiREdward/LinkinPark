@@ -8,7 +8,9 @@
     --visitedcolor: #767CA2;
     --shopcardcolor: #CAC5C0;
     --pulsantecolor1: #934458;
+    --btnConferma: #589344;
 }
+
 
 body {
     max-width: 1024px;
@@ -448,13 +450,9 @@ header h1 {
 }
 
 .card-front .add-to-cart-btn {
-    background-color: var(--pulsantecolor1);
+    background-color: var(--btnConferma);
     color: white;
     border-radius: 4px;
-}
-
-.card-front .add-to-cart-btn:hover {
-    background-color: var(--pulsantecolor1);
 }
 
 .card-front .button-wrapper {
@@ -582,7 +580,7 @@ header h1 {
     font-weight: bold;
     text-align: center;
     padding-top: 10px;
-    color: white; /* Aggiungi questa linea per rendere il testo bianco */
+    color: var(--txtcolor); /* Aggiungi questa linea per rendere il testo bianco */
 }
 
 #checkout-btn, #clear-cart-btn {
@@ -592,7 +590,7 @@ header h1 {
     margin-top: 10px;
     font-size: 1rem;
     font-weight: bold;
-    color: var(--bgcolor2);
+    color: var(--txtcolor);
     border: none;
     border-radius: 8px;
     cursor: pointer;
@@ -601,19 +599,11 @@ header h1 {
 }
 
 #checkout-btn {
-    background-color: var(--linkcolor);
-}
-
-#checkout-btn:hover {
-    background-color: var(--linkcolor);
+    background-color: var(--btnConferma);
 }
 
 #clear-cart-btn {
-    background-color: var(--visitedcolor);
-}
-
-#clear-cart-btn:hover {
-    background-color: var(--visitedcolor);
+    background-color: var(--pulsantecolor1);
 }
 
 .empty-cart {
