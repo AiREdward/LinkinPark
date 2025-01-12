@@ -15,10 +15,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="stylesheet" href="asset/css/mobile.css" media="screen and (max-width:600px)">
 
-    <!--Lato, PT Sans, Bebas Neue -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <!--Lato, Bebas Neue -->
+    <link rel="preconnect" href="https://fonts.googleapis.com"> <!--lasciarli come performance enhancer? in quali file metterli? -->
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    
 
 </head>
 
@@ -30,7 +30,7 @@
         <h1>Linkin Park: Il Nostro Viaggio</h1>
 
         <dl id = "storia">
-            <dt class="short-article"><time datetime="1996">1996</time></dt>    <!--bisogna spostare "short-article" da <dd> -->
+            <dt class="short-article"><time datetime="1996">1996</time></dt>
             <dd id='item1'>
                 <img src="asset/img/diario/xero.webp" alt=""> <!--aggiungere q.sa che dice che questo e' la prima foto della band Xero con la composizione iniziale-->
                 <p>Prima di diventare Linkin Park, abbiamo formato Xero: un gruppo di ragazzi con tanta passione,

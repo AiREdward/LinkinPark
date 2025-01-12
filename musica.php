@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <title>Musica - Linkin Park</title>
     <meta name="description" content="Informazioni principali e tracce degli album più significativi nella storia di Linkin Park.">
-    <meta name="keywords" content="Linkin Park, discografia, album, tracklist, musica, From Zero, One More Light, Living Things, A Thousand Suns, Minutes to Midnight, Meteora, Hybrid Theory">
+    <meta name="keywords" content="linkin park,discografia,album,tracklist,musica,from zero,one more light,living things,a thousand suns,minutes to midnight,meteora,hybrid theory">
     <meta name="author" content="linkins">
     <meta name="viewport" content="width=device-width">
 
