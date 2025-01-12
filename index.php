@@ -5,8 +5,8 @@
 <head>
     <title>Home - Linkin Park</title>
     <meta charset="UTF-8">
-    <meta name="description" content="TODO">
-    <meta name="keywords" content="TODO">
+    <meta name="description" content="Le ultime novità dei Linkin Park: dal nuovo album al tour in corso.">
+    <meta name="keywords" content="linkin park,from zero,emily armstrong,colin brittain,world tour,rock band,rock">
     <meta name="author" content="linkins">
     <meta name="viewport" content="width=device-width">
 

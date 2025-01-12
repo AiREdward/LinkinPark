@@ -1,5 +1,7 @@
 /* GENERALE */
 
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
 :root{
     --bgcolor1: #0B1520;
     --bgcolor2: #04060F;
@@ -8,6 +10,12 @@
     --visitedcolor: #767CA2;
     --shopcardcolor: #CAC5C0;
     --pulsantecolor1: #934458;
+<<<<<<< Updated upstream
+=======
+    --btnConferma: #589344;
+
+    --mainFont: 'Lato', sans-serif;
+>>>>>>> Stashed changes
 }
 
 body {
@@ -16,7 +24,7 @@ body {
     background-color: var(--bgcolor1);
     font-size: 100%;
     line-height: 1.5em;
-    font-family: 'Lato', sans-serif; 
+    font-family: var(--mainFont);
     margin: auto;
     padding-left: 1em;
     padding-right: 1em;
@@ -66,7 +74,7 @@ header h1::after {
 
 header h1 {
     font-size: 6em;
-    font-family: "bebas neue", sans-serif;
+    font-family: "Bebas Neue", sans-serif;
     margin-top: 0.2em;
 }
 
@@ -139,77 +147,91 @@ header h1 {
 
 #integranti, #ex-integranti {
     display: flex;
-    flex-direction: column;
-    gap: 1em; 
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2em;
+    padding: 1em;
 }
 
-#integranti dd, #ex-integranti dd {
-    display: flex;
-    flex-direction: row; 
-    flex-wrap: wrap; 
-    position: relative;
-    width: 20%; 
-    height: 20em; 
-    background-color: var(--bgcolor1); 
-    border: 2px solid var(--txtcolor); 
-    border-radius: 8px; 
-    overflow: hidden; 
-    transition: transform 0.3s ease-in-out; 
-    padding: 0; 
+/* Card container */
+#integranti div, #ex-integranti div {
+    box-sizing: border-box;         /*conta padding + bordi + margini nella larghezza e altezza*/
+    flex: 0 1 calc(33.333% - 2em);
+    min-width: 280px;
+    perspective: 1000px;
 }
 
+/* Card title */
 #integranti dt, #ex-integranti dt {
-    max-width: 30%;
-    font-weight: bold;
-    text-align: center;
-    color: var(--txtcolor); 
-    margin: 0;
-    padding: 0.5em; 
-    background-color: var(--bgcolor1); 
-    width: fit-content; 
-    height: fit-content;
-    border-radius: 8px; 
-    border: 2px solid var(--txtcolor);
-    z-index: 2;
-}
-
-#integranti img, #ex-integranti img {
-    position: absolute;
-    border-radius: 8px; 
-    top: 0;
-    left: 0;
     width: 100%;
-    height: 100%; 
-    padding: 1em; 
-    box-sizing: border-box; 
-    object-fit: cover; 
-    z-index: 1; 
-    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
-}
-
-#integranti p, #ex-integranti p {
-    z-index: 2; 
-    display: flex; 
-    font-size: 0.9rem; 
-    color: var(--txtcolor); 
     text-align: center;
-    overflow-y: auto;
-    height: 100%;
-    background-color: var(--bgcolor1); 
+    font-weight: bold;
+    margin-bottom: 0.5em;
+    padding: 0.5em;
+    background-color: var(--bgcolor2);
+    color: var(--txtcolor);
+    border: 2px solid var(--txtcolor);
+    border-radius: 8px;
     box-sizing: border-box;
-    opacity: 0; 
-    overflow-y: auto; 
-    padding: 2em;
-    flex-grow: 1;
 }
 
-#integranti dd:hover p, #ex-integranti dd:hover img {
-    opacity: 0;
+/* Card flip container */
+#integranti dd, #ex-integranti dd {
+    margin: 0;
+    padding: 0;
+    height: 400px;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+    /*box-sizing: border-box;*/
 }
 
-#integranti dd:hover p, #ex-integranti dd:hover p {
-    display: block;
-    opacity: 1; 
+/* Flip animation on hover */
+#integranti dd:hover, #ex-integranti dd:hover {
+    transform: rotateY(180deg);
+}
+
+/* Card front and back common styles */
+#integranti dd img,
+#integranti dd p,
+#ex-integranti dd img,
+#ex-integranti dd p {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 8px;
+    border: 2px solid var(--txtcolor);
+    box-sizing: border-box;
+}
+
+/* Card front (image) */
+#integranti dd img, #ex-integranti dd img {
+    object-fit: cover;  /*to specify how an img should be resized to fit its container; the image keeps its aspect ratio and fills the given dimension. It will be clipped to fit*/
+    background-color: var(--bgcolor2);
+    padding: 0.5em;
+    overflow: hidden;
+}
+
+#integranti div:nth-of-type(1) img { object-position: 10% 0%; }
+#integranti div:nth-of-type(2) img { object-position: 60% 0%; }
+#integranti div:nth-of-type(3) img { object-position: 78% 0%; }
+#integranti div:nth-of-type(4) img { object-position: 50% 0%; }
+#integranti div:nth-of-type(5) img { object-position: 50% 0%; }
+#integranti div:nth-of-type(6) img { object-position: 35% 0%; }
+/*come rimpicciolire un po' l'immagine? per farne stare di piu' nel contenitore*/
+
+#ex-integranti div:nth-of-type(1) img { object-position: 25% 0%; }
+#ex-integranti div:nth-of-type(2) img { object-position: 50% 0%; }
+
+/* Card back (description) */
+#integranti dd p, #ex-integranti dd p {
+    background-color: var(--bgcolor2);
+    color: var(--txtcolor);
+    padding: 1.5em;
+    transform: rotateY(180deg);
+    overflow-y: auto;
+    font-size: 0.9rem;
 }
 
 /* ----------------------------------------------- */
@@ -225,6 +247,7 @@ header h1 {
 }
 
 .album { 
+    background-color: var(--bgcolor2);
     border: 4px solid var(--txtcolor);
     border-radius: 1.5em;
     padding: 0 0.5em 0;
@@ -664,7 +687,7 @@ h1 {
     gap: 1em;
 }
 
-/*perche' non funziona senza #storia? */
+/*perche' non funziona senza #storia? Possibile in un altro modo? */
 #storia #item1 { grid-area: a1; }
 #storia #item2 { grid-area: a2; }
 #storia #item3 { grid-area: a3; }
@@ -676,45 +699,63 @@ h1 {
 /* Central timeline line */
 #storia::before {
     content: '';
-    position: absolute;
-    left: 50%;
     width: 2px;
     height: 100%;
     background: var(--txtcolor);
-    transform: translateX(-50%);
+    grid-area: l;
+    justify-self: center;
+    z-index: -5;
 }
 
 /* Timeline entries styling */
 #storia dt {
-    grid-column: 2;
+    grid-area: l;
+    grid-row: var(--row);
     width: 90px;
     height: 25px;
-    /*position: relative;*/
-    /*left: 50%;*/
-    /*transform: translateX(-50%);*/
     background: var(--bgcolor2);
     border: 2px solid var(--txtcolor);
     border-radius: 20px;
     padding: 0.5em;
-    /*margin: 2em 0;*/
     text-align: center;
-    z-index: 1; /*non serve?*/
+    z-index: 0;
     justify-self: center;
+    margin: 50px; /*aggiunge altezza alla riga - da rivisitare*/
+    position: relative;
 }
 
 #storia dt:nth-of-type(even)::after {
-    content: '->';
-    margin-left: 0.5em;
+    content: '';
+    position: absolute;
+    right: -20%; /* Positions the line to extend right from the year */
+    top: 50%;
+    width: 20%;
+    height: 2px;
+    background: var(--txtcolor);
+    display: block;
+    z-index: -5;    /*rivedere tutti gli z-index*/
 }
 
 #storia dt:nth-of-type(odd)::before {
-    content: '<-';
-    margin-right: 0.5em;
+    content: '';
+    position: absolute;
+    left: -20%; /* Positions the line to extend left from the year */
+    top: 50%; /* Centers it vertically */
+    width: 20%;
+    height: 2px;
+    background: var(--txtcolor); /* Use background instead of color */
+    display: block;
+    z-index: -5;
 }
 
-#storia dt::nth-of-type(n){
-    grid-row: calc((2*n + 1)); /* Dynamically places <dt> in even rows */
-}
+#storia dt:nth-of-type(1) { --row: 2; }
+#storia dt:nth-of-type(2) { --row: 4; }
+#storia dt:nth-of-type(3) { --row: 6; }
+#storia dt:nth-of-type(4) { --row: 8; }
+#storia dt:nth-of-type(5) { --row: 10; }
+#storia dt:nth-of-type(6) { --row: 12; }
+#storia dt:nth-of-type(7) { --row: 14; }
+
 
 /* Article preview containers */
 #storia dd {
@@ -743,10 +784,11 @@ h1 {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+/*
 .short-article + dd:hover {
     transform: scale(1.05);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-}
+}*/
 
 /* Preview images */
 #storia dd img {
@@ -978,7 +1020,5 @@ footer > div:last-of-type {
 footer > div:last-of-type p {
     margin: 0.5em 0; /* Spazio tra i paragrafi della sezione inferiore */
 }
-
-
 
 /* ----------------------------------------------- */
