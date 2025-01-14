@@ -73,7 +73,6 @@ VALUES
     ('European Tour', '2025-06-28', '22:00:00', 'Wembley Stadium', 'Londra', 'Regno Unito', 'Un grande show nella leggendaria cornice di Wembley.', 100.00),
     ('Asian Tour', '2025-02-11', '21:30:00', 'Saitama Super Arena', 'Saitama', 'Giappone', 'Preparati per una performance straordinaria nella Saitama Super Arena.', 90.00),
     ('Asian Tour', '2025-02-16', '19:30:00', 'GBK Madya Stadium', 'Jakarta', 'Indonesia', 'Scopri la magia della musica dal vivo al GBK Madya Stadium.', 65.00),
-    ('Asian Tour', '2024-12-12', '18:30:00', 'Soundstorm Music Festival', 'Riyadh', 'Arabia Saudita', 'Vivi l\'atmosfera elettrizzante del Soundstorm Music Festival.', 50.00),
     ('American Tour', '2025-08-16', '20:30:00', 'Wells Fargo Center', 'Detroit', 'USA', 'Un evento epico nel cuore di Detroit.', 95.00),
     ('American Tour', '2025-09-13', '22:30:00', 'Dodger Stadium', 'Los Angeles', 'USA', 'Una serata indimenticabile al Dodger Stadium di Los Angeles.', 120.00),
     ('American Tour', '2025-07-29', '18:30:00', 'Barclays Center', 'Brooklyn', 'USA', 'Non perdere il concerto al Barclays Center a New York.', 110.00),
