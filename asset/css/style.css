@@ -28,8 +28,12 @@ body {
 }
 
 a {
-    text-decoration: none;
+    text-decoration: underline;
     color: var(--linkcolor);;
+}
+
+a:visited {
+    color: var(--visitedcolor); /* TODO: Change visited link color */
 }
 
 a[href^="http"]:not([href*="localhost"]):not([href*="127.0.0.1"])::after {
@@ -56,6 +60,29 @@ h2 {
 }
 
 /* ----------------------------------------------- */
+
+/* PERSONALIZED SCROLLBAR */
+
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* ----------------------------------------------- */
+
 
 /* HEADER */
 
@@ -310,12 +337,13 @@ header h1 {
     gap: 20px;
     padding: 20px;
     box-sizing: border-box;
-    height: 180vh;
+    height: 223vh; /*TODO perchè 400px per 4 righe di carte + gap == 223vh (coi pixel non funziona)*/
 }
 
 #shop {
     width: 75%;
     justify-content: space-around;
+    max-height: 100vh;
 }
 
 /* FILTERS */ 
@@ -467,6 +495,12 @@ header h1 {
     margin-bottom: 10px;
 }
 
+.card-front .sizeAndQuantityContainer {
+    display: flex;
+    justify-content: space-between;
+    width: 60%;
+}
+
 .card-front .add-to-cart-btn{
     font-size: 0.8rem;
     padding: 5%;
@@ -503,7 +537,7 @@ header h1 {
     background-color: var(--bgcolor2);
     border: 2px solid var(--txtcolor);
     border-radius: 8px;
-    flex: 0 0 calc(25% - 20px); /* Considera il gap */
+    flex: 25%;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     font-family: 'Arial', sans-serif;
     box-sizing: border-box;
@@ -642,6 +676,156 @@ header h1 {
     margin-bottom: 10px;
     opacity: 0.6;
 }
+
+/*================================*/
+
+/* TOUR */
+
+#tour-dates dd .extra-details {
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+#tour-dates dd .extra-details[aria-hidden="true"] {
+  opacity: 0;
+  transform: translateY(-10px);
+  pointer-events: none;
+}
+
+#tour-dates dd .extra-details[aria-hidden="false"] {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#tour-dates dd .extra-details .button-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+#tour-dates dd .extra-details .button-container button {
+  font-size: 1rem;
+  padding: 10px 15px;
+  margin: 5px 0;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.2s ease;
+}
+
+#tour-dates dd .extra-details .button-container .buy {
+  background-color: var(--btnConferma);
+}
+
+#tour-dates dd .extra-details .button-container .close {
+  background-color: var(--pulsantecolor1);
+}
+
+#tour-dates {
+  padding-left: 20%;
+  max-width: 80%;
+  margin: auto;
+}
+
+#tour-dates dt {
+  float: left;
+  clear: both;
+  width: 30%;
+  padding: 1.2em 1.5em;
+  font-weight: bold;
+  text-transform: uppercase;
+  direction: rtl;
+  margin-left: -30%;
+}
+
+#tour-dates dd {
+  position: relative;
+  float: left;
+  padding: 1.2em 1.5em;
+  width: 65%;
+  opacity: 0.8;
+  transition: opacity 0.3s ease, background-color 0.3s ease;
+  margin-top: 0.5em; /* Riduci il margine superiore */
+}
+
+#tour-dates dd + dd {
+  clear: both;
+}
+
+#tour-dates dd::before {
+  content: "";
+  position: absolute;
+  top: 0.7em; /* Regola la posizione per far toccare i puntini le linee */
+  left: -0.8em;
+  z-index: 1; /* Per evitare che il bordo venga coperto dal contenuto */
+  border: 2px solid #fff;
+  border-radius: 50%;
+  width: 0.5em;
+  height: 0.5em;
+  background: currentColor;
+}
+
+#tour-dates dd:not(:last-of-type)::after {
+  content: "";
+  position: absolute;
+  top: 1.2em;
+  left: -0.45em;
+  border-left: 1px solid #888;
+  height: 100%;
+}
+
+#tour-dates dd p {
+  margin-top: -11.5px;
+}
+
+#tour-dates dt {
+  margin-top: -23px;
+  margin-right: -20px;
+}
+
+@media (max-width: 768px) {
+  #tour-dates dt {
+      width: 25%;
+      margin-left: -25%;
+  }
+  #tour-dates dd {
+      width: 70%;
+  }
+}
+
+@media (max-width: 480px) {
+  #tour-dates dt {
+      width: 20%;
+      margin-left: -20%;  /* DA FIXARE */
+      font-size: 0.9em;
+  }
+  #tour-dates dd {
+      width: 75%;
+  }
+  #tour-dates dd .extra-details .button-container button {
+    font-size: 0.9rem;
+    padding: 8px 12px;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+#tour-dates dd .extra-details[aria-hidden="false"] {
+  animation: fadeIn 0.2s ease;
+}
+  
 
 
 /* ===== DIARIO =====*/
