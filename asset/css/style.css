@@ -763,17 +763,17 @@ header h1 {
   z-index: 1; /* Per evitare che il bordo venga coperto dal contenuto */
   border: 2px solid #fff;
   border-radius: 50%;
-  width: 0.5em;
-  height: 0.5em;
+  width: 1em;
+  height: 1em;
   background: currentColor;
 }
 
 #tour-dates dd:not(:last-of-type)::after {
   content: "";
   position: absolute;
-  top: 1.2em;
-  left: -0.45em;
-  border-left: 1px solid #888;
+  top: 1.6em;
+  left: -0.35em;
+  border-left: 5px solid #888;
   height: 100%;
 }
 
@@ -1101,27 +1101,21 @@ article[id^="article"] img + img {
     bottom: 20px;
     right: 20px;
     z-index: 1000;
-    display: none; /* Nascondi di default */
-}
-
-#scrollToTop button {
     background-color: var(--visitedcolor);
     border: none;
     border-radius: 50%;
     width: 50px;
     height: 50px;
     display: flex;
-    justify-content: center;
-    align-items: center;
     cursor: pointer;
 }
 
-#scrollToTop button img {
+#scrollToTop img {
     width: 10%;
     height: auto;
 }
 
-#scrollToTop button:hover {
+#scrollToTop:hover {
     background-color: var(--visitedcolor);
 }
 
