@@ -45,13 +45,15 @@
                     <h3>Maglia Mercurio</h3>
                     <img src="asset/img/merch/maglietta1_fronte.webp" alt="Maglia Mercurio">
                     <p class="price">€50,00</p>
-                    <select class="size-select">
-                        <option value="S">S</option>
-                        <option value="M">M</option>
-                        <option value="L">L</option>
-                        <option value="XL">XL</option>
-                    </select>
-                    <input type="number" min="1" max="5" value="1" class="quantity-input">
+                    <div class="sizeAndQuantityContainer">
+                        <select class="size-select">
+                            <option value="S">S</option>
+                            <option value="M">M</option>
+                            <option value="L">L</option>
+                            <option value="XL">XL</option>
+                        </select>
+                        <input type="number" min="1" max="5" value="1" class="quantity-input">
+                    </div>
                     <button class="add-to-cart-btn">Aggiungi al carrello</button>
                 </div>
             </div>
@@ -60,13 +62,15 @@
                     <h3>Maglia Venere</h3>
                     <img src="asset/img/merch/maglietta2_fronte.webp" alt="Maglia Venere">
                     <p class="price">€50,00</p>
-                    <select class="size-select">
-                        <option value="S">S</option>
-                        <option value="M">M</option>
-                        <option value="L">L</option>
-                        <option value="XL">XL</option>
-                    </select>
-                    <input type="number" min="1" max="5" value="1" class="quantity-input">
+                    <div class="sizeAndQuantityContainer">
+                        <select class="size-select">
+                            <option value="S">S</option>
+                            <option value="M">M</option>
+                            <option value="L">L</option>
+                            <option value="XL">XL</option>
+                        </select>
+                        <input type="number" min="1" max="5" value="1" class="quantity-input">
+                    </div>
                     <button class="add-to-cart-btn">Aggiungi al carrello</button>
                 </div>
             </div>
@@ -75,13 +79,15 @@
                     <h3>Maglia Giove</h3>
                     <img src="asset/img/merch/maglietta3_fronte.webp" alt="Maglia Giove">
                     <p class="price">€50,00</p>
-                    <select class="size-select">
-                        <option value="S">S</option>
-                        <option value="M">M</option>
-                        <option value="L">L</option>
-                        <option value="XL">XL</option>
-                    </select>
-                    <input type="number" min="1" max="5" value="1" class="quantity-input">
+                    <div class="sizeAndQuantityContainer">
+                        <select class="size-select">
+                            <option value="S">S</option>
+                            <option value="M">M</option>
+                            <option value="L">L</option>
+                            <option value="XL">XL</option>
+                        </select>
+                        <input type="number" min="1" max="5" value="1" class="quantity-input">
+                    </div>
                     <button class="add-to-cart-btn">Aggiungi al carrello</button>
                 </div>
             </div>
@@ -90,13 +96,15 @@
                     <h3>Maglia Saturno</h3>
                     <img src="asset/img/merch/maglietta4_fronte.webp" alt="Maglia Saturno">
                     <p class="price">€50,00</p>
-                    <select class="size-select">
-                        <option value="S">S</option>
-                        <option value="M">M</option>
-                        <option value="L">L</option>
-                        <option value="XL">XL</option>
-                    </select>
-                    <input type="number" min="1" max="5" value="1" class="quantity-input">
+                    <div class="sizeAndQuantityContainer">
+                        <select class="size-select">
+                            <option value="S">S</option>
+                            <option value="M">M</option>
+                            <option value="L">L</option>
+                            <option value="XL">XL</option>
+                        </select>
+                        <input type="number" min="1" max="5" value="1" class="quantity-input">
+                    </div>
                     <button class="add-to-cart-btn">Aggiungi al carrello</button>
                 </div>
             </div>
@@ -107,13 +115,15 @@
                     <h3>Felpa Urano</h3>
                     <img src="asset/img/merch/felpa1_fronte.webp" alt="Felpa Urano">
                     <p class="price">€60,00</p>
-                    <select class="size-select">
-                        <option value="S">S</option>
-                        <option value="M">M</option>
-                        <option value="L">L</option>
-                        <option value="XL">XL</option>
-                    </select>
-                    <input type="number" min="1" max="5" value="1" class="quantity-input">
+                    <div class="sizeAndQuantityContainer">
+                        <select class="size-select">
+                            <option value="S">S</option>
+                            <option value="M">M</option>
+                            <option value="L">L</option>
+                            <option value="XL">XL</option>
+                        </select>
+                        <input type="number" min="1" max="5" value="1" class="quantity-input">
+                    </div>
                     <button class="add-to-cart-btn">Aggiungi al carrello</button>
                 </div>
             </div>
@@ -122,13 +132,15 @@
                     <h3>Felpa Nettuno</h3>
                     <img src="asset/img/merch/felpa2_fronte.webp" alt="Felpa Nettuno">
                     <p class="price">€60,00</p>
-                    <select class="size-select">
-                        <option value="S">S</option>
-                        <option value="M">M</option>
-                        <option value="L">L</option>
-                        <option value="XL">XL</option>
-                    </select>
-                    <input type="number" min="1" max="5" value="1" class="quantity-input">
+                    <div class="sizeAndQuantityContainer">
+                        <select class="size-select">
+                            <option value="S">S</option>
+                            <option value="M">M</option>
+                            <option value="L">L</option>
+                            <option value="XL">XL</option>
+                        </select>
+                        <input type="number" min="1" max="5" value="1" class="quantity-input">
+                    </div>
                     <button class="add-to-cart-btn">Aggiungi al carrello</button>
                 </div>
             </div>
