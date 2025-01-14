@@ -15,7 +15,6 @@
     --mainFont: 'Lato', sans-serif;
 }
 
-
 body {
     max-width: 1024px;
     color: var(--txtcolor);
@@ -31,6 +30,16 @@ body {
 a {
     text-decoration: none;
     color: var(--linkcolor);;
+}
+
+a[href^="http"]:not([href*="localhost"]):not([href*="127.0.0.1"])::after {
+    content: "\f35d";
+    font-family: "Font Awesome 5 Free";
+    margin-left: 5px;
+    font-weight: 900;
+    font-size: 0.8em;
+    position: relative;
+    top: -0.4em;
 }
 
 h1 {
