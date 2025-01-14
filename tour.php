@@ -73,9 +73,9 @@
                         </strong>
                     </p>
                     <div class="button-container">
-                        <button aria-label="Compra Biglietto per <?php echo $citta; ?>"
+                        <button class="buy" aria-label="Compra Biglietto per <?php echo $citta; ?>"
                             onclick="handleTicketPurchase(event, '<?php echo $citta; ?>')">Compra Biglietto</button>
-                        <button class="close-details" aria-label="Chiudi dettagli per <?php echo $citta; ?>"
+                        <button class="close" aria-label="Chiudi dettagli per <?php echo $citta; ?>"
                             onclick="closeDetails(event, this)">Chiudi</button>
                     </div>
                 </div>

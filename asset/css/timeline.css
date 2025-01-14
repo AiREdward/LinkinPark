@@ -1,4 +1,4 @@
-/* Styles */
+/* TIMELINE */
 
 main {
   display: block;  
@@ -14,7 +14,6 @@ main::after {
 
 .extra-details {
   padding: 15px;
-  background-color: #f9f9f9;
   border: 1px solid #ddd;
   border-radius: 8px;
   transition: opacity 0.3s ease, transform 0.3s ease;
@@ -35,7 +34,6 @@ main::after {
   display: flex;
   justify-content: space-between;
   width: 100%;
-  padding: 1em 0; /* Optional: Add some padding for better spacing */
 }
 
 .extra-details .button-container button {
@@ -44,29 +42,17 @@ main::after {
   margin: 5px 0;
   border: none;
   border-radius: 5px;
-  background-color: #007BFF;
   color: #fff;
   cursor: pointer;
   transition: background-color 0.3s ease, box-shadow 0.2s ease;
 }
 
-.extra-details .button-container button:hover,
-.extra-details .button-container button:focus {
-  background-color: #0056b3;
-  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+.buy{
+  background-color: var(--btnConferma);
 }
 
-.extra-details .button-container button:active {
-  background-color: #003d82;
-}
-
-.extra-details .button-container button.close-details {
-  background-color: #dc3545;
-}
-
-.extra-details .button-container button.close-details:hover,
-.extra-details .button-container button.close-details:focus {
-  background-color: #b21f2d;
+.close{
+  background-color: var(--pulsantecolor1);
 }
 
 dl {
@@ -132,18 +118,6 @@ dl dt {
   margin-right: -20px;
 }
 
-a {
-  color: #007BFF;
-  text-decoration: underline;
-  transition: color 0.3s ease;
-}
-
-a:hover,
-a:focus {
-  color: #0056b3;
-  outline: none;
-}
-
 @media (max-width: 768px) {
   dt {
       width: 25%;
@@ -181,5 +155,5 @@ a:focus {
 }
 
 .extra-details[aria-hidden="false"] {
-  animation: fadeIn 0.3s ease;
+  animation: fadeIn 0.2s ease;
 }

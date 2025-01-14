@@ -28,8 +28,12 @@ body {
 }
 
 a {
-    text-decoration: none;
+    text-decoration: underline;
     color: var(--linkcolor);;
+}
+
+a:visited {
+    color: var(--visitedcolor); /* TODO: Change visited link color */
 }
 
 a[href^="http"]:not([href*="localhost"]):not([href*="127.0.0.1"])::after {
