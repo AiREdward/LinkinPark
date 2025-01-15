@@ -46,7 +46,7 @@
             </dt>
             <dd id="<?php echo $citta . '_' . $data; ?>" onclick="openDetails(this)" role="button" tabindex="0"
                 aria-expanded="false" aria-controls="<?php echo $citta . '_' . $data; ?>_details">
-                <p>
+                <p class="data_clickable">
                     <strong>
                         <?php echo $citta; ?>
                     </strong> -

@@ -15,7 +15,10 @@ function addToCart(itemName, itemPrice, quantity, itemImage, itemSize) {
         .then(response => response.text())
         .then(data => {
             console.log('Response from addToCart:', data);
-            document.getElementById('cart-items').innerHTML = data;
+            const cartItemsElement = document.getElementById('cart-items');
+            if (cartItemsElement) {
+                cartItemsElement.innerHTML = data;
+            }
             updateSubtotal();
         });
 }
@@ -33,7 +36,10 @@ function removeFromCart(itemName) {
         .then(response => response.text())
         .then(data => {
             console.log('Response from removeFromCart:', data);
-            document.getElementById('cart-items').innerHTML = data;
+            const cartItemsElement = document.getElementById('cart-items');
+            if (cartItemsElement) {
+                cartItemsElement.innerHTML = data;
+            }            
             updateSubtotal();
         });
 }
@@ -47,33 +53,66 @@ function loadCart() {
         .then(response => response.text())
         .then(data => {
             //console.log('Response from loadCart:', data);
-            document.getElementById('cart-items').innerHTML = data;
+            const cartItemsElement = document.getElementById('cart-items');
+            if (cartItemsElement) {
+                cartItemsElement.innerHTML = data;
+            }            
             updateSubtotal();
         });
 }
 
 function updateSubtotal() {
     var cartItemContainer = document.getElementById('cart-items');
+    if (!cartItemContainer) return;
     var cartRows = cartItemContainer.getElementsByClassName('cart-item');
     var total = 0;
-    for (var i = 0; i < cartRows.length; i++) {
-        var cartRow = cartRows[i];
-        var priceElement = cartRow.getElementsByClassName('price')[0];
-        var quantityElement = cartRow.getElementsByClassName('quantity-input')[0];
-        var price = parseFloat(priceElement.innerText.replace('€', '').replace(',', '.'));
-        var quantity = quantityElement.value;
-        total = total + (price * quantity);
+
+    function calculateSubtotal() {
+        total = 0;
+        for (var i = 0; i < cartRows.length; i++) {
+            var cartRow = cartRows[i];
+            var priceElement = cartRow.getElementsByClassName('price')[0];
+            var quantityElement = cartRow.getElementsByClassName('quantity-input')[0];
+            if (!quantityElement) return; // Wait if quantityElement is not found
+            var price = priceElement && priceElement.textContent ? parseFloat(priceElement.textContent.replace('€', '').replace(',', '.')) : 0;
+            var quantity = quantityElement.value;
+            total = total + (price * quantity);
+        }
+        total = Math.round(total * 100) / 100;
+        const subtotalElement = document.getElementById('subtotal');
+        if (subtotalElement) {
+            subtotalElement.innerText = 'Subtotale: €' + total;
+        }
+
+        // Show/Hide buttons if cart items > 0
+        var clearCartBtn = document.getElementById('clear-cart-btn');
+        if (cartRows.length === 0) {
+            if (clearCartBtn) {
+                clearCartBtn.classList.add('hidden');
+            }
+        } else {
+            if (clearCartBtn) {
+                clearCartBtn.classList.remove('hidden');
+            }
+        }
     }
-    total = Math.round(total * 100) / 100;
-    document.getElementById('subtotal').innerText = 'Subtotale: €' + total;
-    
-    // Show/Hide buttons if cart items > 0
-    var clearCartBtn = document.getElementById('clear-cart-btn');
-    if (cartRows.length === 0) {
-        clearCartBtn.classList.add('hidden');
-    } else {
-        clearCartBtn.classList.remove('hidden');
-    }
+
+    // Create an observer instance linked to the callback function
+    var observer = new MutationObserver(function(mutationsList, observer) {
+        for (var mutation of mutationsList) {
+            if (mutation.type === 'childList') {
+                calculateSubtotal();
+                observer.disconnect(); // Stop observing once the elements are found
+                break;
+            }
+        }
+    });
+
+    // Start observing the target node for configured mutations
+    observer.observe(cartItemContainer, { childList: true, subtree: true });
+
+    // Initial calculation in case elements are already present
+    calculateSubtotal();
 }
 
 function clearCart() {
@@ -85,9 +124,11 @@ function clearCart() {
         .then(response => response.text())
         .then(data => {
             console.log('Response from clearCart:', data);
-            document.getElementById('cart-items').innerHTML = data;
+            const cartItemsElement = document.getElementById('cart-items');
+            if (cartItemsElement) {
+                cartItemsElement.innerHTML = data;
+            }
             updateSubtotal();
-            toggleCartButtons();
         });
 }
 
