@@ -61,7 +61,7 @@ function updateCartDisplay() {
                     <p>' . $sizeHtml . '</p>
                     <p>Quantità: ' . $item['quantity'] . '</p>
                     <p class="price">Prezzo: €' . number_format($item['price'], 2) . '</p>
-                    <button class="remove-btn" onclick="removeFromCart(\'' . $item['name'] . '\', \'' . $item['size'] . '\')">Rimuovi</button>
+                    <button class="remove-btn" alt="Rimuovi prodotto dal carrello" onclick="removeFromCart(\'' . $item['name'] . '\', \'' . $item['size'] . '\')"><i class="fa-solid fa-trash-can"></i></button>
                 </div>';
             $subtotal += $item['price'] * $item['quantity'];
         }

@@ -41,147 +41,127 @@
 
             <!-- Sez. Maglie -->
             <div class="card" id="MagliaMercurio" data-type="maglietta">
-                <div class="card-front">
-                    <h3>Maglia Mercurio</h3>
-                    <img src="asset/img/merch/maglietta1_fronte.webp" alt="Maglia Mercurio">
-                    <p class="price">€50,00</p>
-                    <div class="sizeAndQuantityContainer">
-                        <select class="size-select">
-                            <option value="S">S</option>
-                            <option value="M">M</option>
-                            <option value="L">L</option>
-                            <option value="XL">XL</option>
-                        </select>
-                        <input type="number" min="1" max="5" value="1" class="quantity-input">
-                    </div>
-                    <button class="add-to-cart-btn">Aggiungi al carrello</button>
+                <h3>Maglia Mercurio</h3>
+                <img src="asset/img/merch/maglietta1_fronte.webp" alt="Maglia Mercurio">
+                <p class="price">€50,00</p>
+                <div class="sizeAndQuantityContainer">
+                    <select class="size-select">
+                        <option value="S">S</option>
+                        <option value="M">M</option>
+                        <option value="L">L</option>
+                        <option value="XL">XL</option>
+                    </select>
+                    <input type="number" min="1" max="5" value="1" class="quantity-input">
                 </div>
+                <button class="add-to-cart-btn">Aggiungi al carrello</button>
             </div>
             <div class="card" id="MagliaVenere" data-type="maglietta">
-                <div class="card-front">
-                    <h3>Maglia Venere</h3>
-                    <img src="asset/img/merch/maglietta2_fronte.webp" alt="Maglia Venere">
-                    <p class="price">€50,00</p>
-                    <div class="sizeAndQuantityContainer">
-                        <select class="size-select">
-                            <option value="S">S</option>
-                            <option value="M">M</option>
-                            <option value="L">L</option>
-                            <option value="XL">XL</option>
-                        </select>
-                        <input type="number" min="1" max="5" value="1" class="quantity-input">
-                    </div>
-                    <button class="add-to-cart-btn">Aggiungi al carrello</button>
+                <h3>Maglia Venere</h3>
+                <img src="asset/img/merch/maglietta2_fronte.webp" alt="Maglia Venere">
+                <p class="price">€50,00</p>
+                <div class="sizeAndQuantityContainer">
+                    <select class="size-select">
+                        <option value="S">S</option>
+                        <option value="M">M</option>
+                        <option value="L">L</option>
+                        <option value="XL">XL</option>
+                    </select>
+                    <input type="number" min="1" max="5" value="1" class="quantity-input">
                 </div>
+                <button class="add-to-cart-btn">Aggiungi al carrello</button>
             </div>
             <div class="card" id="MagliaGiove" data-type="maglietta">
-                <div class="card-front">
-                    <h3>Maglia Giove</h3>
-                    <img src="asset/img/merch/maglietta3_fronte.webp" alt="Maglia Giove">
-                    <p class="price">€50,00</p>
-                    <div class="sizeAndQuantityContainer">
-                        <select class="size-select">
-                            <option value="S">S</option>
-                            <option value="M">M</option>
-                            <option value="L">L</option>
-                            <option value="XL">XL</option>
-                        </select>
-                        <input type="number" min="1" max="5" value="1" class="quantity-input">
-                    </div>
-                    <button class="add-to-cart-btn">Aggiungi al carrello</button>
+                <h3>Maglia Giove</h3>
+                <img src="asset/img/merch/maglietta3_fronte.webp" alt="Maglia Giove">
+                <p class="price">€50,00</p>
+                <div class="sizeAndQuantityContainer">
+                    <select class="size-select">
+                        <option value="S">S</option>
+                        <option value="M">M</option>
+                        <option value="L">L</option>
+                        <option value="XL">XL</option>
+                    </select>
+                    <input type="number" min="1" max="5" value="1" class="quantity-input">
                 </div>
+                <button class="add-to-cart-btn">Aggiungi al carrello</button>
             </div>
             <div class="card" id="MagliaSaturno" data-type="maglietta">
-                <div class="card-front">
-                    <h3>Maglia Saturno</h3>
-                    <img src="asset/img/merch/maglietta4_fronte.webp" alt="Maglia Saturno">
-                    <p class="price">€50,00</p>
-                    <div class="sizeAndQuantityContainer">
-                        <select class="size-select">
-                            <option value="S">S</option>
-                            <option value="M">M</option>
-                            <option value="L">L</option>
-                            <option value="XL">XL</option>
-                        </select>
-                        <input type="number" min="1" max="5" value="1" class="quantity-input">
-                    </div>
-                    <button class="add-to-cart-btn">Aggiungi al carrello</button>
+                <h3>Maglia Saturno</h3>
+                <img src="asset/img/merch/maglietta4_fronte.webp" alt="Maglia Saturno">
+                <p class="price">€50,00</p>
+                <div class="sizeAndQuantityContainer">
+                    <select class="size-select">
+                        <option value="S">S</option>
+                        <option value="M">M</option>
+                        <option value="L">L</option>
+                        <option value="XL">XL</option>
+                    </select>
+                    <input type="number" min="1" max="5" value="1" class="quantity-input">
                 </div>
+                <button class="add-to-cart-btn">Aggiungi al carrello</button>
             </div>
 
             <!-- Sez. Felpe -->
             <div class="card" id="FelpaUrano" data-type="felpa">
-                <div class="card-front">
-                    <h3>Felpa Urano</h3>
-                    <img src="asset/img/merch/felpa1_fronte.webp" alt="Felpa Urano">
-                    <p class="price">€60,00</p>
-                    <div class="sizeAndQuantityContainer">
-                        <select class="size-select">
-                            <option value="S">S</option>
-                            <option value="M">M</option>
-                            <option value="L">L</option>
-                            <option value="XL">XL</option>
-                        </select>
-                        <input type="number" min="1" max="5" value="1" class="quantity-input">
-                    </div>
-                    <button class="add-to-cart-btn">Aggiungi al carrello</button>
+                <h3>Felpa Urano</h3>
+                <img src="asset/img/merch/felpa1_fronte.webp" alt="Felpa Urano">
+                <p class="price">€60,00</p>
+                <div class="sizeAndQuantityContainer">
+                    <select class="size-select">
+                        <option value="S">S</option>
+                        <option value="M">M</option>
+                        <option value="L">L</option>
+                        <option value="XL">XL</option>
+                    </select>
+                    <input type="number" min="1" max="5" value="1" class="quantity-input">
                 </div>
+                <button class="add-to-cart-btn">Aggiungi al carrello</button>
             </div>
             <div class="card" id="FelpaNettuno" data-type="felpa">
-                <div class="card-front">
-                    <h3>Felpa Nettuno</h3>
-                    <img src="asset/img/merch/felpa2_fronte.webp" alt="Felpa Nettuno">
-                    <p class="price">€60,00</p>
-                    <div class="sizeAndQuantityContainer">
-                        <select class="size-select">
-                            <option value="S">S</option>
-                            <option value="M">M</option>
-                            <option value="L">L</option>
-                            <option value="XL">XL</option>
-                        </select>
-                        <input type="number" min="1" max="5" value="1" class="quantity-input">
-                    </div>
-                    <button class="add-to-cart-btn">Aggiungi al carrello</button>
+                <h3>Felpa Nettuno</h3>
+                <img src="asset/img/merch/felpa2_fronte.webp" alt="Felpa Nettuno">
+                <p class="price">€60,00</p>
+                <div class="sizeAndQuantityContainer">
+                    <select class="size-select">
+                        <option value="S">S</option>
+                        <option value="M">M</option>
+                        <option value="L">L</option>
+                        <option value="XL">XL</option>
+                    </select>
+                    <input type="number" min="1" max="5" value="1" class="quantity-input">
                 </div>
+                <button class="add-to-cart-btn">Aggiungi al carrello</button>
             </div>
 
 
             <!-- Sez. Accessori -->
             <div class="card" id="BerrettoFuoco" data-type="accessori">
-                <div class="card-front">
-                    <h3>Berretto Fuoco</h3>
-                    <img src="asset/img/merch/berretto.webp" alt="Berretto Fuoco">
-                    <p class="price">€35,00</p>
-                    <input type="number" min="1" max="5" value="1" class="quantity-input">
-                    <button class="add-to-cart-btn">Aggiungi al carrello</button>
-                </div>
+                <h3>Berretto Fuoco</h3>
+                <img src="asset/img/merch/berretto.webp" alt="Berretto Fuoco">
+                <p class="price">€35,00</p>
+                <input type="number" min="1" max="5" value="1" class="quantity-input">
+                <button class="add-to-cart-btn">Aggiungi al carrello</button>
             </div>
             <div class="card" id="BorsaTerra" data-type="accessori">
-                <div class="card-front">
-                    <h3>Borsa Terra</h3>
-                    <img src="asset/img/merch/borsa.webp" alt="Borsa Terra">
-                    <p class="price">€40,00</p>
-                    <input type="number" min="1" max="5" value="1" class="quantity-input">
-                    <button class="add-to-cart-btn">Aggiungi al carrello</button>
-                </div>
+                <h3>Borsa Terra</h3>
+                <img src="asset/img/merch/borsa.webp" alt="Borsa Terra">
+                <p class="price">€40,00</p>
+                <input type="number" min="1" max="5" value="1" class="quantity-input">
+                <button class="add-to-cart-btn">Aggiungi al carrello</button>
             </div>
             <div class="card" id="PortachiaviAria" data-type="accessori">
-                <div class="card-front">
-                    <h3>Portachiavi Aria</h3>
-                    <img src="asset/img/merch/portachiavi.webp" alt="Portachiavi Aria">
-                    <p class="price">€8,50</p>
-                    <input type="number" min="1" max="5" value="1" class="quantity-input">
-                    <button class="add-to-cart-btn">Aggiungi al carrello</button>
-                </div>
+                <h3>Portachiavi Aria</h3>
+                <img src="asset/img/merch/portachiavi.webp" alt="Portachiavi Aria">
+                <p class="price">€8,50</p>
+                <input type="number" min="1" max="5" value="1" class="quantity-input">
+                <button class="add-to-cart-btn">Aggiungi al carrello</button>
             </div>
             <div class="card" id="Adesivi Acqua" data-type="accessori">
-                <div class="card-front">
-                    <h3>Adesivi Acqua</h3>
-                    <img src="asset/img/merch/stckers.webp" alt="Adesivi Acqua">
-                    <p class="price">€3,00</p>
-                    <input type="number" min="1" max="5" value="1" class="quantity-input">
-                    <button class="add-to-cart-btn">Aggiungi al carrello</button>
-                </div>
+                <h3>Adesivi Acqua</h3>
+                <img src="asset/img/merch/stckers.webp" alt="Adesivi Acqua">
+                <p class="price">€3,00</p>
+                <input type="number" min="1" max="5" value="1" class="quantity-input">
+                <button class="add-to-cart-btn">Aggiungi al carrello</button>
             </div>
 
             <p id="no-results">Nessun risultato trovato.</p>
