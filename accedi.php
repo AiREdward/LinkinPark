@@ -24,6 +24,7 @@
                 <h1>Ciao!</h1>
                 <p>Accedi per continuare a esplorare tutte le funzionalità del nostro sito.</p>
                 <p>Non hai un account? <a href="registrazione.php">Registrati qui</a></p>
+                <p>Torna alla <a href="index.php"><span lang="en">Home</span></a></p>
             </div>
 
             <!-- Right Section -->

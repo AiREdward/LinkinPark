@@ -1,6 +1,8 @@
 <!-- Freccia "Torna su" -->
-<button id="scrollToTop" class="hidden" aria-label="Torna su">
-    <i class="fas fa-arrow-up"></i>
-</button>
+<div id="scrollToTop" class="hidden">
+    <button aria-label="Torna su">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+</div>
 
 <script src="js/scrollToTop.js"></script>

@@ -61,7 +61,7 @@ h2 {
 
 /* ----------------------------------------------- */
 
-/* PERSONALIZED SCROLLBAR */
+/* SCROLLBAR */
 
 ::-webkit-scrollbar {
     width: 12px;
@@ -154,26 +154,58 @@ header h1 {
     border-radius: 5px;
 }
 
+.logout {
+    display: none; /* Nascondi il popup inizialmente */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Sfondo semi-trasparente */
+    color: var(--bgcolor1);
+}
+
+.logout-content {
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 8px;
+    width: 300px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.close-btn {
+    float: right;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btnLogout {
+    margin: 10px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#confirm-logout {
+    background-color: var(--pulsantecolor1);
+    color: white;
+}
+
+#cancel-logout {
+    background-color: var(--visitedcolor);
+    color: white;
+}
+
 /* ----------------------------------------------- */
 
 /* INDEX */
 
-#accountPopup {
-    position: fixed;
-    top: 20%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    padding: 20px;
-    background-color: white;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    border-radius: 10px;
-    text-align: center;
-    z-index: 1000;
-}
 
-.hidden {
-    display: none;
-}
 
 /* ----------------------------------------------- */
 
@@ -1081,21 +1113,27 @@ article[id^="article"] img + img {
     bottom: 20px;
     right: 20px;
     z-index: 1000;
+    display: none; /* Nascondi di default */
+}
+
+#scrollToTop button {
     background-color: var(--visitedcolor);
     border: none;
     border-radius: 50%;
     width: 50px;
     height: 50px;
     display: flex;
+    justify-content: center;
+    align-items: center;
     cursor: pointer;
 }
 
-#scrollToTop img {
+#scrollToTop button img {
     width: 10%;
     height: auto;
 }
 
-#scrollToTop:hover {
+#scrollToTop button:hover {
     background-color: var(--visitedcolor);
 }
 
@@ -1110,24 +1148,22 @@ footer {
     margin-top: 4em;
     clear: both;
     border-top: 2px solid var(--txtcolor);
-    text-align: center; /* Centra tutto il contenuto del footer */
+    text-align: center;
 }
 
 footer a {
     margin-right: 10px;
-    text-decoration: none;
-    color: var(--txtcolor);
 }
 
 .footerContainer {
     max-width: 1200px;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Tre colonne di larghezza uguale */
-    gap: 2em; /* Spazio tra le colonne */
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2em;
     padding-bottom: 2em;
-    justify-items: center; /* Allinea orizzontalmente ogni colonna */
-    text-align: center; /* Centra il testo in tutte le sezioni */
+    justify-items: center;
+    text-align: center;
 }
 
 .footerContainer > div {
@@ -1152,8 +1188,6 @@ footer a {
 .social a {
     display: flex;
     align-items: center;
-    text-decoration: none;
-    color: var(--txtcolor);
 }
 
 .social i {
