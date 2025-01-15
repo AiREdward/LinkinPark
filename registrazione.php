@@ -24,6 +24,7 @@
                 <h1>Benvenuto!</h1>
                 <p>Compila il modulo per creare un account e accedere a tutte le funzionalità del nostro sito.</p>
                 <p>Hai già un account? <a href="accedi.php">Accedi qui</a></p>
+                <p>Torna alla <a href="index.php"><span lang="en">Home</span></a></p>
             </div>
         
             <!-- Right Section -->
