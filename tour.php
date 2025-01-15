@@ -57,7 +57,7 @@
 
                 <div id="<?php echo $citta . '_' . $data; ?>_details" class="extra-details" hidden aria-hidden="true">
                     <p>
-                        <?php echo $descrizione; ?> Alle ore
+                        <?php echo $descrizione; ?> <Obj></Obj>Ore
                         <strong>
                             <?php echo $orario; ?>
                         </strong>.
@@ -76,7 +76,7 @@
                         <button class="buy" aria-label="Compra Biglietto per <?php echo $citta; ?>"
                             onclick="handleTicketPurchase(event, '<?php echo $citta; ?>')">Compra Biglietto</button>
                         <button class="close" aria-label="Chiudi dettagli per <?php echo $citta; ?>"
-                            onclick="closeDetails(event, this)">Chiudi</button>
+                            alt="Chiudi data tour" onclick="closeDetails(event, this)"><i class="fa-solid fa-rectangle-xmark"></i></button>
                     </div>
                 </div>
             </dd>
