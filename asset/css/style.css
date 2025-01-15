@@ -364,17 +364,17 @@ header h1 {
 
 /* SHOP */
 
-#main{
+#shop {
+    width: 75%;
+    justify-content: space-around;
+}
+
+#container-shop {
     display: flex;
     gap: 20px;
     padding: 20px;
     box-sizing: border-box;
     height: 224.5vh; /*TODO perchè 400px per 4 righe di carte + gap == 223vh (coi pixel non funziona)*/
-}
-
-#shop {
-    width: 75%;
-    justify-content: space-around;
 }
 
 /* FILTERS */ 

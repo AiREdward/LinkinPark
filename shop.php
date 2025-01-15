@@ -36,11 +36,11 @@
         </div>
     </div>
 
-    <div id="main">
+    <div id="container-shop">
         <section id="shop">
 
             <!-- Sez. Maglie -->
-            <div class="card" id="MagliaMercurio" data-type="maglietta">
+            <article class="card" id="MagliaMercurio" data-type="maglietta">
                 <h3>Maglia Mercurio</h3>
                 <img src="asset/img/merch/maglietta1_fronte.webp" alt="Maglia Mercurio">
                 <p class="price">€50,00</p>
@@ -54,8 +54,8 @@
                     <input type="number" min="1" max="5" value="1" class="quantity-input">
                 </div>
                 <button class="add-to-cart-btn">Aggiungi al carrello</button>
-            </div>
-            <div class="card" id="MagliaVenere" data-type="maglietta">
+            </article>
+            <article class="card" id="MagliaVenere" data-type="maglietta">
                 <h3>Maglia Venere</h3>
                 <img src="asset/img/merch/maglietta2_fronte.webp" alt="Maglia Venere">
                 <p class="price">€50,00</p>
@@ -69,8 +69,8 @@
                     <input type="number" min="1" max="5" value="1" class="quantity-input">
                 </div>
                 <button class="add-to-cart-btn">Aggiungi al carrello</button>
-            </div>
-            <div class="card" id="MagliaGiove" data-type="maglietta">
+            </article>
+            <article class="card" id="MagliaGiove" data-type="maglietta">
                 <h3>Maglia Giove</h3>
                 <img src="asset/img/merch/maglietta3_fronte.webp" alt="Maglia Giove">
                 <p class="price">€50,00</p>
@@ -84,8 +84,8 @@
                     <input type="number" min="1" max="5" value="1" class="quantity-input">
                 </div>
                 <button class="add-to-cart-btn">Aggiungi al carrello</button>
-            </div>
-            <div class="card" id="MagliaSaturno" data-type="maglietta">
+            </article>
+            <article class="card" id="MagliaSaturno" data-type="maglietta">
                 <h3>Maglia Saturno</h3>
                 <img src="asset/img/merch/maglietta4_fronte.webp" alt="Maglia Saturno">
                 <p class="price">€50,00</p>
@@ -99,10 +99,10 @@
                     <input type="number" min="1" max="5" value="1" class="quantity-input">
                 </div>
                 <button class="add-to-cart-btn">Aggiungi al carrello</button>
-            </div>
+            </article>
 
             <!-- Sez. Felpe -->
-            <div class="card" id="FelpaUrano" data-type="felpa">
+            <article class="card" id="FelpaUrano" data-type="felpa">
                 <h3>Felpa Urano</h3>
                 <img src="asset/img/merch/felpa1_fronte.webp" alt="Felpa Urano">
                 <p class="price">€60,00</p>
@@ -116,8 +116,8 @@
                     <input type="number" min="1" max="5" value="1" class="quantity-input">
                 </div>
                 <button class="add-to-cart-btn">Aggiungi al carrello</button>
-            </div>
-            <div class="card" id="FelpaNettuno" data-type="felpa">
+            </article>
+            <article class="card" id="FelpaNettuno" data-type="felpa">
                 <h3>Felpa Nettuno</h3>
                 <img src="asset/img/merch/felpa2_fronte.webp" alt="Felpa Nettuno">
                 <p class="price">€60,00</p>
@@ -131,38 +131,37 @@
                     <input type="number" min="1" max="5" value="1" class="quantity-input">
                 </div>
                 <button class="add-to-cart-btn">Aggiungi al carrello</button>
-            </div>
-
+            </article>
 
             <!-- Sez. Accessori -->
-            <div class="card" id="BerrettoFuoco" data-type="accessori">
+            <article class="card" id="BerrettoFuoco" data-type="accessori">
                 <h3>Berretto Fuoco</h3>
                 <img src="asset/img/merch/berretto.webp" alt="Berretto Fuoco">
                 <p class="price">€35,00</p>
                 <input type="number" min="1" max="5" value="1" class="quantity-input">
                 <button class="add-to-cart-btn">Aggiungi al carrello</button>
-            </div>
-            <div class="card" id="BorsaTerra" data-type="accessori">
+            </article>
+            <article class="card" id="BorsaTerra" data-type="accessori">
                 <h3>Borsa Terra</h3>
                 <img src="asset/img/merch/borsa.webp" alt="Borsa Terra">
                 <p class="price">€40,00</p>
                 <input type="number" min="1" max="5" value="1" class="quantity-input">
                 <button class="add-to-cart-btn">Aggiungi al carrello</button>
-            </div>
-            <div class="card" id="PortachiaviAria" data-type="accessori">
+            </article>
+            <article class="card" id="PortachiaviAria" data-type="accessori">
                 <h3>Portachiavi Aria</h3>
                 <img src="asset/img/merch/portachiavi.webp" alt="Portachiavi Aria">
                 <p class="price">€8,50</p>
                 <input type="number" min="1" max="5" value="1" class="quantity-input">
                 <button class="add-to-cart-btn">Aggiungi al carrello</button>
-            </div>
-            <div class="card" id="Adesivi Acqua" data-type="accessori">
+            </article>
+            <article class="card" id="Adesivi Acqua" data-type="accessori">
                 <h3>Adesivi Acqua</h3>
                 <img src="asset/img/merch/stckers.webp" alt="Adesivi Acqua">
                 <p class="price">€3,00</p>
                 <input type="number" min="1" max="5" value="1" class="quantity-input">
                 <button class="add-to-cart-btn">Aggiungi al carrello</button>
-            </div>
+            </article>
 
             <p id="no-results">Nessun risultato trovato.</p>
 
