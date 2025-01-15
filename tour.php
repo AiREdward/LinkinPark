@@ -57,7 +57,7 @@
 
                 <div id="<?php echo $citta . '_' . $data; ?>_details" class="extra-details" hidden aria-hidden="true">
                     <p>
-                        <?php echo $descrizione; ?> Alle ore
+                        <?php echo $descrizione; ?> <Obj></Obj>Ore
                         <strong>
                             <?php echo $orario; ?>
                         </strong>.
