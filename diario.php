@@ -18,8 +18,7 @@
     <!--Lato, Bebas Neue -->
     <link rel="preconnect" href="https://fonts.googleapis.com"> <!--lasciarli come performance enhancer? in quali file metterli? -->
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    
-
+    <link rel="icon" href="asset/img/favicon.ico" type="image/x-icon">
 </head>
 
 <body>
