@@ -12,7 +12,8 @@
     <meta name="viewport" content="width=device-width">
 
     <link rel="icon" href="asset/img/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="asset/css/timeline.css" media="screen">
+    <link rel="stylesheet" href="asset/css/timeline.css" media="all">
+    <link rel="stylesheet" href="asset/css/stampa.css" media="print">
 </head>
 
 <body>

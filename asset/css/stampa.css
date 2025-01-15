@@ -1,0 +1,210 @@
+/*mettere in ogni file: <link href="stampa.css" rel="stylesheet" type="text/css" media="print">  
+mettere media="all" per style.css*/
+
+/*mettere un @import per i font*/
+
+/*aggiungere forse un selettore per tutte le pagine con page-break-... per le intestazioni H2, H3...?
+gestire il colore del testo bene, che non si ripete in piu' posti se non ha senso*/
+
+
+
+/*===== GENERALE =====*/
+:root {
+    --txtColor: #000;
+}
+
+* {
+    filter: grayscale(100%);
+}
+
+@page {
+    margin: 1.5cm;
+}
+
+main {
+    width: 100%;
+    margin-left: 0em;
+    margin-top: -5em;
+}
+
+body {  /*o body *? */
+    background-color: #fff;
+    color: var(--txtColor);
+    font-family: "Times New Roman", Times, serif;
+    font-size: 12pt;
+    line-height: 18pt;   /*verificare*/
+}
+
+#scrollToTop button {
+    display: none;
+}
+
+a {
+    text-decoration: underline;
+    page-break-inside:avoid;
+}
+
+a[href^=http]:after {
+    content:" [ " attr(href) "] ";
+    font-size: 90%;
+}
+
+/* non funziona - per il logo
+header h1::after {
+    content: '';
+    display: inline-block;
+    width: 2cm;
+    height: 2cm;
+    margin-left: 0.3em;
+    vertical-align: middle;
+    background-image: url('../img/favicon.ico');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+} */
+
+
+/*===== MENU', FOOTER =====*/
+#menu, footer {
+    display: none;
+}
+
+/*===== INDEX =====*/
+/*===== CHI SIAMO =====*/
+
+#integranti, #ex-integranti {
+    display: block;
+    padding: 0;
+    margin: 0;
+}
+
+#integranti div, #ex-integranti div {
+    width: 100%;
+    margin: 2em 0;
+    page-break-inside: avoid;
+}
+
+#integranti dt, #ex-integranti dt {
+    width: 100%;
+    text-align: left;
+    font-size: 14pt;
+    font-weight: bold;
+    margin: 1em 0 0.5em 0;
+    padding: 0;
+    border: none;
+    background: none;
+    color: var(--txtColor);
+}
+
+#integranti dd, #ex-integranti dd {
+    height: auto;
+    position: static;
+    transform: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+}
+
+#integranti dd img,
+#ex-integranti dd img {
+    position: static;
+    width: 200px;
+    height: 250px;
+    object-fit: cover;
+    border: 1px solid var(--txtColor);
+    padding: 0.5em;
+    margin: 0;
+}
+
+#integranti dd p,
+#ex-integranti dd p {
+    position: static;
+    transform: none;
+    padding: 0;
+    margin: 0;
+    border: none;
+    background: none;
+    color: var(--txtColor);
+    overflow: visible;
+}
+
+h2 {
+    margin-top: 2em;
+    page-break-after: avoid;
+}
+
+.flipped {
+    transform: none;
+}
+
+
+/*===== DIARIO =====*/
+#storia dt, #storia::before, #item2, #item3, #item5, #item6, #item7 {
+    display: none;
+}
+
+#storia {
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+
+#storia dd {
+    width: 100%;
+    border: none;
+    background: none;
+    border-radius: 0;
+    position: static;
+    transition: none;
+}
+
+/* Reset popup-related styles */
+article[id^="article"] {
+    display: block;
+    position: static;
+    transform: none;
+    width: 100%;
+    max-width: none;
+    max-height: none;
+    overflow: visible;
+    padding: 1em 0;
+    border-radius: 0;
+    box-shadow: none;
+    page-break-inside: auto;
+    margin: 2em 0;
+}
+
+article[id^="article"] h2 {
+    color: var(--txtColor);
+}
+
+.overlay,
+.closePopUp,
+.readMore {
+    display: none;
+}
+
+#storia dd img,
+article[id^="article"] img {
+    max-width: 50%;
+    height: auto;
+    margin: 1em 0;
+}
+
+article[id^="article"] h2 {
+    margin: 1em 0;
+    font-size: 1.5em;
+    break-inside: avoid;
+    page-break-after: avoid;
+}
+
+article[id^="article"] p {
+    margin: 0.5em 0;
+}
+/*===== TOUR =====*/
+/*===== MUSICA =====*/
+/*===== SHOP =====*/
+
+/*===== altre paginee =====*/

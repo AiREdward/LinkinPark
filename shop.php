@@ -9,7 +9,8 @@
     <meta name="keywords" content="Linkin Park, merchandising ufficioso, magliette band, felpe tour, accessori musicali, shop rock, prodotti esclusivi, abbigliamento band, souvenir concerti, articoli musica, negozio ufficiale band">
     <meta name="viewport" content="width=device-width">
     
-    <link rel="stylesheet" href="asset/css/style.css" media="screen">
+    <link rel="stylesheet" href="asset/css/style.css" media="all">
+    <link rel="stylesheet" href="asset/css/stampa.css" media="print">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="icon" href="asset/img/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">

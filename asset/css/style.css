@@ -1,6 +1,7 @@
 /* GENERALE */
 
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+/*cosa accade con i font se il css non arriva?*/
 
 :root{
     --bgcolor1: #0B1520;
@@ -10,13 +11,13 @@
     --visitedcolor: #767CA2;
     --shopcardcolor: #CAC5C0;
     --pulsantecolor1: #934458;
-    --btnConferma: #589344;
+    --pulsantecolor2: #61698F;
 
     --mainFont: 'Lato', sans-serif;
 }
 
 
-body {
+body {  /*penso che debba essere body * , cioe' separato tra body e body *  */
     max-width: 1024px;
     color: var(--txtcolor);
     background-color: var(--bgcolor1);
@@ -143,6 +144,11 @@ header h1 {
 
 /* CHI SIAMO */
 
+#introduzione {
+    margin-left: 2em;
+    margin-bottom: 3.5em;
+}
+
 #integranti, #ex-integranti {
     display: flex;
     flex-wrap: wrap;
@@ -167,7 +173,7 @@ header h1 {
     margin-bottom: 0.5em;
     padding: 0.5em;
     background-color: var(--bgcolor2);
-    color: var(--txtcolor);
+    /*color: var(--txtcolor);*/
     border: 2px solid var(--txtcolor);
     border-radius: 8px;
     box-sizing: border-box;
@@ -181,11 +187,11 @@ header h1 {
     position: relative;
     transform-style: preserve-3d;
     transition: transform 0.6s;
-    /*box-sizing: border-box;*/
+    transform-origin: center center;
 }
 
 /* Flip animation on hover */
-#integranti dd:hover, #ex-integranti dd:hover {
+#integranti dd.flipped, #ex-integranti dd.flipped {
     transform: rotateY(180deg);
 }
 
@@ -195,12 +201,15 @@ header h1 {
 #ex-integranti dd img,
 #ex-integranti dd p {
     position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     backface-visibility: hidden;
     border-radius: 8px;
     border: 2px solid var(--txtcolor);
     box-sizing: border-box;
+    margin: 0;
 }
 
 /* Card front (image) */
@@ -229,7 +238,7 @@ header h1 {
     padding: 1.5em;
     transform: rotateY(180deg);
     overflow-y: auto;
-    font-size: 0.9rem;
+    /*font-size: 0.9rem;*/
 }
 
 /* ----------------------------------------------- */
@@ -467,7 +476,7 @@ header h1 {
 }
 
 .card-front .add-to-cart-btn {
-    background-color: var(--btnConferma);
+    background-color: var(--pulsantecolor2);
     color: white;
     border-radius: 4px;
 }
@@ -606,7 +615,8 @@ header h1 {
 }
 
 #checkout-btn {
-    background-color: var(--btnConferma);
+    background-color: var(--pulsantecolor2);
+    color: white;
 }
 
 #clear-cart-btn {
@@ -741,7 +751,7 @@ h1 {
 
 /* Article preview containers */
 #storia dd {
-    width: 100%; /*width: 45%;*/
+    width: 100%;
     margin: 0;
     padding: 1em;
     background: var(--bgcolor2);
@@ -760,7 +770,7 @@ h1 {
     grid-column: 1;
 }
 
-/* Special handling for short articles */
+/* Special handling for short articles*/
 .short-article + dd {
     cursor: pointer;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
