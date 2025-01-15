@@ -48,12 +48,6 @@
             <!-- trovare una frase migliore per il button -->
         </div>
 
-        <!-- Popup per account -->
-        <div id="accountPopup" class="hidden">
-            <p>Sei loggato come: <span id="accountEmail"></span></p>
-            <button id="logoutButton">Log Out</button>
-        </div>
-
         <?php include 'includes/scrollToTop.php'; ?>
 
     </main>
