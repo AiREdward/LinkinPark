@@ -693,6 +693,10 @@ header h1 {
 
 /* TOUR */
 
+.data_clickable {
+    cursor: pointer;
+}
+
 #tour-dates dd .extra-details {
   padding: 15px;
   border: 1px solid #ddd;
