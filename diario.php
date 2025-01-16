@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Il Nostro Viaggio - Linkin Park</title> <!--qua devo mettere lo span? -->
+    <title>Il Nostro Viaggio - Linkin Park</title>
     <meta name="keywords" content="linkin park,linkin park storia,chester bennington,hybrid theory,xero band,one more light,grammy linkin park,live in texas,
         meteora album,emily armstrong,colin brittain,band alternative rock">
     <meta name="description" content="Ripercorri i momenti salienti della carriera dei Linkin Park, dal 1996 al 2024.">
@@ -20,7 +20,6 @@
     <!--Lato, Bebas Neue -->
     <link rel="preconnect" href="https://fonts.googleapis.com"> <!--lasciarli come performance enhancer? in quali file metterli? -->
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="icon" href="asset/img/favicon.ico" type="image/x-icon">
 </head>
 
 <body>
@@ -84,7 +83,7 @@
 
         
         <article id="article2">
-            <h2>L’arrivo di Chester e il nuovo nome</h2>
+            <h2>L’arrivo di <span lang="en">Chester</span> e il nuovo nome</h2>
             <button type="button" class="closePopUp">X</button>
 
             <img src="asset/img/diario/articolo1 prima foto.webp" alt="">  <!--aggiungere q.sa che dice che questo e' la prima foto della band Xero con la composizione iniziale-->
@@ -109,7 +108,7 @@
             <p>Parliamoci chiaro: quando abbiamo iniziato a lavorare su <span lang="en">Hybrid Theory</span>, non avevamo idea di cosa stessimo facendo. Sapevamo 
                 solo che avevamo un sacco di idee, un <span lang="en">budget</span> minuscolo e un’enorme voglia di farcela. Eravamo giovani, affamati e determinati
                 a creare qualcosa che nessuno aveva mai sentito prima.</p>
-            <p>Le sessioni di registrazione? Un mix di entusiasmo e caos totale. <span lang="en">Mike</span> passava ore a sperimentare con campionamenti e <span lang="en">beat</span> sul 
+            <p>Le sessioni di registrazione? Un <span lang="en">mix</span> di entusiasmo e caos totale. <span lang="en">Mike</span> passava ore a sperimentare con campionamenti e <span lang="en">beat</span> sul 
                 suo vecchio computer, mentre <span lang="en">Chester</span> metteva ogni briciolo di anima nella voce. <span lang="en">Brad</span> e <span lang="en">Rob</span>? Instancabili. Ci sono stati momenti 
                 in cui pensavamo: “Ragazzi, ma è troppo strano, la gente non capirà mai!” Eppure, ogni volta che riascoltavamo i brani, 
                 sentivamo che c’era qualcosa di speciale.</p>
@@ -129,14 +128,14 @@
 
             <img src="asset/img/diario/articolo3_live_in_texas.webp" alt="Copertina di Linkin Park Live in Texas, braccio alzato tra la folla.">
             <p>Abbiamo sempre amato suonare dal vivo. C’è qualcosa di magico in quei momenti sul palco: l’adrenalina, il pubblico che canta 
-                a squarciagola, la connessione unica che si crea. Quindi, nel 2003, durante il nostro tour per Meteora, abbiamo deciso di 
+                a squarciagola, la connessione unica che si crea. Quindi, nel 2003, durante il nostro tour per <span lang="en">Meteora</span>, abbiamo deciso di 
                 catturare quell’energia in un <span lang="en">album live</span>. E così è nato <span lang="en">Live in Texas</span>.</p>
             <p>Registrarlo è stato… intenso. Due concerti in <span lang="en">Texas</span>, uno a <span lang="en">Houston</span> e uno a <span lang="en">Irving</span>, con un pubblico scatenato e una produzione 
                 gigantesca. Immaginatevi noi che corriamo su e giù per il palco, sudati e carichi di adrenalina, mentre le telecamere catturano 
                 ogni singolo momento. <span lang="en">Chester</span> che urla come se non ci fosse un domani, <span lang="en">Mike</span> che incita la folla, <span lang="en">Rob</span> che pesta sulla batteria 
                 come un martello pneumatico – insomma, eravamo in modalità "massima potenza".</p>
             <p>Quando è arrivato il momento di mettere tutto insieme, abbiamo scelto con cura le tracce migliori, mescolando i nostri successi 
-                di <span lang="en">Hybrid Theory</span> e <span lang="en">Meteora</span>. E poi, perché non farci un regalo extra? Abbiamo incluso un DVD con le immagini del concerto, così 
+                di <span lang="en">Hybrid Theory</span> e <span lang="en">Meteora</span>. E poi, perché non farci un regalo <span lang="en">extra</span>? Abbiamo incluso un DVD con le immagini del concerto, così 
                 chiunque potesse sentirsi parte di quella folla texana impazzita.</p>
         </article>
 
@@ -173,7 +172,7 @@
             <img src="asset/img/diario/reunion concert articolo5.webp" alt="I Linkin Park si esibiscono con due nuovi membri.">
             <p>Per chi non lo sapesse, <span lang="en">Emily</span> è stata la <span lang="en">frontwoman</span> dei <span lang="en">Dead Sara</span> e ha collaborato con artisti del calibro di <span lang="en">Beck</span> e <span lang="en">Demi Lovato</span>. 
             Sul palco è una forza della natura: potente, sincera, e con un carisma che cattura l'attenzione di tutti. Non potevamo immaginare 
-            un'aggiunta migliore ai <span lang="en">Linkin Park</span>. <span lang="en">Colin</span>, dal canto suo, ha lavorato con band come <span lang="en">Papa Roach</span> e <span lang="en">5 Seconds of Summer</span>, portando 
+            un'aggiunta migliore ai <span lang="en">Linkin Park</span>. <span lang="en">Colin</span>, dal canto suo, ha lavorato con <span lang="en">band</span> come <span lang="en">Papa Roach</span> e <span lang="en">5 Seconds of Summer</span>, portando 
             la sua esperienza e il suo stile unico nel nostro mondo.</p>
             <p>Il nostro ritorno sul palco dopo la pausa di sette anni è stato emozionante. Durante il nostro concerto a <span lang="en">Los Angeles</span>, <span lang="en">Emily</span> e 
             <span lang="en">Colin</span> hanno conquistato il pubblico fin dalla prima nota. Cantare insieme a loro è stato come riscoprire le nostre stesse canzoni. 

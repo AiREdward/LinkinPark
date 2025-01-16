@@ -7,7 +7,7 @@
     <meta name="description" content="Dashboard Admin per la gestione utenti, statistiche delle vendite e gestione delle date dei tour. Accesso rapido e funzionalità avanzate per amministratori.">
     <meta name="keywords" content="Admin Dashboard, gestione utenti, statistiche vendite, gestione tour, pannello di controllo, amministrazione, transazioni, statistiche, utenti, tour, gestione ecommerce">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin</title>
+    <title>Admin Dashboard - Linkin Park</title>
     <link rel="icon" href="../asset/img/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
@@ -199,6 +199,7 @@
 </head>
 
 <body>
+
     <!-- Menu laterale -->
     <div class="sidebar">
         <h2>Admin Dashboard</h2>
@@ -257,10 +258,33 @@
 
             <!-- Tour -->
             <div id="tour">
-                <h2>Nuova data</h2>
 
+                <button>Aggiungi Evento</button>
+
+                <!--The action attribute specifies where to send the form-data when a form is submitted.
+                The method attribute specifies how to send form-data (the form-data is sent to the page specified in the action attribute).
+                The form-data can be sent as URL variables (with method="get") or as HTTP post transaction (with method="post").
+                -->
+                <form action="" method="GET">
+                    <label for="search2">Cerca evento per data:</label>
+                    <input 
+                        type="text" 
+                        id="search2" 
+                        name="search2" 
+                        placeholder="Scrivere nel formato: AAAA-MM-GG" 
+                        pattern="\d{4}-\d{2}-\d{2}"
+                        required> <!--o class="search" se cambiamo da id="searchForm" a class="search" del primo form (barra di ricerca per utente) -->
+                        <!--o metto type="date"?-->
+                    <button type="submit">Cerca</button>
+                </form>
+
+                <div>    <!--buttons are better suited to <div> container (than to lists) -->
+                    <button>Informazioni Evento</button>
+                    <button>Aggiorna Evento</button>
+                    <button>Cancella Evento</button>
+                </div>
             </div>
-
+            
         </div>
     </div>
 

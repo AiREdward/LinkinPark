@@ -34,7 +34,7 @@
                 <dt lang="en">Dave Farrell</dt>
                 <dd>
                     <img src="asset/img/integranti/Dave_Farrell.webp" alt="">
-                    <p>Nato nel 1977 a <span lang="en">Plymouth, Massachusetts,</span> è il bassista della band. Trasferitosi in California, ha sviluppato il suo 
+                    <p>Nato nel 1977 a <span lang="en">Plymouth, Massachusetts,</span> è il bassista della <span lang="en">band</span>. Trasferitosi in California, ha sviluppato il suo 
                         talento con vari strumenti. Prima di unirsi ai <span lang="en">Linkin Park</span>, ha suonato in altre <span lang="en">band</span>, portando 
                         con sé esperienza e carisma.</p>
                 </dd>
@@ -65,7 +65,7 @@
                 <dd>
                     <img src="asset/img/integranti/Emily_Armstrong.webp" alt="">
                     <p>Nata nel 1986 è la nuova voce dei <span lang="en">Linkin Park</span> dal 2024. Nata a <span lang="en">Los Angeles</span>, è conosciuta per il suo 
-                        lavoro come cantante dei <span lang="en">Dead Sara</span>. La sua potente voce e il carisma sul palco hanno attirato l’attenzione della band, 
+                        lavoro come cantante dei <span lang="en">Dead Sara</span>. La sua potente voce e il carisma sul palco hanno attirato l’attenzione della <span lang="en">band</span>, 
                         che l'ha scelta per il nuovo corso dopo la perdita di <span lang="en">Chester Bennington</span>. Il suo debutto con i <span lang="en">Linkin Park</span> 
                         avviene nell’album <span lang="en">From Zero</span>, segnando una nuova era per il gruppo.</p>
                 </dd>
@@ -76,7 +76,7 @@
                 <dd>
                     <img src="asset/img/integranti/Colin_Brittain.webp" alt="">
                     <p><span lang="en">Colin Brittain</span> (all’anagrafe <span lang="en">“Colin Cunningham”</span>) è un musicista, produttore e compositore nato nel 
-                    1986 a <span lang="en">Nashville, Tennessee</span>. Ha iniziato come batterista per la band <span lang="en">Oh No Fiasco</span> e successivamente ha 
+                    1986 a <span lang="en">Nashville, Tennessee</span>. Ha iniziato come batterista per la <span lang="en">band Oh No Fiasco</span> e successivamente ha 
                     collaborato con artisti come <span lang="en">Papa Roach, 5 Seconds of Summer</span> e <span lang="en">A Day to Remember</span>. Dal 2024, è il nuovo 
                     batterista dei <span lang="en">Linkin Park</span>, scelto per il suo talento e la sintonia con la <span lang="en">band</span>.</p>
                 </dd>
