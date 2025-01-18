@@ -30,6 +30,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $response = getTransactionStats($conn);
             break;
 
+        case 'find_event':
+            $date = trim($_POST['date']);
+            $event = findEventByDate($conn, $date);
+            if ($event) {
+                $response['event'] = $event;
+            } else  {
+                $response['message'] = "Evento non trovato";
+            }
+            break;
+
         default:
             $response['message'] = "Azione non valida!";
             break;

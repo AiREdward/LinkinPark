@@ -31,6 +31,37 @@ function findUserByEmail($conn, $email) {
     }
 }
 
+function findEventByDate($conn, $date) {
+    // Debug: Log invalid data format
+    
+    if (!preg_match('/^\d{4}-\d{2}-\d{2}$/', $date)) {
+        error_log("Invalid data format: $date");
+        return 'Invalid data format';
+    }
+
+    // Prepare the statement
+    $stmt = $conn->prepare("SELECT evento, data, orario, luogo, citta, paese, descrizione, prezzo FROM tour WHERE data = ?");
+    if (!$stmt) {
+        error_log("Query preparation failed");
+        return null; // Handle query preparation failure
+    }
+
+
+    $stmt->bind_param("s", $date);
+    $stmt->execute();
+
+    $result = $stmt->get_result();
+
+    if ($result && $result->num_rows > 0) {
+        error_log("Event found: " . print_r($event, true));
+        return $result->fetch_assoc();
+    } else {
+        error_log("No event found for date: $date");
+        return null; 
+    }
+}
+
+
 /**
  * Ottieni statistiche sulle transazioni
  */
