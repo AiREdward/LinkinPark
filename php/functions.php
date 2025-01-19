@@ -46,15 +46,15 @@ function findEventByDate($conn, $date) {
         return null; // Handle query preparation failure
     }
 
-
     $stmt->bind_param("s", $date);
     $stmt->execute();
 
     $result = $stmt->get_result();
 
     if ($result && $result->num_rows > 0) {
+        $event = $result->fetch_assoc();
         error_log("Event found: " . print_r($event, true));
-        return $result->fetch_assoc();
+        return $event; 
     } else {
         error_log("No event found for date: $date");
         return null; 
