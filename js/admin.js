@@ -16,7 +16,6 @@ document.getElementById('userManagementBtn').addEventListener('click', function 
 
 document.getElementById('dateTourBtn').addEventListener('click', function () {
     document.getElementById('userManagement').style.display = 'none';
-    document.getElementById('vendite').style.display = 'none';
     document.getElementById('tour').style.display = 'block';
     updatePageTitle('Gestione Tour');
 });
