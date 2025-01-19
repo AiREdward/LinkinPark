@@ -168,12 +168,12 @@
 
         </section>
 
-        <nav id="cart">
+        <aside id="cart">
             <h3>Carrello</h3>
             <div id="cart-items" class="cart-items">
-                <!-- Gli articoli del carrello verranno aggiunti qui tramite JavaScript -->
+            <!-- Gli articoli del carrello verranno aggiunti qui tramite JavaScript -->
             </div>
-        </nav>
+        </aside>
     </div>
 
     <!-- CONTROLLA -->

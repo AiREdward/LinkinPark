@@ -446,16 +446,14 @@ header h1 {
 
 .filters button:hover {
     background-color: var(--linkcolor);
-    transform: scale(1.05);
 }
 
 .filters button{
     background-color: var(--visitedcolor);
 }
 
-
 .filters-buttons button.active-filter {
-    background-color: var(--pulsantecolor1);
+    background-color: var(--linkcolor);
 }
 
 /* CARD ELEMENT SHOP */
@@ -704,10 +702,6 @@ header h1 {
 
 /* TOUR */
 
-.data_clickable {
-    cursor: pointer;
-}
-
 #tour-dates dd .extra-details {
   padding: 15px;
   border: 1px solid #ddd;
@@ -744,7 +738,7 @@ header h1 {
 }
 
 #tour-dates dd .extra-details .button-container .buy {
-  background-color: var(--btnConferma);
+  background-color: var(--visitedcolor);
 }
 
 #tour-dates dd .extra-details .button-container .close {
@@ -806,6 +800,11 @@ header h1 {
 
 #tour-dates dd p {
   margin-top: -11.5px;
+}
+
+#tour-dates dd>p:hover {
+    color: var(--linkcolor);
+    cursor: pointer;
 }
 
 #tour-dates dt {
