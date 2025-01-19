@@ -104,6 +104,7 @@ function searchEvent() {
                 console.log("event found");
                 console.log(data.event.data);
 
+                /*
                 const event = data.event;
                 resultDiv.innerHTML += `
                     <div>
@@ -116,7 +117,7 @@ function searchEvent() {
                         <p><strong>Paese:</strong> ${event.paese}</p>
                         <p><strong>Descrizione:</strong> ${event.descrizione}</p>
                         <p><strong>Prezzo:</strong> ${event.prezzo}</p>
-                `;
+                `;*/
 
                 currentEventData = data.event;
                 selectButton('eventInfoBtn');
