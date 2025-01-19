@@ -139,28 +139,36 @@
                 <h3>Berretto Fuoco</h3>
                 <img src="asset/img/merch/berretto.webp" alt="Berretto Fuoco">
                 <p class="price">€35,00</p>
-                <input type="number" min="1" max="5" value="1" class="quantity-input">
+                <div class="sizeAndQuantityContainer">
+                    <input type="number" min="1" max="5" value="1" class="quantity-input">
+                </div>
                 <button class="add-to-cart-btn">Aggiungi al carrello</button>
             </article>
             <article class="card" id="BorsaTerra" data-type="accessori">
                 <h3>Borsa Terra</h3>
                 <img src="asset/img/merch/borsa.webp" alt="Borsa Terra">
                 <p class="price">€40,00</p>
-                <input type="number" min="1" max="5" value="1" class="quantity-input">
+                <div class="sizeAndQuantityContainer">
+                    <input type="number" min="1" max="5" value="1" class="quantity-input">
+                </div>
                 <button class="add-to-cart-btn">Aggiungi al carrello</button>
             </article>
             <article class="card" id="PortachiaviAria" data-type="accessori">
                 <h3>Portachiavi Aria</h3>
                 <img src="asset/img/merch/portachiavi.webp" alt="Portachiavi Aria">
                 <p class="price">€8,50</p>
-                <input type="number" min="1" max="5" value="1" class="quantity-input">
+                <div class="sizeAndQuantityContainer">
+                    <input type="number" min="1" max="5" value="1" class="quantity-input">
+                </div>
                 <button class="add-to-cart-btn">Aggiungi al carrello</button>
             </article>
             <article class="card" id="Adesivi Acqua" data-type="accessori">
                 <h3>Adesivi Acqua</h3>
                 <img src="asset/img/merch/stckers.webp" alt="Adesivi Acqua">
                 <p class="price">€3,00</p>
-                <input type="number" min="1" max="5" value="1" class="quantity-input">
+                <div class="sizeAndQuantityContainer">
+                    <input type="number" min="1" max="5" value="1" class="quantity-input">
+                </div>
                 <button class="add-to-cart-btn">Aggiungi al carrello</button>
             </article>
 

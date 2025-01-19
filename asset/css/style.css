@@ -503,11 +503,12 @@ header h1 {
 
 .card .size-select, 
 .card .quantity-input {
-    width: 45%; 
+    width: 100%; 
     padding: 5px;
     text-align: center;
     border: 1px solid #ccc;
     border-radius: 4px;
+    zoom: 130%;
 }
 
 .card .size-quantity-wrapper {
@@ -521,7 +522,7 @@ header h1 {
 .card .sizeAndQuantityContainer {
     display: flex;
     justify-content: space-between;
-    width: 60%;
+    width: 75%;
 }
 
 .card .add-to-cart-btn{
@@ -533,6 +534,7 @@ header h1 {
     color: white;
     border-radius: 4px;
     margin-bottom: 20px;
+    width: 75%;
 }
 
 .card .button-wrapper {
