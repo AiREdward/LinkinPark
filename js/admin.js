@@ -36,7 +36,7 @@ document.getElementById('venditeBtn').addEventListener('click', function () {
             const totalRevenue = typeof data.total_revenue === 'number' ? data.total_revenue : 0;
             document.getElementById('totalRevenue').textContent = `€${totalRevenue.toFixed(2)}`;
             document.getElementById('totalTransactions').textContent = data.total_transactions || 0;
-            document.getElementById('mostBoughtProduct').textContent = 
+            document.getElementById('mostBoughtProduct').textContent =
                 `${data.most_bought_product || '-'} (${data.most_bought_count || 0} volte)`;
         })
         .catch(error => {
@@ -85,45 +85,45 @@ function searchEvent() {
         method: 'POST',
         body: new URLSearchParams({ action: 'find_event', date: date })
     })
-    .then(response => response.json())
-    .then(data => {
-        const resultDiv = document.getElementById('result2');
-        resultDiv.innerHTML = '';
+        .then(response => response.json())
+        .then(data => {
+            const resultDiv = document.getElementById('result2');
+            resultDiv.innerHTML = '';
 
-        console.log(data);
+            console.log(data);
 
-        if (data.message) {
-            console.log(data.message);
-            resultDiv.innerHTML = `
+            if (data.message) {
+                console.log(data.message);
+                resultDiv.innerHTML = `
                 <div class="message not-found">
                     <p class="fas fa-exclamation-circle">${data.message}</p>
                 </div>`;
-               
-        }
-        if (data.event) {
-            console.log("event found");
-            console.log(data.event.data);
-            
-            /*const event = data.event;
-            resultDiv.innerHTML += `
-                <div>
-                    <h3>Informazioni Evento</h3>
-                    <p><strong>Evento:</strong> ${event.evento}</p>
-                    <p><strong>Data:</strong> ${event.data}</p>
-                    <p><strong>Orario:</strong> ${event.orario}</p>
-                    <p><strong>Luogo:</strong> ${event.luogo}</p>
-                    <p><strong>Città:</strong> ${event.citta}</p>
-                    <p><strong>Paese:</strong> ${event.paese}</p>
-                    <p><strong>Descrizione:</strong> ${event.descrizione}</p>
-                    <p><strong>Prezzo:</strong> ${event.prezzo}</p>
-            `;*/
-            
-            currentEventData = data.event;
-            selectButton('eventInfoBtn');
-            displayEventInfo();
-        }
-    })
-    .catch(error => console.error('Errore:', error));
+
+            }
+            if (data.event) {
+                console.log("event found");
+                console.log(data.event.data);
+
+                const event = data.event;
+                resultDiv.innerHTML += `
+                    <div>
+                        <h3>Informazioni Evento</h3>
+                        <p><strong>Evento:</strong> ${event.evento}</p>
+                        <p><strong>Data:</strong> ${event.data}</p>
+                        <p><strong>Orario:</strong> ${event.orario}</p>
+                        <p><strong>Luogo:</strong> ${event.luogo}</p>
+                        <p><strong>Città:</strong> ${event.citta}</p>
+                        <p><strong>Paese:</strong> ${event.paese}</p>
+                        <p><strong>Descrizione:</strong> ${event.descrizione}</p>
+                        <p><strong>Prezzo:</strong> ${event.prezzo}</p>
+                `;
+
+                currentEventData = data.event;
+                selectButton('eventInfoBtn');
+                displayEventInfo();
+            }
+        })
+        .catch(error => console.error('Errore:', error));
 }
 
 function selectButton(buttonId) {
@@ -154,21 +154,21 @@ function displayEventInfo() {
     `;
 }
 
-document.getElementById('eventInfoBtn').addEventListener('click', function() {
+document.getElementById('eventInfoBtn').addEventListener('click', function () {
     if (currentEventData) {
         selectButton('eventInfoBtn');
         displayEventInfo();
     }
 });
 
-document.getElementById('eventUpdateBtn').addEventListener('click', function() {
+document.getElementById('eventUpdateBtn').addEventListener('click', function () {
     if (currentEventData) {
         selectButton('eventUpdateBtn');
         // Add your update event logic here
     }
 });
 
-document.getElementById('deleteEventBtn').addEventListener('click', function() {
+document.getElementById('deleteEventBtn').addEventListener('click', function () {
     if (currentEventData) {
         selectButton('deleteEventBtn');
         // Add your delete event logic here
@@ -191,7 +191,7 @@ function searchUser() {
                     <div class="message not-found">
                         <i class="fas fa-exclamation-circle"></i> ${data.message}
                     </div>`;
-            }            
+            }
 
             if (data.user) {
                 const user = data.user;
