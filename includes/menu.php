@@ -9,6 +9,11 @@ $email = $_SESSION['email'] ?? '';
 
 <header>
     <h1 lang="en">Linkin Park</h1>
+    <button id="hamburger-menu" aria-label="Apri menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
 </header>
 
 <nav id="menu" role="navigation" aria-label="Menu principale">

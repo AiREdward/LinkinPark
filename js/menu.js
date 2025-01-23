@@ -4,6 +4,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const closeBtn = document.querySelector('.close-btn');
     const confirmBtn = document.getElementById('confirm-logout');
     const cancelBtn = document.getElementById('cancel-logout');
+    const hamburgerMenu = document.getElementById('hamburger-menu');
+    const menu = document.getElementById('menu');
 
     if (logoutLink) {
         logoutLink.addEventListener('click', function (event) {
@@ -39,4 +41,14 @@ document.addEventListener('DOMContentLoaded', function () {
             modal.style.display = 'none';
         }
     });
+
+    // Gestione del menu a hamburger
+    if (hamburgerMenu) {
+        hamburgerMenu.addEventListener('click', function () {
+            const isExpanded = hamburgerMenu.getAttribute('aria-expanded') === 'true';
+            hamburgerMenu.setAttribute('aria-expanded', !isExpanded);
+            menu.classList.toggle('show');
+            document.body.classList.toggle('menu-open');
+        });
+    }
 });
