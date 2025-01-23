@@ -122,6 +122,10 @@ header h1 {
     display: flex;
     flex-direction: column;
     align-items: center;
+    border-bottom: 2px solid var(--txtcolor);
+    border-top: 2px solid var(--txtcolor);
+    padding-bottom: 0.6em;
+    padding-top: 0.6em;
 }
 
 #menu ul {
@@ -260,6 +264,8 @@ header h1 {
         height: 100vh;
         z-index: 9;
         overflow-y: auto;
+        border-bottom: none;
+        border-top: none;
     }
 
     #menu ul {

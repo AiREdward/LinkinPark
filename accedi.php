@@ -19,6 +19,8 @@
 
 <body>
     <main>
+        <?php include 'includes/breadcrumb.php'; ?>
+
         <div class="main-container">
             <!-- Left Section -->
             <div class="left-section">
