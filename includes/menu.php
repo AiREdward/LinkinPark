@@ -16,6 +16,8 @@ $email = $_SESSION['email'] ?? '';
     </button>
 </header>
 
+<?php include 'breadcrumb.php'; ?>
+
 <nav id="menu" role="navigation" aria-label="Menu principale">
     <ul>
         <li><a href="index.php" class="<?= $currentPage == 'index.php' ? 'active' : '' ?>">Home</a></li>

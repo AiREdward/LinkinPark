@@ -18,6 +18,8 @@
 </head>
 
 <body>
+    <?php include 'includes/breadcrumb.php'; ?>
+
     <form id="cardForm" action="php/pagamento.php" method="POST">
         <div class="container">
             <div class="left-section">
