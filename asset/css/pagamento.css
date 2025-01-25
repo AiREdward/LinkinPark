@@ -6,7 +6,7 @@
     --visitedcolor: #767CA2;
     --shopcardcolor: #CAC5C0;
     --pulsantecolor1: #934458;
-    --btnConferma: #589344;
+    --visitedcolor: #589344;
 }
 
 body {
@@ -90,7 +90,7 @@ body {
 }
 
 #cardForm .container .card input:focus {
-    border-bottom: 1px solid var(--btnConferma);
+    border-bottom: 1px solid var(--visitedcolor);
     outline: none;
 }
 
@@ -118,7 +118,7 @@ body {
     width: 25%; 
     height: auto;
     border-radius: 14px;
-    background: var(--btnConferma);
+    background: var(--visitedcolor);
     border: none;
     color: white;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
@@ -235,7 +235,7 @@ body {
 
 #cardForm .container .receipt .bought-items .bought-item .price {
     font-weight: bold;
-    color: var(--btnConferma);
+    color: var(--visitedcolor);
 }
 
 #cardForm .container .receipt #bought-items > div {
@@ -269,7 +269,7 @@ body {
 
 #cardForm .container .receipt #bought-items > div .price {
     font-weight: bold;
-    color: var(--btnConferma);
+    color: var(--visitedcolor);
 }
 
 #cardForm button {
@@ -332,7 +332,7 @@ button.cancel {
 }
 
 #confirm-cancel.popup-btn {
-    background-color: var(--btnConferma);
+    background-color: var(--visitedcolor);
 }
 
 #close-popup.popup-btn {
