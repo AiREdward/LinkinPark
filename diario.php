@@ -24,7 +24,13 @@
 
 <body>
 
-    <?php include 'includes/menu.php'; ?>
+    <?php
+        $breadcrumb = [
+            ['name' => 'Home', 'url' => 'index.php'],
+            ['name' => 'Diario', 'url' => 'diario.php']
+        ];
+        include 'includes/menu.php'; 
+    ?>
 
     <main>
         <h1><span lang="en">Linkin Park</span>: Il Nostro Viaggio</h1>
