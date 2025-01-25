@@ -44,6 +44,9 @@
     </div>
 
     <div id="container-shop">
+        <button id="cart-hamburger-menu" aria-expanded="false">
+            <i class="fa-sharp fa-solid fa-cart-shopping"></i>
+        </button>
         <section id="shop">
 
             <!-- Sez. Maglie -->
@@ -183,6 +186,7 @@
         </section>
 
         <aside id="cart">
+            <button id="close-cart-btn" aria-label="Chiudi Carrello">&times;</button>
             <h3>Carrello</h3>
             <div id="cart-items" class="cart-items">
             <!-- Gli articoli del carrello verranno aggiunti qui tramite JavaScript -->
@@ -190,7 +194,6 @@
         </aside>
     </div>
 
-    <!-- CONTROLLA -->
     <script src="js/cart.js"></script> 
     <script src="js/filter_manager.js"></script>
     <script src="js/checkout.js"></script>
