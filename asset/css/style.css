@@ -1007,39 +1007,45 @@ header h1 {
 }
 
 @media (max-width: 768px) {
-  #tour-dates dt {
-      width: 25%;
-      margin-left: -25%;
-  }
-  #tour-dates dd {
-      width: 70%;
-  }
+    
+    #tour-dates dt {
+        width: 25%;
+        margin-left: -25%;
+    }
+
+    #tour-dates dd {
+        width: 70%;
+    }
 }
 
-@media (max-width: 480px) {
-  #tour-dates dt {
-      width: 20%;
-      margin-left: -20%;  /* DA FIXARE */
-      font-size: 0.9em;
-  }
-  #tour-dates dd {
-      width: 75%;
-  }
-  #tour-dates dd .extra-details .button-container button {
-    font-size: 0.9rem;
-    padding: 8px 12px;
-  }
+@media (max-width: 600px) {
+    
+    #tour-dates dt {
+      display: none;
+    }
+    
+    #tour-dates dd {
+        margin-left: -30px;
+        width: 95%;
+    }
+    
+    #tour-dates dd .extra-details .button-container button {
+      font-size: 0.9rem;
+      padding: 8px 12px;
+    }
 }
 
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
 }
 
 #tour-dates dd .extra-details[aria-hidden="false"] {
