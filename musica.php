@@ -259,7 +259,42 @@
 
     </main>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const albums = document.querySelectorAll('.album');
+            
+            albums.forEach(album => {
+                const img = album.querySelector('img');
+                const dl = album.querySelector('dl');
+                const frontSide = album.querySelectorAll('img, p, h2');
+                const backSide = album.querySelector('dl');
+                
+                // Initially show front side
+                backSide.style.display = 'none';
+                
+                img.addEventListener('click', () => {
+                    // Toggle visibility between front and back sides
+                    frontSide.forEach(el => {
+                        el.style.display = el.style.display === 'none' ? '' : 'none';
+                    });
+                    
+                    backSide.style.display = backSide.style.display === 'none' ? '' : 'none';
+                });
+
+                dl.addEventListener('click', () => {
+                    // Toggle visibility between front and back sides
+                    frontSide.forEach(el => {
+                        el.style.display = el.style.display === 'none' ? '' : 'none';
+                    });
+                    
+                    backSide.style.display = backSide.style.display === 'none' ? '' : 'none';
+                });
+            });
+        });
+    </script>
+
     <?php include 'includes/footer.php'; ?>
+    
 
 </body>
 

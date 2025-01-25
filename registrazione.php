@@ -17,10 +17,14 @@
     <link rel="stylesheet" href="asset/css/stampa.css" media="print">
     <link rel="stylesheet" href="asset/css/login.css" media="screen">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
 </head>
 
 <body>
     <main>
+
+        <?php include 'includes/breadcrumb.php'; ?>
+
         <div class="main-container">
             <!-- Left Section -->
             <div class="left-section">
@@ -82,14 +86,14 @@
                         <input type="date" id="data_nascita" name="data_nascita">
                     </div>
 
-                    <div class="checkbox-container full-width">
+                    <div class="input-container">
                         <label>
                             <input type="checkbox" id="privacy" name="privacy" required> Accetto la <a href="#"
                                 onclick="openModal('privacyModal')">Privacy Policy</a>.
                         </label>
                     </div>
 
-                    <div class="checkbox-container full-width">
+                    <div class="input-container">
                         <label>
                             <input type="checkbox" id="termini" name="termini" required> Accetto i <a href="#"
                                 onclick="openModal('termsModal')">Termini di Servizio</a>.

@@ -5,7 +5,6 @@
     --linkcolor: #BC6779;
     --visitedcolor: #767CA2;
     --shopcardcolor: #CAC5C0;
-    --btnConferma: #589344;
     --input-bg: #1C2733;
     --input-border: #505C6D;
     --error-bg: #472D35;
@@ -118,7 +117,7 @@ body {
 
 button[type="submit"] {
     grid-column: span 2;
-    background: var(--btnConferma);
+    background: var(--visitedcolor);
     color: var(--txtcolor);
     border: none;
     padding: 1rem;
