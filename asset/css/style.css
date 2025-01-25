@@ -29,6 +29,10 @@ body {  /*penso che debba essere body * , cioe' separato tra body e body *  */
     padding-right: 1em;
 }
 
+body.no-scroll {
+    overflow: hidden;
+}
+
 a {
     text-decoration: underline;
     color: var(--linkcolor);
@@ -216,7 +220,7 @@ header h1 {
     border: none;
     cursor: pointer;
     padding: 0;
-    z-index: 10;
+    z-index: 10000;
     position: absolute;
     top: 20px;
     right: 20px;
@@ -491,6 +495,87 @@ header h1 {
     padding: 20px;
     box-sizing: border-box;
     height: 224.5vh; /*TODO perchè 400px per 4 righe di carte + gap == 223vh (coi pixel non funziona)*/
+    position: relative; /* Aggiungi questa linea */
+}
+
+#cart-hamburger-menu {
+    display: none;
+    width: 50px;
+    height: 50px;
+    background: var(--pulsantecolor2);
+    border: 2px solid var(--txtcolor);
+    border-radius: 50%;
+    cursor: pointer;
+    padding: 0;
+    z-index: 10;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+#cart-hamburger-menu i {
+    font-size: 1.5rem;
+    color: var(--txtcolor);
+}
+
+#close-cart-btn {
+    display: none;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: transparent;
+    border: none;
+    font-size: 2rem;
+    color: var(--txtcolor);
+    cursor: pointer;
+    z-index: 1001;
+}
+
+#close-cart-btn:hover {
+    color: var(--linkcolor);
+}
+
+@media (max-width: 768px) {
+
+    #container-shop {
+        height: auto;
+    }
+
+    #close-cart-btn {
+        display: block;
+    }
+
+    #shop {
+        width: 100%;
+    }
+
+    #cart-hamburger-menu {
+        display: block;
+    }
+
+    #cart {
+        display: none;
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        background-color: var(--bgcolor2);
+        z-index: 1000;
+        padding: 20px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        overflow-y: auto;
+    }
+
+    #cart.show {
+        display: block;
+    }
+}
+
+@media (max-width: 600px) {
+    article.card {
+        width: calc(95% / 2);
+    }
 }
 
 /* FILTERS */ 
@@ -505,7 +590,8 @@ header h1 {
 
 .search-container {
     position: relative;
-    width: 700px;
+    width: 100%;
+    max-width: 700px;
     margin: 0 auto;
 }
 
@@ -537,7 +623,7 @@ header h1 {
 }
 
 .filters button {
-    flex: 0 0 150px;
+    flex: 0 0 calc(100% / 5);
     padding: 10px;
     font-size: 16px;
     font-weight: bold;

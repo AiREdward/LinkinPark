@@ -169,4 +169,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Initial check to hide buttons if cart is empty
     updateSubtotal();
+
+    // Hamburger menu toggle
+    const cartHamburgerMenu = document.getElementById('cart-hamburger-menu');
+    const cart = document.getElementById('cart');
+    cartHamburgerMenu.addEventListener('click', () => {
+        const expanded = cartHamburgerMenu.getAttribute('aria-expanded') === 'true' || false;
+        cartHamburgerMenu.setAttribute('aria-expanded', !expanded);
+        cart.classList.toggle('show');
+        document.body.classList.toggle('no-scroll', !expanded);
+    });
+
+    // Close cart button
+    const closeCartBtn = document.getElementById('close-cart-btn');
+    closeCartBtn.addEventListener('click', () => {
+        cartHamburgerMenu.setAttribute('aria-expanded', 'false');
+        cart.classList.remove('show');
+        document.body.classList.remove('no-scroll');
+    });
 });
