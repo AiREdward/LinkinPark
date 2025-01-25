@@ -70,7 +70,7 @@ VALUES
     ('European Tour', '2025-06-16', '19:00:00', 'Heinz-Von-Heiden Arena', 'Hanover', 'Germania', "Un evento unico all'arena di Hannover. Non perderti la musica dal vivo.", 70.00),
     ('European Tour', '2025-06-18', '19:30:00', 'Olympiastadion', 'Berlino', 'Germania', "Spettacolo imperdibile nell'iconico Olympiastadion di Berlino.", 80.00),
     ('European Tour', '2025-07-08', '21:00:00', 'Deutsche Bank Park', 'Francoforte', 'Germania', 'Vieni a vivere una notte di musica al Deutsche Bank Park.', 75.00),
-    ('European Tour', '2025-06-28', '22:00:00', 'Wembley Stadium', 'Londra', 'Regno Unito', 'Un grande show nella leggendaria cornice di Wembley.', 100.00),
+    ('European Tour', '2025-06-28', '22:00:00', 'Wembley Stadium', 'Londra', 'Inghilterra', 'Un grande show nella leggendaria cornice di Wembley.', 100.00),
     ('Asian Tour', '2025-02-11', '21:30:00', 'Saitama Super Arena', 'Saitama', 'Giappone', 'Preparati per una performance straordinaria nella Saitama Super Arena.', 90.00),
     ('Asian Tour', '2025-02-16', '19:30:00', 'GBK Madya Stadium', 'Jakarta', 'Indonesia', 'Scopri la magia della musica dal vivo al GBK Madya Stadium.', 65.00),
     ('American Tour', '2025-08-16', '20:30:00', 'Wells Fargo Center', 'Detroit', 'USA', 'Un evento epico nel cuore di Detroit.', 95.00),
