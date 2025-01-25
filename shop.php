@@ -19,7 +19,13 @@
 
 <body>
 
-    <?php include 'includes/menu.php'; ?>
+    <?php
+        $breadcrumb = [
+            ['name' => 'Home', 'url' => 'index.php'],
+            ['name' => 'Shop', 'url' => 'shop.php']
+        ];
+        include 'includes/menu.php'; 
+    ?>
 
     <div class="filters">
         <!-- Search Bar -->
