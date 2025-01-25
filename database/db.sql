@@ -77,7 +77,7 @@ VALUES
     ('American Tour', '2025-09-13', '22:30:00', 'Dodger Stadium', 'Los Angeles', 'USA', 'Una serata indimenticabile al Dodger Stadium di Los Angeles.', 120.00),
     ('American Tour', '2025-07-29', '18:30:00', 'Barclays Center', 'Brooklyn', 'USA', 'Non perdere il concerto al Barclays Center a New York.', 110.00),
     ('American Tour', '2025-08-01', '18:00:00', 'TD Garden', 'Boston', 'USA', "Un'esperienza incredibile al TD Garden di Boston.", 105.00),
-    ('American Tour', '2025-08-16', '15:30:00', 'Wells Fargo Center', 'Philadelphia', 'USA', 'Philadelphia ti aspetta per un concerto imperdibile.', 92.00),
+    ('American Tour', '2025-08-18', '15:30:00', 'Wells Fargo Center', 'Philadelphia', 'USA', 'Philadelphia ti aspetta per un concerto imperdibile.', 92.00),
     ('American Tour', '2025-10-26', '16:30:00', 'Nemesio Camacho El Campín Stadium', 'Bogotá', 'Colombia', 'Un evento memorabile nello stadio di Bogotá.', 60.00),
     ('American Tour', '2025-11-01', '20:00:00', 'Estadio Alberto José Armando', 'Buenos Aires', 'Argentina', 'Buenos Aires ti offre una notte di grande musica.', 70.00),
     ('American Tour', '2025-11-10', '19:30:00', 'Neo Química Arena', 'São Paulo', 'Brasile', 'São Paulo accoglie la band per una performance unica.', 75.00);
