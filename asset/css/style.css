@@ -48,10 +48,15 @@ a[href^="http"]:not([href*="localhost"]):not([href*="127.0.0.1"])::after {
     top: -0.4em;
 }
 
-h1 {
+header h1 {
     font-size: 3em;
     margin-top: 1em;
     margin-bottom: 1em;
+}
+
+h1 {
+    margin-top: 2em;
+    margin-bottom: 2em;
 }
 
 h2 {
@@ -89,7 +94,7 @@ h2 {
 /* HEADER */
 
 header {
-    display: flex;  /*perche'?*/
+    display: flex;
     justify-content: center;
     align-items: center;
     /*margin-bottom: -1.7em;*/  /*c'e' un altro modo?*/
@@ -1083,18 +1088,6 @@ h1 {
 #storia dt + dd:nth-of-type(odd) {
     grid-column: 1;
 }
-
-/* Special handling for short articles*/
-.short-article + dd {
-    cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-/*
-.short-article + dd:hover {
-    transform: scale(1.05);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-}*/
 
 /* Preview images */
 #storia dd img {

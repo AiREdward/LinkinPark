@@ -14,9 +14,9 @@
 
     <link rel="icon" href="asset/img/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="asset/css/style.css" media="all">
-    <link rel="stylesheet" href="asset/css/stampa.css" media="print">
     <link rel="stylesheet" href="asset/css/login.css" media="screen">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="asset/css/stampa2.css" media="print">
 
 </head>
 

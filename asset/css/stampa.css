@@ -1,12 +1,7 @@
-/*mettere in ogni file: <link href="stampa.css" rel="stylesheet" type="text/css" media="print">  
-mettere media="all" per style.css*/
-
 /*mettere un @import per i font*/
 
 /*aggiungere forse un selettore per tutte le pagine con page-break-... per le intestazioni H2, H3...?
 gestire il colore del testo bene, che non si ripete in piu' posti se non ha senso*/
-
-
 
 /*===== GENERALE =====*/
 :root {
@@ -23,7 +18,7 @@ gestire il colore del testo bene, che non si ripete in piu' posti se non ha sens
 
 main {
     width: 100%;
-    margin-left: 0em;
+    margin-left: 0;
     margin-top: -5em;
 }
 
@@ -62,6 +57,16 @@ header h1::after {
     background-repeat: no-repeat;
     background-position: center;
 } */
+
+/* DA FARE
+header h1 {
+    margin-bottom: 0;
+}*/
+
+/* DA FARE
+#breadcrumb {
+    
+}*/
 
 
 /*===== MENU', FOOTER =====*/
@@ -203,8 +208,8 @@ article[id^="article"] h2 {
 article[id^="article"] p {
     margin: 0.5em 0;
 }
+
+
 /*===== TOUR =====*/
 /*===== MUSICA =====*/
 /*===== SHOP =====*/
-
-/*===== altre paginee =====*/
