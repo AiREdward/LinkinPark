@@ -18,7 +18,15 @@
 
 <body>
     <main>
-        <?php include 'includes/menu.php'; ?>
+
+        <?php
+            $breadcrumb = [
+                ['name' => 'Home', 'url' => 'index.php'],
+                ['name' => 'Tour', 'url' => 'tour.php']
+            ];
+            include 'includes/menu.php'; 
+        ?>
+        
         <h2>Prossimi Eventi del Tour</h2>
 
         <dl id="tour-dates">

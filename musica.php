@@ -17,7 +17,13 @@
 
 <body>
 
-    <?php include 'includes/menu.php'; ?>
+    <?php
+        $breadcrumb = [
+            ['name' => 'Home', 'url' => 'index.php'],
+            ['name' => 'Musica', 'url' => 'musica.php']
+        ];
+        include 'includes/menu.php'; 
+    ?>
 
     <main>
         <h1>Discografia</h1>
@@ -53,7 +59,6 @@
                     </dd>
                 </dl>
             </article>
-
 
             <article class="album">
                 <!-- One More Light -->
@@ -117,7 +122,6 @@
                 </dl>
             </article>
 
-
             <article class="album">
                 <!-- A Thousand Suns -->
                 <h2>A Thousand Suns</h2>
@@ -153,7 +157,6 @@
                 </dl>
             </article>
 
-
             <article class="album">
                 <!-- Minutes to Midnight -->
                 <h2>Minutes to Midnight</h2>
@@ -185,8 +188,6 @@
                     </dd>
                 </dl>
             </article>
-
-
 
             <article class="album">
                 <!-- Meteora -->

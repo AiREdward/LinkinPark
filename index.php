@@ -21,7 +21,13 @@
 
 <body>
 
-    <?php include 'includes/menu.php'; ?>
+    <?php
+        $breadcrumb = [
+            ['name' => 'Home', 'url' => 'index.php']
+        ]; 
+
+        include 'includes/menu.php'; 
+    ?>
 
     <main>
         <h1><span lang="en">Homepage</span></h1>
