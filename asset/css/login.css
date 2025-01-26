@@ -24,6 +24,15 @@ body {
     align-items: center;
 }
 
+a {
+    text-decoration: underline;
+    color: var(--linkcolor);
+}
+
+a:visited {
+    color: var(--visitedcolor);
+}
+
 .main-container {
     display: grid;
     grid-template-columns: 1fr 1.5fr;
@@ -58,14 +67,6 @@ body {
     line-height: 1.6;
     color: var(--bgcolor1);
     margin-bottom: 2rem;
-}
-
-.left-section a {
-    color: var(--linkcolor);
-    font-weight: bold;
-    text-decoration: none;
-    font-size: 1.1rem;
-    transition: color 0.3s ease;
 }
 
 .main-container .right-section form {
