@@ -193,7 +193,7 @@
                             <section>
                                 <h2>10. Contatti e Reclami</h2>
                                 <p>
-                                    Per domande o reclami, contattaci all'indirizzo wishbone@assistenza.it. Se ritieni
+                                    Per domande o reclami, contattaci all'indirizzo linkinpark@assistenza.it. Se ritieni
                                     che i tuoi
                                     diritti siano stati
                                     violati, hai il diritto di rivolgerti al Garante per la protezione dei dati
