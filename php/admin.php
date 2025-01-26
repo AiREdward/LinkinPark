@@ -43,6 +43,46 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         default:
             $response['message'] = "Azione non valida!";
             break;
+
+        //nuovo inizio
+        case 'update_event':
+            $event_id = intval($_POST['id']);
+            $evento = trim($_POST['evento']);
+            $data = trim($_POST['data']);
+            $orario = trim($_POST['orario']);
+            $luogo = trim($_POST['luogo']);
+            $citta = trim($_POST['citta']);
+            $paese = trim($_POST['paese']);
+            $descrizione = trim($_POST['descrizione']);
+            $prezzo = floatval($_POST['prezzo']);
+        
+            $sql = "UPDATE tour SET 
+                    evento = ?, 
+                    data = ?, 
+                    orario = ?, 
+                    luogo = ?, 
+                    citta = ?, 
+                    paese = ?, 
+                    descrizione = ?, 
+                    prezzo = ? 
+                    WHERE id = ?";
+            
+            $stmt = $conn->prepare($sql);
+            $stmt->bind_param("sssssssdi", 
+                $evento, $data, $orario, $luogo, 
+                $citta, $paese, $descrizione, $prezzo, $event_id
+            );
+        
+            if ($stmt->execute()) {
+                $response['success'] = true;
+                $response['message'] = "Evento aggiornato con successo!";
+            } else {
+                $response['success'] = false;
+                $response['message'] = "Errore nell'aggiornamento dell'evento: " . $stmt->error;
+            }
+            $stmt->close();
+            break;
+        //nuovo fine
     }
 
     echo json_encode($response); // Risponde con i dati in formato JSON
