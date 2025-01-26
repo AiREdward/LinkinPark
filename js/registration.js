@@ -10,33 +10,32 @@ function validatePhone() {
     }
 }
 
-// Funzione per aprire il modale
+// Apertura del modale
 function openModal(modalId) {
     const modal = document.getElementById(modalId);
     modal.style.display = "block";
     setTimeout(() => {
         modal.classList.add("show");
-    }, 10);  // Attiva l'animazione con un breve ritardo
+    }, 10);
 }
 
-// Funzione per chiudere il modale con l'animazione
 function closeModal(modalId) {
     const modal = document.getElementById(modalId);
     modal.classList.remove("show");
     setTimeout(() => {
         modal.style.display = "none";
-    }, 300);  // Aspetta la fine dell'animazione prima di nascondere il modale
+    }, 300);
 }
 
-// Funzione per chiudere il modale cliccando fuori dal contenuto
+// Chiudere il modale cliccando fuori
 function closeModalOutside(event, modalId) {
     const modal = document.getElementById(modalId);
-    if (event.target === modal) {  // Controlla se il click è fuori dal contenuto del modale
+    if (event.target === modal) {
         closeModal(modalId);
     }
 }
 
-// Funzione per controllare la forza della password
+// Controllare la forza della password
 function checkPasswordStrength() {
     const password = document.getElementById('password').value;
     const strengthBar = document.getElementById('strength-bar');
@@ -52,7 +51,6 @@ function checkPasswordStrength() {
     // Imposta la larghezza della barra in base alla forza
     strengthBar.style.width = (strength * 25) + '%';
 
-    // Imposta il colore della barra in base alla forza
     if (strength === 1) strengthBar.style.backgroundColor = 'red';
     if (strength === 2) strengthBar.style.backgroundColor = 'orange';
     if (strength === 3) strengthBar.style.backgroundColor = 'yellowgreen';
@@ -61,6 +59,7 @@ function checkPasswordStrength() {
 
 // Convalida i campi del form
 function validateForm() {
+    const username = document.getElementById('username').value.trim();
     const nome = document.getElementById('nome').value.trim();
     const cognome = document.getElementById('cognome').value.trim();
     const email = document.getElementById('email').value.trim();
@@ -74,7 +73,7 @@ function validateForm() {
         return false;
     }
 
-    // Controlla che il telefono sia numerico
+    // Controlla che il telefono sia un numero
     if (!/^\d*$/.test(telefono)) {
         alert("Il campo telefono deve contenere solo caratteri numerici.");
         return false;
@@ -99,32 +98,44 @@ function validateForm() {
         return false;
     }
 
-    // Controlla che la checkbox privacy sia selezionata
+    // Controlla che checkbox privacy sia selezionata
     const privacyCheckbox = document.getElementById('privacy');
     if (!privacyCheckbox.checked) {
         alert("Devi accettare la Privacy Policy.");
         return false;
     }
 
-    // Controlla che la checkbox dei Termini di Servizio sia selezionata
+    // Controlla che checkbox dei Termini di Servizio sia selezionata
     const termsCheckbox = document.getElementById('terms');
     if (!termsCheckbox.checked) {
         alert("Devi accettare i Termini di Servizio.");
         return false;
     }
 
-    return true; // Form valido
+    return true;
 }
 
-// Visualizza il messaggio di errore
-const errorMessage = document.getElementById('error-message');
-const error = params.get('error');
-if (error) {
-    switch (error) {
-        case 'used':
-            errorMessage.textContent = 'Mail già utilizzata. Riprova.';
-            break;
-        default:
-            errorMessage.textContent = 'Si è verificato un errore. Riprova.';
-    }
-}
+const passwordField = document.getElementById('password');
+const togglePassword = document.getElementById('togglePassword');
+
+togglePassword.addEventListener('click', () => {
+    const type = passwordField.type === 'password' ? 'text' : 'password';
+    passwordField.type = type;
+
+    // Cambia l'icona della visibilità della password
+    togglePassword.classList.toggle('fa-eye');
+    togglePassword.classList.toggle('fa-eye-slash');
+});
+
+
+const confermaPassword = document.getElementById('confermaPassword');
+const togglePassworConfirm = document.getElementById('togglePassworConfirm');
+
+togglePassworConfirm.addEventListener('click', () => {
+    const type = confermaPassword.type === 'password' ? 'text' : 'password';
+    confermaPassword.type = type;
+
+    // Cambia l'icona della visibilità della conferma password
+    togglePassworConfirm.classList.toggle('fa-eye');
+    togglePassworConfirm.classList.toggle('fa-eye-slash');
+});

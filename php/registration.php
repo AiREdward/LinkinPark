@@ -2,6 +2,7 @@
 include '../includes/db_config.php';
 
 // Riceve i dati dal form di registrazione
+$username = $_POST['username'];
 $nome = $_POST['nome'];
 $cognome = $_POST['cognome'];
 $email = $_POST['email'];
@@ -15,12 +16,17 @@ $sql = "SELECT * FROM utenti WHERE email = '$email'";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
-    header("Location: ../registrazione.php?error=used");
+    $existing = $result->fetch_assoc();
+    if ($existing['email'] === $email) {
+        header("Location: ../registrazione.php?error=email_used");
+    } elseif ($existing['username'] === $username) {
+        header("Location: ../registrazione.php?error=username_used");
+    }
     exit();
 } else {
     // Inserisci il nuovo utente
-    $sql = "INSERT INTO utenti (nome, cognome, email, password, indirizzo, telefono, data_nascita) 
-            VALUES ('$nome', '$cognome', '$email', '$password', '$indirizzo', '$telefono', '$data_nascita')";
+    $sql = "INSERT INTO utenti (username, nome, cognome, email, password, indirizzo, telefono, data_nascita) 
+            VALUES ('$username', '$nome', '$cognome', '$email', '$password', '$indirizzo', '$telefono', '$data_nascita')";
 
     if ($conn->query($sql) === TRUE) {
         // Ottieni il percorso dinamico della directory principale

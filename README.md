@@ -14,17 +14,20 @@
 ## 🔑 Account di Test
 
 ### 🛠️ **Admin**
+- **Username:** `admin`
 - **Email:** `admin@test`  
-- **Password:** `Admin123?`
+- **Password:** `admin`
 
 ---
 
 ### 👤 **Utente Attivo**
+- **Username:** `user`
 - **Email:** `user@test`  
-- **Password:** `User123?`
+- **Password:** `user`
 
 ---
 
 ### 🚫 **Utente Bloccato**
+- **Username:** `block`
 - **Email:** `block@test`  
 - **Password:** `Block123?`
