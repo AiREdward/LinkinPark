@@ -321,7 +321,96 @@ header h1 {
 
 /* INDEX */
 
+#homeMusic {
+    text-align: center;
+    margin: 40px auto;
+    max-width: 800px;
+}
 
+#homeMusic img {
+    width: 100%;
+    max-width: 600px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+}
+
+#homeMusic p {
+    font-size: 1.2rem;
+    margin-top: 10px;
+}
+
+#homeTour {
+    text-align: center;
+    margin: 40px auto;
+    max-width: 800px;
+}
+
+#homeTour img {
+    width: 100%;
+    max-width: 600px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+}
+
+#homeTour button.link {
+    background-color: var(--pulsantecolor1);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+
+#homeJournal {
+    text-align: center;
+    margin: 40px auto;
+    max-width: 800px;
+}
+
+#homeJournal img {
+    width: 100%;
+    max-width: 600px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+}
+
+#homeJournal button.link {
+    background-color: var(--pulsantecolor1);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+
+@media screen and (max-width: 600px) {
+    #homeMusic img, #homeTour img, #homeJournal img {
+        width: 90%;
+        max-width: none;
+    }
+
+    #homeMusic, #homeTour, #homeJournal {
+        margin: 20px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    #homeMusic p {
+        font-size: 1rem;
+    }
+}
 
 /* ----------------------------------------------- */
 
