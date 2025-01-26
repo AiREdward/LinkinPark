@@ -18,11 +18,11 @@
 </head>
 
 <body>
-<?php
+    <?php
         $breadcrumb = [
             ['name' => 'Home', 'url' => 'index.php'],
             ['name' => 'Shop', 'url' => 'shop.php'],
-            ['name' => 'Pagamento', 'url' => 'pagamento.php'],
+            ['name' => 'Pagamento', 'url' => 'pagamento.php']
         ];
         include 'includes/breadcrumb.php'; 
     ?>

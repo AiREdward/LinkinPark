@@ -113,18 +113,32 @@ function validateForm() {
         return false;
     }
 
-    return true; // Form valido
+    return true;
 }
 
-// Visualizza il messaggio di errore
-const errorMessage = document.getElementById('error-message');
-const error = params.get('error');
-if (error) {
-    switch (error) {
-        case 'used':
-            errorMessage.textContent = 'Mail già utilizzata. Riprova.';
-            break;
-        default:
-            errorMessage.textContent = 'Si è verificato un errore. Riprova.';
-    }
-}
+const passwordField = document.getElementById('password');
+const togglePassword = document.getElementById('togglePassword');
+
+// Evento per alternare la visibilità della password e cambiare icona
+togglePassword.addEventListener('click', () => {
+    const type = passwordField.type === 'password' ? 'text' : 'password';
+    passwordField.type = type;
+
+    // Cambia l'icona in base alla visibilità della password
+    togglePassword.classList.toggle('fa-eye');
+    togglePassword.classList.toggle('fa-eye-slash');
+});
+
+
+const confermaPassword = document.getElementById('confermaPassword');
+const togglePassworConfirm = document.getElementById('togglePassworConfirm');
+
+// Evento per alternare la visibilità della password e cambiare icona
+togglePassworConfirm.addEventListener('click', () => {
+    const type = confermaPassword.type === 'password' ? 'text' : 'password';
+    confermaPassword.type = type;
+
+    // Cambia l'icona in base alla visibilità della password
+    togglePassworConfirm.classList.toggle('fa-eye');
+    togglePassworConfirm.classList.toggle('fa-eye-slash');
+});
