@@ -59,6 +59,7 @@ function checkPasswordStrength() {
 
 // Convalida i campi del form
 function validateForm() {
+    const username = document.getElementById('username').value.trim();
     const nome = document.getElementById('nome').value.trim();
     const cognome = document.getElementById('cognome').value.trim();
     const email = document.getElementById('email').value.trim();

@@ -37,9 +37,8 @@
 
                 <form action="php/login.php" method="post">
                     <div class="input-container full-width">
-                        <label for="email">Email:</label>
-                        <input type="email" id="email" name="email" required placeholder="Inserisci la tua email"
-                            class="input">
+                        <label for="login">Email o Username:</label>
+                        <input type="text" id="login" name="login" required placeholder="Inserisci email o username" class="input">
                     </div>
 
                     <div class="input-container full-width">

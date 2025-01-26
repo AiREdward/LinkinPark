@@ -2,12 +2,12 @@ CREATE DATABASE lp_db;
 
 DROP TABLE IF EXISTS biglietti;
 DROP TABLE IF EXISTS tour;
-DROP TABLE IF EXISTS transazioni;
 DROP TABLE IF EXISTS transazione;
 DROP TABLE IF EXISTS utenti;
 
 CREATE TABLE utenti (
     id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(50) NOT NULL UNIQUE,
     nome VARCHAR(50) NOT NULL,
     cognome VARCHAR(50) NOT NULL,
     email VARCHAR(100) NOT NULL UNIQUE,
@@ -21,11 +21,11 @@ CREATE TABLE utenti (
     data_creazione TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
-INSERT INTO utenti (nome, cognome, email, password, indirizzo, ruolo, stato) 
+INSERT INTO utenti (username, nome, cognome, email, password, indirizzo, ruolo, stato) 
 VALUES 
-    ('admin', 'test', 'admin@test', '$2y$10$fQ2S5rViOrfy9RrcOcUAVuaWgEyaV8KdwqEKGqFLfB0vdphUcyJHO', 'via test', 'admin', 'attivo'),
-    ('utente', 'test', 'user@test', '$2y$10$ZTGUODT.9o6REeHgcYt9tO9OufttUPe6alAfI7VCVSwCTFgXOstAS', 'via test', 'utente', 'attivo'),
-    ('block', 'test', 'block@test', '$2y$10$nx0vjdmO/U8dPT0cWS6M5OydWpdwOcTpRUwlaWCphyF57uzjvUUsS', 'via test', 'utente', 'bloccato');
+    ('admin', 'Admin', 'Test', 'admin@test', '$2y$10$DtD/uFtUSUPSznqliAdVgeX7tflJ62PgUqVvR7tVf1cRkoeERuC3K', 'via test', 'admin', 'attivo'),
+    ('user', 'Utente', 'Test', 'user@test', '$2y$10$qSb11LcmGJXjeDLafimZ1usUsGbs9qsJVxzpea/wi3THeDb0pICoa', 'via test', 'utente', 'attivo'),
+    ('block', 'Block', 'Test', 'block@test', '$2y$10$nx0vjdmO/U8dPT0cWS6M5OydWpdwOcTpRUwlaWCphyF57uzjvUUsS', 'via test', 'utente', 'bloccato');
 
 CREATE TABLE transazione (
     id INT AUTO_INCREMENT PRIMARY KEY,
@@ -81,20 +81,3 @@ VALUES
     ('American Tour', '2025-10-26', '16:30:00', 'Nemesio Camacho El Campín Stadium', 'Bogotá', 'Colombia', 'Un evento memorabile nello stadio di Bogotá.', 60.00),
     ('American Tour', '2025-11-01', '20:00:00', 'Estadio Alberto José Armando', 'Buenos Aires', 'Argentina', 'Buenos Aires ti offre una notte di grande musica.', 70.00),
     ('American Tour', '2025-11-10', '19:30:00', 'Neo Química Arena', 'São Paulo', 'Brasile', 'São Paulo accoglie la band per una performance unica.', 75.00);
-
-CREATE TABLE biglietti (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    utente_id INT NOT NULL,
-    tour_id INT NOT NULL,
-    data_creazione TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (utente_id) REFERENCES utenti(id),
-    FOREIGN KEY (tour_id) REFERENCES tour(id)
-);
-
-INSERT INTO biglietti (utente_id, tour_id)
-VALUES
-    ('2','2'),
-    ('2','3'),
-    ('2','8'),
-    ('2','7'),
-    ('2','4');

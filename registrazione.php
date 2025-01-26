@@ -37,7 +37,12 @@
                 <form action="php/registration.php" method="post" onsubmit="return validateForm()">
                     <div id="error-message" class="error"></div>
 
-                    <div class="input-container full-width">
+                    <div class="input-container">
+                        <label for="username">Username:</label>
+                        <input type="text" id="username" name="username" required placeholder="Inserisci uno username" class="input">
+                    </div>
+
+                    <div class="input-container">
                         <label for="email">Email:</label>
                         <input type="email" id="email" name="email" required placeholder="Inserisci la tua email">
                     </div>
