@@ -6,7 +6,8 @@
     --visitedcolor: #767CA2;
     --shopcardcolor: #CAC5C0;
     --pulsantecolor1: #934458;
-    --visitedcolor: #589344;
+
+    --mainFont: 'Lato', sans-serif;
 }
 
 body {
@@ -15,7 +16,7 @@ body {
     background-color: var(--bgcolor1);
     font-size: 1rem;
     line-height: 1.5em;
-    font-family: 'Lato', sans-serif;
+    font-family: var(--mainFont);
     margin: auto;
     padding-left: 1em;
     padding-right: 1em;
@@ -79,7 +80,6 @@ body {
 
 #cardForm .container .card input {
     width: 100%;
-    font-family: 'Work Sans', sans-serif;
     background: transparent;
     border: none;
     border-bottom: 1px solid #7f8c8d;
