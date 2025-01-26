@@ -43,10 +43,12 @@
         </div>
     </div>
 
+    <button id="cart-hamburger-menu" aria-expanded="false">
+        Carrello<i class="fa-sharp fa-solid fa-cart-shopping"></i>
+    </button>
+
     <div id="container-shop">
-        <button id="cart-hamburger-menu" aria-expanded="false">
-            <i class="fa-sharp fa-solid fa-cart-shopping"></i>
-        </button>
+        
         <section id="shop">
 
             <!-- Sez. Maglie -->

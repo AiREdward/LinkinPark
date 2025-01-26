@@ -220,7 +220,7 @@ header h1 {
     border: none;
     cursor: pointer;
     padding: 0;
-    z-index: 10000;
+    z-index: 1000;
     position: absolute;
     top: 20px;
     right: 20px;
@@ -463,7 +463,7 @@ header h1 {
 }
 
 .album dt:not(:last-of-type) {
-    float: left; /* Move to the left */
+    float: left;
     margin: 0;
     text-align: left;
 }
@@ -487,6 +487,9 @@ header h1 {
 #shop {
     width: 75%;
     justify-content: space-around;
+    overflow-y: auto;
+    border: 2px solid var(--txtcolor);
+    border-radius: 8px;
 }
 
 #container-shop {
@@ -494,28 +497,28 @@ header h1 {
     gap: 20px;
     padding: 20px;
     box-sizing: border-box;
-    height: 224.5vh; /*TODO perchè 400px per 4 righe di carte + gap == 223vh (coi pixel non funziona)*/
-    position: relative; /* Aggiungi questa linea */
+    height: 150vh;
+    position: relative;
 }
 
 #cart-hamburger-menu {
     display: none;
-    width: 50px;
-    height: 50px;
-    background: var(--pulsantecolor2);
+    width: 55%;
+    background-color: var(--bgcolor2);
     border: 2px solid var(--txtcolor);
-    border-radius: 50%;
+    border-radius: 5px;
     cursor: pointer;
-    padding: 0;
-    z-index: 10;
-    position: absolute;
-    top: 20px;
-    right: 20px;
+    padding: 10px;
+    justify-self: center;
+    justify-content: center;
+    color: var(--txtcolor);
+    font-size: 1.5rem;
 }
 
 #cart-hamburger-menu i {
     font-size: 1.5rem;
     color: var(--txtcolor);
+    padding-left: 10px;
 }
 
 #close-cart-btn {
@@ -525,7 +528,7 @@ header h1 {
     right: 10px;
     background: transparent;
     border: none;
-    font-size: 2rem;
+    font-size: 3rem;
     color: var(--txtcolor);
     cursor: pointer;
     z-index: 1001;
@@ -569,6 +572,26 @@ header h1 {
 
     #cart.show {
         display: block;
+    }
+
+    div.cart-item {
+        flex-direction: row;
+    }
+
+    div.cart-item .remove-btn {
+        font-size: 1.8rem;
+    }
+
+    div.cart-item img.cart-item-image {
+        width: 20%;
+    }
+
+    div.cart-item p{
+        padding-right: 10px;
+    }
+
+    div.cart-item p:first-of-type {
+        border-bottom: none;
     }
 }
 
@@ -661,7 +684,7 @@ header h1 {
     float: left;
     background: var(--shopcardcolor);
     color: var(--bgcolor2);
-    border: solid white 2px;
+    border: solid 2px;
     align-items: center;
     justify-content: space-between;
 }
