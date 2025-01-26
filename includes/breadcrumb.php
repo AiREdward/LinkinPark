@@ -1,31 +1,5 @@
-<style>
-    :root{
-        --txtcolor: #EEE0F1;
-    }
-
-    nav[aria-label="breadcrumb"] p {
-        font-size: 16px;
-    }
-
-    nav[aria-label="breadcrumb"] a {
-        text-decoration: none;
-        color: #007bff;
-    }
-
-    nav[aria-label="breadcrumb"] a:hover {
-        text-decoration: underline;
-    }
-
-    nav[aria-label="breadcrumb"] .active {
-        font-weight: bold;
-        color: var(--txtcolor);
-        pointer-events: none;
-        text-decoration: none;
-    }
-</style>
-
 <nav aria-label="breadcrumb">
-    <p>Ti trovi in
+    <p>Ti trovi in:
         <?php
         // Array del percorso: ogni elemento rappresenta una voce della breadcrumb
         $breadcrumb = isset($breadcrumb) ? $breadcrumb : [];
