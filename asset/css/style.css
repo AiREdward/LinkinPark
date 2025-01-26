@@ -776,7 +776,6 @@ header h1 {
     border-radius: 8px;
     flex: 25%;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    font-family: 'Arial', sans-serif;
     box-sizing: border-box;
     overflow-y: auto; /* Ensure scrolling works */    
     max-height:100%;
@@ -1327,7 +1326,6 @@ article[id^="article"] img + img {
 /* ERRORE DI CONNESSIONE */
 
 .errorPage {
-    font-family: Arial, sans-serif;
     text-align: center;
     margin-top: 20%;
 }
