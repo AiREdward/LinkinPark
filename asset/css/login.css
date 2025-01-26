@@ -1,10 +1,5 @@
 :root {
-    --bgcolor1: #0B1520;
-    --bgcolor2: #04060F;
-    --txtcolor: #EEE0F1;
-    --linkcolor: #BC6779;
-    --visitedcolor: #767CA2;
-    --shopcardcolor: #CAC5C0;
+    --visitedLink: #0000AD;
     --input-bg: #1C2733;
     --input-border: #505C6D;
     --error-bg: #472D35;
@@ -30,7 +25,7 @@ a {
 }
 
 a:visited {
-    color: var(--visitedcolor);
+    color: var(--visitedLink);
 }
 
 .main-container {
