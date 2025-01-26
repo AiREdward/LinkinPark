@@ -1,4 +1,8 @@
 <style>
+    :root{
+        --txtcolor: #EEE0F1;
+    }
+
     nav[aria-label="breadcrumb"] p {
         font-size: 16px;
     }
@@ -14,7 +18,7 @@
 
     nav[aria-label="breadcrumb"] .active {
         font-weight: bold;
-        color: #555;
+        color: var(--txtcolor);
         pointer-events: none;
         text-decoration: none;
     }
