@@ -1,7 +1,6 @@
 <style>
     nav[aria-label="breadcrumb"] p {
         font-size: 16px;
-        font-family: Arial, sans-serif;
     }
 
     nav[aria-label="breadcrumb"] a {
