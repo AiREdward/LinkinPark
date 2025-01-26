@@ -1,5 +1,3 @@
-<link rel="stylesheet" href="asset/css/breadcrumb.css" media="all">
-
 <nav aria-label="breadcrumb">
     <p>Ti trovi in:
         <?php

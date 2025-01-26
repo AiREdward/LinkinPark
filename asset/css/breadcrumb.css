@@ -1,5 +1,7 @@
 :root{
     --txtcolor: #EEE0F1;
+    --linkcolor: #BC6779;
+    --visitedcolor: #767CA2;
 }
 
 nav[aria-label="breadcrumb"] p {
@@ -11,4 +13,13 @@ nav[aria-label="breadcrumb"] .active {
     color: var(--txtcolor);
     pointer-events: none;
     text-decoration: none;
+}
+
+a {
+    text-decoration: underline;
+    color: var(--linkcolor);
+}
+
+a:visited {
+    color: var(--visitedcolor);
 }
