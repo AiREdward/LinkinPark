@@ -1,7 +1,6 @@
 /* GENERALE */
 
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
-/*cosa accade con i font se il css non arriva?*/
 
 :root{
     --bgcolor1: #0B1520;
@@ -15,7 +14,6 @@
 
     --mainFont: 'Lato', sans-serif;
 }
-
 
 body {
     max-width: 1024px;
@@ -89,7 +87,6 @@ h2 {
 
 /* ----------------------------------------------- */
 
-
 /* HEADER */
 
 header {
@@ -114,6 +111,38 @@ header h1::after {
 header h1 {
     font-size: 6em;
     margin-top: 0.2em;
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+    }
+
+    header h1 {
+        font-size: 4em;
+    }
+
+    header h1::after {
+        width: 1.1em;
+        height: 1.1em;
+        transform: translateY(10%);
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        flex-direction: column;
+    }
+
+    header h1 {
+        font-size: 3.5em;
+    }
+
+    header h1::after {
+        width: 1em;
+        height: 1em;
+        transform: translateY(5%);
+    }
 }
 
 /* ----------------------------------------------- */
@@ -207,7 +236,6 @@ header h1 {
     color: white;
 }
 
-/* Hamburger Menu Button */
 #hamburger-menu {
     display: none;
     flex-direction: column;
@@ -285,7 +313,6 @@ header h1 {
         display: flex;
     }
 
-    /* Impedisce lo scrolling del body quando il menu è aperto */
     body.menu-open {
         overflow: hidden;
     }
@@ -295,7 +322,96 @@ header h1 {
 
 /* INDEX */
 
+#homeMusic {
+    text-align: center;
+    margin: 40px auto;
+    max-width: 800px;
+}
 
+#homeMusic img {
+    width: 100%;
+    max-width: 600px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+}
+
+#homeMusic p {
+    font-size: 1.2rem;
+    margin-top: 10px;
+}
+
+#homeTour {
+    text-align: center;
+    margin: 40px auto;
+    max-width: 800px;
+}
+
+#homeTour img {
+    width: 100%;
+    max-width: 600px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+}
+
+#homeTour button.link {
+    background-color: var(--pulsantecolor1);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+
+#homeJournal {
+    text-align: center;
+    margin: 40px auto;
+    max-width: 800px;
+}
+
+#homeJournal img {
+    width: 100%;
+    max-width: 600px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+}
+
+#homeJournal button.link {
+    background-color: var(--pulsantecolor1);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+
+@media screen and (max-width: 600px) {
+    #homeMusic img, #homeTour img, #homeJournal img {
+        width: 90%;
+        max-width: none;
+    }
+
+    #homeMusic, #homeTour, #homeJournal {
+        margin: 20px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    #homeMusic p {
+        font-size: 1rem;
+    }
+}
 
 /* ----------------------------------------------- */
 
@@ -330,7 +446,6 @@ header h1 {
     margin-bottom: 0.5em;
     padding: 0.5em;
     background-color: var(--bgcolor2);
-    /*color: var(--txtcolor);*/
     border: 2px solid var(--txtcolor);
     border-radius: 8px;
     box-sizing: border-box;
@@ -371,7 +486,7 @@ header h1 {
 
 /* Card front (image) */
 #integranti dd img, #ex-integranti dd img {
-    object-fit: cover;  /*to specify how an img should be resized to fit its container; the image keeps its aspect ratio and fills the given dimension. It will be clipped to fit*/
+    object-fit: cover;
     background-color: var(--bgcolor2);
     padding: 0.5em;
     overflow: hidden;
@@ -395,14 +510,11 @@ header h1 {
     padding: 1.5em;
     transform: rotateY(180deg);
     overflow-y: auto;
-    /*font-size: 0.9rem;*/
 }
 
 /* ----------------------------------------------- */
 
 /* MUSICA */
-
-
 
 #discografia {
     display: flex;
@@ -443,8 +555,6 @@ header h1 {
 #discografia dl.flipped {
     transform: rotateY(180deg);
 }
-
-
 
 .album h2 {
     text-align: center;
@@ -1204,13 +1314,6 @@ h1 {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/*
-.short-article + dd:hover {
-    transform: scale(1.05);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-}*/
-
-/* Preview images */
 #storia dd img {
     width: 100%;
     height: auto;
@@ -1236,11 +1339,10 @@ h1 {
     color: var(--visitedcolor);
 }
 
-.readMore:hover {   /*serve?*/
+.readMore:hover {
     text-decoration: underline;
 }
 
-/* Popup article styling */
 article[id^="article"] {
     display: none;
     position: fixed;
@@ -1261,7 +1363,6 @@ article[id^="article"].active {
     display: block;
 }
 
-/* Popup overlay */
 .overlay {
     display: none;
     position: fixed;
@@ -1277,7 +1378,6 @@ article[id^="article"].active {
     display: block;
 }
 
-/* Close button */
 .closePopUp {
     position: absolute;
     top: 1em;
@@ -1294,7 +1394,6 @@ article[id^="article"].active {
     color: var(--linkcolor);
 }
 
-/* Article content styling */
 article[id^="article"] img {
     width: 100%;
     max-width: 600px;
@@ -1313,13 +1412,9 @@ article[id^="article"] p {
     margin-bottom: 1em;
 }
 
-/* Add space between multiple images in articles */
 article[id^="article"] img + img {
     margin-top: 1.5em;
 }
-/*====================*/
-
-
 
 /* ----------------------------------------------- */
 

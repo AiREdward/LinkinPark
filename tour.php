@@ -13,6 +13,7 @@
 
     <link rel="icon" href="asset/img/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="asset/css/style.css" media="all">
+    <link rel="stylesheet" href="asset/css/breadcrumb.css" media="all">
     <link rel="stylesheet" href="asset/css/stampa.css" media="print">
 </head>
 
