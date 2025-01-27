@@ -34,7 +34,7 @@
         <!-- grande immagine del gruppo -->
         <div id="homeMusic">
             <!-- immagine ultimo album -->
-            <img src="asset/img/album/From Zero.jpeg" alt="">
+            <img src="asset/img/album/From Zero.webp" alt="">
             <h2>From Zero</h2>
             <!-- <button type="button" class="link" onclick="location.href='music.html'">Scopri di più</button>
             link?? -->
