@@ -35,21 +35,22 @@ CREATE TABLE transazione (
     ccv VARCHAR(4) NOT NULL,
     totale DECIMAL(10, 2) NOT NULL,
     el_acquistati TEXT NOT NULL,
+    quantita INT NOT NULL,
     utente_id INT NOT NULL,
     data_creazione TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (utente_id) REFERENCES utenti(id)
 );
 
-INSERT INTO transazione (n_carta, titolare, ccv, data_scadenza, totale, el_acquistati, utente_id) 
+INSERT INTO transazione (n_carta, titolare, ccv, data_scadenza, totale, el_acquistati, quantita, utente_id) 
 VALUES 
-    ('1234567890123456', 'Lorenzo Chiesa', '123', '2029-12-31', 49.99, 'articolo1, articolo2', 2),
-    ('1122334455667788', 'Mario Retegui', '200', '2030-08-20', 49.99, 'articolo1', 2),
-    ('9876543210987654', 'Andrea Pessina', '300', '2026-01-10', 49.99, 'articolo1, articolo2, articolo2, articolo2', 2),
-    ('0000111122223333', 'Antonio Sanabria', '400', '2024-10-25', 49.99, 'articolo1, articolo2, articolo2', 2),
-    ('9999888877776666', 'Lewis Adams', '500', '2024-03-05', 49.99, 'articolo1', 2),
-    ('5555222233331111', 'Aitana Hernandez', '600', '2024-04-11', 49.99, 'articolo1', 2),
-    ('1234123412341234', 'Didier Okocha', '700', '2024-06-26', 49.99, 'articolo1', 2),
-    ('5656232345451212', 'Morgan Kerr', '800', '2024-06-01', 49.99, 'articolo1', 2);
+    ('1234567890123456', 'Lorenzo Chiesa', '123', '2029-12-31', 110.00, 'Maglia Mercurio, Felpa Urano', 2, 2),
+    ('1122334455667788', 'Mario Retegui', '200', '2030-08-20', 50.00, 'Maglia Mercurio', 1, 2),
+    ('9876543210987654', 'Andrea Pessina', '300', '2026-01-10', 230.00, 'Maglia Mercurio, Felpa Urano, Felpa Urano, Felpa Urano', 4, 2),
+    ('0000111122223333', 'Antonio Sanabria', '400', '2024-10-25', 170.00, 'Maglia Mercurio, Felpa Urano, Felpa Urano', 3, 2),
+    ('9999888877776666', 'Lewis Adams', '500', '2024-03-05', 50.00, 'Maglia Mercurio', 1, 2),
+    ('5555222233331111', 'Aitana Hernandez', '600', '2024-04-11', 50.00, 'Maglia Mercurio', 1, 2),
+    ('1234123412341234', 'Didier Okocha', '700', '2024-06-26', 50.00, 'Maglia Mercurio', 1, 2),
+    ('5656232345451212', 'Morgan Kerr', '800', '2024-06-01', 50.00, 'Maglia Mercurio', 1, 2);
 
 CREATE TABLE tour (
     id INT AUTO_INCREMENT PRIMARY KEY,
