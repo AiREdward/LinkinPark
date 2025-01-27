@@ -33,7 +33,7 @@
             <article class="album">
                 <!-- from zero -->
                 <h2>From Zero</h2>
-                <img src="asset/img/album/From Zero.jpeg" alt="">
+                <img src="asset/img/album/From Zero.webp" alt="">
                 <p>Ascolta su <a href="https://open.spotify.com/album/4R6FV9NSzhPihHR0h4pI93" target="_blank" lang="en">Spotify</a></p>
                 <dl>
                     <dt>Data di pubblicazione</dt> 
@@ -64,7 +64,7 @@
             <article class="album">
                 <!-- One More Light -->
                 <h2>One More Light</h2>
-                <img src="asset/img/album/One More Light.jpeg" alt="">
+                <img src="asset/img/album/One More Light.webp" alt="">
                 <p>Ascolta su <a href="https://open.spotify.com/track/3xXBsjrbG1xQIm1xv1cKOt" target="_blank" lang="en">Spotify</a></p>
                 <dl>
                     <dt>Data di pubblicazione</dt> 
@@ -94,7 +94,7 @@
             <article class="album">
                 <!-- living things -->
                 <h2>Living Things</h2>
-                <img src="asset/img/album/Living Things.jpeg" alt="">
+                <img src="asset/img/album/Living Things.webp" alt="">
                 <p>Ascolta su <a href="https://open.spotify.com/album/4XHIjbhjRmqWlosjj5rqSI" target="_blank" lang="en">Spotify</a></p>
                 <dl>
                     <dt>Data di pubblicazione</dt> 
@@ -126,7 +126,7 @@
             <article class="album">
                 <!-- A Thousand Suns -->
                 <h2>A Thousand Suns</h2>
-                <img src="asset/img/album/A Thousand Suns.jpeg" alt="">
+                <img src="asset/img/album/A Thousand Suns.webp" alt="">
                 <p>Ascolta su <a href="https://open.spotify.com/album/5uvXx5ZQswNRFCdHR521YZ" target="_blank" lang="en">Spotify</a></p>
                 <dl>
                     <dt>Data di pubblicazione</dt> 
@@ -161,7 +161,7 @@
             <article class="album">
                 <!-- Minutes to Midnight -->
                 <h2>Minutes to Midnight</h2>
-                <img src="asset/img/album/Minutes to Midnight.jpeg" alt="">
+                <img src="asset/img/album/Minutes to Midnight.webp" alt="">
                 <p>Ascolta su <a href="https://open.spotify.com/album/2tlTBLz2w52rpGCLBGyGw6" target="_blank" lang="en">Spotify</a></p>
                 <dl>
                     <dt>Data di pubblicazione</dt> 
@@ -193,7 +193,7 @@
             <article class="album">
                 <!-- Meteora -->
                 <h2>Meteora</h2>
-                <img src="asset/img/album/Meteora.jpeg" alt="">
+                <img src="asset/img/album/Meteora.webp" alt="">
                 <p>Ascolta su <a href="https://open.spotify.com/album/4Gfnly5CzMJQqkUFfoHaP3" target="_blank" lang="en">Spotify</a></p>
                 <dl>
                     <dt>Data di pubblicazione</dt> 
@@ -227,7 +227,7 @@
             <article class="album">
                 <!-- Hybrid Theory -->
                 <h2>Hybrid Theory</h2>
-                <img src="asset/img/album/Hybrid Theory.jpeg" alt="">
+                <img src="asset/img/album/Hybrid Theory.webp" alt="">
                 <p>Ascolta su <a href="https://open.spotify.com/album/6PFPjumGRpZnBzqnDci6qJ" target="_blank" lang="en">Spotify</a></p>
                 <dl>
                     <dt>Data di pubblicazione</dt> 
