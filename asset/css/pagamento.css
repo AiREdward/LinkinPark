@@ -143,6 +143,7 @@ body {
     box-shadow: 4px 8px 20px rgba(0, 0, 0, 0.5);
     position: relative;
     color: var(--bgcolor1);
+    margin-bottom: 15px;
 }
 
 /* Sezione ricevuta */
@@ -276,13 +277,14 @@ body {
 button#cancel {
     background-color: var(--pulsantecolor1);
     color: var(--txtcolor);
-    padding: 18px 25px;
+    padding: 18px 30px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 1rem;
-    margin: 2%;
-    width: 96%;
+    font-size: 1.4rem;
+    font-weight: bold;
+    width: 100%;
+    height: auto;
 }
 
 .popup {

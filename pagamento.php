@@ -65,6 +65,10 @@
                         <h3 class="user" id="user-name" aria-live="polite">Nome Cognome</h3>
                     </article>
                 </section>
+
+                <button id="cancel" type="button" onclick="confermaAnnullamento()" aria-label="Annulla pagamento">
+                    Annulla Pagamento
+                </button>
             </div>
 
             <section id="receipt" role="region" aria-labelledby="receipt-section">
@@ -79,10 +83,6 @@
             </section>
             
         </div>
-
-        <button id="cancel" type="button" onclick="confermaAnnullamento()" aria-label="Annulla pagamento">
-            Annulla Pagamento
-        </button>        
 
         <div id="custom-popup" class="popup hidden" role="dialog" aria-labelledby="popup-title" aria-describedby="popup-description">
             <div class="popup-content">
