@@ -93,7 +93,7 @@ document.addEventListener("DOMContentLoaded", function () {
     setRelativeHeight('.left-section', '.receipt');
 });
 
-document.querySelector('.cancel').addEventListener('click', function () {
+document.querySelector('#cancel').addEventListener('click', function () {
     document.getElementById('custom-popup').classList.remove('hidden');
 });
 
