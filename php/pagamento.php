@@ -39,15 +39,17 @@ $el_acquistati = [];
 foreach ($cartItems as $item) {
     $itemTotal = $item['price'] * $item['quantity'];
     $subtotal += $itemTotal;
-    $el_acquistati[] = $item['name'] . "\nQuantità: " . $item['quantity'] . "\nTaglia: " . $item['size'] . "\nPrezzo: €" . number_format($item['price'], 2) . " cad.";
+    $quantita += $item['quantity'];
+    $el_acquistati[] = $item['name'];
+    // $el_acquistati[] = $item['name'] . "\nQuantità: " . $item['quantity'] . "\nTaglia: " . $item['size'] . "\nPrezzo: €" . number_format($item['price'], 2) . " cad.";
 }
 
 $el_acquistati_str = implode("\n\n", $el_acquistati);
 
 // Inserisci i dati nel database
-$sql = "INSERT INTO transazione (n_carta, titolare, data_scadenza, ccv, totale, el_acquistati, utente_id) VALUES (?, ?, ?, ?, ?, ?, ?)";
+$sql = "INSERT INTO transazione (n_carta, titolare, data_scadenza, ccv, totale, el_acquistati, quantita, utente_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
 $stmt = $conn->prepare($sql);
-$stmt->bind_param("ssssiss", $n_carta, $nome, $data_scadenza, $ccv, $subtotal, $el_acquistati_str, $utente_id);
+$stmt->bind_param("ssssdsis", $n_carta, $nome, $data_scadenza, $ccv, $subtotal, $el_acquistati_str, $quantita, $utente_id);
 
 if ($stmt->execute()) {
     // Ottieni il percorso dinamico della directory principale
