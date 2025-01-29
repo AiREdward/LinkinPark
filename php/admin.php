@@ -58,6 +58,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             break;
 
         case 'add_event':
+            // Recupero dati dal POST
             $evento = trim($_POST['evento']);
             $data = trim($_POST['data']);
             $orario = trim($_POST['orario']);
@@ -66,17 +67,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $paese = trim($_POST['paese']);
             $descrizione = trim($_POST['descrizione']);
             $prezzo = floatval($_POST['prezzo']);
-        
-            $result = addEvent($conn, $evento, $data, $orario, $luogo, $citta, $paese, $descrizione, $prezzo);
             
-            if ($result === true) {
-                $response['success'] = true;
-                $response['message'] = "Evento aggiunto con successo!";
-            } else {
-                $response['success'] = false;
-                $response['message'] = "Errore nell'aggiunta dell'evento: " . $result;
-            }
-            break;
+            // Chiamiamo la funzione per aggiungere l'evento
+            $response['message'] = addEvent($conn, $evento, $data, $orario, $luogo, $citta, $paese, $descrizione, $prezzo);
+            break;    
 
         default:
             $response['message'] = "Azione non valida!";

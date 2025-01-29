@@ -118,44 +118,31 @@ function getTransactionStats($conn) {
 }
 
 function addEvent($conn, $evento, $data, $orario, $luogo, $citta, $paese, $descrizione, $prezzo) {
-    // Validazione data
-    if (!preg_match('/^\d{4}-\d{2}-\d{2}$/', $data)) {
-        return 'Formato data non valido';
+    // Validazioni
+    if (empty($evento) || empty($data) || empty($orario) || empty($luogo) || empty($citta) || empty($paese) || empty($descrizione)) {
+        return "Tutti i campi sono obbligatori!";
     }
-    
-    // Validazione orario
-    if (!preg_match('/^([01]?[0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]$/', $orario)) {
-        return 'Formato orario non valido';
+
+    if (!strtotime($data)) {
+        return "Formato data non valido!";
     }
-    
-    // Validazione prezzo
-    if (!is_numeric($prezzo) || $prezzo <= 0) {
-        return 'Prezzo non valido';
+
+    if (!strtotime($orario)) {
+        return "Formato orario non valido!";
     }
-    
-    $sql = "INSERT INTO tour (evento, data, orario, luogo, citta, paese, descrizione, prezzo) 
-            VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
-            
-    $stmt = $conn->prepare($sql);
-    if (!$stmt) {
-        return $conn->error;
+
+    if ($prezzo < 0) {
+        return "Il prezzo non può essere negativo!";
     }
-    
-    $stmt->bind_param("sssssssd", 
-        $evento,
-        $data,
-        $orario,
-        $luogo,
-        $citta,
-        $paese,
-        $descrizione,
-        $prezzo
-    );
-    
+
+    // Query per l'inserimento dell'evento
+    $stmt = $conn->prepare("INSERT INTO tour (evento, data, orario, luogo, citta, paese, descrizione, prezzo) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
+    $stmt->bind_param("sssssssd", $evento, $data, $orario, $luogo, $citta, $paese, $descrizione, $prezzo);
+
     if ($stmt->execute()) {
-        return true;
+        return "Evento aggiunto con successo!";
     } else {
-        return $stmt->error;
+        return "Errore nell'aggiunta dell'evento: " . $stmt->error;
     }
 }
 
