@@ -94,7 +94,7 @@
 
     </form>
 
-    <script src="js/payment.js"></script>
+    <script src="js/pagamento.js"></script>
 
 </body>
 
