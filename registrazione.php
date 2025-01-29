@@ -23,8 +23,6 @@
 <body>
     <main>
 
-        <?php include 'includes/breadcrumb.php'; ?>
-
         <div class="main-container">
             <!-- Left Section -->
             <div class="left-section">
@@ -39,7 +37,12 @@
                 <form action="php/registration.php" method="post" onsubmit="return validateForm()">
                     <div id="error-message" class="error"></div>
 
-                    <div class="input-container full-width">
+                    <div class="input-container">
+                        <label for="username">Username:</label>
+                        <input type="text" id="username" name="username" required placeholder="Inserisci uno username" class="input">
+                    </div>
+
+                    <div class="input-container">
                         <label for="email">Email:</label>
                         <input type="email" id="email" name="email" required placeholder="Inserisci la tua email">
                     </div>
@@ -47,16 +50,18 @@
                     <div class="input-container full-width">
                         <label for="password">Password:</label>
                         <input type="password" id="password" name="password" required
-                            placeholder="Inserisci la tua password" oninput="checkPasswordStrength()">
+                            placeholder="Inserisci la tua password" class="input-with-icon" oninput="checkPasswordStrength()">
+                        <i id="togglePassword" class="fa-solid fa-eye icon-right"></i>
                         <div class="password-strength">
                             <div id="strength-bar"></div>
                         </div>
                     </div>
 
                     <div class="input-container full-width">
-                        <label for="conferma-password">Conferma Password:</label>
-                        <input type="password" id="conferma-password" name="conferma-password" required
-                            placeholder="Conferma la tua password">
+                        <label for="confermaPassword">Conferma Password:</label>
+                        <input type="password" id="confermaPassword" name="confermaPassword" required
+                            placeholder="Conferma la tua password" class="input-with-icon">
+                        <i id="togglePassworConfirm" class="fa-solid fa-eye icon-right"></i>
                     </div>
 
                     <div class="input-container">
@@ -193,7 +198,7 @@
                             <section>
                                 <h2>10. Contatti e Reclami</h2>
                                 <p>
-                                    Per domande o reclami, contattaci all'indirizzo wishbone@assistenza.it. Se ritieni
+                                    Per domande o reclami, contattaci all'indirizzo linkinpark@assistenza.it. Se ritieni
                                     che i tuoi
                                     diritti siano stati
                                     violati, hai il diritto di rivolgerti al Garante per la protezione dei dati

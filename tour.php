@@ -13,12 +13,21 @@
 
     <link rel="icon" href="asset/img/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="asset/css/style.css" media="all">
+    <link rel="stylesheet" href="asset/css/breadcrumb.css" media="all">
     <link rel="stylesheet" href="asset/css/stampa.css" media="print">
 </head>
 
 <body>
     <main>
-        <?php include 'includes/menu.php'; ?>
+
+        <?php
+            $breadcrumb = [
+                ['name' => 'Home', 'url' => 'index.php'],
+                ['name' => 'Tour', 'url' => 'tour.php']
+            ];
+            include 'includes/menu.php'; 
+        ?>
+        
         <h2>Prossimi Eventi del Tour</h2>
 
         <dl id="tour-dates">

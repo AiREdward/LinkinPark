@@ -25,7 +25,7 @@ main {
 body {  /*o body *? */
     background-color: #fff;
     color: var(--txtColor);
-    font-family: "Times New Roman", Times, serif;
+    font-family: "Times New Roman", Times, serif; /* è diverso perchè times new roman ha le grazie */
     font-size: 12pt;
     line-height: 18pt;   /*verificare*/
 }

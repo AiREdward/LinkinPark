@@ -52,7 +52,7 @@ function loadCart() {
     })
         .then(response => response.text())
         .then(data => {
-            //console.log('Response from loadCart:', data);
+            console.log('Response from loadCart:', data);
             const cartItemsElement = document.getElementById('cart-items');
             if (cartItemsElement) {
                 cartItemsElement.innerHTML = data;
@@ -138,7 +138,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.add-to-cart-btn').forEach(button => {
         button.addEventListener('click', event => {
             const card = event.target.closest('.card');
-            const itemName = card.querySelector('h3').textContent;
+            const itemName = card.querySelector('h2').textContent;
             const itemPrice = parseFloat(card.querySelector('.price').textContent.replace('€', '').replace(',', '.'));
             const quantity = parseInt(card.querySelector('.quantity-input').value, 10);
             const itemImage = card.querySelector('img').src;
@@ -169,4 +169,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Initial check to hide buttons if cart is empty
     updateSubtotal();
+
+    // Hamburger menu toggle
+    const cartHamburgerMenu = document.getElementById('cart-hamburger-menu');
+    const cart = document.getElementById('cart');
+    cartHamburgerMenu.addEventListener('click', () => {
+        const expanded = cartHamburgerMenu.getAttribute('aria-expanded') === 'true' || false;
+        cartHamburgerMenu.setAttribute('aria-expanded', !expanded);
+        cart.classList.toggle('show');
+        document.body.classList.toggle('no-scroll', !expanded);
+    });
+
+    // Close cart button
+    const closeCartBtn = document.getElementById('close-cart-btn');
+    closeCartBtn.addEventListener('click', () => {
+        cartHamburgerMenu.setAttribute('aria-expanded', 'false');
+        cart.classList.remove('show');
+        document.body.classList.remove('no-scroll');
+    });
 });

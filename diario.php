@@ -12,6 +12,7 @@
     <meta name="viewport" content="width=device-width">
 
     <link rel="stylesheet" href="asset/css/style.css" media="all">
+    <link rel="stylesheet" href="asset/css/breadcrumb.css" media="all">
     <link rel="stylesheet" href="asset/css/stampa.css" media="print">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="icon" href="asset/img/favicon.ico" type="image/x-icon">
@@ -24,7 +25,13 @@
 
 <body>
 
-    <?php include 'includes/menu.php'; ?>
+    <?php
+        $breadcrumb = [
+            ['name' => 'Home', 'url' => 'index.php'],
+            ['name' => 'Diario', 'url' => 'diario.php']
+        ];
+        include 'includes/menu.php'; 
+    ?>
 
     <main>
         <h1><span lang="en">Linkin Park</span>: Il Nostro Viaggio</h1>

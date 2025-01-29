@@ -9,13 +9,20 @@
         <meta name="viewport" content="width=device-width">
 
         <link rel="stylesheet" href="asset/css/style.css" media="all">
+        <link rel="stylesheet" href="asset/css/breadcrumb.css" media="all">
         <link rel="stylesheet" href="asset/css/stampa.css" media="print">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="icon" href="asset/img/favicon.ico" type="image/x-icon">
     </head>
     <body>
 
-        <?php include 'includes/menu.php'; ?>
+    <?php
+        $breadcrumb = [
+            ['name' => 'Home', 'url' => 'index.php'],
+            ['name' => 'Chi Siamo', 'url' => 'chisiamo.php']
+        ];
+        include 'includes/menu.php'; 
+    ?>
         
         <main>
         <h1>Chi siamo</h1>
