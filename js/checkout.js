@@ -4,10 +4,10 @@ async function handleCheckout() {
 
     if (isLoggedIn) {
         // Utente loggato: vai direttamente alla pagina di acquisto
-        window.location.href = `pagamento.html`;
+        window.location.href = `pagamento.php`;
     } else {
         // Utente non loggato: reindirizza alla pagina di login con redirect alla pagina di acquisto
-        const redirectUrl = encodeURIComponent(`pagamento.html`);
+        const redirectUrl = encodeURIComponent(`pagamento.php`);
         window.location.href = `accedi.php?redirect=${redirectUrl}`;
     }
 }
