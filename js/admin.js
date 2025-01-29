@@ -9,19 +9,23 @@ function updatePageTitle(title) {
 
 // Gestisci il click sui bottoni del menu
 document.getElementById('userManagementBtn').addEventListener('click', function () {
-    document.getElementById('userManagement').style.display = 'block';
     document.getElementById('vendite').style.display = 'none';
+    document.getElementById('tour').style.display = 'none';
+    document.getElementById('userManagement').style.display = 'block';
     updatePageTitle('Gestione Utenti');
 });
 
 document.getElementById('dateTourBtn').addEventListener('click', function () {
+    console.log("cliccato il pulsante Tour"); /*da cancellare*/
     document.getElementById('userManagement').style.display = 'none';
+    document.getElementById('vendite').style.display = 'none';
     document.getElementById('tour').style.display = 'block';
     updatePageTitle('Gestione Tour');
 });
 
 document.getElementById('venditeBtn').addEventListener('click', function () {
     document.getElementById('userManagement').style.display = 'none';
+    document.getElementById('tour').style.display = 'none';
     document.getElementById('vendite').style.display = 'block';
     updatePageTitle('Statistiche');
 
@@ -59,7 +63,7 @@ document.getElementById('email').addEventListener('keydown', function (e) {
     }
 });
 
-/*nuovo*/
+// Gestisci la ricerca dell'evento
 const searchForm2 = document.getElementById('searchForm2');
 searchForm2.addEventListener('submit', function (e) {
     e.preventDefault();
@@ -70,7 +74,7 @@ searchForm2.addEventListener('submit', function (e) {
 document.getElementById('search2').addEventListener('keydown', function (e) {
     if (e.key === 'Enter') {
         e.preventDefault();
-        searchEvent();       // era: searchDate();
+        searchEvent();
     }
 });
 
@@ -80,14 +84,13 @@ function searchEvent() {
     console.log(date);
 
 
-
     fetch('../php/admin.php', {
         method: 'POST',
         body: new URLSearchParams({ action: 'find_event', date: date })
     })
         .then(response => response.json())
         .then(data => {
-            const resultDiv = document.getElementById('result2');
+            const resultDiv = document.getElementById('result3');
             resultDiv.innerHTML = '';
 
             console.log(data);
@@ -101,24 +104,6 @@ function searchEvent() {
 
             }
             if (data.event) {
-                console.log("event found");
-                console.log(data.event.data);
-
-                /*
-                const event = data.event;
-                resultDiv.innerHTML += `
-                    <div>
-                        <h3>Informazioni Evento</h3>
-                        <p><strong>Evento:</strong> ${event.evento}</p>
-                        <p><strong>Data:</strong> ${event.data}</p>
-                        <p><strong>Orario:</strong> ${event.orario}</p>
-                        <p><strong>Luogo:</strong> ${event.luogo}</p>
-                        <p><strong>Città:</strong> ${event.citta}</p>
-                        <p><strong>Paese:</strong> ${event.paese}</p>
-                        <p><strong>Descrizione:</strong> ${event.descrizione}</p>
-                        <p><strong>Prezzo:</strong> ${event.prezzo}</p>
-                `;*/
-
                 currentEventData = data.event;
                 selectButton('eventInfoBtn');
                 displayEventInfo();
@@ -128,18 +113,17 @@ function searchEvent() {
 }
 
 function selectButton(buttonId) {
-    // Remove selected class from all buttons
-    ['eventInfoBtn', 'eventUpdateBtn', 'deleteEventBtn'].forEach(id => {
+    ['eventInfoBtn', 'eventUpdateBtn', 'deleteEventBtn', 'addEventBtn'].forEach(id => {
         document.getElementById(id).classList.remove('selected');
     });
-    // Add selected class to clicked button
+
     document.getElementById(buttonId).classList.add('selected');
 }
 
 function displayEventInfo() {
     if (!currentEventData) return;
 
-    const resultDiv = document.getElementById('result2');
+    const resultDiv = document.getElementById('result3');
     resultDiv.innerHTML = `
         <div>
             <h3>Informazioni Evento</h3>
@@ -155,8 +139,149 @@ function displayEventInfo() {
     `;
 }
 
+
+function displayEventUpdate() {
+    if (!currentEventData) return;
+
+    const resultDiv = document.getElementById('result3');
+    resultDiv.innerHTML = `
+        <div>
+            <h3>Aggiorna Evento</h3>
+            <form id="updateEventForm">
+                <input type="hidden" id="id" name="id" value="${currentEventData.id}">
+                <div class="input-container">
+                    <label for="evento">Evento:</label>
+                    <input type="text" id="evento" name="evento" value="${currentEventData.evento}" required>
+                </div>
+                <div class="input-container">
+                    <label for="data">Data:</label>
+                    <input type="date" id="data" name="data" value="${currentEventData.data}" required>
+                </div>
+                <div class="input-container">
+                    <label for="orario">Orario:</label>
+                    <input type="time" id="orario" name="orario" value="${currentEventData.orario}" required>
+                </div>
+                <div class="input-container">
+                    <label for="luogo">Luogo:</label>
+                    <input type="text" id="luogo" name="luogo" value="${currentEventData.luogo}" required>
+                </div>
+                <div class="input-container">
+                    <label for="citta">Città:</label>
+                    <input type="text" id="citta" name="citta" value="${currentEventData.citta}" required>
+                </div>
+                <div class="input-container">
+                    <label for="paese">Paese:</label>
+                    <input type="text" id="paese" name="paese" value="${currentEventData.paese}" required>
+                </div>
+                <div class="input-container">
+                    <label for="descrizione">Descrizione:</label>
+                    <textarea id="descrizione" name="descrizione" required>${currentEventData.descrizione}</textarea>
+                </div>
+                <div class="input-container">
+                    <label for="prezzo">Prezzo:</label>
+                    <input type="number" id="prezzo" name="prezzo" step="0.01" value="${currentEventData.prezzo}" required>
+                </div>
+                <button type="submit" id="submitUpdateBtn">Salva Modifiche</button>
+            </form>
+        </div>
+    `;
+
+    document.getElementById('updateEventForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        const formData = new FormData(this);
+        const updatedEventData = Object.fromEntries(formData.entries());
+        
+        fetch('php/update_event.php', {
+            method: 'POST',
+            body: new FormData(this)
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                alert('Evento aggiornato con successo!');
+            } else {
+                alert('Errore nell\'aggiornamento dell\'evento');
+            }
+        })
+        .catch(error => {
+            console.error('Errore:', error);
+            alert('Errore: Impossibile aggiornare l\'evento. Verifica la tua connessione o riprova più tardi.');
+        });
+    });
+}
+
+function displayAddEvent() {
+    const resultDiv = document.getElementById('result2');
+    resultDiv.innerHTML = `
+        <form id="addEventForm">        
+            <label for="evento">Evento:</label>
+            <input type="text" id="evento" name="evento" required>
+        
+            <label for="data">Data:</label>
+            <input type="date" id="data" name="data" required>
+        
+            <label for="orario">Orario:</label>
+            <input type="time" id="orario" name="orario" required>
+        
+            <label for="luogo">Luogo:</label>
+            <input type="text" id="luogo" name="luogo" required>
+        
+            <label for="citta">Citta':</label>
+            <input type="text" id="citta" name="citta" required>
+        
+            <label for="paese">Paese:</label>
+            <input type="text" id="paese" name="paese" required>
+        
+            <label for="descrizione">Descrizione:</label>
+            <textarea id="descrizione" name="descrizione" required></textarea>
+        
+            <label for="prezzo">Prezzo:</label>
+            <input type="number" id="prezzo" name="prezzo" required>
+        
+            <button type="submit">Salva Evento</button>
+        </form>
+    `;
+
+    document.getElementById('addEventForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const formData = new FormData(this);
+        
+        fetch('../php/admin.php', {
+            method: 'POST',
+            body: new URLSearchParams({
+                action: 'add_event',
+                ...Object.fromEntries(formData)
+            })
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                alert('Evento aggiunto con successo!');
+                this.reset();
+            } else {
+                alert('Errore nell\'aggiunta dell\'evento');
+            }
+        })
+        .catch(error => {
+            console.error('Errore:', error);
+            alert('Errore: Impossibile aggiungere l\'evento. Verifica la tua connessione o riprova più tardi.');
+        });
+    });
+}
+
+
+//Gestisci il click sui pulsanti della sezione Tour
+document.getElementById('addEventBtn').addEventListener('click', function () {
+    selectButton('addEventBtn');
+    document.getElementById('result3').innerHTML = '';
+    displayAddEvent();
+});
+
 document.getElementById('eventInfoBtn').addEventListener('click', function () {
     if (currentEventData) {
+        document.getElementById('result2').innerHTML = '';
         selectButton('eventInfoBtn');
         displayEventInfo();
     }
@@ -164,17 +289,27 @@ document.getElementById('eventInfoBtn').addEventListener('click', function () {
 
 document.getElementById('eventUpdateBtn').addEventListener('click', function () {
     if (currentEventData) {
+        document.getElementById('result2').innerHTML = '';
         selectButton('eventUpdateBtn');
-        // Add your update event logic here
+        displayEventUpdate();
     }
 });
 
 document.getElementById('deleteEventBtn').addEventListener('click', function () {
     if (currentEventData) {
+        document.getElementById('result2').innerHTML = '';
         selectButton('deleteEventBtn');
-        // Add your delete event logic here
+        
+        const resultDiv = document.getElementById('result3');
+        resultDiv.innerHTML = `
+            <p>Sei sicuro di voler cancellare l'evento a ${currentEventData.citta} nella data di ${currentEventData.data}? Questa azione è irreversibile.</p>
+
+            <button id="confirmationBtn">Confermo</button>
+        `;
+        //aggiungere l'event listener per il pulsante che cancella l'evento dalla db
     }
-});  //fine
+});
+
 
 function searchUser() {
     const email = document.getElementById('email').value;

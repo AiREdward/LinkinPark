@@ -40,6 +40,44 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             }
             break;
 
+        case 'update_event':
+            $event_id = intval($_POST['id']);
+            $evento = trim($_POST['evento']);
+            $data = trim($_POST['data']);
+            $orario = trim($_POST['orario']);
+            $luogo = trim($_POST['luogo']);
+            $citta = trim($_POST['citta']);
+            $paese = trim($_POST['paese']);
+            $descrizione = trim($_POST['descrizione']);
+            $prezzo = floatval($_POST['prezzo']);
+            $response['message'] = updateEvent($conn, $event_id, $evento, $data, $orario, $luogo, $citta, $paese, $descrizione, $prezzo);
+            $response['debug'] = 'This is a debug message from PHP';
+            if (!$response['message']) {
+                $response['message'] = 'Nessuna modifica effettuata.';
+            } 
+            break;
+
+        case 'add_event':
+            $evento = trim($_POST['evento']);
+            $data = trim($_POST['data']);
+            $orario = trim($_POST['orario']);
+            $luogo = trim($_POST['luogo']);
+            $citta = trim($_POST['citta']);
+            $paese = trim($_POST['paese']);
+            $descrizione = trim($_POST['descrizione']);
+            $prezzo = floatval($_POST['prezzo']);
+        
+            $result = addEvent($conn, $evento, $data, $orario, $luogo, $citta, $paese, $descrizione, $prezzo);
+            
+            if ($result === true) {
+                $response['success'] = true;
+                $response['message'] = "Evento aggiunto con successo!";
+            } else {
+                $response['success'] = false;
+                $response['message'] = "Errore nell'aggiunta dell'evento: " . $result;
+            }
+            break;
+
         default:
             $response['message'] = "Azione non valida!";
             break;

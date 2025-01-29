@@ -13,7 +13,7 @@
 
     <style>
         body {
-            font-family: 'Lato', sans-serif;
+            font-family: Arial, sans-serif;
             margin: 0;
             display: flex;
             height: 100vh;
@@ -259,12 +259,10 @@
             <!-- Tour -->
             <div id="tour">
 
-                <button>Aggiungi Evento</button>
+                <button id="addEventBtn">Aggiungi Evento</button>
 
-                <!--The action attribute specifies where to send the form-data when a form is submitted.
-                The method attribute specifies how to send form-data (the form-data is sent to the page specified in the action attribute).
-                The form-data can be sent as URL variables (with method="get") or as HTTP post transaction (with method="post").
-                -->
+                <div id="result2"></div>
+
                 <form id="searchForm2" action="" method="GET">
                     <label for="search2">Cerca evento per data:</label>
                     <input 
@@ -275,20 +273,19 @@
                         placeholder="Scrivere nel formato: AAAA-MM-GG" 
                         pattern="\d{4}-\d{2}-\d{2}"
                     
-                        required> <!--o class="search" se cambiamo da id="searchForm" a class="search" del primo form (barra di ricerca per utente) -->
-                        <!--o metto type="date"?-->
+                        required>
                     <button type="submit">Cerca</button>
                 </form>
 
-                <div>    <!--buttons are better suited to <div> container (than to lists) -->
+                <div>
                     <button id="eventInfoBtn">Informazioni Evento</button>
                     <button id="eventUpdateBtn">Aggiorna Evento</button>
                     <button id="deleteEventBtn">Cancella Evento</button>
                 </div>
+
+                <div id="result3"></div>
             </div>
 
-            <div id="result2"></div>
-            
         </div>
     </div>
 

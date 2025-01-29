@@ -14,6 +14,20 @@ function updateUser($conn, $user_id, $role, $status) {
     }
 }
 
+function updateEvent($conn, $event_id, $evento, $data, $orario, $luogo, $citta, $paese, $descrizione, $prezzo) {
+    $stmt = $conn->prepare("UPDATE tour SET evento = ?, data = ?, orario = ?, luogo = ?, citta = ?, paese = ?, descrizione = ?, prezzo = ? WHERE id = ?");
+
+    $stmt->bind_param("sssssssdi", $evento, $data, $orario, $luogo, $citta, $paese, $descrizione, $prezzo, $event_id);
+
+    if ($stmt->execute()) {
+        echo '<script>console.log("Debugging message from PHP");</script>';
+        return "Evento aggiornato con successo!";
+    } else {
+        echo '<script>console.log("Debugging message from PHP");</script>';
+        return "Errore nell'aggiornamento dell'evento: " . $conn->error;
+    }
+}
+
 /**
  * Cerca un utente per email
  */
@@ -102,5 +116,48 @@ function getTransactionStats($conn) {
 
     return $stats;
 }
+
+function addEvent($conn, $evento, $data, $orario, $luogo, $citta, $paese, $descrizione, $prezzo) {
+    // Validazione data
+    if (!preg_match('/^\d{4}-\d{2}-\d{2}$/', $data)) {
+        return 'Formato data non valido';
+    }
+    
+    // Validazione orario
+    if (!preg_match('/^([01]?[0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]$/', $orario)) {
+        return 'Formato orario non valido';
+    }
+    
+    // Validazione prezzo
+    if (!is_numeric($prezzo) || $prezzo <= 0) {
+        return 'Prezzo non valido';
+    }
+    
+    $sql = "INSERT INTO tour (evento, data, orario, luogo, citta, paese, descrizione, prezzo) 
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+            
+    $stmt = $conn->prepare($sql);
+    if (!$stmt) {
+        return $conn->error;
+    }
+    
+    $stmt->bind_param("sssssssd", 
+        $evento,
+        $data,
+        $orario,
+        $luogo,
+        $citta,
+        $paese,
+        $descrizione,
+        $prezzo
+    );
+    
+    if ($stmt->execute()) {
+        return true;
+    } else {
+        return $stmt->error;
+    }
+}
+
 
 ?>
