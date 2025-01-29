@@ -34,10 +34,6 @@
                 <section id="card" aria-labelledby="card-section">
                     <h2 id="card-section">Dettagli della Carta</h2>
 
-                    <button id="proceed" type="submit" aria-label="Procedi al pagamento">
-                        <p class="confirmation">Conferma Acquisto</p>
-                    </button>
-
                     <i class="fa-solid fa-building-columns" aria-hidden="true"></i>
 
                     <label for="n_carta">Numero della carta:</label>
@@ -52,8 +48,11 @@
                     <input type="date" id="data_scadenza" name="data_scadenza" required aria-required="true">
 
                     <label for="ccv" class="toleft">CCV (codice di sicurezza):</label>
-                    <input id="ccv" class="input toleft" name="ccv" placeholder="321" maxlength="4" required
-                        aria-required="true">
+                    <input id="ccv" class="input toleft" name="ccv" placeholder="321" maxlength="4" required aria-required="true">
+
+                    <button id="proceed" type="submit" aria-label="Procedi al pagamento">
+                        <p class="confirmation">Conferma Acquisto</p>
+                    </button>
                 </section>
 
                 <section id="data" role="region" aria-labelledby="data-section">
