@@ -78,21 +78,6 @@ document.getElementById('cardForm').addEventListener('submit', function (event) 
     }
 });
 
-// Controllo dell'altezza dello scontrino
-function setRelativeHeight(referenceSelector, targetSelector) {
-    var referenceElement = document.querySelector(referenceSelector);
-    var targetElement = document.querySelector(targetSelector);
-
-    if (referenceElement && targetElement) {
-        var referenceHeight = referenceElement.offsetHeight;
-        targetElement.style.height = referenceHeight + 'px';
-    }
-}
-
-document.addEventListener("DOMContentLoaded", function () {
-    setRelativeHeight('.left-section', '.receipt');
-});
-
 document.querySelector('#cancel').addEventListener('click', function () {
     document.getElementById('custom-popup').classList.remove('hidden');
 });
