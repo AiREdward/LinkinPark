@@ -45,10 +45,8 @@ a {
 }
 
 .left-section p:nth-of-type(2),
-.left-section p:nth-of-type(3) {
-    display: none;
-}
-
+.left-section p:nth-of-type(3),
+.left-section p:nth-of-type(4),
 .input-container:nth-child(10),
 .input-container:nth-child(11) {
     display: none;

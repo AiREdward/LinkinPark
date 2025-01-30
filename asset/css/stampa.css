@@ -165,7 +165,6 @@ h2 {
     transition: none;
 }
 
-/* Reset popup-related styles */
 article[id^="article"] {
     display: block;
     position: static;
@@ -213,3 +212,7 @@ article[id^="article"] p {
 /*===== TOUR =====*/
 /*===== MUSICA =====*/
 /*===== SHOP =====*/
+
+/*===== PAGAMENTO =====*/
+
+
