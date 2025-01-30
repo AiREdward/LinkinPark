@@ -146,5 +146,26 @@ function addEvent($conn, $evento, $data, $orario, $luogo, $citta, $paese, $descr
     }
 }
 
+function removeEvent($conn, $evento, $data, $orario, $luogo, $citta, $paese) {
+    $sql = "DELETE FROM tour WHERE evento = ? AND data = ? AND orario = ? AND luogo = ? AND citta = ? AND paese = ?";
+    $stmt = $conn->prepare($sql);
+
+    if (!$stmt) {
+        return "Failed to prepare statement: " . $conn->error;
+    }
+
+    $stmt->bind_param("ssssss", $evento, $data, $orario, $luogo, $citta, $paese);
+
+    if ($stmt->execute()) {
+        if ($stmt->affected_rows > 0) {
+            return "Record deleted successfully.";
+        } else {
+            return "No matching record found.";
+        }
+    } else {
+        return "Failed to delete record: " . $stmt->error;
+    }
+}
+
 
 ?>

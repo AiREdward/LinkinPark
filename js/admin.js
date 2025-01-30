@@ -2,17 +2,26 @@
 
 let currentEventData = null;
 
-// Cambia il titolo della pagina in base al contenuto attivo
-function updatePageTitle(title) {
-    document.getElementById('pageTitle').textContent = title;
-}
+document.getElementById('vendite').style.display = 'none';
+document.getElementById('tour').style.display = 'none';
+document.getElementById('userManagement').style.display = 'block';
+document.getElementById('eventOptions').style.display = 'none';
+
+document.getElementById('addEventBtn').addEventListener('click', function () {
+    document.getElementById('searchForm2').style.display = 'none';
+});
+
+document.getElementById('cancelBtn').addEventListener('click', function () {
+    document.getElementById('result2').style.display = 'none';
+    document.getElementById('result3').style.display = 'none';
+    document.getElementById('eventOptions').style.display = 'none';
+});
 
 // Gestisci il click sui bottoni del menu
 document.getElementById('userManagementBtn').addEventListener('click', function () {
     document.getElementById('vendite').style.display = 'none';
     document.getElementById('tour').style.display = 'none';
     document.getElementById('userManagement').style.display = 'block';
-    updatePageTitle('Gestione Utenti');
 });
 
 document.getElementById('dateTourBtn').addEventListener('click', function () {
@@ -20,14 +29,12 @@ document.getElementById('dateTourBtn').addEventListener('click', function () {
     document.getElementById('userManagement').style.display = 'none';
     document.getElementById('vendite').style.display = 'none';
     document.getElementById('tour').style.display = 'block';
-    updatePageTitle('Gestione Tour');
 });
 
 document.getElementById('venditeBtn').addEventListener('click', function () {
     document.getElementById('userManagement').style.display = 'none';
     document.getElementById('tour').style.display = 'none';
     document.getElementById('vendite').style.display = 'block';
-    updatePageTitle('Statistiche');
 
     // Carica le statistiche
     fetch('../php/admin.php', {
@@ -79,6 +86,7 @@ document.getElementById('search2').addEventListener('keydown', function (e) {
 });
 
 
+
 function searchEvent() {
     const date = document.getElementById('search2').value;
     console.log(date);
@@ -123,6 +131,8 @@ function selectButton(buttonId) {
 function displayEventInfo() {
     if (!currentEventData) return;
 
+    document.getElementById('eventOptions').style.display = 'block';
+
     const resultDiv = document.getElementById('result3');
     resultDiv.innerHTML = `
         <div>
@@ -137,6 +147,7 @@ function displayEventInfo() {
             <p><strong>Prezzo:</strong> ${currentEventData.prezzo}</p>
         </div>
     `;
+    document.getElementById('result3').style.display = 'block';
 }
 
 
@@ -185,6 +196,8 @@ function displayEventUpdate() {
             </form>
         </div>
     `;
+
+    document.getElementById('result3').style.display = 'block';
 
     document.getElementById('updateEventForm').addEventListener('submit', function (e) {
         e.preventDefault();
@@ -243,11 +256,21 @@ function displayAddEvent() {
             <input type="number" id="prezzo" name="prezzo" required>
         
             <button type="submit">Salva Evento</button>
+            <button type="button" id="cancelButton">Annulla</button>
         </form>
     `;
 
+    document.getElementById('result2').style.display = 'block';
+
+    document.getElementById('cancelButton').addEventListener('click', function(event) {
+        document.getElementById('result2').innerHTML = '';
+        document.getElementById('searchForm2').style.display = 'block';
+    });
+
     document.getElementById('addEventForm').addEventListener('submit', function(event) {
         event.preventDefault();
+
+        document.getElementById('eventOptions').style.display = 'block';
     
         const formData = new FormData(this);
         formData.append('action', 'add_event');
@@ -298,12 +321,38 @@ document.getElementById('deleteEventBtn').addEventListener('click', function () 
         const resultDiv = document.getElementById('result3');
         resultDiv.innerHTML = `
             <p>Sei sicuro di voler cancellare l'evento a ${currentEventData.citta} nella data di ${currentEventData.data}? Questa azione è irreversibile.</p>
-
             <button id="confirmationBtn">Confermo</button>
+            <button id="cancelDeleteBtn">Annulla</button>
         `;
-        //aggiungere l'event listener per il pulsante che cancella l'evento dalla db
+
+        document.getElementById('confirmationBtn').addEventListener('click', function() {
+            const formData = new FormData();
+            formData.append('action', 'remove_event');
+            formData.append('evento', currentEventData.evento);
+            formData.append('data', currentEventData.data);
+            formData.append('orario', currentEventData.orario);
+            formData.append('luogo', currentEventData.luogo);
+            formData.append('citta', currentEventData.citta);
+            formData.append('paese', currentEventData.paese);
+
+            fetch('../php/admin.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json()) 
+            .then(data => {
+                alert(data.message);
+                resultDiv.innerHTML = ''; 
+            })
+            .catch(error => console.error('Error:', error));
+        });
+
+        document.getElementById('cancelDeleteBtn').addEventListener('click', function() {
+            resultDiv.innerHTML = ''; 
+        });
     }
 });
+
 
 
 function searchUser() {

@@ -70,6 +70,15 @@ header h1::after {
 }
 
 /*===== INDEX =====*/
+
+#homeMusic img, #homeTour img, #homeJournal img {
+    width: 70%;
+}
+
+#homeMusic p, #homeTour button, #homeJournal button {
+    display: none;
+}
+
 /*===== CHI SIAMO =====*/
 
 #integranti, #ex-integranti {
@@ -286,7 +295,111 @@ article[id^="article"] p {
 }
 
 /*===== MUSICA =====*/
+
+.album {
+    visibility: visible;
+    flex: none;
+    width: 40%; 
+    border: none;
+    page-break-inside: avoid; 
+}
+
+.album img {
+    max-width: 100%;
+    height: auto;
+    border: none;
+}
+
+.album h2 {
+    font-size: 16pt;
+    margin-bottom: 0.5em;
+}
+
+.album dl {
+    display: block;
+    visibility: visible;
+    transform: none;
+}
+
+.album dt, .album dd {
+    font-size: 12pt;
+    display: block;
+    float: none;
+    text-align: left;
+    margin: 0;
+}
+
+.album p {
+    text-align: left;
+    font-size: 11pt;
+}
+
+.album:hover {
+    transform: none; 
+}
+
+#discografia dl {
+    transform: none;
+}
+
+#discografia dl.flipped {
+    transform: none;
+}
+
+.album img, .album p, .album h2, .album dl { 
+    display: block !important; 
+}
+
+
 /*===== SHOP =====*/
+
+#cart-hamburger-menu, .filters {
+    display: none;
+}
+
+/* Ensure the content fits within the printable area */
+#container-shop, #shop {
+    flex: none;
+    width: 80%;
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+
+/* Adjust the layout for better print readability */
+.card {
+    width: 50%;
+    margin: 10px 0;
+    page-break-inside: avoid;
+    break-inside: avoid-column;
+}
+
+.card img {
+    max-width: 40%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+/* Hide no results message when printing */
+#no-results {
+    display: none;
+}
+
+#cart-items {
+    display: block;
+}
+
+.card, .cart-item {
+    page-break-inside: avoid;
+    break-inside: avoid-column;
+}
+
+/*===== ACCEDI =====*/
+
+.left-section {
+    margin-top: 10em;
+}
+
 
 /*===== altre paginee =====*/
 

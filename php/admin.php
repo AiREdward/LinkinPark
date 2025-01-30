@@ -70,7 +70,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             
             // Chiamiamo la funzione per aggiungere l'evento
             $response['message'] = addEvent($conn, $evento, $data, $orario, $luogo, $citta, $paese, $descrizione, $prezzo);
-            break;    
+            break;  
+            
+        case 'remove_event':
+            $evento = trim($_POST['evento']);
+            $data = trim($_POST['data']);
+            $orario = trim($_POST['orario']);
+            $luogo = trim($_POST['luogo']);
+            $citta = trim($_POST['citta']);
+            $paese = trim($_POST['paese']);
+            $response['message'] = removeEvent($conn, $evento, $data, $orario, $luogo, $citta, $paese);
+            break;
 
         default:
             $response['message'] = "Azione non valida!";
