@@ -14,20 +14,6 @@ function updateUser($conn, $user_id, $role, $status) {
     }
 }
 
-function updateEvent($conn, $event_id, $evento, $data, $orario, $luogo, $citta, $paese, $descrizione, $prezzo) {
-    $stmt = $conn->prepare("UPDATE tour SET evento = ?, data = ?, orario = ?, luogo = ?, citta = ?, paese = ?, descrizione = ?, prezzo = ? WHERE id = ?");
-
-    $stmt->bind_param("sssssssdi", $evento, $data, $orario, $luogo, $citta, $paese, $descrizione, $prezzo, $event_id);
-
-    if ($stmt->execute()) {
-        echo '<script>console.log("Debugging message from PHP");</script>';
-        return "Evento aggiornato con successo!";
-    } else {
-        echo '<script>console.log("Debugging message from PHP");</script>';
-        return "Errore nell'aggiornamento dell'evento: " . $conn->error;
-    }
-}
-
 /**
  * Cerca un utente per email
  */
@@ -45,19 +31,16 @@ function findUserByEmail($conn, $email) {
     }
 }
 
-function findEventByDate($conn, $date) {
-    // Debug: Log invalid data format
-    
+function findEventByDate($conn, $date) {    
     if (!preg_match('/^\d{4}-\d{2}-\d{2}$/', $date)) {
         error_log("Invalid data format: $date");
         return 'Invalid data format';
     }
 
-    // Prepare the statement
     $stmt = $conn->prepare("SELECT evento, data, orario, luogo, citta, paese, descrizione, prezzo FROM tour WHERE data = ?");
     if (!$stmt) {
         error_log("Query preparation failed");
-        return null; // Handle query preparation failure
+        return null;
     }
 
     $stmt->bind_param("s", $date);
@@ -75,19 +58,16 @@ function findEventByDate($conn, $date) {
     }
 }
 
-
 /**
  * Ottieni statistiche sulle transazioni
  */
 function getTransactionStats($conn) {
     $stats = [];
 
-    // Totale guadagno e numero di transazioni
     $stmt = $conn->query("SELECT COUNT(*) AS total_transactions, SUM(totale) AS total_revenue FROM transazione");
     if ($stmt) {
         $stats = $stmt->fetch_assoc();
-        // Assicurati che total_revenue sia un numero, se è null metti 0
-        $stats['total_revenue'] = floatval($stats['total_revenue']);  // Garantisce che sia un numero
+        $stats['total_revenue'] = floatval($stats['total_revenue']);
     } else {
         return ['message' => 'Errore nella query delle transazioni: ' . $conn->error];
     }
@@ -135,7 +115,7 @@ function addEvent($conn, $evento, $data, $orario, $luogo, $citta, $paese, $descr
         return "Il prezzo non può essere negativo!";
     }
 
-    // Query per l'inserimento dell'evento
+    // Inserimento dell'evento
     $stmt = $conn->prepare("INSERT INTO tour (evento, data, orario, luogo, citta, paese, descrizione, prezzo) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
     $stmt->bind_param("sssssssd", $evento, $data, $orario, $luogo, $citta, $paese, $descrizione, $prezzo);
 
@@ -166,6 +146,5 @@ function removeEvent($conn, $evento, $data, $orario, $luogo, $citta, $paese) {
         return "Failed to delete record: " . $stmt->error;
     }
 }
-
 
 ?>

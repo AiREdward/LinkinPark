@@ -1,5 +1,3 @@
-// @ts-nocheck
-
 let currentEventData = null;
 
 document.getElementById('vendite').style.display = 'none';
@@ -17,7 +15,6 @@ document.getElementById('cancelBtn').addEventListener('click', function () {
     document.getElementById('eventOptions').style.display = 'none';
 });
 
-// Gestisci il click sui bottoni del menu
 document.getElementById('userManagementBtn').addEventListener('click', function () {
     document.getElementById('vendite').style.display = 'none';
     document.getElementById('tour').style.display = 'none';
@@ -55,7 +52,7 @@ document.getElementById('venditeBtn').addEventListener('click', function () {
         });
 });
 
-// Gestisci la ricerca dell'utente
+// Ricerca dell'utente
 const searchForm = document.getElementById('searchForm');
 searchForm.addEventListener('submit', function (e) {
     e.preventDefault();
@@ -69,7 +66,7 @@ document.getElementById('email').addEventListener('keydown', function (e) {
     }
 });
 
-// Gestisci la ricerca dell'evento
+// Ricerca dell'evento
 const searchForm2 = document.getElementById('searchForm2');
 searchForm2.addEventListener('submit', function (e) {
     e.preventDefault();
@@ -120,7 +117,7 @@ function searchEvent() {
 }
 
 function selectButton(buttonId) {
-    ['eventInfoBtn', 'eventUpdateBtn', 'deleteEventBtn', 'addEventBtn'].forEach(id => {
+    ['eventInfoBtn', 'deleteEventBtn', 'addEventBtn'].forEach(id => {
         document.getElementById(id).classList.remove('selected');
     });
 
@@ -147,83 +144,6 @@ function displayEventInfo() {
         </div>
     `;
     document.getElementById('result3').style.display = 'block';
-}
-
-
-function displayEventUpdate() {
-    if (!currentEventData) return;
-
-    const resultDiv = document.getElementById('result3');
-    resultDiv.innerHTML = `
-        <div>
-            <h3>Aggiorna Evento</h3>
-            <form id="updateEventForm">
-                <input type="hidden" id="id" name="id" value="${currentEventData.id}">
-                <div class="input-container">
-                    <label for="evento">Evento:</label>
-                    <input type="text" id="evento" name="evento" value="${currentEventData.evento}" required>
-                </div>
-                <div class="input-container">
-                    <label for="data">Data:</label>
-                    <input type="date" id="data" name="data" value="${currentEventData.data}" required>
-                </div>
-                <div class="input-container">
-                    <label for="orario">Orario:</label>
-                    <input type="time" id="orario" name="orario" value="${currentEventData.orario}" required>
-                </div>
-                <div class="input-container">
-                    <label for="luogo">Luogo:</label>
-                    <input type="text" id="luogo" name="luogo" value="${currentEventData.luogo}" required>
-                </div>
-                <div class="input-container">
-                    <label for="citta">Città:</label>
-                    <input type="text" id="citta" name="citta" value="${currentEventData.citta}" required>
-                </div>
-                <div class="input-container">
-                    <label for="paese">Paese:</label>
-                    <input type="text" id="paese" name="paese" value="${currentEventData.paese}" required>
-                </div>
-                <div class="input-container">
-                    <label for="descrizione">Descrizione:</label>
-                    <textarea id="descrizione" name="descrizione" required>${currentEventData.descrizione}</textarea>
-                </div>
-                <div class="input-container">
-                    <label for="prezzo">Prezzo:</label>
-                    <input type="number" id="prezzo" name="prezzo" step="0.01" value="${currentEventData.prezzo}" required>
-                </div>
-                <button type="submit" id="submitUpdateBtn">Salva Modifiche</button>
-            </form>
-        </div>
-    `;
-
-    document.getElementById('result3').style.display = 'block';
-
-    document.getElementById('updateEventForm').addEventListener('submit', function (e) {
-        e.preventDefault();
-
-        const formData = new FormData(this);
-        formData.append('action', 'update_event');
-
-        const updatedEventData = Object.fromEntries(formData.entries());
-
-        fetch('../php/admin.php', {
-            method: 'POST',
-            //body: new URLSearchParams({ action: 'update_event' })
-            body: formData
-        })
-            .then(response => response.json())
-            .then(data => {
-                if (data.success) {
-                    alert('Evento aggiornato con successo!');
-                } else {
-                    alert('Errore nell\'aggiornamento dell\'evento');
-                }
-            })
-            .catch(error => {
-                console.error('Errore:', error);
-                alert('Errore: Impossibile aggiornare l\'evento. Verifica la tua connessione o riprova più tardi.');
-            });
-    });
 }
 
 function displayAddEvent() {
@@ -301,14 +221,6 @@ document.getElementById('eventInfoBtn').addEventListener('click', function () {
         document.getElementById('result2').innerHTML = '';
         selectButton('eventInfoBtn');
         displayEventInfo();
-    }
-});
-
-document.getElementById('eventUpdateBtn').addEventListener('click', function () {
-    if (currentEventData) {
-        document.getElementById('result2').innerHTML = '';
-        selectButton('eventUpdateBtn');
-        displayEventUpdate();
     }
 });
 
