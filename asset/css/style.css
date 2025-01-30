@@ -414,18 +414,6 @@ header h1 {
     }
 }
 
-@media print {
-    #tour-dates dd::before{
-        display: none;
-    }
-
-    #tour-dates dd::after{
-        display: none;
-    }
-
-}
-
-
 /* ----------------------------------------------- */
 
 /* CHI SIAMO */
@@ -1535,8 +1523,6 @@ footer a {
 }
 
 .social a {
-    display: flex;
-    align-items: center;
     margin: 0px 0;
 }
 

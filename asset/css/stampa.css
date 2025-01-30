@@ -203,8 +203,144 @@ article[id^="article"] h2 {
 article[id^="article"] p {
     margin: 0.5em 0;
 }
+
 /*===== TOUR =====*/
+
+@media print {
+
+    header, footer {
+        display: none;
+    }
+
+    #logout-modal, #hamburger-menu{
+        display: none;
+    }
+
+    #tour-dates {
+        padding-left: 0;
+        max-width: 100%;
+        margin: 0;
+    }
+
+    #tour-dates dt {
+        float: none;
+        clear: none;
+        width: 100%;
+        padding: 0.5em 0;
+        font-weight: bold;
+        text-transform: uppercase;
+        direction: ltr;
+        margin: 0;
+        text-align: left;
+    }
+
+    #tour-dates dd {
+        position: static;
+        float: none;
+        padding: 0.5em 0;
+        width: 100%;
+        opacity: 1;
+        transition: none;
+        margin-top: 0;
+        border-bottom: 1px solid #000;
+    }
+
+    #tour-dates dd::before,
+    #tour-dates dd:not(:last-of-type)::after {
+        display: none;
+    }
+
+    #tour-dates dd .extra-details {
+        padding: 0;
+        border: none;
+        border-radius: 0;
+        transition: none;
+    }
+
+    #tour-dates dd .extra-details[aria-hidden="true"],
+    #tour-dates dd .extra-details[aria-hidden="false"] {
+        opacity: 1;
+        transform: none;
+        pointer-events: auto;
+    }
+
+    #tour-dates dd .extra-details .button-container {
+        display: none;
+    }
+
+    #tour-dates dd p {
+        margin-top: 0;
+        margin-bottom: 0.5em;
+    }
+
+    #tour-dates dd>p:hover {
+        color: inherit;
+        cursor: default;
+    }
+
+    #tour-dates dt {
+        margin-top: 0;
+        margin-right: 0;
+    }
+
+}
+
 /*===== MUSICA =====*/
 /*===== SHOP =====*/
 
 /*===== altre paginee =====*/
+
+/*===== PAGAMENTO ======*/
+
+
+@media print {
+    
+    #cardForm .container {
+        display: block;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    #receipt {
+        width: 100%;
+        margin: 1em 0;
+        padding: 1em;
+        display: block;
+        position: static;
+        box-shadow: none;
+        background: none;
+    }
+
+    #cardForm .container #left-section,
+    #cardForm .container #card,
+    #cardForm .container #data {
+        page-break-inside: avoid;
+    }
+
+    #cardForm input {
+        display: block;
+        width: 100%;
+        border: none;
+        border-bottom: 1px solid var(--txtColor);
+        margin-bottom: 1em;
+        padding: 0.5em 0;
+        color: var(--txtColor);
+    }
+
+    #cardForm #receipt #bought-items > div {
+        border-top: 1px solid var(--txtColor);
+        padding: 1em 0;
+    }
+
+    #proceed,
+    #cancel,
+    .popup,
+    #custom-popup,
+    ::-webkit-scrollbar,
+    ::-webkit-scrollbar-track,
+    ::-webkit-scrollbar-thumb,
+    #rcardForm #receipt {
+        display: none;
+    }
+}
