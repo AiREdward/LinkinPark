@@ -14,6 +14,20 @@ function updateUser($conn, $user_id, $role, $status) {
     }
 }
 
+function updateEvent($conn, $event_id, $evento, $data, $orario, $luogo, $citta, $paese, $descrizione, $prezzo) {
+    $stmt = $conn->prepare("UPDATE tour SET evento = ?, data = ?, orario = ?, luogo = ?, citta = ?, paese = ?, descrizione = ?, prezzo = ? WHERE id = ?");
+
+    $stmt->bind_param("sssssssdi", $evento, $data, $orario, $luogo, $citta, $paese, $descrizione, $prezzo, $event_id);
+
+    if ($stmt->execute()) {
+        echo '<script>console.log("Debugging message from PHP");</script>';
+        return "Evento aggiornato con successo!";
+    } else {
+        echo '<script>console.log("Debugging message from PHP");</script>';
+        return "Errore nell'aggiornamento dell'evento: " . $conn->error;
+    }
+}
+
 /**
  * Cerca un utente per email
  */
@@ -102,5 +116,56 @@ function getTransactionStats($conn) {
 
     return $stats;
 }
+
+function addEvent($conn, $evento, $data, $orario, $luogo, $citta, $paese, $descrizione, $prezzo) {
+    // Validazioni
+    if (empty($evento) || empty($data) || empty($orario) || empty($luogo) || empty($citta) || empty($paese) || empty($descrizione)) {
+        return "Tutti i campi sono obbligatori!";
+    }
+
+    if (!strtotime($data)) {
+        return "Formato data non valido!";
+    }
+
+    if (!strtotime($orario)) {
+        return "Formato orario non valido!";
+    }
+
+    if ($prezzo < 0) {
+        return "Il prezzo non può essere negativo!";
+    }
+
+    // Query per l'inserimento dell'evento
+    $stmt = $conn->prepare("INSERT INTO tour (evento, data, orario, luogo, citta, paese, descrizione, prezzo) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
+    $stmt->bind_param("sssssssd", $evento, $data, $orario, $luogo, $citta, $paese, $descrizione, $prezzo);
+
+    if ($stmt->execute()) {
+        return "Evento aggiunto con successo!";
+    } else {
+        return "Errore nell'aggiunta dell'evento: " . $stmt->error;
+    }
+}
+
+function removeEvent($conn, $evento, $data, $orario, $luogo, $citta, $paese) {
+    $sql = "DELETE FROM tour WHERE evento = ? AND data = ? AND orario = ? AND luogo = ? AND citta = ? AND paese = ?";
+    $stmt = $conn->prepare($sql);
+
+    if (!$stmt) {
+        return "Failed to prepare statement: " . $conn->error;
+    }
+
+    $stmt->bind_param("ssssss", $evento, $data, $orario, $luogo, $citta, $paese);
+
+    if ($stmt->execute()) {
+        if ($stmt->affected_rows > 0) {
+            return "Record deleted successfully.";
+        } else {
+            return "No matching record found.";
+        }
+    } else {
+        return "Failed to delete record: " . $stmt->error;
+    }
+}
+
 
 ?>

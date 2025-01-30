@@ -8,7 +8,7 @@
     <title>Eventi del Tour - Linkin Park</title>
     <meta name="author" content="linkins">
     <meta name="description" content="Scopri le date del tour dei Linkin Park: luoghi, orari e dettagli degli eventi in tutto il mondo. Unisciti a noi per una serata indimenticabile con la tua band preferita!">
-    <meta name="keywords" content="Linkin Park tour, concerti Linkin Park, date tour, eventi musicali, concerti live, biglietti concerti, luoghi tour, Linkin Park eventi">
+    <meta name="keywords" content="Linkin Park tour, concerti Linkin Park, date tour, eventi musicali, concerti live, biglietti concerti, luoghi tour, Linkinh Park eventi">
     <meta name="viewport" content="width=device-width">
 
     <link rel="icon" href="asset/img/favicon.ico" type="image/x-icon">
@@ -84,7 +84,7 @@
                     </p>
                     <div class="button-container">
                         <button class="buy" aria-label="Compra Biglietto per <?php echo $citta; ?>"
-                            onclick="handleTicketPurchase(event, '<?php echo $citta; ?>')">Compra Biglietto</button>
+                            onclick="window.open('https://www.ticketone.it/en/artist/linkin-park/', '_blank')">Compra Biglietto</button>
                         <button class="close" aria-label="Chiudi dettagli per <?php echo $citta; ?>"
                             alt="Chiudi data tour" onclick="closeDetails(event, this)"><i class="fa-solid fa-rectangle-xmark"></i></button>
                     </div>

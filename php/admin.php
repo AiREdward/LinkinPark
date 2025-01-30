@@ -40,6 +40,48 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             }
             break;
 
+        case 'update_event':
+            $event_id = intval($_POST['id']);
+            $evento = trim($_POST['evento']);
+            $data = trim($_POST['data']);
+            $orario = trim($_POST['orario']);
+            $luogo = trim($_POST['luogo']);
+            $citta = trim($_POST['citta']);
+            $paese = trim($_POST['paese']);
+            $descrizione = trim($_POST['descrizione']);
+            $prezzo = floatval($_POST['prezzo']);
+            $response['message'] = updateEvent($conn, $event_id, $evento, $data, $orario, $luogo, $citta, $paese, $descrizione, $prezzo);
+            $response['debug'] = 'This is a debug message from PHP';
+            if (!$response['message']) {
+                $response['message'] = 'Nessuna modifica effettuata.';
+            } 
+            break;
+
+        case 'add_event':
+            // Recupero dati dal POST
+            $evento = trim($_POST['evento']);
+            $data = trim($_POST['data']);
+            $orario = trim($_POST['orario']);
+            $luogo = trim($_POST['luogo']);
+            $citta = trim($_POST['citta']);
+            $paese = trim($_POST['paese']);
+            $descrizione = trim($_POST['descrizione']);
+            $prezzo = floatval($_POST['prezzo']);
+            
+            // Chiamiamo la funzione per aggiungere l'evento
+            $response['message'] = addEvent($conn, $evento, $data, $orario, $luogo, $citta, $paese, $descrizione, $prezzo);
+            break;  
+            
+        case 'remove_event':
+            $evento = trim($_POST['evento']);
+            $data = trim($_POST['data']);
+            $orario = trim($_POST['orario']);
+            $luogo = trim($_POST['luogo']);
+            $citta = trim($_POST['citta']);
+            $paese = trim($_POST['paese']);
+            $response['message'] = removeEvent($conn, $evento, $data, $orario, $luogo, $citta, $paese);
+            break;
+
         default:
             $response['message'] = "Azione non valida!";
             break;

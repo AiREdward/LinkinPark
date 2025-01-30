@@ -9,11 +9,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Dashboard - Linkin Park</title>
     <link rel="icon" href="../asset/img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../asset/css/style.css" media="all">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
+    
+<!-- 
     <style>
         body {
-            font-family: 'Lato', sans-serif;
+            font-family: Arial, sans-serif;
             margin: 0;
             display: flex;
             height: 100vh;
@@ -196,26 +199,31 @@
             font-size: 1.3rem;
         }
     </style>
+    -->
+
 </head>
 
+
 <body>
+    <header>
+        <h1 lang="en">Admin Dashboard</h1>
+    </header>
 
     <!-- Menu laterale -->
-    <div class="sidebar">
-        <h2>Admin Dashboard</h2>
+    <nav id="menu">
         <button id="userManagementBtn">Gestione Utenti</button>
         <button id="venditeBtn">Statistiche</button>
-        <button id="dateTourBtn">Tour</button>
+        <button id="dateTourBtn">Gestione Tour</button>
         <button id="logoutBtn">Logout</button>
-    </div>
+    </nav>
 
     <!-- Contenuto principale -->
-    <div class="main">
-        <h1 id="pageTitle">Gestione Utenti</h1>
+    <main>
 
         <div id="content" class="content">
             <!-- Gestione Utenti -->
             <div id="userManagement">
+                <h2>Gestione Utenti</h2>
                 <form id="searchForm">
                     <label for="email">Cerca utente per email:</label>
                     <div class="input-container">
@@ -235,21 +243,21 @@
                     <div class="stat-card">
                         <div class="icon"><i class="fas fa-dollar-sign"></i></div>
                         <div>
-                            <p class="stat-title">Totale Guadagno</p>
+                            <h3 class="stat-title">Totale Guadagno</h3>
                             <p class="stat-value" id="totalRevenue">€0.00</p>
                         </div>
                     </div>
                     <div class="stat-card">
                         <div class="icon"><i class="fas fa-chart-line"></i></div>
                         <div>
-                            <p class="stat-title">Numero di Transazioni</p>
+                            <h3 class="stat-title">Numero di Transazioni</h3>
                             <p class="stat-value" id="totalTransactions">0</p>
                         </div>
                     </div>
                     <div class="stat-card">
                         <div class="icon"><i class="fas fa-shopping-cart"></i></div>
                         <div>
-                            <p class="stat-title">Articolo più Acquistato</p>
+                            <h3 class="stat-title">Articolo più Acquistato</h3>
                             <p class="stat-value" id="mostBoughtProduct">-</p>
                         </div>
                     </div>
@@ -259,12 +267,12 @@
             <!-- Tour -->
             <div id="tour">
 
-                <button>Aggiungi Evento</button>
+                <h2>Gestione Tour</h2>
 
-                <!--The action attribute specifies where to send the form-data when a form is submitted.
-                The method attribute specifies how to send form-data (the form-data is sent to the page specified in the action attribute).
-                The form-data can be sent as URL variables (with method="get") or as HTTP post transaction (with method="post").
-                -->
+                <button id="addEventBtn">Aggiungi Evento</button>
+
+                <div id="result2"></div>
+
                 <form id="searchForm2" action="" method="GET">
                     <label for="search2">Cerca evento per data:</label>
                     <input 
@@ -275,22 +283,24 @@
                         placeholder="Scrivere nel formato: AAAA-MM-GG" 
                         pattern="\d{4}-\d{2}-\d{2}"
                     
-                        required> <!--o class="search" se cambiamo da id="searchForm" a class="search" del primo form (barra di ricerca per utente) -->
-                        <!--o metto type="date"?-->
+                        required>
                     <button type="submit">Cerca</button>
                 </form>
 
-                <div>    <!--buttons are better suited to <div> container (than to lists) -->
+                <div id="result3"></div>
+
+                <div id="eventOptions">
                     <button id="eventInfoBtn">Informazioni Evento</button>
                     <button id="eventUpdateBtn">Aggiorna Evento</button>
                     <button id="deleteEventBtn">Cancella Evento</button>
+                    <button id="cancelBtn">Annulla</button>
                 </div>
 
                 <div id="result2"></div>
             </div>
 
         </div>
-    </div>
+    </main>
 
     <script src="../js/admin.js"></script>
 </body>

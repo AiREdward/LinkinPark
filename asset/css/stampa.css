@@ -75,6 +75,15 @@ header h1 {
 }
 
 /*===== INDEX =====*/
+
+#homeMusic img, #homeTour img, #homeJournal img {
+    width: 70%;
+}
+
+#homeMusic p, #homeTour button, #homeJournal button {
+    display: none;
+}
+
 /*===== CHI SIAMO =====*/
 
 #integranti, #ex-integranti {
@@ -208,11 +217,247 @@ article[id^="article"] p {
     margin: 0.5em 0;
 }
 
-
 /*===== TOUR =====*/
+
+@media print {
+
+    header, footer {
+        display: none;
+    }
+
+    #logout-modal, #hamburger-menu{
+        display: none;
+    }
+
+    #tour-dates {
+        padding-left: 0;
+        max-width: 100%;
+        margin: 0;
+    }
+
+    #tour-dates dt {
+        float: none;
+        clear: none;
+        width: 100%;
+        padding: 0.5em 0;
+        font-weight: bold;
+        text-transform: uppercase;
+        direction: ltr;
+        margin: 0;
+        text-align: left;
+    }
+
+    #tour-dates dd {
+        position: static;
+        float: none;
+        padding: 0.5em 0;
+        width: 100%;
+        opacity: 1;
+        transition: none;
+        margin-top: 0;
+        border-bottom: 1px solid #000;
+    }
+
+    #tour-dates dd::before,
+    #tour-dates dd:not(:last-of-type)::after {
+        display: none;
+    }
+
+    #tour-dates dd .extra-details {
+        padding: 0;
+        border: none;
+        border-radius: 0;
+        transition: none;
+    }
+
+    #tour-dates dd .extra-details[aria-hidden="true"],
+    #tour-dates dd .extra-details[aria-hidden="false"] {
+        opacity: 1;
+        transform: none;
+        pointer-events: auto;
+    }
+
+    #tour-dates dd .extra-details .button-container {
+        display: none;
+    }
+
+    #tour-dates dd p {
+        margin-top: 0;
+        margin-bottom: 0.5em;
+    }
+
+    #tour-dates dd>p:hover {
+        color: inherit;
+        cursor: default;
+    }
+
+    #tour-dates dt {
+        margin-top: 0;
+        margin-right: 0;
+    }
+
+}
+
 /*===== MUSICA =====*/
+
+.album {
+    visibility: visible;
+    flex: none;
+    width: 40%; 
+    border: none;
+    page-break-inside: avoid; 
+}
+
+.album img {
+    max-width: 100%;
+    height: auto;
+    border: none;
+}
+
+.album h2 {
+    font-size: 16pt;
+    margin-bottom: 0.5em;
+}
+
+.album dl {
+    display: block;
+    visibility: visible;
+    transform: none;
+}
+
+.album dt, .album dd {
+    font-size: 12pt;
+    display: block;
+    float: none;
+    text-align: left;
+    margin: 0;
+}
+
+.album p {
+    text-align: left;
+    font-size: 11pt;
+}
+
+.album:hover {
+    transform: none; 
+}
+
+#discografia dl {
+    transform: none;
+}
+
+#discografia dl.flipped {
+    transform: none;
+}
+
+.album img, .album p, .album h2, .album dl { 
+    display: block !important; 
+}
+
+
 /*===== SHOP =====*/
 
-/*===== PAGAMENTO =====*/
+#cart-hamburger-menu, .filters {
+    display: none;
+}
+
+/* Ensure the content fits within the printable area */
+#container-shop, #shop {
+    flex: none;
+    width: 80%;
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+
+/* Adjust the layout for better print readability */
+.card {
+    width: 50%;
+    margin: 10px 0;
+    page-break-inside: avoid;
+    break-inside: avoid-column;
+}
+
+.card img {
+    max-width: 40%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+/* Hide no results message when printing */
+#no-results {
+    display: none;
+}
+
+#cart-items {
+    display: block;
+}
+
+.card, .cart-item {
+    page-break-inside: avoid;
+    break-inside: avoid-column;
+}
+
+/*===== ACCEDI =====*/
+
+.left-section {
+    margin-top: 10em;
+}
 
 
+/*===== altre paginee =====*/
+
+/*===== PAGAMENTO ======*/
+
+
+@media print {
+    
+    #cardForm .container {
+        display: block;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    #receipt {
+        width: 100%;
+        margin: 1em 0;
+        padding: 1em;
+        display: block;
+        position: static;
+        box-shadow: none;
+        background: none;
+    }
+
+    #cardForm .container #left-section,
+    #cardForm .container #card,
+    #cardForm .container #data {
+        page-break-inside: avoid;
+    }
+
+    #cardForm input {
+        display: block;
+        width: 100%;
+        border: none;
+        border-bottom: 1px solid var(--txtColor);
+        margin-bottom: 1em;
+        padding: 0.5em 0;
+        color: var(--txtColor);
+    }
+
+    #cardForm #receipt #bought-items > div {
+        border-top: 1px solid var(--txtColor);
+        padding: 1em 0;
+    }
+
+    #proceed,
+    #cancel,
+    .popup,
+    #custom-popup,
+    ::-webkit-scrollbar,
+    ::-webkit-scrollbar-track,
+    ::-webkit-scrollbar-thumb,
+    #rcardForm #receipt {
+        display: none;
+    }
+}
