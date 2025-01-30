@@ -36,6 +36,13 @@ a {
     color: var(--linkcolor);
 }
 
+.left-section p a {
+    color: var(--bgcolor2);
+}
+.left-section p a:visited {
+    color: var(--pulsantecolor2);
+}
+
 a:visited {
     color: var(--visitedcolor);
 }
@@ -889,6 +896,10 @@ header h1 {
     margin: 0 auto;
 }
 
+.search-container label {
+    font-weight: bold;
+}
+
 #search-bar {
     padding: 8px 35px 8px 8px;
     width: 100%;
@@ -901,7 +912,7 @@ header h1 {
 .search-icon {
     position: absolute;
     right: 10px;
-    top: 50%;
+    top: 68%;
     transform: translateY(-50%);
     color: #888;
     font-size: 18px;
@@ -994,7 +1005,7 @@ header h1 {
     width: 100%;
     padding: 1px;
     text-align: center;
-    border: 1px solid #ccc;
+    border: 2px solid var(--bgcolor2);
     border-radius: 4px;
     zoom: 130%;
     margin-bottom: 2px;

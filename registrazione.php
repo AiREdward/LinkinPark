@@ -44,13 +44,13 @@
 
                     <div class="input-container">
                         <label for="email">Email:</label>
-                        <input type="email" id="email" name="email" required placeholder="Inserisci la tua email">
+                        <input type="email" id="email" name="email" required placeholder="Inserisci la tua email" autocomplete="email">
                     </div>
 
                     <div class="input-container full-width">
                         <label for="password">Password:</label>
                         <input type="password" id="password" name="password" required
-                            placeholder="Inserisci la tua password" class="input-with-icon" oninput="checkPasswordStrength()">
+                            placeholder="Inserisci la tua password" class="input-with-icon" oninput="checkPasswordStrength()" autocomplete="current-password">
                         <i id="togglePassword" class="fa-solid fa-eye icon-right"></i>
                         <div class="password-strength">
                             <div id="strength-bar"></div>
@@ -60,7 +60,7 @@
                     <div class="input-container full-width">
                         <label for="confermaPassword">Conferma Password:</label>
                         <input type="password" id="confermaPassword" name="confermaPassword" required
-                            placeholder="Conferma la tua password" class="input-with-icon">
+                            placeholder="Conferma la tua password" class="input-with-icon" autocomplete="current-password">
                         <i id="togglePassworConfirm" class="fa-solid fa-eye icon-right"></i>
                     </div>
 
@@ -91,14 +91,14 @@
                         <input type="date" id="data_nascita" name="data_nascita">
                     </div>
 
-                    <div class="input-container">
+                    <div class="registration-condition">
                         <label>
                             <input type="checkbox" id="privacy" name="privacy" required> Accetto la <a href="#"
                                 onclick="openModal('privacyModal')">Privacy Policy</a>.
                         </label>
                     </div>
 
-                    <div class="input-container">
+                    <div class="registration-condition">
                         <label>
                             <input type="checkbox" id="termini" name="termini" required> Accetto i <a href="#"
                                 onclick="openModal('termsModal')">Termini di Servizio</a>.

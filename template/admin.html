@@ -11,198 +11,7 @@
     <link rel="icon" href="../asset/img/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="../asset/css/style.css" media="all">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
-    
-<!-- 
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            display: flex;
-            height: 100vh;
-            background-color: #eef2f7;
-            color: #333;
-        }
-
-        .sidebar {
-            width: 250px;
-            background-color: #1f2937;
-            color: white;
-            display: flex;
-            flex-direction: column;
-            padding: 20px;
-            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-        }
-
-        .sidebar h2 {
-            text-align: center;
-            margin-bottom: 30px;
-            font-size: 24px;
-            font-weight: bold;
-            color: #61dafb;
-        }
-
-        .sidebar button {
-            background-color: #374151;
-            border: none;
-            color: white;
-            padding: 15px;
-            margin-bottom: 10px;
-            border-radius: 5px;
-            font-size: 16px;
-            text-align: left;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-
-        .sidebar button:hover {
-            background-color: #4b5563;
-        }
-
-        .sidebar #logoutBtn {
-            margin-top: auto;
-            background-color: #f87171;
-        }
-
-        .sidebar #logoutBtn:hover {
-            background-color: #ef4444;
-        }
-
-        .main {
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-            padding: 20px;
-        }
-
-        .main h1 {
-            font-size: 28px;
-            margin-bottom: 20px;
-            color: #1f2937;
-        }
-
-        .content {
-            background-color: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        .stats {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .stat-card {
-            display: flex;
-            align-items: center;
-            background-color: #f9fafb;
-            border-radius: 10px;
-            padding: 20px;
-            margin-bottom: 15px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        .stat-card .icon {
-            font-size: 30px;
-            margin-right: 20px;
-        }
-
-        .stat-card .stat-title {
-            font-size: 16px;
-            color: #6b7280;
-        }
-
-        .stat-card .stat-value {
-            font-size: 20px;
-            font-weight: bold;
-            color: #1f2937;
-        }
-
-        form {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-
-        form input,
-        form select,
-        form button {
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            font-size: 16px;
-        }
-
-        form button {
-            background-color: #007BFF;
-            color: white;
-            border: none;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-
-        form button:hover {
-            background-color: #0056b3;
-        }
-
-        .input-container {
-            position: relative;
-            width: 90%;
-            margin-bottom: 15px;
-        }
-
-        .input-container i {
-            position: absolute;
-            left: 12px;
-            top: 50%;
-            transform: translateY(-50%);
-            font-size: 18px;
-            color: #007BFF;
-            pointer-events: none;
-        }
-
-        .input-container input {
-            padding-left: 35px;
-            font-size: 16px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            background-color: #f9fafb;
-            width: 100%;
-        }
-
-        #tour {
-            display: none;
-        }
-
-        #vendite {
-            display: none;
-        }
-
-        .message {
-            padding: 15px;
-            border-radius: 5px;
-            margin-top: 20px;
-            font-size: 1.1rem;
-            text-align: center;
-        }
-
-        .message.not-found {
-            background-color: #ffdddd;
-            border: 1px solid #f5c6cb;
-            color: #721c24;
-        }
-
-        .message.not-found i {
-            margin-right: 8px;
-            color: #f5c6cb;
-            font-size: 1.3rem;
-        }
-    </style>
-    -->
-
 </head>
-
 
 <body>
     <header>
@@ -227,7 +36,7 @@
                 <form id="searchForm">
                     <label for="email">Cerca utente per email:</label>
                     <div class="input-container">
-                        <input type="email" name="email" id="email" placeholder="Inserisci email utente" required>
+                        <input type="email" name="email" id="email" placeholder="Inserisci email utente" required autocomplete="email">
                         <i class="fa fa-search" aria-hidden="true"></i>
                     </div>
                     <button type="submit">Cerca</button>
@@ -291,12 +100,9 @@
 
                 <div id="eventOptions">
                     <button id="eventInfoBtn">Informazioni Evento</button>
-                    <button id="eventUpdateBtn">Aggiorna Evento</button>
                     <button id="deleteEventBtn">Cancella Evento</button>
                     <button id="cancelBtn">Annulla</button>
                 </div>
-
-                <div id="result2"></div>
             </div>
 
         </div>
