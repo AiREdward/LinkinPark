@@ -152,7 +152,8 @@ header h1 {
 
 #menu {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: center;
     align-items: center;
     border-bottom: 2px solid var(--txtcolor);
     border-top: 2px solid var(--txtcolor);
@@ -188,6 +189,26 @@ header h1 {
     color: var(--bgcolor1);
     background-color: var(--visitedcolor);
     border-radius: 5px;
+}
+
+#menu button {
+    color: var(--txtcolor);
+    background-color: var(--bgcolor2);
+    font-size: large;
+    font-weight: bold;
+    padding: 5px 10px;
+    transition: background-color 0.3s;
+    text-align: center;
+    flex: 1;  
+    box-sizing: border-box;
+    cursor: pointer;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+#menu button:focus {
+    color: var(--bgcolor2);
+    background: var(--pulsantecolor2);
 }
 
 .logout {
@@ -317,6 +338,113 @@ header h1 {
     body.menu-open {
         overflow: hidden;
     }
+}
+
+
+/* ----------------------------------------------- */
+
+/* ADMIN */
+
+#userManagement, #vendite, #tour {
+    /*display: none;*/
+    max-width: fit-content;
+    margin: 3em auto;
+    padding: 2em;
+    background-color: var(--bgcolor2);
+    border: 2px solid var(--txtcolor);
+    border-radius: 2em;
+}
+
+#userManagement h3, #vendite h3, #tour h3 {
+    font-size: 2em;
+}
+
+#userManagement p, #tour p {
+    font-size: 1.3em;
+}
+
+#userManagement label, #tour label {
+    font-size: 1.5em;
+}
+
+#userManagement input, #tour input {
+    font-size: 1.5em;
+    margin-bottom: 0.5em;
+    margin-top: 0.7em;
+    min-width: 70%;
+    max-width: 100%;
+    justify-items: center;
+    border: 1px solid var(--pulsantecolor2);
+    border-radius: 5px;
+    padding-left: 0.5em;
+}
+
+#userManagement button, #tour button {
+    font-size: 1.5em;
+    max-width: fit-content;
+}
+
+#userManagement select, #tour select {
+    font-size: 1.3em;
+    max-width: fit-content;
+    margin-bottom: 0.7em;
+    margin-top: 0.5em;
+}
+
+#updateForm {
+    display: flex;
+    flex-direction: column;
+}
+
+#vendite .icon {
+    font-size: 2em;
+    border: 2px solid var(--txtcolor);
+    border-radius: 8px;
+    padding: 0.3em;
+    max-width: fit-content;
+}
+
+#vendite p {
+    font-size: 1.3em;
+    margin-bottom: 4em;
+}
+
+
+
+/*
+#searchForm {
+    position: relative;
+    width: 90%;
+    margin-bottom: 15px;
+    padding-bottom: 1em;
+}
+/*
+#userManagement i {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+#userManagement input {
+    padding-left: 35px;
+    font-size: 16px;
+    border: 1px solid var(--pulsantecolor2);
+    border-radius: 5px;
+    width: 100%;
+}*/
+
+#content h2 {
+    font-size: 4em;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    line-height: 1.5em;
+}
+
+#userManagement input,
+#userManagement button {
+    font-size: 1.3em; 
 }
 
 /* ----------------------------------------------- */

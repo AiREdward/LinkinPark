@@ -2,17 +2,26 @@
 
 let currentEventData = null;
 
-// Cambia il titolo della pagina in base al contenuto attivo
-function updatePageTitle(title) {
-    document.getElementById('pageTitle').textContent = title;
-}
+document.getElementById('vendite').style.display = 'none';
+document.getElementById('tour').style.display = 'none';
+document.getElementById('userManagement').style.display = 'block';
+document.getElementById('eventOptions').style.display = 'none';
+
+document.getElementById('addEventBtn').addEventListener('click', function () {
+    document.getElementById('searchForm2').style.display = 'none';
+});
+
+document.getElementById('cancelBtn').addEventListener('click', function () {
+    document.getElementById('result2').style.display = 'none';
+    document.getElementById('result3').style.display = 'none';
+    document.getElementById('eventOptions').style.display = 'none';
+});
 
 // Gestisci il click sui bottoni del menu
 document.getElementById('userManagementBtn').addEventListener('click', function () {
     document.getElementById('vendite').style.display = 'none';
     document.getElementById('tour').style.display = 'none';
     document.getElementById('userManagement').style.display = 'block';
-    updatePageTitle('Gestione Utenti');
 });
 
 document.getElementById('dateTourBtn').addEventListener('click', function () {
@@ -20,14 +29,12 @@ document.getElementById('dateTourBtn').addEventListener('click', function () {
     document.getElementById('userManagement').style.display = 'none';
     document.getElementById('vendite').style.display = 'none';
     document.getElementById('tour').style.display = 'block';
-    updatePageTitle('Gestione Tour');
 });
 
 document.getElementById('venditeBtn').addEventListener('click', function () {
     document.getElementById('userManagement').style.display = 'none';
     document.getElementById('tour').style.display = 'none';
     document.getElementById('vendite').style.display = 'block';
-    updatePageTitle('Statistiche');
 
     // Carica le statistiche
     fetch('../php/admin.php', {
@@ -123,6 +130,8 @@ function selectButton(buttonId) {
 function displayEventInfo() {
     if (!currentEventData) return;
 
+    document.getElementById('eventOptions').style.display = 'block';
+
     const resultDiv = document.getElementById('result3');
     resultDiv.innerHTML = `
         <div>
@@ -137,6 +146,7 @@ function displayEventInfo() {
             <p><strong>Prezzo:</strong> ${currentEventData.prezzo}</p>
         </div>
     `;
+    document.getElementById('result3').style.display = 'block';
 }
 
 
@@ -185,6 +195,8 @@ function displayEventUpdate() {
             </form>
         </div>
     `;
+
+    document.getElementById('result3').style.display = 'block';
 
     document.getElementById('updateEventForm').addEventListener('submit', function (e) {
         e.preventDefault();
@@ -243,11 +255,21 @@ function displayAddEvent() {
             <input type="number" id="prezzo" name="prezzo" required>
         
             <button type="submit">Salva Evento</button>
+            <button type="button" id="cancelButton">Annulla</button>
         </form>
     `;
 
+    document.getElementById('result2').style.display = 'block';
+
+    document.getElementById('cancelButton').addEventListener('click', function(event) {
+        document.getElementById('result2').innerHTML = '';
+        document.getElementById('searchForm2').style.display = 'block';
+    });
+
     document.getElementById('addEventForm').addEventListener('submit', function(event) {
         event.preventDefault();
+
+        document.getElementById('eventOptions').style.display = 'block';
     
         const formData = new FormData(this);
         formData.append('action', 'add_event');
