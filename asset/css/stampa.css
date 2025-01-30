@@ -22,12 +22,12 @@ main {
     margin-top: -5em;
 }
 
-body {  /*o body *? */
+body {
     background-color: #fff;
     color: var(--txtColor);
-    font-family: "Times New Roman", Times, serif; /* è diverso perchè times new roman ha le grazie */
+    font-family: "Times New Roman", serif;
     font-size: 12pt;
-    line-height: 18pt;   /*verificare*/
+    line-height: 18pt;
 }
 
 #scrollToTop button {
@@ -75,7 +75,6 @@ header h1 {
 }
 
 /*===== INDEX =====*/
-
 #homeMusic img, #homeTour img, #homeJournal img {
     width: 70%;
 }
@@ -85,7 +84,6 @@ header h1 {
 }
 
 /*===== CHI SIAMO =====*/
-
 #integranti, #ex-integranti {
     display: block;
     padding: 0;
@@ -218,88 +216,83 @@ article[id^="article"] p {
 }
 
 /*===== TOUR =====*/
-
-@media print {
-
-    header, footer {
-        display: none;
-    }
-
-    #logout-modal, #hamburger-menu{
-        display: none;
-    }
-
-    #tour-dates {
-        padding-left: 0;
-        max-width: 100%;
-        margin: 0;
-    }
-
-    #tour-dates dt {
-        float: none;
-        clear: none;
-        width: 100%;
-        padding: 0.5em 0;
-        font-weight: bold;
-        text-transform: uppercase;
-        direction: ltr;
-        margin: 0;
-        text-align: left;
-    }
-
-    #tour-dates dd {
-        position: static;
-        float: none;
-        padding: 0.5em 0;
-        width: 100%;
-        opacity: 1;
-        transition: none;
-        margin-top: 0;
-        border-bottom: 1px solid #000;
-    }
-
-    #tour-dates dd::before,
-    #tour-dates dd:not(:last-of-type)::after {
-        display: none;
-    }
-
-    #tour-dates dd .extra-details {
-        padding: 0;
-        border: none;
-        border-radius: 0;
-        transition: none;
-    }
-
-    #tour-dates dd .extra-details[aria-hidden="true"],
-    #tour-dates dd .extra-details[aria-hidden="false"] {
-        opacity: 1;
-        transform: none;
-        pointer-events: auto;
-    }
-
-    #tour-dates dd .extra-details .button-container {
-        display: none;
-    }
-
-    #tour-dates dd p {
-        margin-top: 0;
-        margin-bottom: 0.5em;
-    }
-
-    #tour-dates dd>p:hover {
-        color: inherit;
-        cursor: default;
-    }
-
-    #tour-dates dt {
-        margin-top: 0;
-        margin-right: 0;
-    }
-
+header, footer {
+    display: none;
 }
 
-/*===== MUSICA =====*/
+#logout-modal, #hamburger-menu{
+    display: none;
+}
 
+#tour-dates {
+    padding-left: 0;
+    max-width: 100%;
+    margin: 0;
+}
+
+#tour-dates dt {
+    float: none;
+    clear: none;
+    width: 100%;
+    padding: 0.5em 0;
+    font-weight: bold;
+    text-transform: uppercase;
+    direction: ltr;
+    margin: 0;
+    text-align: left;
+}
+
+#tour-dates dd {
+    position: static;
+    float: none;
+    padding: 0.5em 0;
+    width: 100%;
+    opacity: 1;
+    transition: none;
+    margin-top: 0;
+    border-bottom: 1px solid #000;
+}
+
+#tour-dates dd::before,
+#tour-dates dd:not(:last-of-type)::after {
+    display: none;
+}
+
+#tour-dates dd .extra-details {
+    padding: 0;
+    border: none;
+    border-radius: 0;
+    transition: none;
+}
+
+#tour-dates dd .extra-details[aria-hidden="true"],
+#tour-dates dd .extra-details[aria-hidden="false"] {
+    opacity: 1;
+    transform: none;
+    pointer-events: auto;
+}
+
+#tour-dates dd .extra-details .button-container {
+    display: none;
+}
+
+#tour-dates dd p {
+    margin-top: 0;
+    margin-bottom: 0.5em;
+}
+
+#tour-dates dd>p:hover {
+    color: inherit;
+    cursor: default;
+}
+
+#tour-dates dt {
+    margin-top: 0;
+    margin-right: 0;
+}
+
+
+/*===== MUSICA =====*/
 .album {
     visibility: visible;
     flex: none;
@@ -356,12 +349,10 @@ article[id^="article"] p {
 
 
 /*===== SHOP =====*/
-
 #cart-hamburger-menu, .filters {
     display: none;
 }
 
-/* Ensure the content fits within the printable area */
 #container-shop, #shop {
     flex: none;
     width: 80%;
@@ -370,7 +361,6 @@ article[id^="article"] p {
     padding: 0;
 }
 
-/* Adjust the layout for better print readability */
 .card {
     width: 50%;
     margin: 10px 0;
@@ -384,7 +374,6 @@ article[id^="article"] p {
     margin-bottom: 10px;
 }
 
-/* Hide no results message when printing */
 #no-results {
     display: none;
 }
@@ -398,66 +387,59 @@ article[id^="article"] p {
     break-inside: avoid-column;
 }
 
-/*===== ACCEDI =====*/
 
+/*===== ACCEDI =====*/
 .left-section {
     margin-top: 10em;
 }
 
 
-/*===== altre paginee =====*/
-
 /*===== PAGAMENTO ======*/
+#cardForm .container {
+    display: block;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
 
+#receipt {
+    width: 100%;
+    margin: 1em 0;
+    padding: 1em;
+    display: block;
+    position: static;
+    box-shadow: none;
+    background: none;
+}
 
-@media print {
-    
-    #cardForm .container {
-        display: block;
-        width: 100%;
-        margin: 0;
-        padding: 0;
-    }
+#cardForm .container #left-section,
+#cardForm .container #card,
+#cardForm .container #data {
+    page-break-inside: avoid;
+}
 
-    #receipt {
-        width: 100%;
-        margin: 1em 0;
-        padding: 1em;
-        display: block;
-        position: static;
-        box-shadow: none;
-        background: none;
-    }
+#cardForm input {
+    display: block;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid var(--txtColor);
+    margin-bottom: 1em;
+    padding: 0.5em 0;
+    color: var(--txtColor);
+}
 
-    #cardForm .container #left-section,
-    #cardForm .container #card,
-    #cardForm .container #data {
-        page-break-inside: avoid;
-    }
+#cardForm #receipt #bought-items > div {
+    border-top: 1px solid var(--txtColor);
+    padding: 1em 0;
+}
 
-    #cardForm input {
-        display: block;
-        width: 100%;
-        border: none;
-        border-bottom: 1px solid var(--txtColor);
-        margin-bottom: 1em;
-        padding: 0.5em 0;
-        color: var(--txtColor);
-    }
-
-    #cardForm #receipt #bought-items > div {
-        border-top: 1px solid var(--txtColor);
-        padding: 1em 0;
-    }
-
-    #proceed,
-    #cancel,
-    .popup,
-    #custom-popup,
-    ::-webkit-scrollbar,
-    ::-webkit-scrollbar-track,
-    ::-webkit-scrollbar-thumb,
-    #rcardForm #receipt {
-        display: none;
-    }
+#left-section #card #proceed,
+#cancel,
+.popup,
+#custom-popup,
+::-webkit-scrollbar,
+::-webkit-scrollbar-track,
+::-webkit-scrollbar-thumb,
+#rcardForm #receipt {
+    display: none;
 }

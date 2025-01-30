@@ -11,6 +11,7 @@
         <link rel="stylesheet" href="asset/css/style.css" media="all">
         <link rel="stylesheet" href="asset/css/breadcrumb.css" media="all">
         <link rel="stylesheet" href="asset/css/stampa.css" media="print">
+        <script src="js/chisiamo.js"></script>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="icon" href="asset/img/favicon.ico" type="image/x-icon">
     </head>
@@ -127,18 +128,6 @@
             <?php include 'includes/scrollToTop.php'; ?>
             
         </main>
-
-        <script>
-            document.addEventListener('DOMContentLoaded', function() {
-                const cards = document.querySelectorAll('#integranti dd, #ex-integranti dd');
-                
-                cards.forEach(card => {
-                    card.addEventListener('click', () => {
-                        card.classList.toggle('flipped');
-                    });
-                });
-            });
-        </script>
 
         <?php include 'includes/footer.php'; ?>
         

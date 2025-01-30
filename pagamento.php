@@ -28,6 +28,7 @@
         include 'includes/breadcrumb.php'; 
     ?>
 
+    <main>
     <form id="cardForm" action="php/pagamento.php" method="POST">
         <div class="container">
             <div id="left-section">
@@ -93,6 +94,7 @@
         </div>
 
     </form>
+    </main>
 
     <script src="js/pagamento.js"></script>
 
