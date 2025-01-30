@@ -38,7 +38,7 @@
             <h2>From Zero</h2>
             <!-- <button type="button" class="link" onclick="location.href='music.html'">Scopri di più</button>
             link?? -->
-            <p>Ascolta su <a href="https://open.spotify.com/album/4R6FV9NSzhPihHR0h4pI93" target="_blank" lang="en">Spotify</a></p>
+            <p>Ascolta <a href="https://open.spotify.com/album/4R6FV9NSzhPihHR0h4pI93" target="_blank" lang="en">From Zero su Spotify</a></p>
         </div>
         <hr>
         <div id="homeTour">
