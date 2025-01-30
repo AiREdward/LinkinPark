@@ -86,6 +86,7 @@ document.getElementById('search2').addEventListener('keydown', function (e) {
 });
 
 
+
 function searchEvent() {
     const date = document.getElementById('search2').value;
     console.log(date);
@@ -320,12 +321,38 @@ document.getElementById('deleteEventBtn').addEventListener('click', function () 
         const resultDiv = document.getElementById('result3');
         resultDiv.innerHTML = `
             <p>Sei sicuro di voler cancellare l'evento a ${currentEventData.citta} nella data di ${currentEventData.data}? Questa azione è irreversibile.</p>
-
             <button id="confirmationBtn">Confermo</button>
+            <button id="cancelDeleteBtn">Annulla</button>
         `;
-        //aggiungere l'event listener per il pulsante che cancella l'evento dalla db
+
+        document.getElementById('confirmationBtn').addEventListener('click', function() {
+            const formData = new FormData();
+            formData.append('action', 'remove_event');
+            formData.append('evento', currentEventData.evento);
+            formData.append('data', currentEventData.data);
+            formData.append('orario', currentEventData.orario);
+            formData.append('luogo', currentEventData.luogo);
+            formData.append('citta', currentEventData.citta);
+            formData.append('paese', currentEventData.paese);
+
+            fetch('../php/admin.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json()) 
+            .then(data => {
+                alert(data.message);
+                resultDiv.innerHTML = ''; 
+            })
+            .catch(error => console.error('Error:', error));
+        });
+
+        document.getElementById('cancelDeleteBtn').addEventListener('click', function() {
+            resultDiv.innerHTML = ''; 
+        });
     }
 });
+
 
 
 function searchUser() {

@@ -217,13 +217,6 @@ article[id^="article"] p {
 
 /*===== MUSICA =====*/
 
-.album img, 
-    .album p, 
-    .album h2, 
-    .album dl { 
-        display: block !important; 
-    }
-
 .album {
     visibility: visible;
     flex: none;
@@ -262,20 +255,71 @@ article[id^="article"] p {
     font-size: 11pt;
 }
 
-/* Hide elements that are unnecessary in print */
 .album:hover {
-    transform: none; /* Remove hover effects */
+    transform: none; 
 }
 
 #discografia dl {
-    transform: none !important;
+    transform: none;
 }
 
 #discografia dl.flipped {
-    transform: none !important;
+    transform: none;
+}
+
+.album img, .album p, .album h2, .album dl { 
+    display: block !important; 
 }
 
 
 /*===== SHOP =====*/
+
+#cart-hamburger-menu, .filters {
+    display: none;
+}
+
+/* Ensure the content fits within the printable area */
+#container-shop, #shop {
+    flex: none;
+    width: 80%;
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+
+/* Adjust the layout for better print readability */
+.card {
+    width: 50%;
+    margin: 10px 0;
+    page-break-inside: avoid;
+    break-inside: avoid-column;
+}
+
+.card img {
+    max-width: 40%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+/* Hide no results message when printing */
+#no-results {
+    display: none;
+}
+
+#cart-items {
+    display: block;
+}
+
+.card, .cart-item {
+    page-break-inside: avoid;
+    break-inside: avoid-column;
+}
+
+/*===== ACCEDI =====*/
+
+.left-section {
+    margin-top: 10em;
+}
+
 
 /*===== altre paginee =====*/
