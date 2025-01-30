@@ -592,6 +592,7 @@ header h1 {
     transform-style: preserve-3d;
     transition: transform 0.6s;
     transform-origin: center center;
+    cursor: pointer;
 }
 
 #integranti dd.flipped, #ex-integranti dd.flipped {
@@ -697,6 +698,7 @@ header h1 {
     max-height: auto;
     border-radius: 1em;
     border: 2px solid var(--txtcolor);
+    cursor: pointer;
 }
 
 .album:hover {
