@@ -70,6 +70,15 @@ header h1::after {
 }
 
 /*===== INDEX =====*/
+
+#homeMusic img, #homeTour img, #homeJournal img {
+    width: 70%;
+}
+
+#homeMusic p, #homeTour button, #homeJournal button {
+    display: none;
+}
+
 /*===== CHI SIAMO =====*/
 
 #integranti, #ex-integranti {
@@ -204,7 +213,69 @@ article[id^="article"] p {
     margin: 0.5em 0;
 }
 /*===== TOUR =====*/
+
+
 /*===== MUSICA =====*/
+
+.album img, 
+    .album p, 
+    .album h2, 
+    .album dl { 
+        display: block !important; 
+    }
+
+.album {
+    visibility: visible;
+    flex: none;
+    width: 40%; 
+    border: none;
+    page-break-inside: avoid; 
+}
+
+.album img {
+    max-width: 100%;
+    height: auto;
+    border: none;
+}
+
+.album h2 {
+    font-size: 16pt;
+    margin-bottom: 0.5em;
+}
+
+.album dl {
+    display: block;
+    visibility: visible;
+    transform: none;
+}
+
+.album dt, .album dd {
+    font-size: 12pt;
+    display: block;
+    float: none;
+    text-align: left;
+    margin: 0;
+}
+
+.album p {
+    text-align: left;
+    font-size: 11pt;
+}
+
+/* Hide elements that are unnecessary in print */
+.album:hover {
+    transform: none; /* Remove hover effects */
+}
+
+#discografia dl {
+    transform: none !important;
+}
+
+#discografia dl.flipped {
+    transform: none !important;
+}
+
+
 /*===== SHOP =====*/
 
 /*===== altre paginee =====*/
