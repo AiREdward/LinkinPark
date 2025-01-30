@@ -186,28 +186,31 @@ function displayEventUpdate() {
         </div>
     `;
 
-    document.getElementById('updateEventForm').addEventListener('submit', function(e) {
+    document.getElementById('updateEventForm').addEventListener('submit', function (e) {
         e.preventDefault();
 
         const formData = new FormData(this);
+        formData.append('action', 'update_event');
+
         const updatedEventData = Object.fromEntries(formData.entries());
-        
-        fetch('php/update_event.php', {
+
+        fetch('../php/admin.php', {
             method: 'POST',
-            body: new FormData(this)
+            //body: new URLSearchParams({ action: 'update_event' })
+            body: formData
         })
-        .then(response => response.json())
-        .then(data => {
-            if (data.success) {
-                alert('Evento aggiornato con successo!');
-            } else {
-                alert('Errore nell\'aggiornamento dell\'evento');
-            }
-        })
-        .catch(error => {
-            console.error('Errore:', error);
-            alert('Errore: Impossibile aggiornare l\'evento. Verifica la tua connessione o riprova più tardi.');
-        });
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    alert('Evento aggiornato con successo!');
+                } else {
+                    alert('Errore nell\'aggiornamento dell\'evento');
+                }
+            })
+            .catch(error => {
+                console.error('Errore:', error);
+                alert('Errore: Impossibile aggiornare l\'evento. Verifica la tua connessione o riprova più tardi.');
+            });
     });
 }
 
@@ -243,34 +246,26 @@ function displayAddEvent() {
         </form>
     `;
 
-    document.getElementById('addEventForm').addEventListener('submit', function(e) {
-        e.preventDefault();
-        
+    document.getElementById('addEventForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+    
         const formData = new FormData(this);
-        
+        formData.append('action', 'add_event');
+    
         fetch('../php/admin.php', {
             method: 'POST',
-            body: new URLSearchParams({
-                action: 'add_event',
-                ...Object.fromEntries(formData)
-            })
+            body: formData
         })
         .then(response => response.json())
         .then(data => {
-            if (data.success) {
-                alert('Evento aggiunto con successo!');
-                this.reset();
-            } else {
-                alert('Errore nell\'aggiunta dell\'evento');
+            alert(data.message);
+            if (data.message === "Evento aggiunto con successo!") {
+                document.getElementById('addEventForm').reset();
             }
         })
-        .catch(error => {
-            console.error('Errore:', error);
-            alert('Errore: Impossibile aggiungere l\'evento. Verifica la tua connessione o riprova più tardi.');
-        });
-    });
+        .catch(error => console.error('Errore:', error));
+    });    
 }
-
 
 //Gestisci il click sui pulsanti della sezione Tour
 document.getElementById('addEventBtn').addEventListener('click', function () {
@@ -299,7 +294,7 @@ document.getElementById('deleteEventBtn').addEventListener('click', function () 
     if (currentEventData) {
         document.getElementById('result2').innerHTML = '';
         selectButton('deleteEventBtn');
-        
+
         const resultDiv = document.getElementById('result3');
         resultDiv.innerHTML = `
             <p>Sei sicuro di voler cancellare l'evento a ${currentEventData.citta} nella data di ${currentEventData.data}? Questa azione è irreversibile.</p>
