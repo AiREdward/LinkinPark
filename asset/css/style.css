@@ -208,8 +208,9 @@ header h1 {
     transition: background-color 0.3s;
     display: inline-block;
     text-align: center;
-    width: 120px;
+    min-width: 120px;
     box-sizing: border-box;
+    cursor: pointer;
 }
 
 #menu ul li a.active {
@@ -232,6 +233,10 @@ header h1 {
     cursor: pointer;
     text-decoration: none;
     border-radius: 5px;
+}
+
+#menu #userManagementBtn {
+    white-space: nowrap;
 }
 
 #menu button:focus {
@@ -374,11 +379,8 @@ header h1 {
 /* ADMIN */
 
 #userManagement, #vendite, #tour {
-    /*display: none;*/
-    max-width: fit-content;
     margin: 3em auto;
     padding: 2em;
-    background-color: var(--bgcolor2);
     border: 2px solid var(--txtcolor);
     border-radius: 2em;
 }
@@ -413,15 +415,20 @@ header h1 {
 }
 
 #userManagement select, #tour select {
-    font-size: 1.3em;
+    font-size: 1.2em;
     max-width: fit-content;
-    margin-bottom: 0.7em;
-    margin-top: 0.5em;
+    padding: 0.3em;
+    border: 1px solid var(--pulsantecolor2);
+    border-radius: 5px;
+    background-color: var(--backgroundcolor); 
+    color: var(--txtcolor); 
 }
 
 #updateForm {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
 }
 
 #vendite .icon {
@@ -437,22 +444,20 @@ header h1 {
     margin-bottom: 4em;
 }
 
-
-
-/*
 #searchForm {
     position: relative;
     width: 90%;
     margin-bottom: 15px;
     padding-bottom: 1em;
 }
-/*
+
 #userManagement i {
     position: absolute;
     left: 12px;
-    top: 50%;
+    top: 56px;
     transform: translateY(-50%);
     pointer-events: none;
+    color: #888;
 }
 
 #userManagement input {
@@ -461,7 +466,7 @@ header h1 {
     border: 1px solid var(--pulsantecolor2);
     border-radius: 5px;
     width: 100%;
-}*/
+}
 
 #content h2 {
     font-size: 4em;
@@ -470,10 +475,99 @@ header h1 {
     line-height: 1.5em;
 }
 
+#content button {
+    background-color: var(--pulsantecolor2);
+    color: var(--txtcolor);
+    cursor: pointer;
+    border-radius: 5px;
+}
+
 #userManagement input,
 #userManagement button {
     font-size: 1.3em; 
 }
+
+#tour h2 {
+    text-align: center;
+}
+
+#tour button, #addEventForm button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#addEventBtn {
+    display: block;
+    margin: 0 auto;
+}
+
+#searchForm2, #addEventForm {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+    max-width: 90%;
+    margin: 0 auto;
+}
+
+#searchForm2 label, #addEventForm label {
+    font-weight: bold;
+    color: var(--txtcolor);
+}
+
+#searchForm2 input, #addEventForm input, #addEventForm textarea {
+    padding: 8px;
+    border: 1px solid var(--txtcolor);
+    border-radius: 5px;
+    font-size: 14px;
+    width: 100%;
+}
+
+#searchForm2 input:focus, #addEventForm input:focus, #addEventForm textarea:focus {
+    border-color: var(--pulsantecolor2);
+    outline: none;
+}
+
+#eventOptions {
+    display: none;
+    text-align: center;
+    margin-top: 20px;
+}
+
+#eventOptions button {
+    width: 45%;
+    display: inline-block;
+}
+
+#result2 {
+    display: none;
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid var(--txtcolor);
+    margin-top: 20px;
+}
+
+#addEventForm {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 10px;
+    align-items: center;
+}
+
+#addEventForm textarea {
+    resize: vertical;
+    grid-column: span 2;
+}
+
+#content button#deleteEventBtn {
+    background-color: var(--pulsantecolor1);
+}
+
 
 /* ----------------------------------------------- */
 

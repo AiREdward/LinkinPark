@@ -16,15 +16,30 @@
 <body>
     <header>
         <h1 lang="en">Admin Dashboard</h1>
+        <button id="hamburger-menu" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
     </header>
 
-    <!-- Menu laterale -->
+
+
+    <!-- <?php
+        $breadcrumb = [
+            ['name' => 'Home', 'url' => 'index.php'],
+            ['name' => 'Tour', 'url' => 'tour.php']
+        ];
+        include 'includes/menu.php'; 
+    ?> -->
+
+    <!-- Navbar -->
     <nav id="menu">
         <ul>
-            <li><button id="userManagementBtn">Gestione Utenti</button></li>
-            <li><button id="venditeBtn">Statistiche</button></li>
-            <li><button id="dateTourBtn">Gestione Tour</button></li>
-            <li><button id="logoutBtn">Logout</button></li>
+            <li><a id="userManagementBtn">Gestione Utenti</a></li>
+            <li><a id="venditeBtn">Statistiche</a></li>
+            <li><a id="dateTourBtn">Gestione Tour</a></li>
+            <li><a id="logoutBtn">Logout</a></li>
         </ul>
     </nav>
 
@@ -101,7 +116,6 @@
                 <div id="result3"></div>
 
                 <div id="eventOptions">
-                    <button id="eventInfoBtn">Informazioni Evento</button>
                     <button id="deleteEventBtn">Cancella Evento</button>
                     <button id="cancelBtn">Annulla</button>
                 </div>
