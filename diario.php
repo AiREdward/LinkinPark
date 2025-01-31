@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="asset/css/stampa.css" media="print">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="icon" href="asset/img/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="asset/css/mobile.css" media="screen and (max-width:600px)">
+    <!-- <link rel="stylesheet" href="asset/css/mobile.css" media="screen and (max-width:600px)"> -->
 
     <!--Lato, Bebas Neue -->
     <link rel="preconnect" href="https://fonts.googleapis.com"> <!--lasciarli come performance enhancer? in quali file metterli? -->

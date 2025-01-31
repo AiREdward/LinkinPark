@@ -1,12 +1,7 @@
-/*mettere in ogni file: <link href="stampa.css" rel="stylesheet" type="text/css" media="print">  
-mettere media="all" per style.css*/
-
 /*mettere un @import per i font*/
 
 /*aggiungere forse un selettore per tutte le pagine con page-break-... per le intestazioni H2, H3...?
 gestire il colore del testo bene, che non si ripete in piu' posti se non ha senso*/
-
-
 
 /*===== GENERALE =====*/
 :root {
@@ -23,14 +18,14 @@ gestire il colore del testo bene, che non si ripete in piu' posti se non ha sens
 
 main {
     width: 100%;
-    margin-left: 0em;
+    margin-left: 0;
     margin-top: -5em;
 }
 
 body {
     background-color: #fff;
     color: var(--txtColor);
-    font-family: "Times New Roman", Times, serif; /* è diverso perchè times new roman ha le grazie */
+    font-family: "Times New Roman", Times, serif;
     font-size: 12pt;
     line-height: 18pt;   /*verificare*/
 }
@@ -154,7 +149,6 @@ h2 {
     transition: none;
 }
 
-/* Reset popup-related styles */
 article[id^="article"] {
     display: block;
     position: static;

@@ -1,11 +1,10 @@
 <?php
 include '../includes/db_config.php';
-include 'functions.php'; // File dove sono definite le funzioni
+include 'functions.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $response = array();
 
-    // Identifica l'azione richiesta
     $action = isset($_POST['action']) ? $_POST['action'] : null;
 
     switch ($action) {
@@ -40,25 +39,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             }
             break;
 
-        case 'update_event':
-            $event_id = intval($_POST['id']);
-            $evento = trim($_POST['evento']);
-            $data = trim($_POST['data']);
-            $orario = trim($_POST['orario']);
-            $luogo = trim($_POST['luogo']);
-            $citta = trim($_POST['citta']);
-            $paese = trim($_POST['paese']);
-            $descrizione = trim($_POST['descrizione']);
-            $prezzo = floatval($_POST['prezzo']);
-            $response['message'] = updateEvent($conn, $event_id, $evento, $data, $orario, $luogo, $citta, $paese, $descrizione, $prezzo);
-            $response['debug'] = 'This is a debug message from PHP';
-            if (!$response['message']) {
-                $response['message'] = 'Nessuna modifica effettuata.';
-            } 
-            break;
-
         case 'add_event':
-            // Recupero dati dal POST
             $evento = trim($_POST['evento']);
             $data = trim($_POST['data']);
             $orario = trim($_POST['orario']);
@@ -68,7 +49,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $descrizione = trim($_POST['descrizione']);
             $prezzo = floatval($_POST['prezzo']);
             
-            // Chiamiamo la funzione per aggiungere l'evento
             $response['message'] = addEvent($conn, $evento, $data, $orario, $luogo, $citta, $paese, $descrizione, $prezzo);
             break;  
             
@@ -87,7 +67,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             break;
     }
 
-    echo json_encode($response); // Risponde con i dati in formato JSON
+    echo json_encode($response);
     exit;
 }
 

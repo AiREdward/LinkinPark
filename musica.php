@@ -35,7 +35,7 @@
                 <!-- from zero -->
                 <h2>From Zero</h2>
                 <img src="asset/img/album/From Zero.webp" alt="">
-                <p>Ascolta su <a href="https://open.spotify.com/album/4R6FV9NSzhPihHR0h4pI93" target="_blank" lang="en">Spotify</a></p>
+                <p>Ascolta <a href="https://open.spotify.com/album/4R6FV9NSzhPihHR0h4pI93" target="_blank"><span lang="en">From Zero</span> su <span lang="en">Spotify</span></a></p>
                 <dl>
                     <dt>Data di pubblicazione</dt> 
                     <dd><time datetime="2024-11-15">15 novembre 2024</time></dd>
@@ -66,7 +66,7 @@
                 <!-- One More Light -->
                 <h2>One More Light</h2>
                 <img src="asset/img/album/One More Light.webp" alt="">
-                <p>Ascolta su <a href="https://open.spotify.com/track/3xXBsjrbG1xQIm1xv1cKOt" target="_blank" lang="en">Spotify</a></p>
+                <p>Ascolta <a href="https://open.spotify.com/track/3xXBsjrbG1xQIm1xv1cKOt" target="_blank"><span lang="en">One More Light</span> su <span lang="en">Spotify</span></a></p>
                 <dl>
                     <dt>Data di pubblicazione</dt> 
                     <dd><time datetime="2017-05-19">19 maggio 2017</time></dd>
@@ -96,7 +96,7 @@
                 <!-- living things -->
                 <h2>Living Things</h2>
                 <img src="asset/img/album/Living Things.webp" alt="">
-                <p>Ascolta su <a href="https://open.spotify.com/album/4XHIjbhjRmqWlosjj5rqSI" target="_blank" lang="en">Spotify</a></p>
+                <p>Ascolta <a href="https://open.spotify.com/album/4XHIjbhjRmqWlosjj5rqSI" target="_blank"><span lang="en">Living Things</span> su <span lang="en">Spotify</span></a></p>
                 <dl>
                     <dt>Data di pubblicazione</dt> 
                     <dd><time datetime="2012-06-20">20 giugno 2012</time></dd>
@@ -128,7 +128,7 @@
                 <!-- A Thousand Suns -->
                 <h2>A Thousand Suns</h2>
                 <img src="asset/img/album/A Thousand Suns.webp" alt="">
-                <p>Ascolta su <a href="https://open.spotify.com/album/5uvXx5ZQswNRFCdHR521YZ" target="_blank" lang="en">Spotify</a></p>
+                <p>Ascolta <a href="https://open.spotify.com/album/5uvXx5ZQswNRFCdHR521YZ" target="_blank"><span lang="en">A Thousand Suns</span> su <span lang="en">Spotify</span></a></p>
                 <dl>
                     <dt>Data di pubblicazione</dt> 
                     <dd><time datetime="2010-09-08">8 settembre 2010</time></dd>
@@ -163,7 +163,7 @@
                 <!-- Minutes to Midnight -->
                 <h2>Minutes to Midnight</h2>
                 <img src="asset/img/album/Minutes to Midnight.webp" alt="">
-                <p>Ascolta su <a href="https://open.spotify.com/album/2tlTBLz2w52rpGCLBGyGw6" target="_blank" lang="en">Spotify</a></p>
+                <p>Ascolta <a href="https://open.spotify.com/album/2tlTBLz2w52rpGCLBGyGw6" target="_blank"><span lang="en">Minutes to Midnight</span> su <span lang="en">Spotify</span></a></p>
                 <dl>
                     <dt>Data di pubblicazione</dt> 
                     <dd><time datetime="2007-05-17">17 maggio 2007</time></dd>
@@ -195,7 +195,7 @@
                 <!-- Meteora -->
                 <h2>Meteora</h2>
                 <img src="asset/img/album/Meteora.webp" alt="">
-                <p>Ascolta su <a href="https://open.spotify.com/album/4Gfnly5CzMJQqkUFfoHaP3" target="_blank" lang="en">Spotify</a></p>
+                <p>Ascolta <a href="https://open.spotify.com/album/4Gfnly5CzMJQqkUFfoHaP3" target="_blank"><span lang="en">Meteora</span> su <span lang="en">Spotify</span></a></p>
                 <dl>
                     <dt>Data di pubblicazione</dt> 
                     <dd><time datetime="2003-03-25">25 marzo 2003</time></dd>
@@ -229,7 +229,7 @@
                 <!-- Hybrid Theory -->
                 <h2>Hybrid Theory</h2>
                 <img src="asset/img/album/Hybrid Theory.webp" alt="">
-                <p>Ascolta su <a href="https://open.spotify.com/album/6PFPjumGRpZnBzqnDci6qJ" target="_blank" lang="en">Spotify</a></p>
+                <p>Ascolta <a href="https://open.spotify.com/album/6PFPjumGRpZnBzqnDci6qJ" target="_blank"><span lang="en">Hybrid Theory</span> su <span lang="en">Spotify</span></a></p>
                 <dl>
                     <dt>Data di pubblicazione</dt> 
                     <dd><time datetime="2000-10-24">24 ottobre 2000</time></dd>
