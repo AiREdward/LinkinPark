@@ -1,12 +1,10 @@
 <?php
 session_start();
 
-// Initialize cart if not already set
 if (!isset($_SESSION['cart'])) {
     $_SESSION['cart'] = [];
 }
 
-// Function to add item to cart
 function addToCart($itemName, $itemPrice, $quantity, $itemImage, $itemSize) {
     foreach ($_SESSION['cart'] as &$item) {
         if ($item['name'] === $itemName && $item['size'] === $itemSize) {
@@ -29,7 +27,6 @@ function addToCart($itemName, $itemPrice, $quantity, $itemImage, $itemSize) {
     ];
 }
 
-// Function to remove item from cart
 function removeFromCart($itemName) {
     $_SESSION['cart'] = array_filter($_SESSION['cart'], function($item) use ($itemName) {
         return $item['name'] !== $itemName;
@@ -40,7 +37,6 @@ function clearCart() {
     $_SESSION['cart'] = [];
 }
 
-// Function to update cart display
 function updateCartDisplay() {
     $cartItems = $_SESSION['cart'];
     $subtotal = 0;
@@ -79,7 +75,6 @@ function updateCartDisplay() {
     return $cartHtml;
 }
 
-// Handle AJAX requests
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $action = $_POST['action'];
     $itemName = $_POST['itemName'] ?? '';

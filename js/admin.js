@@ -71,7 +71,6 @@ const searchForm2 = document.getElementById('searchForm2');
 searchForm2.addEventListener('submit', function (e) {
     e.preventDefault();
     searchEvent();
-    console.log("searching event");
 });
 
 document.getElementById('search2').addEventListener('keydown', function (e) {
@@ -85,7 +84,6 @@ document.getElementById('search2').addEventListener('keydown', function (e) {
 
 function searchEvent() {
     const date = document.getElementById('search2').value;
-    console.log(date);
 
 
     fetch('../php/admin.php', {
@@ -97,10 +95,8 @@ function searchEvent() {
             const resultDiv = document.getElementById('result3');
             resultDiv.innerHTML = '';
 
-            console.log(data);
 
             if (data.message) {
-                console.log(data.message);
                 resultDiv.innerHTML = `
                 <div class="message not-found">
                     <p class="fas fa-exclamation-circle">${data.message}</p>
@@ -209,7 +205,7 @@ function displayAddEvent() {
     });    
 }
 
-//Gestisci il click sui pulsanti della sezione Tour
+//Gestisce il click sui pulsanti della sezione Tour
 document.getElementById('addEventBtn').addEventListener('click', function () {
     selectButton('addEventBtn');
     document.getElementById('result3').innerHTML = '';
@@ -291,7 +287,7 @@ function searchUser() {
                         <h3>Informazioni Utente</h3>
                         <p><strong>Nome:</strong> ${user.nome}</p>
                         <p><strong>Cognome:</strong> ${user.cognome}</p>
-                        <p><strong>Email:</strong> ${user.email}</p>
+                        <p><strong><span lang="en">Email</span>:</strong> ${user.email}</p>
                         <p><strong>Ruolo:</strong> ${user.ruolo === 'utente' ? 'Utente' : 'Admin'}</p>
                         <p><strong>Stato:</strong> ${user.stato === 'attivo' ? 'Attivo' : 'Bloccato'}</p>
                     </div>

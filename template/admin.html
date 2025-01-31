@@ -20,12 +20,10 @@
 
     <!-- Menu laterale -->
     <nav id="menu">
-        <ul>
-            <li><button id="userManagementBtn">Gestione Utenti</button></li>
-            <li><button id="venditeBtn">Statistiche</button></li>
-            <li><button id="dateTourBtn">Gestione Tour</button></li>
-            <li><button id="logoutBtn">Logout</button></li>
-        </ul>
+        <button id="userManagementBtn">Gestione Utenti</button>
+        <button id="venditeBtn">Statistiche</button>
+        <button id="dateTourBtn">Gestione <span lang="en">Tour</span></button>
+        <button id="logoutBtn" lanng="en">Logout</button>
     </nav>
 
     <!-- Contenuto principale -->
@@ -36,7 +34,7 @@
             <div id="userManagement">
                 <h2>Gestione Utenti</h2>
                 <form id="searchForm">
-                    <label for="email">Cerca utente per email:</label>
+                    <label for="email">Cerca utente per <span lang="en">email</span>:</label>
                     <div class="input-container">
                         <input type="email" name="email" id="email" placeholder="Inserisci email utente" required autocomplete="email">
                         <i class="fa fa-search" aria-hidden="true"></i>
@@ -78,7 +76,7 @@
             <!-- Tour -->
             <div id="tour">
 
-                <h2>Gestione Tour</h2>
+                <h2>Gestione <span lang="en">Tour</span></h2>
 
                 <button id="addEventBtn">Aggiungi Evento</button>
 

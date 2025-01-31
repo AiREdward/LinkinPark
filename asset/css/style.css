@@ -374,7 +374,6 @@ header h1 {
 /* ADMIN */
 
 #userManagement, #vendite, #tour {
-    /*display: none;*/
     max-width: fit-content;
     margin: 3em auto;
     padding: 2em;
@@ -436,32 +435,6 @@ header h1 {
     font-size: 1.3em;
     margin-bottom: 4em;
 }
-
-
-
-/*
-#searchForm {
-    position: relative;
-    width: 90%;
-    margin-bottom: 15px;
-    padding-bottom: 1em;
-}
-/*
-#userManagement i {
-    position: absolute;
-    left: 12px;
-    top: 50%;
-    transform: translateY(-50%);
-    pointer-events: none;
-}
-
-#userManagement input {
-    padding-left: 35px;
-    font-size: 16px;
-    border: 1px solid var(--pulsantecolor2);
-    border-radius: 5px;
-    width: 100%;
-}*/
 
 #content h2 {
     font-size: 4em;
@@ -606,7 +579,6 @@ header h1 {
     box-sizing: border-box;
 }
 
-/*contenitore della carta*/
 #integranti dd, #ex-integranti dd {
     margin: 0;
     padding: 0;
@@ -622,7 +594,6 @@ header h1 {
     transform: rotateY(180deg);
 }
 
-/*fronte e retro della carta*/
 #integranti dd img,
 #integranti dd p,
 #ex-integranti dd img,
@@ -639,7 +610,6 @@ header h1 {
     margin: 0;
 }
 
-/*fronte della carta*/
 #integranti dd img, #ex-integranti dd img {
     object-fit: cover;
     background-color: var(--bgcolor2);
@@ -657,7 +627,6 @@ header h1 {
 #ex-integranti div:nth-of-type(1) img { object-position: 25% 0%; }
 #ex-integranti div:nth-of-type(2) img { object-position: 50% 0%; }
 
-/*retro della carta*/
 #integranti dd p, #ex-integranti dd p {
     background-color: var(--bgcolor2);
     color: var(--txtcolor);
@@ -1005,9 +974,8 @@ header h1 {
 .card img {
     width: 100%;
     height: auto;
-    max-width: 300px; /* Imposta una larghezza massima */
+    max-width: 300px; 
     max-height: 300px;
-    /* object-fit: contain; */
 }
 
 .card .price {
@@ -1066,7 +1034,6 @@ header h1 {
     width: 100%;
 }
 
-/* Non ci dovrebbe mai essere all'interno della pagina ma serve in caso venisse aggiunto un filtro senza item collegati*/
 #no-results {
     display: none;
     font-size: 1.2em;
@@ -1150,7 +1117,6 @@ header h1 {
     margin-top: 0;
 }
 
-/* Dettagli degli articoli */
 .cart-item p {
     margin: 0;
     font-size: 0.9rem;
@@ -1158,7 +1124,6 @@ header h1 {
     text-align: left;
 }
 
-/* Pulsante "Rimuovi" */
 .cart-item .remove-btn {
     margin-top: 10px;
     background-color: var(--pulsantecolor1);
@@ -1497,7 +1462,7 @@ h1 {
     background: var(--bgcolor2);
     border-radius: 8px;
     position: relative;
-    transition: all 0.3s ease;  /*serve?*/
+    transition: all 0.3s ease; 
     box-sizing: border-box;
 }
 
@@ -1514,7 +1479,7 @@ h1 {
     height: auto;
     border-radius: 8px;
     margin-bottom: 1em;
-    transition: transform 0.3s ease;    /*serve?*/
+    transition: transform 0.3s ease;   
 }
 
 #storia dd p {
@@ -1629,7 +1594,6 @@ article[id^="article"] img + img {
 }
 
 @media (max-width: 768px) {
-    /*h1 {} ?*/
 
     #storia {
         grid-template-columns: 5.7em 1fr;
@@ -1639,7 +1603,6 @@ article[id^="article"] img + img {
         grid-auto-flow: column;
     }
 
-    /* Reset all grid areas */
     #storia #item1,
     #storia #item2,
     #storia #item3,
@@ -1658,13 +1621,11 @@ article[id^="article"] img + img {
     #storia #item6 { grid-row: 6; }
     #storia #item7 { grid-row: 7; }
 
-    /* Place timeline on the left */
     #storia::before {
         left: 49px;
         position: absolute;
     }
 
-    /* Adjust date markers */
     #storia dt {
         grid-column: 1;
         align-self: center;
@@ -1672,7 +1633,6 @@ article[id^="article"] img + img {
         width: 70px;
     }
 
-    /* Position each dt in its own row */
     #storia dt:nth-of-type(1) { grid-row: 1; }
     #storia dt:nth-of-type(2) { grid-row: 2; }
     #storia dt:nth-of-type(3) { grid-row: 3; }
@@ -1681,7 +1641,6 @@ article[id^="article"] img + img {
     #storia dt:nth-of-type(6) { grid-row: 6; }
     #storia dt:nth-of-type(7) { grid-row: 7; }
 
-    /* Adjust connecting lines */
     #storia dt:nth-of-type(odd)::before,
     #storia dt:nth-of-type(even)::after {
         width: 40px;
@@ -1693,7 +1652,6 @@ article[id^="article"] img + img {
         width: 80%;
     }
 
-    /* Popup article adjustments */
     article[id^="article"] {
         width: 95%;
         padding: 1em;
@@ -1706,9 +1664,6 @@ article[id^="article"] img + img {
 }
 
 @media (max-width: 480px) {
-    /*h1 {
-        font-size: 1.8em;
-    }*/
 
     #storia {
         grid-template-columns: 80px 1fr;

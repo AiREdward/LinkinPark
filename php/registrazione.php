@@ -24,12 +24,12 @@ if ($result->num_rows > 0) {
     }
     exit();
 } else {
-    // Inserisci il nuovo utente
+    // Inserisce il nuovo utente
     $sql = "INSERT INTO utenti (username, nome, cognome, email, password, indirizzo, telefono, data_nascita) 
             VALUES ('$username', '$nome', '$cognome', '$email', '$password', '$indirizzo', '$telefono', '$data_nascita')";
 
     if ($conn->query($sql) === TRUE) {
-        // Ottieni il percorso dinamico della directory principale
+        // Ottiene il percorso dinamico della directory principale
         $base_url = "http://" . $_SERVER['HTTP_HOST'] . dirname(dirname($_SERVER['SCRIPT_NAME'])) . "/";
 
         // Redirect alla pagina di login

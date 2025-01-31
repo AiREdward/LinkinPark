@@ -4,7 +4,7 @@ function validatePhone() {
 
     // Controlla se il valore contiene solo numeri
     if (/^\d*$/.test(telefono)) {
-        telefonoError.style.display = 'none'; // Nascondi il messaggio di errore
+        telefonoError.style.display = 'none'; // Nasconde il messaggio di errore
     } else {
         telefonoError.style.display = 'block'; // Mostra il messaggio di errore
     }

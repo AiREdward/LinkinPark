@@ -86,7 +86,7 @@
         <div id="custom-popup" class="popup hidden" role="dialog" aria-labelledby="popup-title" aria-describedby="popup-description">
             <div class="popup-content">
                 <h3 id="popup-title">Conferma Annullamento</h3>
-                <p id="popup-description">Stai per tornare alla schermata di shop. Sei sicuro di voler annullare il pagamento?</p>
+                <p id="popup-description">Stai per tornare alla schermata di shop. Confermi di voler annullare il pagamento?</p>
                 <button class="popup-btn" id="confirm-cancel">Sì</button>
                 <button class="popup-btn" id="close-popup">No</button>
             </div>

@@ -10,6 +10,7 @@
     <meta name="viewport" content="width=device-width">
 
     <link rel="stylesheet" href="asset/css/style.css" media="all">
+    <link rel="stylesheet" href="asset/css/breadcrumb.css" media="all">
     <link rel="stylesheet" href="asset/css/stampa.css" media="print">
     <script src="js/musica.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -30,7 +31,7 @@
         <h1>Discografia</h1>
 
         <section id="discografia">
-            <article class="album">
+            <article class="album" tabindex=0>
                 <!-- from zero -->
                 <h2>From Zero</h2>
                 <img src="asset/img/album/From Zero.webp" alt="">
@@ -61,7 +62,7 @@
                 </dl>
             </article>
 
-            <article class="album">
+            <article class="album" tabindex=0>
                 <!-- One More Light -->
                 <h2>One More Light</h2>
                 <img src="asset/img/album/One More Light.webp" alt="">
@@ -91,7 +92,7 @@
                 </dl>
             </article>
 
-            <article class="album">
+            <article class="album" tabindex=0>
                 <!-- living things -->
                 <h2>Living Things</h2>
                 <img src="asset/img/album/Living Things.webp" alt="">
@@ -123,7 +124,7 @@
                 </dl>
             </article>
 
-            <article class="album">
+            <article class="album" tabindex=0>
                 <!-- A Thousand Suns -->
                 <h2>A Thousand Suns</h2>
                 <img src="asset/img/album/A Thousand Suns.webp" alt="">
@@ -158,7 +159,7 @@
                 </dl>
             </article>
 
-            <article class="album">
+            <article class="album" tabindex=0>
                 <!-- Minutes to Midnight -->
                 <h2>Minutes to Midnight</h2>
                 <img src="asset/img/album/Minutes to Midnight.webp" alt="">
@@ -190,7 +191,7 @@
                 </dl>
             </article>
 
-            <article class="album">
+            <article class="album" tabindex=0>
                 <!-- Meteora -->
                 <h2>Meteora</h2>
                 <img src="asset/img/album/Meteora.webp" alt="">
@@ -224,7 +225,7 @@
             </article>
 
 
-            <article class="album">
+            <article class="album" tabindex=0>
                 <!-- Hybrid Theory -->
                 <h2>Hybrid Theory</h2>
                 <img src="asset/img/album/Hybrid Theory.webp" alt="">
