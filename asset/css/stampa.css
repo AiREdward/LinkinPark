@@ -21,7 +21,7 @@ main {
 body {
     background-color: #fff;
     color: var(--txtColor);
-    font-family: "Times New Roman", Times, serif;
+    font-family: Georgia, "Times New Roman", sans-serif;    /*"Times New Roman", Times, serif;*/
     font-size: 12pt;
     line-height: 18pt;
 }
