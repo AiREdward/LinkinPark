@@ -30,16 +30,6 @@ if (!isset($_SESSION['user_id'])) {
         </button>
     </header>
 
-
-
-    <!-- <?php
-        $breadcrumb = [
-            ['name' => 'Home', 'url' => 'index.php'],
-            ['name' => 'Tour', 'url' => 'tour.php']
-        ];
-        include 'includes/menu.php'; 
-    ?> -->
-
     <!-- Navbar -->
     <nav id="menu">
         <ul>
