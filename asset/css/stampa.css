@@ -22,10 +22,10 @@ main {
     margin-top: -5em;
 }
 
-body {  /*o body *? */
+body {
     background-color: #fff;
     color: var(--txtColor);
-    font-family: "Times New Roman", Times, serif; /* è diverso perchè times new roman ha le grazie */
+    font-family: "Times New Roman", Times, serif;
     font-size: 12pt;
     line-height: 18pt;   /*verificare*/
 }
@@ -43,31 +43,6 @@ a[href^=http]:after {
     content:" [ " attr(href) "] ";
     font-size: 90%;
 }
-
-/* non funziona - per il logo
-header h1::after {
-    content: '';
-    display: inline-block;
-    width: 2cm;
-    height: 2cm;
-    margin-left: 0.3em;
-    vertical-align: middle;
-    background-image: url('../img/favicon.ico');
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-} */
-
-/* DA FARE
-header h1 {
-    margin-bottom: 0;
-}*/
-
-/* DA FARE
-#breadcrumb {
-    
-}*/
-
 
 /*===== MENU', FOOTER =====*/
 #menu, footer {
@@ -219,84 +194,81 @@ article[id^="article"] p {
 
 /*===== TOUR =====*/
 
-@media print {
-
-    header, footer {
-        display: none;
-    }
-
-    #logout-modal, #hamburger-menu{
-        display: none;
-    }
-
-    #tour-dates {
-        padding-left: 0;
-        max-width: 100%;
-        margin: 0;
-    }
-
-    #tour-dates dt {
-        float: none;
-        clear: none;
-        width: 100%;
-        padding: 0.5em 0;
-        font-weight: bold;
-        text-transform: uppercase;
-        direction: ltr;
-        margin: 0;
-        text-align: left;
-    }
-
-    #tour-dates dd {
-        position: static;
-        float: none;
-        padding: 0.5em 0;
-        width: 100%;
-        opacity: 1;
-        transition: none;
-        margin-top: 0;
-        border-bottom: 1px solid #000;
-    }
-
-    #tour-dates dd::before,
-    #tour-dates dd:not(:last-of-type)::after {
-        display: none;
-    }
-
-    #tour-dates dd .extra-details {
-        padding: 0;
-        border: none;
-        border-radius: 0;
-        transition: none;
-    }
-
-    #tour-dates dd .extra-details[aria-hidden="true"],
-    #tour-dates dd .extra-details[aria-hidden="false"] {
-        opacity: 1;
-        transform: none;
-        pointer-events: auto;
-    }
-
-    #tour-dates dd .extra-details .button-container {
-        display: none;
-    }
-
-    #tour-dates dd p {
-        margin-top: 0;
-        margin-bottom: 0.5em;
-    }
-
-    #tour-dates dd>p:hover {
-        color: inherit;
-        cursor: default;
-    }
-
-    #tour-dates dt {
-        margin-top: 0;
-        margin-right: 0;
-    }
-
+header, footer {
+    display: none;
 }
+
+#logout-modal, #hamburger-menu{
+    display: none;
+}
+
+#tour-dates {
+    padding-left: 0;
+    max-width: 100%;
+    margin: 0;
+}
+
+#tour-dates dt {
+    float: none;
+    clear: none;
+    width: 100%;
+    padding: 0.5em 0;
+    font-weight: bold;
+    text-transform: uppercase;
+    direction: ltr;
+    margin: 0;
+    text-align: left;
+}
+
+#tour-dates dd {
+    position: static;
+    float: none;
+    padding: 0.5em 0;
+    width: 100%;
+    opacity: 1;
+    transition: none;
+    margin-top: 0;
+    border-bottom: 1px solid #000;
+}
+
+#tour-dates dd::before,
+#tour-dates dd:not(:last-of-type)::after {
+    display: none;
+}
+
+#tour-dates dd .extra-details {
+    padding: 0;
+    border: none;
+    border-radius: 0;
+    transition: none;
+}
+
+#tour-dates dd .extra-details[aria-hidden="true"],
+#tour-dates dd .extra-details[aria-hidden="false"] {
+    opacity: 1;
+    transform: none;
+    pointer-events: auto;
+}
+
+#tour-dates dd .extra-details .button-container {
+    display: none;
+}
+
+#tour-dates dd p {
+    margin-top: 0;
+    margin-bottom: 0.5em;
+}
+
+#tour-dates dd>p:hover {
+    color: inherit;
+    cursor: default;
+}
+
+#tour-dates dt {
+    margin-top: 0;
+    margin-right: 0;
+}
+
 
 /*===== MUSICA =====*/
 
@@ -351,52 +323,74 @@ article[id^="article"] p {
 }
 
 .album img, .album p, .album h2, .album dl { 
-    display: block !important; 
+    display: block; 
 }
-
 
 /*===== SHOP =====*/
 
-#cart-hamburger-menu, .filters {
+#container-shop {
+    display: block;
+}
+
+#shop {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card {
+    width: calc(33.333% - 20px);
+    margin: 10px;
+    float: none;
+    page-break-inside: avoid;
+}
+
+.filters, .add-to-cart-btn,
+#cart-hamburger-menu,
+#clear-cart-btn,
+#checkout-btn {
     display: none;
 }
 
-/* Ensure the content fits within the printable area */
-#container-shop, #shop {
-    flex: none;
-    width: 80%;
+#cart {
+    width: 100%;
     display: block;
-    margin: 0;
-    padding: 0;
+    position: static;
+    box-shadow: none;
+    border: none;
+    margin-top: 20px;
 }
 
-/* Adjust the layout for better print readability */
-.card {
-    width: 50%;
-    margin: 10px 0;
-    page-break-inside: avoid;
-    break-inside: avoid-column;
+#close-cart-btn,
+.cart-item .remove-btn {
+    display: none;
 }
 
-.card img {
-    max-width: 40%;
-    height: auto;
+.cart-item {
+    border: 1px solid #000;
+    padding: 10px;
     margin-bottom: 10px;
 }
 
-/* Hide no results message when printing */
-#no-results {
-    display: none;
+#cart h2 {
+    font-size: 1.5em;
 }
 
-#cart-items {
-    display: block;
+#cart p,
+#cart .cart-item {
+    font-size: 1.2em;
 }
 
-.card, .cart-item {
-    page-break-inside: avoid;
-    break-inside: avoid-column;
+#cart .price {
+    font-weight: bold;
 }
+
+#subtotal {
+    font-size: 1.5em;
+    color: #ff0000;
+    font-weight: bold;
+}
+
 
 /*===== ACCEDI =====*/
 
@@ -404,60 +398,54 @@ article[id^="article"] p {
     margin-top: 10em;
 }
 
-
-/*===== altre paginee =====*/
-
 /*===== PAGAMENTO ======*/
 
-
-@media print {
-    
-    #cardForm .container {
-        display: block;
-        width: 100%;
-        margin: 0;
-        padding: 0;
-    }
-
-    #receipt {
-        width: 100%;
-        margin: 1em 0;
-        padding: 1em;
-        display: block;
-        position: static;
-        box-shadow: none;
-        background: none;
-    }
-
-    #cardForm .container #left-section,
-    #cardForm .container #card,
-    #cardForm .container #data {
-        page-break-inside: avoid;
-    }
-
-    #cardForm input {
-        display: block;
-        width: 100%;
-        border: none;
-        border-bottom: 1px solid var(--txtColor);
-        margin-bottom: 1em;
-        padding: 0.5em 0;
-        color: var(--txtColor);
-    }
-
-    #cardForm #receipt #bought-items > div {
-        border-top: 1px solid var(--txtColor);
-        padding: 1em 0;
-    }
-
-    #proceed,
-    #cancel,
-    .popup,
-    #custom-popup,
-    ::-webkit-scrollbar,
-    ::-webkit-scrollbar-track,
-    ::-webkit-scrollbar-thumb,
-    #rcardForm #receipt {
-        display: none;
-    }
+#cardForm .container {
+    display: block;
+    width: 100%;
+    margin: 0;
+    padding: 0;
 }
+
+#receipt {
+    width: 100%;
+    margin: 1em 0;
+    padding: 1em;
+    display: block;
+    position: static;
+    box-shadow: none;
+    background: none;
+}
+
+#cardForm .container #left-section,
+#cardForm .container #card,
+#cardForm .container #data {
+    page-break-inside: avoid;
+}
+
+#cardForm input {
+    display: block;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid var(--txtColor);
+    margin-bottom: 1em;
+    padding: 0.5em 0;
+    color: var(--txtColor);
+}
+
+#cardForm #receipt #bought-items > div {
+    border-top: 1px solid var(--txtColor);
+    padding: 1em 0;
+}
+
+#proceed,
+#cancel,
+.popup,
+#custom-popup,
+::-webkit-scrollbar,
+::-webkit-scrollbar-track,
+::-webkit-scrollbar-thumb,
+#rcardForm #receipt {
+    display: none;
+}
+

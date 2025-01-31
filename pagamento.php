@@ -11,8 +11,7 @@
         content="pagamento sicuro, checkout online, ricevuta acquisti, carta di credito, conferma ordine, negozio ufficiale band, dettagli acquisto, merchandising rock, pagamento Linkin Park, abbigliamento ufficiale">
     <meta name="viewport" content="width=device-width">
 
-    <link rel="stylesheet" href="asset/css/pagamento.css" media="all">
-    <link rel="stylesheet" href="asset/css/breadcrumb.css" media="all">
+    <link rel="stylesheet" href="asset/css/style_function.css" media="all">
     <link rel="stylesheet" href="asset/css/stampa.css" media="print">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="icon" href="asset/img/favicon.ico" type="image/x-icon">
