@@ -1,8 +1,19 @@
 <?php
+
+// Connessione locale
+
 $servername = "localhost";
 $username = "root";
 $password = ""; // Inserisci la tua password
 $dbname = "lp_db";
+
+// Connessione Paolotti
+
+// $servername = "localhost";
+// $username = "amio";
+// $password = "Ne6aesahv8cooxav";
+// $dbname = "amio";
+
 
 try {
     // Creazione della connessione

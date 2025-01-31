@@ -46,7 +46,13 @@
                     $descrizione = htmlspecialchars($row['descrizione']);
                     $prezzo = number_format($row['prezzo'], 2, ',', '.');
                 
-                    $formattedDate = strftime("%d %B %Y", strtotime($data));
+                    $dateTime = new DateTime($data);
+                    $months = [
+                        'January' => 'Gennaio', 'February' => 'Febbraio', 'March' => 'Marzo', 'April' => 'Aprile',
+                        'May' => 'Maggio', 'June' => 'Giugno', 'July' => 'Luglio', 'August' => 'Agosto',
+                        'September' => 'Settembre', 'October' => 'Ottobre', 'November' => 'Novembre', 'December' => 'Dicembre'
+                    ];
+                    $formattedDate = $dateTime->format('d') . ' ' . $months[$dateTime->format('F')] . ' ' . $dateTime->format('Y');
                     ?>
             <dt>
                 <h3>
