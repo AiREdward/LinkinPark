@@ -34,7 +34,7 @@
 
             <!-- Right Section -->
             <div class="right-section">
-                <form action="php/registration.php" method="post" onsubmit="return validateForm()">
+                <form action="php/registrazione.php" method="post" onsubmit="return validateForm()">
                     <div id="error-message" class="error"></div>
 
                     <div class="input-container">
@@ -287,7 +287,7 @@
 
     </main>
 
-    <script src="js/registration.js"></script>
+    <script src="js/registrazione.js"></script>
 
 </body>
 

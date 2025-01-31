@@ -99,6 +99,21 @@ h2 {
 
 /* ----------------------------------------------- */
 
+/* BREADCRUMB */
+
+nav[aria-label="breadcrumb"] p {
+    font-size: 16px;
+}
+
+nav[aria-label="breadcrumb"] .active {
+    font-weight: bold;
+    color: var(--txtcolor);
+    pointer-events: none;
+    text-decoration: none;
+}
+
+/* ----------------------------------------------- */
+
 /* HEADER */
 
 header {

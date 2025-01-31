@@ -40,7 +40,6 @@ a[href^=http]:after {
     font-size: 90%;
 }
 
-
 /*===== MENU', FOOTER =====*/
 #menu, footer {
     display: none;
@@ -268,6 +267,76 @@ header, footer {
 
 
 /*===== MUSICA =====*/
+
+#tour-dates {
+    padding-left: 0;
+    max-width: 100%;
+    margin: 0;
+}
+
+#tour-dates dt {
+    float: none;
+    clear: none;
+    width: 100%;
+    padding: 0.5em 0;
+    font-weight: bold;
+    text-transform: uppercase;
+    direction: ltr;
+    margin: 0;
+    text-align: left;
+}
+
+#tour-dates dd {
+    position: static;
+    float: none;
+    padding: 0.5em 0;
+    width: 100%;
+    opacity: 1;
+    transition: none;
+    margin-top: 0;
+    border-bottom: 1px solid #000;
+}
+
+#tour-dates dd::before,
+#tour-dates dd:not(:last-of-type)::after {
+    display: none;
+}
+
+#tour-dates dd .extra-details {
+    padding: 0;
+    border: none;
+    border-radius: 0;
+    transition: none;
+}
+
+#tour-dates dd .extra-details[aria-hidden="true"],
+#tour-dates dd .extra-details[aria-hidden="false"] {
+    opacity: 1;
+    transform: none;
+    pointer-events: auto;
+}
+
+#tour-dates dd .extra-details .button-container {
+    display: none;
+}
+
+#tour-dates dd p {
+    margin-top: 0;
+    margin-bottom: 0.5em;
+}
+
+#tour-dates dd>p:hover {
+    color: inherit;
+    cursor: default;
+}
+
+#tour-dates dt {
+    margin-top: 0;
+    margin-right: 0;
+}
+
+
+/*===== MUSICA =====*/
 .album {
     visibility: visible;
     flex: none;
@@ -319,47 +388,72 @@ header, footer {
 }
 
 .album img, .album p, .album h2, .album dl { 
-    display: block !important; 
+    display: block; 
 }
-
 
 /*===== SHOP =====*/
-#cart-hamburger-menu, .filters {
-    display: none;
+
+#container-shop {
+    display: block;
 }
 
-#container-shop, #shop {
-    flex: none;
-    width: 80%;
-    display: block;
-    margin: 0;
-    padding: 0;
+#shop {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .card {
-    width: 50%;
-    margin: 10px 0;
+    width: calc(33.333% - 20px);
+    margin: 10px;
+    float: none;
     page-break-inside: avoid;
-    break-inside: avoid-column;
 }
 
-.card img {
-    max-width: 40%;
-    height: auto;
-    margin-bottom: 10px;
-}
-
-#no-results {
+.filters, .add-to-cart-btn,
+#cart-hamburger-menu,
+#clear-cart-btn,
+#checkout-btn {
     display: none;
 }
 
-#cart-items {
+#cart {
+    width: 100%;
     display: block;
+    position: static;
+    box-shadow: none;
+    border: none;
+    margin-top: 20px;
 }
 
-.card, .cart-item {
-    page-break-inside: avoid;
-    break-inside: avoid-column;
+#close-cart-btn,
+.cart-item .remove-btn {
+    display: none;
+}
+
+.cart-item {
+    border: 1px solid #000;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+#cart h2 {
+    font-size: 1.5em;
+}
+
+#cart p,
+#cart .cart-item {
+    font-size: 1.2em;
+}
+
+#cart .price {
+    font-weight: bold;
+}
+
+#subtotal {
+    font-size: 1.5em;
+    color: #ff0000;
+    font-weight: bold;
 }
 
 
@@ -408,7 +502,7 @@ header, footer {
     padding: 1em 0;
 }
 
-#left-section #card #proceed,
+#proceed,
 #cancel,
 .popup,
 #custom-popup,
