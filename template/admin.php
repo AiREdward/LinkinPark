@@ -1,3 +1,10 @@
+<?php
+session_start();
+if (!isset($_SESSION['user_id'])) {
+    header("Location: ../accedi.php");
+    exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="it">
 
@@ -16,14 +23,21 @@
 <body>
     <header>
         <h1 lang="en">Admin Dashboard</h1>
+        <button id="hamburger-menu" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
     </header>
 
-    <!-- Menu laterale -->
+    <!-- Navbar -->
     <nav id="menu">
-        <button id="userManagementBtn">Gestione Utenti</button>
-        <button id="venditeBtn">Statistiche</button>
-        <button id="dateTourBtn">Gestione <span lang="en">Tour</span></button>
-        <button id="logoutBtn" lanng="en">Logout</button>
+        <ul>
+            <li><a id="userManagementBtn">Gestione Utenti</a></li>
+            <li><a id="venditeBtn">Statistiche</a></li>
+            <li><a id="dateTourBtn">Gestione <span lang="en">Tour</span></a></li>
+            <li><a id="logoutBtn" lang="en">Logout</a></li>
+        </ul>
     </nav>
 
     <!-- Contenuto principale -->
@@ -99,7 +113,6 @@
                 <div id="result3"></div>
 
                 <div id="eventOptions">
-                    <button id="eventInfoBtn">Informazioni Evento</button>
                     <button id="deleteEventBtn">Cancella Evento</button>
                     <button id="cancelBtn">Annulla</button>
                 </div>

@@ -105,7 +105,6 @@ function searchEvent() {
             }
             if (data.event) {
                 currentEventData = data.event;
-                selectButton('eventInfoBtn');
                 displayEventInfo();
             }
         })
@@ -113,7 +112,7 @@ function searchEvent() {
 }
 
 function selectButton(buttonId) {
-    ['eventInfoBtn', 'deleteEventBtn', 'addEventBtn'].forEach(id => {
+    ['deleteEventBtn', 'addEventBtn'].forEach(id => {
         document.getElementById(id).classList.remove('selected');
     });
 
@@ -210,14 +209,6 @@ document.getElementById('addEventBtn').addEventListener('click', function () {
     selectButton('addEventBtn');
     document.getElementById('result3').innerHTML = '';
     displayAddEvent();
-});
-
-document.getElementById('eventInfoBtn').addEventListener('click', function () {
-    if (currentEventData) {
-        document.getElementById('result2').innerHTML = '';
-        selectButton('eventInfoBtn');
-        displayEventInfo();
-    }
 });
 
 document.getElementById('deleteEventBtn').addEventListener('click', function () {

@@ -1,3 +1,10 @@
+<?php
+session_start();
+if (!isset($_SESSION['user_id'])) {
+    header("Location: accedi.php");
+    exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="it">
 
@@ -27,7 +34,6 @@
         include 'includes/breadcrumb.php'; 
     ?>
 
-    <main>
     <form id="cardForm" action="php/pagamento.php" method="POST">
         <div class="container">
             <div id="left-section">
@@ -93,7 +99,6 @@
         </div>
 
     </form>
-    </main>
 
     <script src="js/pagamento.js"></script>
 
