@@ -58,7 +58,7 @@
                 <!-- Sez. Maglie -->
                 <article class="card" id="MagliaMercurio" data-type="maglietta">
                     <h2>Maglia Mercurio</h2>
-                    <img src="asset/img/merch/maglietta1_fronte.webp" alt="Maglia Mercurio" width="300" height="300">
+                    <img src="asset/img/merch/maglietta1_fronte.webp" alt="Maglia bianca Linkin Park con stampa blu astratta e scritta From Zero" width="300" height="300">
                     <p class="price">€50,00</p>
                     <div class="sizeAndQuantityContainer">
                         <label for="size-MagliaMercurio">Taglia:</label>
@@ -75,7 +75,7 @@
                 </article>
                 <article class="card" id="MagliaVenere" data-type="maglietta">
                     <h2>Maglia Venere</h2>
-                    <img src="asset/img/merch/maglietta2_fronte.webp" alt="Maglia Venere" width="300" height="300">
+                    <img src="asset/img/merch/maglietta2_fronte.webp" alt="Maglia nera Linkin Park con stampa rosa e scritta From Zero" width="300" height="300">
                     <p class="price">€50,00</p>
                     <div class="sizeAndQuantityContainer">
                         <label for="size-MagliaVenere">Taglia:</label>
@@ -92,7 +92,7 @@
                 </article>
                 <article class="card" id="MagliaGiove" data-type="maglietta">
                     <h2>Maglia Giove</h2>
-                    <img src="asset/img/merch/maglietta3_fronte.webp" alt="Maglia Giove" width="300" height="300">
+                    <img src="asset/img/merch/maglietta3_fronte.webp" alt="Maglia nera con stampa verde e scritta gialla Linkkin Park From Zero" width="300" height="300">
                     <p class="price">€50,00</p>
                     <div class="sizeAndQuantityContainer">
                         <label for="size-MagliaGiove">Taglia:</label>
@@ -109,7 +109,7 @@
                 </article>
                 <article class="card" id="MagliaSaturno" data-type="maglietta">
                     <h2>Maglia Saturno</h2>
-                    <img src="asset/img/merch/maglietta4_fronte.webp" alt="Maglia Saturno" width="300" height="300">
+                    <img src="asset/img/merch/maglietta4_fronte.webp" alt="Maglia bianca con stampa a colori del logo Linkin Park" width="300" height="300">
                     <p class="price">€50,00</p>
                     <div class="sizeAndQuantityContainer">
                         <label for="size-MagliaSaturno">Taglia:</label>
@@ -128,7 +128,7 @@
                 <!-- Sez. Felpe -->
                 <article class="card" id="FelpaUrano" data-type="felpa">
                     <h2>Felpa Urano</h2>
-                    <img src="asset/img/merch/felpa1_fronte.webp" alt="Felpa Urano" width="300" height="300">
+                    <img src="asset/img/merch/felpa1_fronte.webp" alt="Felpa nera con scritte Linkin Park e From Zero" width="300" height="300">
                     <p class="price">€60,00</p>
                     <div class="sizeAndQuantityContainer">
                         <label for="size-FelpaUrano">Taglia:</label>
@@ -145,7 +145,7 @@
                 </article>
                 <article class="card" id="FelpaNettuno" data-type="felpa">
                     <h2>Felpa Nettuno</h2>
-                    <img src="asset/img/merch/felpa2_fronte.webp" alt="Felpa Nettuno" width="300" height="300">
+                    <img src="asset/img/merch/felpa2_fronte.webp" alt="Felpa rosa con stampa a colori del logo Linkin Park" width="300" height="300">
                     <p class="price">€60,00</p>
                     <div class="sizeAndQuantityContainer">
                         <label for="size-FelpaNettuno">Taglia:</label>
@@ -164,7 +164,7 @@
                 <!-- Sez. Accessori -->
                 <article class="card" id="BerrettoFuoco" data-type="accessori">
                     <h2>Berretto Fuoco</h2>
-                    <img src="asset/img/merch/berretto.webp" alt="Berretto Fuoco" width="300" height="300">
+                    <img src="asset/img/merch/berretto.webp" alt="Berretto a macchie colorite con logo Linkin Park" width="300" height="300">
                     <p class="price">€35,00</p>
                     <div class="sizeAndQuantityContainer">
                         <label for="quantity-BerrettoFuoco">Quantità:</label>
@@ -174,7 +174,7 @@
                 </article>
                 <article class="card" id="BorsaTerra" data-type="accessori">
                     <h2>Borsa Terra</h2>
-                    <img src="asset/img/merch/borsa.webp" alt="Borsa Terra" width="300" height="300">
+                    <img src="asset/img/merch/borsa.webp" alt="Borsa nera con stampa a colori del logo Linkin Parks" width="300" height="300">
                     <p class="price">€40,00</p>
                     <div class="sizeAndQuantityContainer">
                         <label for="quantity-BorsaTerra">Quantità:</label>
@@ -184,7 +184,7 @@
                 </article>
                 <article class="card" id="PortachiaviAria" data-type="accessori">
                     <h2>Portachiavi Aria</h2>
-                    <img src="asset/img/merch/portachiavi.webp" alt="Portachiavi Aria" width="300" height="300">
+                    <img src="asset/img/merch/portachiavi.webp" alt="Portachiavi grigio con logo Linkin Park e scritta From Zero" width="300" height="300">
                     <p class="price">€8,50</p>
                     <div class="sizeAndQuantityContainer">
                         <label for="quantity-PortachiaviAria">Quantità:</label>
@@ -194,7 +194,7 @@
                 </article>
                 <article class="card" id="Adesivi Acqua" data-type="accessori">
                     <h2>Adesivi Acqua</h2>
-                    <img src="asset/img/merch/stckers.webp" alt="Adesivi Acqua" width="300" height="300">
+                    <img src="asset/img/merch/stckers.webp" alt="Adesivi Linkin Park con logo e con copertina album From Zero" width="300" height="300">
                     <p class="price">€3,00</p>
                     <div class="sizeAndQuantityContainer">
                         <label for="quantity-AdesiviAcqua">Quantità:</label>

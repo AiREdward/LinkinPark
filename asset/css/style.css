@@ -743,6 +743,38 @@ header h1 {
     text-align: right;
 }
 
+@media (max-width: 768px) {
+
+    .album {
+        flex: 0 0 80%;
+    }
+
+    .album h2 {
+        font-size: 1.5em;
+    }
+
+    .album p {
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .album {
+        flex: 0 0 100%;
+        padding: 1em;
+    }
+
+    .album h2 {
+        font-size: 1.2em;
+    }
+
+    .album img {
+        max-width: 90%;
+        display: block;
+        margin: 0 auto;
+    }
+}
+
 /* ----------------------------------------------- */
 
 /* SHOP */
