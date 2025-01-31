@@ -7,7 +7,7 @@ $response = [
 ];
 
 if ($response['logged_in']) {
-    $response['email'] = $_SESSION['email']; // Aggiungi l'email se l'utente è loggato
+    $response['email'] = $_SESSION['email']; 
 }
 
 header('Content-Type: application/json');

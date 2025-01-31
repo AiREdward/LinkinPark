@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function () {
             });
     });
 
-    // Chiudi il popup cliccando fuori dalla finestra del popup
+    // Chiude il popup cliccando fuori dalla finestra del popup
     window.addEventListener('click', function (event) {
         if (event.target === modal) {
             modal.style.display = 'none';

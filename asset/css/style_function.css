@@ -49,7 +49,6 @@ nav[aria-label="breadcrumb"] .active {
     margin-top: 2%;
 }
 
-/* Contenitore principale */
 #cardForm .container {
     display: flex;
     flex-wrap: nowrap;
@@ -58,7 +57,6 @@ nav[aria-label="breadcrumb"] .active {
     max-height: 100vh;
 }
 
-/* Sezioni carta e dati */
 #cardForm .container #left-section {
     flex-direction: column;
     flex: 0 0 calc(60% - 2%);
@@ -68,7 +66,6 @@ nav[aria-label="breadcrumb"] .active {
     margin-bottom: 15px;
 }
 
-/* Card di pagamento */
 #cardForm .container #card {
     background: var(--shopcardcolor);
     border-radius: 15px;
@@ -87,7 +84,6 @@ nav[aria-label="breadcrumb"] .active {
     display: block;
 }
 
-/* Etichette e input */
 #cardForm .container #card label {
     display: block;
     font-size: 12px;
@@ -127,7 +123,6 @@ nav[aria-label="breadcrumb"] .active {
     background-color: var(--shopcardcolor);
 }
 
-/* Pulsante di conferma */
 #cardForm .container #card #proceed {
     position: absolute;
     bottom: 15px; 
@@ -168,7 +163,6 @@ nav[aria-label="breadcrumb"] .active {
     margin-bottom: 15px;
 }
 
-/* Sezione ricevuta */
 #cardForm .container #receipt {
     flex: 0 0 calc(40% - 20px);
     background: #ecf0f1;

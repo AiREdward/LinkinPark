@@ -15,14 +15,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['action']) && $_GET['act
     $result = $stmt->get_result();
     $user = $result->fetch_assoc();
 
-    // Restituisci i dati dell'utente in formato JSON
+    // Restituisce i dati dell'utente in formato JSON
     echo json_encode($user);
     exit();
 }
 
 // Recupera i dati dal form
 $n_carta = $_POST['n_carta'] ?? '';
-$nome = $_POST['nome'] ?? ''; // Cambiato da $titolare a $nome
+$nome = $_POST['nome'] ?? ''; 
 $data_scadenza = $_POST['data_scadenza'] ?? '';
 $ccv = $_POST['ccv'] ?? '';
 
@@ -46,13 +46,13 @@ foreach ($cartItems as $item) {
 
 $el_acquistati_str = implode("\n\n", $el_acquistati);
 
-// Inserisci i dati nel database
+// Inserisce i dati nel database
 $sql = "INSERT INTO transazione (n_carta, titolare, data_scadenza, ccv, totale, el_acquistati, quantita, utente_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
 $stmt = $conn->prepare($sql);
 $stmt->bind_param("ssssdsis", $n_carta, $nome, $data_scadenza, $ccv, $subtotal, $el_acquistati_str, $quantita, $utente_id);
 
 if ($stmt->execute()) {
-    // Ottieni il percorso dinamico della directory principale
+    // Ottiene il percorso dinamico della directory principale
     $base_url = "http://" . $_SERVER['HTTP_HOST'] . dirname(dirname($_SERVER['SCRIPT_NAME'])) . "/";
     header("Location: " . $base_url . 'shop.php'); 
 

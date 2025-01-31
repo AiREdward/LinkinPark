@@ -26,7 +26,7 @@
         <div class="main-container">
             <!-- Left Section -->
             <div class="left-section">
-                <h1>Benvenuto!</h1>
+                <h1>Ti diamo il benvenuto!</h1>
                 <p>Compila il modulo per creare un account e accedere a tutte le funzionalità del nostro sito.</p>
                 <p>Hai già un account? <a href="accedi.php">Accedi qui</a></p>
                 <p>Torna alla <a href="index.php"><span lang="en">Home</span></a></p>
@@ -38,7 +38,7 @@
                     <div id="error-message" class="error"></div>
 
                     <div class="input-container">
-                        <label for="username">Username:</label>
+                        <label for="username" lang="en">Username:</label>   
                         <input type="text" id="username" name="username" required placeholder="Inserisci uno username" class="input">
                     </div>
 
@@ -58,7 +58,7 @@
                     </div>
 
                     <div class="input-container full-width">
-                        <label for="confermaPassword">Conferma Password:</label>
+                        <label for="confermaPassword">Conferma <span lang="en">Password</span>:</label>
                         <input type="password" id="confermaPassword" name="confermaPassword" required
                             placeholder="Conferma la tua password" class="input-with-icon" autocomplete="current-password">
                         <i id="togglePassworConfirm" class="fa-solid fa-eye icon-right"></i>
@@ -94,7 +94,7 @@
                     <div class="registration-condition">
                         <label>
                             <input type="checkbox" id="privacy" name="privacy" required> Accetto la <a href="#"
-                                onclick="openModal('privacyModal')">Privacy Policy</a>.
+                            onclick="openModal('privacyModal')"><span lang="en">Privacy Policy</span></a>.
                         </label>
                     </div>
 
@@ -112,8 +112,8 @@
                             <section>
                                 <h2>1. Titolare del Trattamento</h2>
                                 <p>
-                                    Il titolare del trattamento dei dati è Linkin Park, con sede legale in
-                                    Piazza delle Erbe, 35 35122 Padova PD. Puoi contattarci all'indirizzo email:
+                                    Il titolare del trattamento dei dati è <span lang="en">Linkin Park</span>, con sede legale in
+                                    Piazza delle Erbe, 35 35122 Padova PD. Puoi contattarci all'indirizzo <span lang="en">email</span>:
                                     linkinpark@assistenza.it.
                                 </p>
                             </section>
@@ -121,10 +121,10 @@
                             <section>
                                 <h2>2. Tipologie di Dati Raccolti</h2>
                                 <p>
-                                    Raccogliamo dati personali come nome, email, dati di pagamento e dati di navigazione
-                                    sul sito. I
-                                    dati vengono raccolti al momento della registrazione, dell'acquisto e della
-                                    navigazione.
+                                    Raccogliamo dati personali come nome, <span lang="en">email</span>, dati di pagamento e dati di navigazione
+                                    sul sito. I 
+                                    dati vengono raccolti al momento della registrazione, dell'acquisto e 
+                                    della navigazione.
                                 </p>
                             </section>
 
@@ -170,9 +170,9 @@
                             </section>
 
                             <section>
-                                <h2>7. Cookie e Tecnologie di Tracciamento</h2>
+                                <h2>7. <span lang="en">Cookie</span> e Tecnologie di Tracciamento</h2>
                                 <p>
-                                    Utilizziamo i cookie per migliorare l'esperienza utente e per analizzare il
+                                    Utilizziamo i <span lang="en">cookie</span> per migliorare l'esperienza utente e per analizzare il
                                     traffico.
                                 </p>
                             </section>
@@ -215,9 +215,9 @@
                             <section>
                                 <h2>1. Accettazione dei Termini</h2>
                                 <p>
-                                    Utilizzando il nostro sito web, accetti i presenti Termini e Condizioni, applicabili
+                                    Utilizzando il nostro sito <span lang="en">web</span>, accetti i presenti Termini e Condizioni, applicabili
                                     a tutti gli
-                                    utenti che visitano o effettuano acquisti su Linkin Park. Se non accetti i termini,
+                                    utenti che visitano o effettuano acquisti su <span lang="en">Linkin Park</span>. Se non accetti i termini,
                                     ti invitiamo
                                     a non utilizzare il sito.
                                 </p>
@@ -226,10 +226,10 @@
                             <section>
                                 <h2>2. Servizi Offerti</h2>
                                 <p>
-                                    Linkin Park offre ai fan della nostra band la possibilità di acquistare prodotti
+                                <span lang="en">Linkin Park</span> offre ai fan della nostra band la possibilità di acquistare prodotti
                                     ufficiali,
                                     come
-                                    abbigliamento e accessori, e di prenotare biglietti per le date del tour. Tutti i
+                                    abbigliamento e accessori, e di prenotare biglietti per le date del <span lang="en">tour</span>. Tutti i
                                     prodotti e i
                                     biglietti sono soggetti a disponibilità e possono essere modificati senza preavviso.
                                 </p>
@@ -240,7 +240,7 @@
                                 <p>
                                     Gli acquisti effettuati su questo sito sono vincolati alla disponibilità dei
                                     prodotti. Al
-                                    completamento dell'acquisto, riceverai una conferma via email con i dettagli
+                                    completamento dell'acquisto, riceverai una conferma via <span lang="en">email</span> con i dettagli
                                     dell'ordine. Per i
                                     biglietti, assicurati di conservare la conferma, che sarà richiesta per l'ingresso
                                     agli eventi.
@@ -262,10 +262,10 @@
                             <section>
                                 <h2>5. Modifiche ai Termini e Servizi</h2>
                                 <p>
-                                    Linkin Park si riserva il diritto di modificare questi Termini e Servizi in
+                                <span lang="en">Linkin Park</span> si riserva il diritto di modificare questi Termini e Servizi in
                                     qualsiasi
                                     momento.
-                                    Le modifiche verranno comunicate sul sito e, se rilevanti, tramite email agli utenti
+                                    Le modifiche verranno comunicate sul sito e, se rilevanti, tramite <span lang="en">email</span> agli utenti
                                     registrati.
                                 </p>
                             </section>
@@ -273,7 +273,7 @@
                             <section>
                                 <h2>6. Contatti</h2>
                                 <p>
-                                    Per qualsiasi domanda, contatta il nostro servizio clienti all'indirizzo email:
+                                    Per qualsiasi domanda, contatta il nostro servizio clienti all'indirizzo <span lang="en">email</span>:
                                     linkinpark@assistenza.it.
                                 </p>
                             </section>

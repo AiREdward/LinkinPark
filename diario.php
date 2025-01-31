@@ -36,7 +36,7 @@
         <dl id = "storia">
             <dt class="short-article"><time datetime="1996">1996</time></dt>
             <dd id='item1' tabindex="0">
-                <img src="asset/img/diario/xero.webp" alt=""> <!--aggiungere q.sa che dice che questo e' la prima foto della band Xero con la composizione iniziale-->
+                <img src="asset/img/diario/xero.webp" alt="">
                 <p>Prima di diventare <span lang="en">Linkin Park</span>, abbiamo formato <span lang="en">Xero</span>: un gruppo di ragazzi con 
                     tanta passione, pochi mezzi e un sogno enorme. Era l'inizio di un viaggio che non immaginavamo ci avrebbe portato così lontano.</p>
             </dd>

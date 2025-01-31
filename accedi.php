@@ -36,12 +36,12 @@
 
                 <form action="php/login.php" method="post">
                     <div class="input-container full-width">
-                        <label for="login">Email o Username:</label>
+                        <label for="login"><span lang="en">Email</span> o <span lang="en">Username</span>:</label>
                         <input type="text" id="login" name="login" required placeholder="Inserisci email o username" class="input" autocomplete="username">
                     </div>
 
                     <div class="input-container full-width">
-                        <label for="password">Password:</label>
+                        <label for="password" lang="en">Password:</label>
                         <input type="password" id="password" name="password" required
                             placeholder="Inserisci la tua password" class="input-with-icon" autocomplete="current-password">
                         <i id="togglePassword" class="fa-solid fa-eye icon-right"></i>
