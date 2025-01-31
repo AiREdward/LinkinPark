@@ -1,4 +1,11 @@
+
+
+-- Connessione locale
 CREATE DATABASE lp_db;
+
+-- Connessione Paolotti
+-- CREATE DATABASE amio; // anche se è già creato
+-- USE amio;
 
 DROP TABLE IF EXISTS tour;
 DROP TABLE IF EXISTS transazione;

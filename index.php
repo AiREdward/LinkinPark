@@ -11,10 +11,8 @@
     <meta name="viewport" content="width=device-width">
 
     <link rel="stylesheet" href="asset/css/style.css" media="all">
-    <link rel="stylesheet" href="asset/css/breadcrumb.css" media="all">
     <link rel="stylesheet" href="asset/css/stampa.css" media="print">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="stylesheet" href="asset/css/mobile.css" media="screen and (max-width:600px)">
     <link rel="icon" href="asset/img/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
