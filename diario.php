@@ -36,49 +36,49 @@
 
         <dl id = "storia">
             <dt class="short-article"><time datetime="1996">1996</time></dt>
-            <dd id='item1'>
+            <dd id='item1' tabindex="0">
                 <img src="asset/img/diario/xero.webp" alt=""> <!--aggiungere q.sa che dice che questo e' la prima foto della band Xero con la composizione iniziale-->
                 <p>Prima di diventare <span lang="en">Linkin Park</span>, abbiamo formato <span lang="en">Xero</span>: un gruppo di ragazzi con 
                     tanta passione, pochi mezzi e un sogno enorme. Era l'inizio di un viaggio che non immaginavamo ci avrebbe portato così lontano.</p>
             </dd>
 
             <dt class="long-article"><time datetime="1999">1999</time></dt>
-            <dd id='item2'>
+            <dd id='item2' tabindex="0">
                 <img src="asset/img/diario/articolo1 prima foto.webp" alt="Una delle prime foto di Linkin Park con i suoi membri.">
                 <p>Nel 1999 eravamo ancora un gruppo che cercava di capire cosa fare della propria vita. Ci chiamavamo <span lang="en">Xero</span>
                 (sì, lo sappiamo, non proprio il nome più ispirato di sempre)...<a href="#article2" class="readMore">scopri di più</a></p>
             </dd>
 
             <dt class="long-article"><time datetime="2000">2000</time></dt>
-            <dd id='item3'>
+            <dd id='item3' tabindex="0">
                 <img src="asset/img/diario/LP vecchia composizione.webp" alt="Foto dei membri di Linkin Park seduti in una piscina vuota.">
                 <p>Parliamoci chiaro: quando abbiamo iniziato a lavorare su <span lang="en">Hybrid Theory</span>, non avevamo idea di cosa stessimo facendo. 
                     Sapevamo solo che avevamo un sacco di idee, un <span lang="en">budget</span> minuscolo...<a href="#article3" class="readMore">scopri di più</a></p>
             </dd>
 
             <dt class="short-article"><time datetime="2002">2002</time></dt>
-            <dd id='item4'>
+            <dd id='item4' tabindex="0">
                 <img src="asset/img/diario/grammy 2002.webp" alt="I Linkin Park posano con un Grammy tenuto da Chester.">
                 <p>Nel 2002, abbiamo conquistato il <span lang="en">Grammy</span> per la Miglior <span lang="en">Performance Hard Rock</span> con 
                     <span lang="en">Crawling</span>. Ci avete mostrato che la nostra passione e innovazione musicale non passano inosservate.</p>
             </dd>
 
             <dt class="long-article"><time datetime="2004">2004</time></dt>
-            <dd id='item5'>
+            <dd id='item5' tabindex="0">
                 <img src="asset/img/diario/articolo3_live_in_texas.webp" alt="Copertina di Linkin Park Live in Texas, braccio alzato tra la folla.">
                 <p>Abbiamo sempre amato suonare dal vivo. C’è qualcosa di magico in quei momenti sul palco: l’adrenalina, il pubblico che canta 
                     a squarciagola, la connessione unica che si crea...<a href="#article5" class="readMore">scopri di più</a></p>
             </dd>
 
             <dt class="long-article"><time datetime="2017">2017</time></dt>
-            <dd id='item6'>
+            <dd id='item6' tabindex="0">
                 <img src="asset/img/diario/articolo4 chester foto2.webp" alt="Il ritratto di Chester che canta dal vivo con tanta energia.">
                 <p>Il 20 luglio 2017 è stato il giorno più buio della nostra vita. <span lang="en">Chester</span>, il nostro amico, fratello, anima
                     e voce, ci ha lasciati. È impossibile descrivere quanto ha significato per noi...<a href="#article6" class="readMore">scopri di più</a></p>
             </dd>
 
             <dt class="long-article"><time datetime="2024">2024</time></dt>
-            <dd id='item7'>
+            <dd id='item7' tabindex="0">
                 <img src="asset/img/diario/LP riunione articolo5.webp" alt="Band seduta su un divano in studio con palco illuminato sullo sfondo.">
                 <p>Dopo la perdita di <span lang="en">Chester</span>, abbiamo passato un periodo difficile, ma ora finalmente siamo pronti per un 
                     nuovo inizio con <span lang="en">Emily</span> e <span lang="en">Colin</span>. Quando ci siamo incontrati per la prima 
