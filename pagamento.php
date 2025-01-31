@@ -34,7 +34,6 @@ if (!isset($_SESSION['user_id'])) {
         include 'includes/breadcrumb.php'; 
     ?>
 
-    <main>
     <form id="cardForm" action="php/pagamento.php" method="POST">
         <div class="container">
             <div id="left-section">
@@ -100,7 +99,6 @@ if (!isset($_SESSION['user_id'])) {
         </div>
 
     </form>
-    </main>
 
     <script src="js/pagamento.js"></script>
 
