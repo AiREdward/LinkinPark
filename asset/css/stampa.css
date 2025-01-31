@@ -328,46 +328,69 @@ header, footer {
 
 /*===== SHOP =====*/
 
-#cart-hamburger-menu, .filters {
+#container-shop {
+    display: block;
+}
+
+#shop {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card {
+    width: calc(33.333% - 20px);
+    margin: 10px;
+    float: none;
+    page-break-inside: avoid;
+}
+
+.filters, .add-to-cart-btn,
+#cart-hamburger-menu,
+#clear-cart-btn,
+#checkout-btn {
     display: none;
 }
 
-/* Ensure the content fits within the printable area */
-#container-shop, #shop {
-    flex: none;
-    width: 80%;
+#cart {
+    width: 100%;
     display: block;
-    margin: 0;
-    padding: 0;
+    position: static;
+    box-shadow: none;
+    border: none;
+    margin-top: 20px;
 }
 
-/* Adjust the layout for better print readability */
-.card {
-    width: 50%;
-    margin: 10px 0;
-    page-break-inside: avoid;
-    break-inside: avoid-column;
+#close-cart-btn,
+.cart-item .remove-btn {
+    display: none;
 }
 
-.card img {
-    max-width: 40%;
-    height: auto;
+.cart-item {
+    border: 1px solid #000;
+    padding: 10px;
     margin-bottom: 10px;
 }
 
-/* Hide no results message when printing */
-#no-results {
-    display: none;
+#cart h2 {
+    font-size: 1.5em;
 }
 
-#cart-items {
-    display: block;
+#cart p,
+#cart .cart-item {
+    font-size: 1.2em;
 }
 
-.card, .cart-item {
-    page-break-inside: avoid;
-    break-inside: avoid-column;
+#cart .price {
+    font-weight: bold;
 }
+
+#subtotal {
+    font-size: 1.5em;
+    color: #ff0000;
+    font-weight: bold;
+}
+
 
 /*===== ACCEDI =====*/
 
