@@ -11,6 +11,7 @@
     <title>Accedi - Linkin Park</title>
 
     <link rel="icon" href="asset/img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="asset/css/style_function.css" media="all">
     <link rel="stylesheet" href="asset/css/style.css" media="all">
     <link rel="stylesheet" href="asset/css/stampa.css" media="print">
     <link rel="stylesheet" href="asset/css/login.css" media="screen">
