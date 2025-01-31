@@ -28,7 +28,7 @@ $email = $_SESSION['email'] ?? '';
         <li><a href="shop.php" class="<?= $currentPage == 'shop.php' ? 'active' : '' ?>">Shop</a></li>
 
         <?php if ($ruolo === 'admin'): ?>
-            <li><a href="template/admin.html" target="_blank" class="<?= $currentPage == 'template/admin.html' ? 'active' : '' ?>" lang="en">Admin</a></li>
+            <li><a href="template/admin.php" target="_blank" class="<?= $currentPage == 'template/admin.php' ? 'active' : '' ?>" lang="en">Admin</a></li>
         <?php endif; ?>
 
         <?php if ($loggedIn): ?>
