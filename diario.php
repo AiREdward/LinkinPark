@@ -86,7 +86,7 @@
         </dl>
 
         
-        <article id="article2">
+        <article id="article2" tabindex="-1">
             <h2>L’arrivo di <span lang="en">Chester</span> e il nuovo nome</h2>
             <button type="button" class="closePopUp">X</button>
 
@@ -104,7 +104,7 @@
                 in "<span lang="en">Linkin</span>" è stata una mossa obbligata per poter comprare il dominio web. Ah, le priorità di fine anni ’90!</p>
         </article>
 
-        <article id="article3">
+        <article id="article3" tabindex="-1">
             <h2>La nascita di <span lang="en">Hybrid Theory</span>: sudore, sogni e un pizzico di magia</h2>
             <button type="button" class="closePopUp">X</button>
 
@@ -126,7 +126,7 @@
                 avuto un senso.</p>
         </article>
 
-        <article id="article5">
+        <article id="article5" tabindex="-1">
             <h2>Il delirio di <span lang="en">Live in Texas</span>: quando il palco è diventato casa</h2>
             <button type="button" class="closePopUp">X</button>
 
@@ -143,7 +143,7 @@
                 chiunque potesse sentirsi parte di quella folla texana impazzita.</p>
         </article>
 
-        <article id="article6">
+        <article id="article6" tabindex="-1">
             <h2>Un addio che non dimenticheremo mai: <span lang="en">Chester</span> e <span lang="en">One More Light Live</span></h2>
             <button type="button" class="closePopUp">X</button>
 
@@ -163,7 +163,7 @@
             con noi la sua luce.</p>
         </article>
 
-        <article id="article7">
+        <article id="article7" tabindex="-1">
             <h2>Il nuovo capitolo con <span lang="en">Emily Armstrong</span> e <span lang="en">Colin Brittain</span></h2>
             <button type="button" class="closePopUp">X</button>
 
